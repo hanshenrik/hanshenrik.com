@@ -1,0 +1,44 @@
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faApple,
+  faSoundcloud,
+  faSpotify,
+  faYoutube
+} from "@fortawesome/free-brands-svg-icons";
+
+import { Link, ListItem } from "../";
+
+const separator = ". ";
+
+const Recording = ({ recording, ...props }) => {
+  return (
+    <ListItem {...props}>
+      {recording.spotifyLink && (
+        <Link target="_blank" href={recording.spotifyLink}>
+          <FontAwesomeIcon icon={faSpotify} />
+        </Link>
+      )}
+      {recording.appleLink && (
+        <Link target="_blank" href={recording.appleLink}>
+          <FontAwesomeIcon icon={faApple} />
+        </Link>
+      )}
+      {recording.soundcloudLink && (
+        <Link target="_blank" href={recording.soundcloudLink}>
+          <FontAwesomeIcon icon={faSoundcloud} />
+        </Link>
+      )}
+      {recording.youtubeLink && (
+        <Link target="_blank" href={recording.youtubeLink}>
+          <FontAwesomeIcon icon={faYoutube} />
+        </Link>
+      )}
+      {recording.artist && `${recording.artist}${separator}`}
+      {recording.name && `${recording.name}${separator}`}
+      <ListItem.Detail>{recording.description}</ListItem.Detail>
+    </ListItem>
+  );
+};
+
+export default Recording;

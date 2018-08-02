@@ -1,0 +1,63 @@
+.accordion__title {
+  cursor: pointer;
+  padding: 0 1rem;
+  display: inline-block;
+}
+
+.accordion__title:hover {
+  transform: scale(1.1) rotateZ(-2deg);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.accordion__body {
+  display: block;
+  text-align: left;
+}
+
+.accordion__body--hidden {
+  display: none;
+}
+
+.accordion__arrow {
+  display: inline-block;
+  position: relative;
+  width: 24px;
+  height: 1rem;
+  margin: 0 0.5rem 0 0;
+}
+
+.accordion__arrow::after,
+.accordion__arrow::before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 2px;
+  background-color: currentColor;
+  content: "";
+}
+
+.accordion__arrow::before {
+  left: 4px;
+  transform: rotate(225deg);
+}
+
+[aria-expanded="true"] .accordion__arrow::before,
+[aria-selected="true"] .accordion__arrow::before {
+  transform: rotate(-45deg);
+}
+
+.accordion__arrow::after {
+  right: 4px;
+  transform: rotate(-45deg);
+}
+
+[aria-expanded="true"] .accordion__arrow::after,
+[aria-selected="true"] .accordion__arrow::after {
+  transform: rotate(225deg);
+}
+
+.accordion__arrow::before,
+.accordion__arrow::after {
+  transition: transform var(--slow) ease;
+}

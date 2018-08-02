@@ -1,0 +1,46 @@
+table {
+  border-collapse: collapse;
+}
+
+tr:nth-child(2n + 2) {
+  background-color: var(--super-light-transparent-black);
+}
+tr:last-child {
+  border-bottom: 1px solid var(--super-light-transparent-black);
+}
+
+td {
+  padding: 0.5rem;
+}
+td:not(:first-child):not(:last-child) {
+  word-break: break-word;
+}
+td:first-child {
+  border-radius: 2px 0 0 2px;
+}
+td:last-child {
+  border-radius: 0 2px 2px 0;
+}
+
+@media only screen and (max-width: 1100px) {
+  table,
+  thead,
+  tbody,
+  th,
+  tr,
+  td {
+    display: block;
+  }
+
+  table {
+    text-align: center;
+  }
+
+  tr {
+    padding: 0.5rem;
+  }
+
+  td {
+    padding: 0;
+  }
+}

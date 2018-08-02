@@ -1,0 +1,45 @@
+[
+  {
+    "name": "Jazzkart",
+    "description": "An interactive map showing the events at Mandaljazz 2017.",
+    "url": "http://jazzatlas.hanshenrik.com/",
+    "githubUrl": "https://github.com/mandaljazz/jazzatlas"
+  },
+  {
+    "name": "kickmap",
+    "description":
+      "A map showing upcoming concerts in a city. Using data from Songkick and Mapbox.",
+    "githubUrl": "https://github.com/hanshenrik/kickmap"
+  },
+  {
+    "name": "when.fm",
+    "description":
+      "What hours of the day do you listen to music the most? Using data from last.fm and Highcharts for React.",
+    "githubUrl": "https://github.com/hanshenrik/when.fm"
+  },
+  {
+    "name": "rønsenrock.no",
+    "description":
+      "Website for the music festival RønsenROCK. Written in Elm ✌️",
+    "url": "https://rønsenrock.no",
+    "githubUrl": "https://github.com/hanshenrik/ronsenrock"
+  },
+  {
+    "name": "eliaseine.no",
+    "description": "Website for the artist Elias Eine.",
+    "url": "https://eliaseine.no",
+    "githubUrl": "https://github.com/hanshenrik/eliaseine.no"
+  },
+  {
+    "name": "hakonhammer.no",
+    "description": "Website for the musician Håkon Hammer.",
+    "url": "https://hakonhammer.no",
+    "githubUrl": "https://github.com/hanshenrik/hakonhammer.no"
+  },
+  {
+    "name": "CardioMech",
+    "description":
+      "Website for CardioMech, a company designing new therapeutic options for heart disease.",
+    "url": "https://cardiomech.com"
+  }
+]

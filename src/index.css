@@ -1,0 +1,45 @@
+:root {
+  /* Colors */
+  --white: #fffffe;
+  --black: #232323;
+  --super-light-transparent-black: rgba(0, 0, 0, 0.05);
+  --gray: #505050;
+  --yellow: #fffd53;
+  --lightblue: #34a3f1;
+  --teal: #9ee9f5;
+
+  /* Durations */
+  --quick: 0.2s;
+  --slow: 0.4s;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  color: var(--black);
+  background: linear-gradient(170deg, var(--yellow) 95%, var(--teal) 5%);
+  font-family: "Muli", sans-serif;
+  font-weight: 200;
+}
+
+.svg-inline--fa {
+  margin: 0 0.25em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+ul {
+  padding: 0;
+}

@@ -1,0 +1,11 @@
+:local(.Link) {
+  color: var(--lightblue);
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  /* transition: transform var(--quick) ease-in-out; */
+}
+:local(.Link):hover {
+  transform: scale(1.05) rotateZ(-5deg);
+}
