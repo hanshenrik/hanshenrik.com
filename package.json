@@ -2,12 +2,14 @@
   "name": "hanshenrik.com-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://hanshenrik.github.io/hanshenrik.com-react",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
     "@fortawesome/free-brands-svg-icons": "^5.1.0-11",
     "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
     "@fortawesome/react-fontawesome": "^0.1.0-11",
     "dayjs": "^1.7.4",
+    "gh-pages": "^1.2.0",
     "lodash": "^4.17.10",
     "react": "^16.4.1",
     "react-accessible-accordion": "^2.4.4",
@@ -19,6 +21,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   }
 }
