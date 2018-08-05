@@ -15,9 +15,7 @@
 
 body {
   margin: 0;
-  padding: 2rem;
   color: var(--black);
-  background: linear-gradient(170deg, var(--yellow) 95%, var(--teal) 5%);
   font-family: "Muli", sans-serif;
   font-weight: 200;
 }
