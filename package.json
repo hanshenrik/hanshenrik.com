@@ -2,7 +2,7 @@
   "name": "hanshenrik.com-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hanshenrik.github.io/hanshenrik.com-react",
+  "homepage": "https://www.hanshenrik.com",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
     "@fortawesome/free-brands-svg-icons": "^5.1.0-11",
