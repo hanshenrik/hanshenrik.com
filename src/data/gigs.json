@@ -95,8 +95,7 @@
     "venue": "Trøndertun",
     "venueUrl": "http://www.trondertun.no/",
     "city": "Melhus",
-    "artist":
-      "Kjellerbandet with Håkon Mjåset Johansen, Hermund Nygård & Tollef Østvang",
+    "artist": "Kjellerbandet with Håkon Mjåset Johansen, Hermund Nygård & Tollef Østvang",
     "artistUrl": "",
     "eventDescription": "A tribute to Buddy Rich",
     "eventUrl": "",
@@ -216,8 +215,7 @@
     "artist": "S. Møller Storband",
     "artistUrl": "http://www.smoller.no/",
     "eventDescription": "De Sorte Faars Ridderskab: Ridderpromosjon",
-    "eventUrl":
-      "https://www.samfundet.no/arrangement/674-festmote-ridderpromosjon",
+    "eventUrl": "https://www.samfundet.no/arrangement/674-festmote-ridderpromosjon",
     "facebookUrl": "https://www.facebook.com/events/492769964246538/",
     "ticketsUrl": "",
     "createdAt": "2016-04-05T13:36:40.140Z"
@@ -292,8 +290,7 @@
     "venue": "Sund",
     "venueUrl": "http://www.sundfhs.no/",
     "city": "Inderøya",
-    "artist":
-      "Kjellerbandet with Håkon Mjåset Johansen, Hermund Nygård & Tollef Østvang",
+    "artist": "Kjellerbandet with Håkon Mjåset Johansen, Hermund Nygård & Tollef Østvang",
     "artistUrl": "",
     "eventDescription": "A tribute to Buddy Rich",
     "eventUrl": "",
@@ -384,8 +381,7 @@
     "venue": "Dokkhuset",
     "venueUrl": "http://www.dokkhuset.no/",
     "city": "Trondheim",
-    "artist":
-      "Kjellerbandet with Håkon Mjåset Johansen, Hermund Nygård & Tollef Østvang",
+    "artist": "Kjellerbandet with Håkon Mjåset Johansen, Hermund Nygård & Tollef Østvang",
     "artistUrl": "",
     "eventDescription": "A tribute to Buddy Rich",
     "eventUrl": "",
@@ -582,8 +578,7 @@
     "city": "Eidsvoll",
     "artist": "HHG",
     "artistUrl": "",
-    "eventDescription":
-      "Culture Prize Award to Vidar «Peeters» Pettersen (Eidsvoll Rock- & Bluesklubb)",
+    "eventDescription": "Culture Prize Award to Vidar «Peeters» Pettersen (Eidsvoll Rock- & Bluesklubb)",
     "eventUrl": "",
     "facebookUrl": "",
     "ticketsUrl": "",
@@ -672,14 +667,12 @@
     "venue": "Victoria Nasjonal Jazzscene",
     "venueUrl": "http://nasjonaljazzscene.no/",
     "city": "Oslo",
-    "artist":
-      "Kjellerbandet with Håkon Mjåset Johansen, Hermund Nygård & Tollef Østvang",
+    "artist": "Kjellerbandet with Håkon Mjåset Johansen, Hermund Nygård & Tollef Østvang",
     "artistUrl": "",
     "eventDescription": "A tribute to Buddy Rich",
     "eventUrl": "",
     "facebookUrl": "",
-    "ticketsUrl":
-      "http://nasjonaljazzscene.no/arrangement/kjellerbandet-a-tribute-to-buddy-rich/",
+    "ticketsUrl": "http://nasjonaljazzscene.no/arrangement/kjellerbandet-a-tribute-to-buddy-rich/",
     "createdAt": "2016-04-02T15:49:59.585Z",
     "event": ""
   },
@@ -732,8 +725,7 @@
     "eventDescription": "Vinterjazz",
     "eventUrl": "http://www.vinterjazz.no",
     "facebookUrl": "",
-    "ticketsUrl":
-      "http://www.vinterjazz.no/arrangement/reistadbakknielsenthorpgronsleth/",
+    "ticketsUrl": "http://www.vinterjazz.no/arrangement/reistadbakknielsenthorpgronsleth/",
     "createdAt": "2016-04-02T16:14:51.710Z"
   },
   {
@@ -741,8 +733,7 @@
     "venue": "Dokkhuset",
     "venueUrl": "http://www.dokkhuset.no/",
     "city": "Trondheim",
-    "artist":
-      "Kjellerbandet with Håkon Mjåset Johansen, Hermund Nygård & Tollef Østvang",
+    "artist": "Kjellerbandet with Håkon Mjåset Johansen, Hermund Nygård & Tollef Østvang",
     "artistUrl": "",
     "eventDescription": "A tribute to Buddy Rich",
     "eventUrl": "",
@@ -1262,8 +1253,7 @@
     "venue": "Festiviteten",
     "venueUrl": "",
     "city": "Eidsvoll Verk",
-    "artist":
-      "Stian Carstensen, Arve Henriksen, Finn Guttormsen and Thomas Hvale",
+    "artist": "Stian Carstensen, Arve Henriksen, Finn Guttormsen and Thomas Hvale",
     "artistUrl": "",
     "eventDescription": "Eidsvoll Jazz Påskejazz Jam",
     "eventUrl": "",
@@ -1903,8 +1893,7 @@
     "artist": "Lisa Nybrott",
     "artistUrl": "https://www.facebook.com/lisanybrott",
     "eventDescription": "Uhørt presenterer",
-    "eventUrl":
-      "https://uhortistroget.no/program1/2017/6/13/uhrt-presenterer-lisa-nybrott-supp-marius-sol",
+    "eventUrl": "https://uhortistroget.no/program1/2017/6/13/uhrt-presenterer-lisa-nybrott-supp-marius-sol",
     "facebookUrl": "https://www.facebook.com/events/202050100289269/",
     "ticketsUrl": "https://www.ticketmaster.no/event/535357",
     "createdAt": "2017-04-05T20:07:56.121Z"
@@ -2016,7 +2005,7 @@
   {
     "date": "2017-08-18",
     "venue": "Sundtkvartalet",
-    "venueUrl": "",
+    "venueUrl": "http://sundtkvartalet.no/",
     "city": "Oslo",
     "artist": "bandit",
     "artistUrl": "",
@@ -2029,7 +2018,7 @@
   {
     "date": "2017-08-31",
     "venue": "Sundtkvartalet",
-    "venueUrl": "",
+    "venueUrl": "http://sundtkvartalet.no/",
     "city": "Oslo",
     "artist": "bandit",
     "artistUrl": "",
@@ -2042,7 +2031,7 @@
   {
     "date": "2017-09-06",
     "venue": "Sundtkvartalet",
-    "venueUrl": "",
+    "venueUrl": "http://sundtkvartalet.no/",
     "city": "Oslo",
     "artist": "bandit",
     "artistUrl": "",
@@ -2071,11 +2060,9 @@
     "venueUrl": "https://www.samfundet.no/",
     "city": "Trondheim",
     "artist": "Passion for Glory",
-    "artistUrl":
-      "https://www.youtube.com/watch?v=OAw55u1sTVs&index=4&list=PLGta0xPJBfuAqHC4FG-eCFOZujyT368Z1",
+    "artistUrl": "https://www.youtube.com/watch?v=OAw55u1sTVs&index=4&list=PLGta0xPJBfuAqHC4FG-eCFOZujyT368Z1",
     "eventDescription": "80's party",
-    "eventUrl":
-      "https://www.youtube.com/watch?v=OAw55u1sTVs&index=4&list=PLGta0xPJBfuAqHC4FG-eCFOZujyT368Z1",
+    "eventUrl": "https://www.youtube.com/watch?v=OAw55u1sTVs&index=4&list=PLGta0xPJBfuAqHC4FG-eCFOZujyT368Z1",
     "facebookUrl": "https://www.facebook.com/events/153375031534165",
     "ticketsUrl": "",
     "createdAt": "2017-09-17T21:47:37.679Z"
@@ -2274,5 +2261,18 @@
     "facebookUrl": "https://www.facebook.com/events/1645171895567999/",
     "ticketsUrl": "",
     "createdAt": "2018-07-10T21:02:30.059Z"
+  },
+  {
+    "date": "2018-09-26",
+    "venue": "Sundtkvartalet",
+    "venueUrl": "http://sundtkvartalet.no/",
+    "city": "Oslo",
+    "artist": "bandit",
+    "artistUrl": "",
+    "eventDescription": "",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2018-08-30T23:00:00.000Z"
   }
 ]
