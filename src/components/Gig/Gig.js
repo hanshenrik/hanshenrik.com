@@ -11,7 +11,13 @@ const Gig = ({ gig }) => {
   return (
     <tr className={`${dayjs(gig.date) > dayjs() ? styles.Gig__upcoming : ""}`}>
       <td style={{ whiteSpace: "nowrap" }}>
-        {dayjs(gig.date).format("MMMM D")}
+        {dayjs(gig.date).format("MMM D")}
+        {gig.toDate &&
+          `\u2013${
+            dayjs(gig.date).month() === dayjs(gig.toDate).month()
+              ? dayjs(gig.toDate).format("D")
+              : dayjs(gig.toDate).format("MMM D")
+          }`}
       </td>
       <td>
         {gig.artistUrl ? (
@@ -29,7 +35,8 @@ const Gig = ({ gig }) => {
           </Link>
         ) : (
           gig.venue
-        )}, {gig.city}
+        )}
+        , {gig.city}
       </td>
       <td>
         {gig.eventUrl ? (
