@@ -52,19 +52,6 @@
     "createdAt": "2016-04-02T16:03:24.117Z"
   },
   {
-    "date": "2002-06-30",
-    "venue": "Outside Håkonshallen",
-    "venueUrl": "",
-    "city": "Lillehammer",
-    "artist": "Replay",
-    "artistUrl": "",
-    "eventDescription": "Vroom!-festivalen",
-    "eventUrl": "",
-    "facebookUrl": "",
-    "ticketsUrl": "",
-    "createdAt": "2016-04-02T16:18:48.021Z"
-  },
-  {
     "date": "2012-05-20",
     "venue": "Antikvariatet",
     "venueUrl": "https://www.facebook.com/antikvarene/",
@@ -678,6 +665,7 @@
   },
   {
     "date": "2002-06-29",
+    "toDate": "2002-06-30",
     "venue": "Outside Håkonshallen",
     "venueUrl": "",
     "city": "Lillehammer",
@@ -911,6 +899,20 @@
     "createdAt": "2016-07-19T20:08:55.649Z"
   },
   {
+    "date": "2009-01-23",
+    "toDate": "2009-01-31",
+    "venue": "Panorama",
+    "venueUrl": "",
+    "city": "Eidsvoll",
+    "artist": "Eidsvollrussen",
+    "artistUrl": "",
+    "eventDescription": "Sirkruss",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2018-09-21T23:08:55.649Z"
+  },
+  {
     "date": "2011-11-19",
     "venue": "Dokkhuset",
     "venueUrl": "http://www.dokkhuset.no/",
@@ -1003,6 +1005,7 @@
   },
   {
     "date": "2007-01-19",
+    "toDate": "2007-01-27",
     "venue": "Panorama",
     "venueUrl": "",
     "city": "Eidsvoll",
@@ -1380,6 +1383,7 @@
   },
   {
     "date": "2007-12-07",
+    "toDate": "2007-12-15",
     "venue": "Panorama",
     "venueUrl": "",
     "city": "Eidsvoll",
@@ -1406,6 +1410,7 @@
   },
   {
     "date": "2008-01-18",
+    "toDate": "2008-01-26",
     "venue": "Panorama",
     "venueUrl": "",
     "city": "Eidsvoll",
@@ -2082,6 +2087,7 @@
   },
   {
     "date": "2013-10-03",
+    "toDate": "2013-10-27",
     "venue": "Storsalen, Studentersamfundet",
     "venueUrl": "https://samfundet.no",
     "city": "Trondheim",
@@ -2225,9 +2231,9 @@
   },
   {
     "date": "2018-08-17",
-    "venue": "Gåsbusætra",
+    "venue": "Åkersætra",
     "venueUrl": "",
-    "city": "Hamar",
+    "city": "Ringsaker",
     "artist": "Lisa Nybrott",
     "artistUrl": "https://www.lisanybrott.com",
     "eventDescription": "",
@@ -2263,16 +2269,29 @@
     "createdAt": "2018-07-10T21:02:30.059Z"
   },
   {
-    "date": "2018-09-26",
-    "venue": "Sundtkvartalet",
-    "venueUrl": "http://sundtkvartalet.no/",
-    "city": "Oslo",
-    "artist": "bandit",
+    "date": "2018-12-13",
+    "venue": "Mago B",
+    "venueUrl": "",
+    "city": "Eidsvoll",
+    "artist": "TBA",
     "artistUrl": "",
-    "eventDescription": "",
+    "eventDescription": "Christmas concert",
     "eventUrl": "",
     "facebookUrl": "",
     "ticketsUrl": "",
-    "createdAt": "2018-08-30T23:00:00.000Z"
+    "createdAt": "2018-09-21T21:00:00.000Z"
+  },
+  {
+    "date": "2018-12-21",
+    "venue": "Eidsvoll kirke",
+    "venueUrl": "",
+    "city": "Eidsvoll",
+    "artist": "TBA",
+    "artistUrl": "",
+    "eventDescription": "Christmas concert",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2018-09-21T21:00:00.000Z"
   }
 ]
