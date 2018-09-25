@@ -36,7 +36,7 @@ const Gig = ({ gig }) => {
         ) : (
           gig.venue
         )}
-        , {gig.city}
+        {gig.city && `, ${gig.city}`}
       </td>
       <td>
         {gig.eventUrl ? (
