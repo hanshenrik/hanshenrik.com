@@ -32,10 +32,5 @@
     "description": "Website for the musician Håkon Hammer.",
     "url": "https://hakonhammer.no",
     "githubUrl": "https://github.com/hanshenrik/hakonhammer.no"
-  },
-  {
-    "name": "CardioMech",
-    "description": "Website for CardioMech, a company designing new therapeutic options for heart disease.",
-    "url": "https://cardiomech.com"
   }
 ]
