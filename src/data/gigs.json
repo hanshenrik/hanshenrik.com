@@ -2293,5 +2293,18 @@
     "facebookUrl": "https://www.facebook.com/events/471059903418192",
     "ticketsUrl": "",
     "createdAt": "2018-09-21T21:00:00.000Z"
+  },
+  {
+    "date": "2019-01-05",
+    "venue": "Nesveien 7",
+    "venueUrl": "",
+    "city": "Eidsvoll",
+    "artist": "Helt Greit Band",
+    "artistUrl": "https://www.last.fm/music/Helt+Greit+Band",
+    "eventDescription": "",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2019-01-06T16:00:00.000Z"
   }
 ]
