@@ -2,7 +2,8 @@
   "name": "hanshenrik.com-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.hanshenrik.com",
+  "homepage": "https://hanshenrik.com",
+  "author": "Hans Henrik Grønsleth <hh.gronsleth@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.4",
     "@fortawesome/free-brands-svg-icons": "^5.3.1",
