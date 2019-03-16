@@ -22,6 +22,12 @@
     "githubUrl": "https://github.com/hanshenrik/ronsenrock"
   },
   {
+    "name": "mandaljazz.no",
+    "description": "Website for the jazz festival Mandaljazz.",
+    "url": "https://mandaljazz.no",
+    "githubUrl": "https://github.com/mandaljazz/mandaljazz.no"
+  },
+  {
     "name": "eliaseine.no",
     "description": "Website for the artist Elias Eine.",
     "url": "https://eliaseine.no",
