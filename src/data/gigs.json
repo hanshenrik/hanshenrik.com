@@ -2306,5 +2306,57 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2019-01-06T16:00:00.000Z"
+  },
+  {
+    "date": "2019-03-23",
+    "venue": "Hjemme hos Nina og Bent",
+    "venueUrl": "",
+    "city": "Eidsvoll",
+    "artist": "Lisa Nybrott",
+    "artistUrl": "https://www.lisanybrott.com/",
+    "eventDescription": "Huskonsertturne",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2019-03-24T23:00:00.000Z"
+  },
+  {
+    "date": "2019-03-24",
+    "venue": "Hjemme hos Martine og Tobias",
+    "venueUrl": "",
+    "city": "Hamar",
+    "artist": "Lisa Nybrott",
+    "artistUrl": "https://www.lisanybrott.com/",
+    "eventDescription": "Huskonsertturne",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2019-03-24T23:00:00.000Z"
+  },
+  {
+    "date": "2019-05-04",
+    "venue": "Hjemme hos Hans Henrik",
+    "venueUrl": "",
+    "city": "Oslo",
+    "artist": "Lisa Nybrott",
+    "artistUrl": "https://www.lisanybrott.com/",
+    "eventDescription": "Huskonsertturne",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2019-03-24T23:00:00.000Z"
+  },
+  {
+    "date": "2019-05-26",
+    "venue": "Bakgården",
+    "venueUrl": "",
+    "city": "Sandvika",
+    "artist": "Lisa Nybrott",
+    "artistUrl": "https://www.lisanybrott.com/",
+    "eventDescription": "",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2019-03-24T23:00:00.000Z"
   }
 ]
