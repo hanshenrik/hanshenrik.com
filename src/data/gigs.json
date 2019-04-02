@@ -2358,5 +2358,18 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2019-03-24T23:00:00.000Z"
+  },
+  {
+    "date": "2019-05-24",
+    "venue": "No. 53",
+    "venueUrl": "",
+    "city": "Oslo",
+    "artist": "Kjør Romskip",
+    "artistUrl": "",
+    "eventDescription": "",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2019-04-03T00:04:00.000Z"
   }
 ]
