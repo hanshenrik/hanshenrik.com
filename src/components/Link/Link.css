@@ -4,8 +4,8 @@
   text-decoration: none;
   cursor: pointer;
   transform-style: preserve-3d;
-  /* transition: transform var(--quick) ease-in-out; */
+  transition: transform var(--superquick) ease-in-out;
 }
 :local(.Link):hover {
-  transform: scale(1.05) rotateZ(-5deg);
+  transform: scale(1.05) rotateZ(-1deg);
 }

@@ -2,10 +2,11 @@
   cursor: pointer;
   padding: 0 1rem;
   display: inline-block;
+  transition: transform var(--superquick) ease-in-out;
 }
 
 .accordion__title:hover {
-  transform: scale(1.1) rotateZ(-2deg);
+  transform: scale(1.1) rotateZ(-1deg);
   background-color: rgba(255, 255, 255, 0.3);
 }
 

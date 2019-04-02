@@ -2,6 +2,7 @@
   content: "👉";
   display: inline-block;
   margin: 0 1.5rem 0 -3rem;
+  transition: margin var(--superquick) ease-in-out;
 }
 
 :local(.Gig__upcoming):hover td:first-child::before {
