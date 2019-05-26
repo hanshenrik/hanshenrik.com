@@ -2371,5 +2371,18 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2019-04-03T00:04:00.000Z"
+  },
+  {
+    "date": "2019-06-29",
+    "venue": "Gullsmed Danielsen",
+    "venueUrl": "",
+    "city": "Mandal",
+    "artist": "Mari Marie",
+    "artistUrl": "",
+    "eventDescription": "Mandaljazz",
+    "eventUrl": "https://mandaljazz.no",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2019-04-03T00:04:00.000Z"
   }
 ]
