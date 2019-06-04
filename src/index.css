@@ -5,7 +5,8 @@
   --super-light-transparent-black: rgba(0, 0, 0, 0.05);
   --gray: #505050;
   --yellow: #fffd7c;
-  --lightblue: #34a3f1;
+  --lightyellow: #fffeb6;
+  --lightblue: #269ff5;
   --teal: #9ee9f5;
 
   /* Durations */
@@ -18,6 +19,7 @@ body {
   margin: 0;
   color: var(--black);
   background-color: var(--yellow);
+  animation: color-transition 30s ease infinite;
   font-family: "Muli", sans-serif;
   font-weight: 200;
 }
@@ -42,4 +44,16 @@ h1 {
 
 ul {
   padding: 0;
+}
+
+@keyframes color-transition {
+  0% {
+    background-color: var(--yellow);
+  }
+  50% {
+    background-color: var(--lightyellow);
+  }
+  100% {
+    background-color: var(--yellow);
+  }
 }

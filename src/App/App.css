@@ -1,7 +1,6 @@
 :local(.App) {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(170deg, var(--yellow) 95%, var(--teal) 5%);
   padding: 2rem;
 }
 
