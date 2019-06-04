@@ -2183,7 +2183,7 @@
     "venueUrl": "",
     "city": "Oslo",
     "artist": "Kjør Romskip",
-    "artistUrl": "",
+    "artistUrl": "https://www.facebook.com/Kjør-Romskip-143074806532195/",
     "eventDescription": "Knowit musikkfest",
     "eventUrl": "",
     "facebookUrl": "",
@@ -2371,6 +2371,19 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2019-04-03T00:04:00.000Z"
+  },
+  {
+    "date": "2019-06-01",
+    "venue": "Good Vibes Vintage",
+    "venueUrl": "https://www.facebook.com/goodvibesvintagevan/",
+    "city": "Oslo",
+    "artist": "Kjør Romskip",
+    "artistUrl": "https://www.facebook.com/Kjør-Romskip-143074806532195/",
+    "eventDescription": "Musikkfest Oslo",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2019-06-03T00:04:00.000Z"
   },
   {
     "date": "2019-06-29",
