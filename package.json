@@ -12,9 +12,9 @@
     "dayjs": "^1.8.14",
     "gh-pages": "^2.0.1",
     "lodash": "^4.17.11",
-    "react": "^16.5.2",
+    "react": "^16.8.6",
     "react-accessible-accordion": "^3.0.0",
-    "react-dom": "^16.5.2",
+    "react-dom": "^16.8.6",
     "react-scripts": "1.1.5",
     "typeface-muli": "^0.0.71"
   },
