@@ -4,7 +4,6 @@ import { capitalize } from "lodash";
 import styles from "./NavMenu.css";
 
 const sections = ["recordings", "gigs", "software"];
-const colors = ["rgba(0, 250, 154, 0.8)", "blue", "green"];
 
 const NavMenu = () => (
   <div className={styles.NavMenu}>
