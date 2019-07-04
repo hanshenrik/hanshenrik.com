@@ -9,6 +9,7 @@ import Recording from "./Recording";
 import RecordingList from "./RecordingList";
 import Table from "./Table";
 import Footer from "./Footer";
+import NavMenu from "./NavMenu";
 
 export {
   Gig,
@@ -21,5 +22,6 @@ export {
   Recording,
   RecordingList,
   Table,
-  Footer
+  Footer,
+  NavMenu
 };

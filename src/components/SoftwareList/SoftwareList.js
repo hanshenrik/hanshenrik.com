@@ -16,8 +16,10 @@ const SoftwareList = () => (
     <p>
       More code at{" "}
       <Link target="_blank" href="https://github.com/hanshenrik">
-        <FontAwesomeIcon icon={faGithub} />GitHub
-      </Link>.
+        <FontAwesomeIcon icon={faGithub} />
+        GitHub
+      </Link>
+      .
     </p>
   </React.Fragment>
 );

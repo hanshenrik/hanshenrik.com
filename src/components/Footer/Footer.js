@@ -9,8 +9,10 @@ const Footer = () => {
   return (
     <div className={styles.Footer}>
       <Link href="mailto:hello@hanshenrik.com" target="_blank">
-        <FontAwesomeIcon icon={faEnvelope} />hello@hanshenrik.com
-      </Link>.
+        <FontAwesomeIcon icon={faEnvelope} />
+        hello@hanshenrik.com
+      </Link>
+      .
     </div>
   );
 };

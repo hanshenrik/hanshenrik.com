@@ -1,19 +1,26 @@
 import React from "react";
 
-import { GigList, SoftwareList, RecordingList, Footer } from "../components";
+import {
+  NavMenu,
+  GigList,
+  SoftwareList,
+  RecordingList,
+  Footer
+} from "../components";
 import styles from "./App.css";
 
 const App = () => (
   <div className={styles.App}>
-    <h1>Recordings.</h1>
+    <NavMenu />
+    <h1 id="recordings">Recordings.</h1>
     <div className={styles.Section}>
       <RecordingList />
     </div>
-    <h1>Gigs.</h1>
+    <h1 id="gigs">Gigs.</h1>
     <div className={styles.Section}>
       <GigList />
     </div>
-    <h1>Software.</h1>
+    <h1 id="software">Software.</h1>
     <div className={styles.Section}>
       <SoftwareList />
     </div>

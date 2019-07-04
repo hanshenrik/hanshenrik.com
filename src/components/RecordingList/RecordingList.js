@@ -16,8 +16,10 @@ const RecordingList = () => (
     <p>
       More sound at{" "}
       <Link target="_blank" href="https://soundcloud.com/hanshenrik">
-        <FontAwesomeIcon icon={faSoundcloud} />Soundcloud
-      </Link>.
+        <FontAwesomeIcon icon={faSoundcloud} />
+        Soundcloud
+      </Link>
+      .
     </p>
   </React.Fragment>
 );

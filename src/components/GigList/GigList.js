@@ -24,7 +24,6 @@ const GigList = () => (
     allowMultipleExpanded
     allowZeroExpanded
     preExpanded={preExpandedYears}
-    id="gigs"
   >
     {Object.entries(gigsByYear)
       .reverse()

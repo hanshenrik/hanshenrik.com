@@ -3,6 +3,8 @@
   --white: #fffffe;
   --black: #232323;
   --super-light-transparent-black: rgba(0, 0, 0, 0.05);
+  --light-transparent-black: rgba(0, 0, 0, 0.1);
+  --light-transparent-white: rgba(255, 255, 254, 0.2);
   --gray: #505050;
   --yellow: #fffd7c;
   --lightyellow: #fffeb6;
