@@ -1,22 +1,13 @@
-.accordion__title {
+.accordion__button {
   cursor: pointer;
   padding: 0 1rem;
   display: inline-block;
   transition: transform var(--superquick) ease-in-out;
 }
 
-.accordion__title:hover {
+.accordion__button:hover {
   transform: scale(1.1) rotateZ(-1deg);
   background-color: rgba(255, 255, 255, 0.3);
-}
-
-.accordion__body {
-  display: block;
-  text-align: left;
-}
-
-.accordion__body--hidden {
-  display: none;
 }
 
 .accordion__arrow {
