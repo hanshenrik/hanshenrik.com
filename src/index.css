@@ -1,14 +1,16 @@
 :root {
   /* Colors */
-  --white: #fffffe;
+  --white: #edeff3;
   --black: #232323;
   --super-light-transparent-black: rgba(0, 0, 0, 0.05);
   --light-transparent-black: rgba(0, 0, 0, 0.1);
   --light-transparent-white: rgba(255, 255, 254, 0.2);
   --gray: #505050;
+  --lightgray: #cacaca;
   --yellow: #fffd7c;
   --lightyellow: #fffeb6;
   --lightblue: #269ff5;
+  --super-lightblue: #a4d6fa;
   --teal: #9ee9f5;
 
   /* Durations */
@@ -19,9 +21,8 @@
 
 body {
   margin: 0;
-  color: var(--black);
-  background-color: var(--yellow);
-  animation: color-transition 30s ease infinite;
+  color: var(--white);
+  background-color: var(--black);
   font-family: "Muli", sans-serif;
   font-weight: 200;
 }

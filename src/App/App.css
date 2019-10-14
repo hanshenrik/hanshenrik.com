@@ -1,7 +1,7 @@
 :local(.App) {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 @media only screen and (min-width: 920px) {

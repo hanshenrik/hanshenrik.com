@@ -1,11 +1,16 @@
-:local(.ListItem):not(:last-child)::after {
-  content: "";
-  display: block;
-  margin: 1rem auto;
+:local(.ListItem) {
+  padding: 1rem 0.5rem;
+}
+
+
+:local(.ListItem):nth-child(2n + 2) {
+  background-color: var(--light-transparent-black);
+}
+:local(.ListItem):last-child {
   border-bottom: 1px solid var(--light-transparent-black);
 }
 
 :local(.ListItem__detail) {
-  color: var(--gray);
+  color: var(--lightgray);
   font-size: 0.6em;
 }

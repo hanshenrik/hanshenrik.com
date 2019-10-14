@@ -13,18 +13,18 @@
 }
 
 :local(.NavMenuItem) {
-  min-width: 150px;
-  min-height: 150px;
-  width: 20vmin;
-  height: 20vmin;
+  min-width: 140px;
+  min-height: 140px;
+  width: 15vmin;
+  height: 15vmin;
   margin: 1rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-color: var(--light-transparent-white);
-  border-bottom: 4px solid var(--light-transparent-black);
+  background-color: var(--super-lightblue);
+  border-bottom: 4px solid var(--lightblue);
 
   transition: transform var(--superquick) ease-in-out;
 }
@@ -34,8 +34,8 @@
 
 @media only screen and (min-width: 920px) {
   :local(.NavMenuItem) {
-    width: 25vw;
-    height: 25vw;
-    font-size: 3rem;
+    width: 20vw;
+    height: 20vw;
+    font-size: 2rem;
   }
 }

@@ -3,10 +3,10 @@ table {
 }
 
 tr:nth-child(2n + 2) {
-  background-color: var(--super-light-transparent-black);
+  background-color: var(--light-transparent-black);
 }
 tr:last-child {
-  border-bottom: 1px solid var(--super-light-transparent-black);
+  border-bottom: 1px solid var(--light-transparent-black);
 }
 
 td {
