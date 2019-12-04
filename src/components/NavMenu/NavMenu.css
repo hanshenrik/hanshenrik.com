@@ -1,6 +1,7 @@
 :local(.NavMenu) {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -13,13 +14,14 @@
 }
 
 :local(.NavMenuItem) {
-  min-width: 140px;
-  min-height: 140px;
-  width: 15vmin;
-  height: 15vmin;
+  min-width: 170px;
+  min-height: 70px;
+  width: 14vmin;
+  height: 7vmin;
   margin: 1rem;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -33,9 +35,13 @@
 }
 
 @media only screen and (min-width: 920px) {
+  :local(.NavMenu) {
+    flex-direction: row;
+  }
+
   :local(.NavMenuItem) {
     width: 20vw;
-    height: 20vw;
+    height: 9vw;
     font-size: 2rem;
   }
 }
