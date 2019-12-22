@@ -21,15 +21,26 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>God jul!</title>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.2/gsap.min.js"></script>
     <style>
       body {
+        padding: 0;
         margin: 0;
         background: #73b4ab;
-        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        font-family: 'Amatic SC', sans-serif;
+        color: #034b62;
+        font-size: 30px;
+        text-align: center;
+      }
+      .globe-wrapper {
+        height: 75vh;
         width: 100vw;
-        overflow: hidden;
+        max-width: 100%;
         cursor: pointer;
       }
 
@@ -63,13 +74,46 @@
         width: 100%;
         height: 100%;
       }
+
+      .img-wrapper {
+        padding: 8px;
+      }
+      img {
+        width: 100%;
+        padding: 2px 0;
+      }
+      .down-arrow {
+        border: solid #90ccc4;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 20px;
+        margin-bottom: 30vh;
+        align-self: center;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
     </style>
   </head>
 
   <body>
-    <div id="globe">
-      <canvas id="town"></canvas>
-      <canvas id="snowFlakes"></canvas>
+    <div class="globe-wrapper">
+      <div id="globe">
+        <canvas id="town"></canvas>
+        <canvas id="snowFlakes"></canvas>
+      </div>
+    </div>
+    <div class="down-arrow"></div>
+    <div class="img-wrapper">
+      <img src="/banan/images/1.jpg" />
+      <img src="/banan/images/2.jpg" />
+      <img src="/banan/images/3.jpg" />
+      <img src="/banan/images/4.jpg" />
+      <img src="/banan/images/5.jpg" />
+      <img src="/banan/images/6.jpg" />
+      <img src="/banan/images/7.jpg" />
+      <p>Så kan vi få inspirasjon til å lage ny og spennende mat med ingredienser som er i sesong!</p>
+      <p>God jul!</p>
+      <p>Glad i deg ♥️</p>
     </div>
     <script>
       var canvas = document.querySelector("#town"),
