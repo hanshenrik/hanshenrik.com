@@ -37,11 +37,12 @@
         font-size: 30px;
         text-align: center;
       }
-      .globe-wrapper {
-        height: 75vh;
+      #globe-wrapper {
+        height: 100vh;
         width: 100vw;
         max-width: 100%;
         cursor: pointer;
+        overflow-x: hidden;
       }
 
       #globe {
@@ -76,18 +77,23 @@
       }
 
       .img-wrapper {
-        padding: 8px;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        padding: 10px;
       }
       img {
         width: 100%;
-        padding: 2px 0;
+        max-width: 500px;
       }
       .down-arrow {
         border: solid #90ccc4;
         border-width: 0 3px 3px 0;
         display: inline-block;
         padding: 20px;
-        margin-bottom: 30vh;
+        position: absolute;
+        bottom: 80px;
         align-self: center;
         transform: rotate(45deg);
         -webkit-transform: rotate(45deg);
@@ -96,7 +102,7 @@
   </head>
 
   <body>
-    <div class="globe-wrapper">
+    <div id="globe-wrapper">
       <div id="globe">
         <canvas id="town"></canvas>
         <canvas id="snowFlakes"></canvas>
@@ -111,10 +117,10 @@
       <img src="/banan/images/5.jpg" />
       <img src="/banan/images/6.jpg" />
       <img src="/banan/images/7.jpg" />
-      <p>Så kan vi få inspirasjon til å lage ny og spennende mat med ingredienser som er i sesong!</p>
-      <p>God jul!</p>
-      <p>Glad i deg ♥️</p>
     </div>
+    <p>Så kan vi få inspirasjon til å lage ny og spennende mat med ingredienser som er i sesong i Norge!</p>
+    <p>God jul!</p>
+    <p>Glad i deg ♥️</p>
     <script>
       var canvas = document.querySelector("#town"),
         ctx = canvas.getContext("2d"),
@@ -140,8 +146,9 @@
       var flakes;
 
       function initSnow() {
-        window.addEventListener("click", shakeGlobe);
-        window.addEventListener("touchstart", shakeGlobe);
+        var globeWrapper = document.querySelector("#globe-wrapper");
+        globeWrapper.addEventListener("click", shakeGlobe);
+        globeWrapper.addEventListener("touchstart", shakeGlobe);
         ctx2.fillStyle = "rgba(255,255,255,0.7)";
         var radius = canvas.width * 0.2875;
         var offsetX = canvas.width / 2;
@@ -191,8 +198,9 @@
       }
 
       function shakeGlobe() {
-        window.removeEventListener("click", shakeGlobe);
-        window.removeEventListener("touchstart", shakeGlobe);
+        var globeWrapper = document.querySelector("#globe-wrapper");
+        globeWrapper.removeEventListener("click", shakeGlobe);
+        globeWrapper.removeEventListener("touchstart", shakeGlobe);
         var globe = document.querySelector("#globe");
         TweenMax.to(canvas2, 0.5, {
           opacity: 0
