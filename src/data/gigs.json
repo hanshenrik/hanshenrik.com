@@ -2488,5 +2488,31 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2019-09-02T19:34:00.000Z"
+  },
+  {
+    "date": "2020-02-29",
+    "venue": "Youngs gate 7",
+    "venueUrl": "",
+    "city": "Oslo",
+    "artist": "Helt Greit Band",
+    "artistUrl": "https://www.last.fm/music/Helt+Greit+Band",
+    "eventDescription": "",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2020-04-01T20:00:00.000Z"
+  },
+  {
+    "date": "2020-02-29",
+    "venue": "Youngs gate 7",
+    "venueUrl": "",
+    "city": "Oslo",
+    "artist": "Kjør Romskip",
+    "artistUrl": "https://kjorromskip.no",
+    "eventDescription": "",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2020-04-01T20:00:00.000Z"
   }
 ]

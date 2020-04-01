@@ -12,16 +12,16 @@ import styles from "./App.css";
 const App = () => (
   <div className={styles.App}>
     <NavMenu />
-    <h1 id="recordings">Recordings.</h1>
     <div className={styles.Section}>
+      <h1 id="recordings">Recordings.</h1>
       <RecordingList />
     </div>
-    <h1 id="gigs">Gigs.</h1>
     <div className={styles.Section}>
+      <h1 id="gigs">Gigs.</h1>
       <GigList />
     </div>
-    <h1 id="software">Software.</h1>
     <div className={styles.Section}>
+      <h1 id="software">Software.</h1>
       <SoftwareList />
     </div>
     <Footer />

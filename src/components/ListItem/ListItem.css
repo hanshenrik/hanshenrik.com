@@ -11,6 +11,6 @@
 }
 
 :local(.ListItem__detail) {
-  color: var(--lightgray);
+  color: var(--gray);
   font-size: 0.6em;
 }
