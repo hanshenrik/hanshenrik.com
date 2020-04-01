@@ -7,12 +7,12 @@
   },
   {
     "name": "kickmap",
-    "description": "A map showing upcoming concerts in a city. Using data from Songkick and Mapbox.",
+    "description": "A map showing upcoming concerts in a city. Data from Songkick and Mapbox GL JS.",
     "githubUrl": "https://github.com/hanshenrik/kickmap"
   },
   {
     "name": "when.fm",
-    "description": "What hours of the day do you listen to music the most? Using data from last.fm and Highcharts for React.",
+    "description": "What hours of the day do you listen to music the most? Data from last.fm and react-highcharts.",
     "githubUrl": "https://github.com/hanshenrik/when.fm"
   },
   {
