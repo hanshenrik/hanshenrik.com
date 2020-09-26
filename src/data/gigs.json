@@ -2514,5 +2514,18 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2020-04-01T20:00:00.000Z"
+  },
+  {
+    "date": "2020-09-18",
+    "venue": "Eik & Tid",
+    "venueUrl": "https://www.eiktid.no",
+    "city": "Oslo",
+    "artist": "Kjør Romskip",
+    "artistUrl": "https://kjorromskip.no",
+    "eventDescription": "Music video premiere",
+    "eventUrl": "https://youtu.be/-GzNoOeA7ho",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2020-04-01T20:00:00.000Z"
   }
 ]
