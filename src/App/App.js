@@ -16,13 +16,11 @@ const App = () => (
       <h1 className={styles.StickyHeading}>Recordings.</h1>
       <RecordingList />
     </div>
-    <div className={styles.Section}>
-      <span id="gigs"></span>
+    <div id="gigs" className={styles.Section}>
       <h1 className={styles.StickyHeading}>Gigs.</h1>
       <GigList />
     </div>
-    <div className={styles.Section}>
-      <span id="software"></span>
+    <div id="software" className={styles.Section}>
       <h1 className={styles.StickyHeading}>Software.</h1>
       <SoftwareList />
     </div>
