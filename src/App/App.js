@@ -5,23 +5,25 @@ import {
   GigList,
   SoftwareList,
   RecordingList,
-  Footer
+  Footer,
 } from "../components";
 import styles from "./App.css";
 
 const App = () => (
   <div className={styles.App}>
     <NavMenu />
-    <div className={styles.Section}>
-      <h1 id="recordings">Recordings.</h1>
+    <div id="recordings" className={styles.Section}>
+      <h1 className={styles.StickyHeading}>Recordings.</h1>
       <RecordingList />
     </div>
     <div className={styles.Section}>
-      <h1 id="gigs">Gigs.</h1>
+      <span id="gigs"></span>
+      <h1 className={styles.StickyHeading}>Gigs.</h1>
       <GigList />
     </div>
     <div className={styles.Section}>
-      <h1 id="software">Software.</h1>
+      <span id="software"></span>
+      <h1 className={styles.StickyHeading}>Software.</h1>
       <SoftwareList />
     </div>
     <Footer />

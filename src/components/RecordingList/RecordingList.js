@@ -7,7 +7,7 @@ import recordings from "../../data/recordings.json";
 import { Link, List, Recording } from "../";
 
 const RecordingList = () => (
-  <React.Fragment>
+  <>
     <List>
       {recordings.map((recording, index) => (
         <Recording recording={recording} key={index} />
@@ -21,7 +21,7 @@ const RecordingList = () => (
       </Link>
       .
     </p>
-  </React.Fragment>
+  </>
 );
 
 export default RecordingList;

@@ -7,11 +7,11 @@ const sections = ["recordings", "gigs", "software"];
 
 const NavMenu = () => (
   <div className={styles.NavMenu}>
-    {sections.map((section, index) => (
+    {sections.map((section) => (
       <a
         key={section}
         className={styles.NavMenuItem}
-        onClick={e => {
+        onClick={(e) => {
           e.preventDefault();
           document
             .getElementById(section)

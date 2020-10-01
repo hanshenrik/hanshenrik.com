@@ -7,7 +7,7 @@ import softwares from "../../data/softwares.json";
 import { Link, List, Software } from "../";
 
 const SoftwareList = () => (
-  <React.Fragment>
+  <>
     <List>
       {softwares.map((software, index) => (
         <Software software={software} key={index} />
@@ -21,7 +21,7 @@ const SoftwareList = () => (
       </Link>
       .
     </p>
-  </React.Fragment>
+  </>
 );
 
 export default SoftwareList;

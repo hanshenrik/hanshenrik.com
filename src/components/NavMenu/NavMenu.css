@@ -1,11 +1,16 @@
 :local(.NavMenu) {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  font-size: 1.5rem;
+  background-color: var(--yellow);
+  animation: color-transition 60s infinite;
+
+  font-size: 1.25rem;
 }
 
 :local(.NavMenu) a {
@@ -14,19 +19,15 @@
 }
 
 :local(.NavMenuItem) {
-  min-width: 170px;
-  min-height: 70px;
-  width: 14vmin;
-  height: 7vmin;
-  margin: 1rem;
+  margin: 0.5rem;
+  padding: 0.25rem 0;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  background-color: var(--light-transparent-white);
-  border-bottom: 4px solid var(--lightblue);
+  border-bottom: 2px solid var(--lightblue);
   color: var(--gray);
 
   transition: transform var(--superquick) ease-in-out;
@@ -37,12 +38,19 @@
 
 @media only screen and (min-width: 920px) {
   :local(.NavMenu) {
-    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
-
   :local(.NavMenuItem) {
-    width: 20vw;
-    height: 9vw;
+    margin: 1rem;
+
+    font-size: 1.25rem;
+    border-bottom: 4px solid var(--lightblue);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  :local(.NavMenuItem) {
     font-size: 2rem;
   }
 }
