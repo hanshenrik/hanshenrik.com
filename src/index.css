@@ -2,16 +2,14 @@
   /* Colors */
   --white: #edeff3;
   --black: #232323;
-  --super-light-transparent-black: rgba(0, 0, 0, 0.05);
+  --lightblack: #414141;
   --light-transparent-black: rgba(0, 0, 0, 0.1);
   --light-transparent-white: rgba(255, 255, 254, 0.2);
-  --gray: #505050;
-  --lightgray: #cacaca;
-  --yellow: #fffd7c;
+  --yellow: #f9c74f;
+  --darkyellow: #f0ac0d;
   --lightyellow: #fffeb6;
-  --lightblue: #269ff5;
-  --super-lightblue: #a4d6fa;
-  --teal: #9ee9f5;
+  --blue: #4751a6;
+  --lightblue: #6671d4;
 
   /* Durations */
   --superquick: 0.1s;
@@ -25,7 +23,7 @@ body {
   background-color: var(--yellow);
   font-family: "Muli", sans-serif;
   font-weight: 200;
-  animation: color-transition 60s infinite;
+  /* animation: color-transition 60s infinite; */
 }
 
 .svg-inline--fa {
@@ -48,6 +46,10 @@ h1 {
 
 ul {
   padding: 0;
+}
+
+img.rounded {
+  border-radius: 12px;
 }
 
 @keyframes color-transition {

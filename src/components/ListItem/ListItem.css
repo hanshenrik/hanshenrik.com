@@ -3,13 +3,13 @@
 }
 
 :local(.ListItem):nth-child(2n + 2) {
-  background-color: var(--light-transparent-black);
+  background-color: var(--light-transparent-white);
 }
 :local(.ListItem):last-child {
-  border-bottom: 1px solid var(--light-transparent-black);
+  border-bottom: 1px solid var(--light-transparent-white);
 }
 
 :local(.ListItem__detail) {
-  color: var(--gray);
+  color: var(--lightblack);
   font-size: 0.6em;
 }

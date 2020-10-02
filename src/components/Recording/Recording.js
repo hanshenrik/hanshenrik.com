@@ -18,7 +18,7 @@ const Recording = ({ recording, ...props }) => {
       <div className={styles.Recording}>
         <div>
           {recording.image && (
-            <img src={recording.image} alt={recording.name} width="200px" />
+            <img className="rounded" src={recording.image} alt={recording.name} width="200px" />
           )}
         </div>
         <div>

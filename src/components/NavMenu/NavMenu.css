@@ -8,7 +8,7 @@
   align-items: center;
 
   background-color: var(--yellow);
-  animation: color-transition 60s infinite;
+  /* animation: color-transition 60s infinite; */
 
   font-size: 1.25rem;
 }
@@ -27,13 +27,14 @@
   justify-content: center;
   align-items: center;
 
-  border-bottom: 2px solid var(--lightblue);
-  color: var(--gray);
+  border-bottom: 2px solid var(--blue);
 
-  transition: transform var(--superquick) ease-in-out;
+  transition: transform var(--superquick) ease-in-out,
+    border-bottom var(--superquick) ease-in-out;
 }
 :local(.NavMenuItem):hover {
-  transform: scale(1.05) rotateZ(-1deg);
+  transform: scale(1.075) rotateZ(-1deg);
+  border-bottom-color: var(--lightblue);
 }
 
 @media only screen and (min-width: 920px) {
@@ -45,7 +46,7 @@
     margin: 1rem;
 
     font-size: 1.25rem;
-    border-bottom: 4px solid var(--lightblue);
+    border-bottom: 4px solid var(--blue);
   }
 }
 

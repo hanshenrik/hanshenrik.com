@@ -10,11 +10,6 @@ const separator = ". ";
 const Software = ({ software, ...props }) => {
   return (
     <ListItem {...props}>
-      {software.githubUrl && (
-        <Link target="_blank" href={software.githubUrl}>
-          <FontAwesomeIcon icon={faGithub} />
-        </Link>
-      )}
       {software.url ? (
         <Link target="_blank" href={software.url}>
           <FontAwesomeIcon icon={faLink} />
@@ -24,7 +19,18 @@ const Software = ({ software, ...props }) => {
         software.name
       )}
       {separator}
-      <ListItem.Detail>{software.description}</ListItem.Detail>
+      <ListItem.Detail>
+        {software.description} Code at{" "}
+        {software.githubUrl && (
+          <>
+            <Link target="_blank" href={software.githubUrl}>
+              <FontAwesomeIcon icon={faGithub} />
+              GitHub
+            </Link>
+            .
+          </>
+        )}
+      </ListItem.Detail>
     </ListItem>
   );
 };
