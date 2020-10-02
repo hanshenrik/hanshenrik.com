@@ -6,7 +6,8 @@
     "soundcloudLink": "https://soundcloud.com/kjorromskip/romturist",
     "spotifyLink": "https://open.spotify.com/track/0ftuszDppBh03LyyoUZwO8?si=Eu-qLBXTSV6-7IO2kwNdLA",
     "appleLink": "https://music.apple.com/no/album/romturist/1476407372",
-    "youtubeLink": "https://youtu.be/-GzNoOeA7ho"
+    "youtubeLink": "https://youtu.be/-GzNoOeA7ho",
+    "image": "https://i1.sndcdn.com/artworks-000572129276-8kpg9o-t500x500.jpg"
   },
   {
     "artist": "Reggie Got Beats",
@@ -14,22 +15,25 @@
     "description": "Had the pleasure of adding some keys on this funky tune by Reggie Got Beats.",
     "appleLink": "https://music.apple.com/no/album/just-pretend/998100888",
     "soundcloudLink": "https://soundcloud.com/the-bay/reggie-got-beats-just-pretend",
-    "spotifyLink": "https://open.spotify.com/track/1o7ODXAoz43K7LUTO3Do1X"
+    "spotifyLink": "https://open.spotify.com/track/1o7ODXAoz43K7LUTO3Do1X",
+    "image": "https://i1.sndcdn.com/artworks-000173549632-gue4by-t500x500.jpg"
   },
   {
     "artist": "Elias Eine",
     "name": "Behagelig Melankoli [EP]",
     "description": "3-piece EP recorded in Øra Studio with Karl Klaseie. Elias Eine is Gaute Einebakken Eliassen. The band is Einar Kjensmo Fuglerud (guitar), Hans Henrik Grønsleth (keys), Eirik Myhre Lauvås (bass) and Isak Seltveit (drums).",
     "appleLink": "https://music.apple.com/no/album/behagelig-melankoli-single/1106061700",
-    "spotifyLink": "https://open.spotify.com/album/6sFofP1OjUHEFw5sB4DR6L"
+    "spotifyLink": "https://open.spotify.com/album/6sFofP1OjUHEFw5sB4DR6L",
+    "image": "https://i1.sndcdn.com/artworks-000160875993-bdp0d5-t500x500.jpg"
   },
   {
     "artist": "Acid Pilgrims",
     "name": "Lots of fun and some serious stuff [Album]",
     "description": "The album \"Lots of fun and some serious stuff\" is the result of Andreas Nergård's project \"Acid Pilgrims\" and was recorded in Trøndertun Studio during the spring of 2010. I made contributions on \"Lobotomies in the Supermarket\" and \"Nessie\".",
     "appleLink": "https://music.apple.com/no/album/lots-of-fun-and-some-serious-stuff/450778934",
-    "youtubeLink": "https://www.youtube.com/watch?v=-g41N73jbmc&list=OLAK5uy_nQzUxUGXuKWCaowmtflnllqWU1rZ35h-s",
-    "spotifyLink": "https://open.spotify.com/album/2FNMLis7sXUFvR6vwEOgVn"
+    "youtubeLink": "https://www.youtube.com/watch?v=J82CJuVXwPE&list=OLAK5uy_nQzUxUGXuKWCaowmtflnllqWU1rZ35h-s&index=2",
+    "spotifyLink": "https://open.spotify.com/album/2FNMLis7sXUFvR6vwEOgVn",
+    "image": "https://m.media-amazon.com/images/I/81LkCJG-Q6L._SS500_.jpg"
   },
   {
     "artist": "ER4",

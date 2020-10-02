@@ -1,5 +1,17 @@
 [
   {
+    "name": "rønsenrock.no",
+    "description": "Website for the music festival RønsenROCK. Written in Elm ✌️.",
+    "url": "https://rønsenrock.no",
+    "githubUrl": "https://github.com/hanshenrik/ronsenrock"
+  },
+  {
+    "name": "mandaljazz.no",
+    "description": "Website for the jazz festival Mandaljazz.",
+    "url": "https://mandaljazz.no",
+    "githubUrl": "https://github.com/mandaljazz/mandaljazz.no"
+  },
+  {
     "name": "Jazzkart",
     "description": "An interactive map showing the events at Mandaljazz 2017.",
     "url": "https://mandaljazz.github.io/jazzatlas",
@@ -7,25 +19,19 @@
   },
   {
     "name": "kickmap",
-    "description": "A map showing upcoming concerts in a city. Data from Songkick and Mapbox GL JS.",
+    "description": "A map showing upcoming concerts in a city. Displaying data from Songkick with Mapbox GL JS.",
     "githubUrl": "https://github.com/hanshenrik/kickmap"
   },
   {
     "name": "when.fm",
-    "description": "What hours of the day do you listen to music the most? Data from last.fm and react-highcharts.",
+    "description": "What hours of the day do you listen to music the most? Displaying data from last.fm with react-highcharts.",
     "githubUrl": "https://github.com/hanshenrik/when.fm"
   },
   {
-    "name": "rønsenrock.no",
-    "description": "Website for the music festival RønsenROCK. Written in Elm ✌️",
-    "url": "https://rønsenrock.no",
-    "githubUrl": "https://github.com/hanshenrik/ronsenrock"
-  },
-  {
-    "name": "mandaljazz.no",
-    "description": "Website for the jazz festival Mandaljazz 2019.",
-    "url": "https://mandaljazz.no",
-    "githubUrl": "https://github.com/mandaljazz/mandaljazz.no/tree/v2019"
+    "name": "kjorromskip.no",
+    "description": "Website for the band Kjør Romskip. Written in Svelte ✌️.",
+    "url": "https://kjorromskip.no",
+    "githubUrl": "https://github.com/hanshenrik/kjorromskip.no"
   },
   {
     "name": "eliaseine.no",

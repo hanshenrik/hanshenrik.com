@@ -14,16 +14,14 @@
 }
 
 @media only screen and (min-width: 920px) {
+  :local(.App) {
+    padding: 1rem 10rem;
+  }
+
   :local(.StickyHeading) {
     position: sticky;
     top: 0rem;
     z-index: 1;
     padding-top: 0;
-  }
-}
-
-@media only screen and (min-width: 920px) {
-  :local(.App) {
-    padding: 1rem 10rem;
   }
 }

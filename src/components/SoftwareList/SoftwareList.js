@@ -14,12 +14,20 @@ const SoftwareList = () => (
       ))}
     </List>
     <p>
-      More code at{" "}
+      More hobby code at{" "}
       <Link target="_blank" href="https://github.com/hanshenrik">
         <FontAwesomeIcon icon={faGithub} />
         GitHub
       </Link>
-      .
+      . I currently work at{" "}
+      <Link target="_blank" href="https://folq.no">
+        Folq
+      </Link>
+      , where we write most of our{" "}
+      <Link target="_blank" href="https://github.com/folq">
+        code
+      </Link>{" "}
+      in Elm and Haskell.
     </p>
   </>
 );
