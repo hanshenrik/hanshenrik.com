@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 import { Link, ListItem } from "../";
 
@@ -16,6 +17,7 @@ const Software = ({ software, ...props }) => {
       )}
       {software.url ? (
         <Link target="_blank" href={software.url}>
+          <FontAwesomeIcon icon={faLink} />
           {software.name}
         </Link>
       ) : (
