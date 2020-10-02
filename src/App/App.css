@@ -10,12 +10,17 @@
 
 :local(.Section h1) {
   padding-top: 0.5rem;
-  width: fit-content;
+  text-align: center;
 }
 
 @media only screen and (min-width: 920px) {
   :local(.App) {
     padding: 1rem 10rem;
+  }
+
+  :local(.Section h1) {
+    width: fit-content;
+    text-align: left;
   }
 
   :local(.StickyHeading) {
