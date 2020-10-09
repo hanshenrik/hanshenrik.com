@@ -12,3 +12,24 @@
     align-items: flex-start;
   }
 }
+
+:local(.CoverAndLinks) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+:local(.Cover) {
+  margin-bottom: 1rem;
+}
+:local(.Name) {
+  /* padding: 0.5rem; */
+  font-weight: 700;
+  /* background-color: white; */
+  /* font-size: 2.5rem; */
+}
+/* @media only screen and (min-width: 920px) {
+  :local(.MoveLeft) {
+    margin-left: -4rem;
+    margin-top: -2rem;
+  }
+} */
