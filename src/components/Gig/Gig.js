@@ -7,18 +7,24 @@ import { faTicketAlt } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Gig.css";
 import { Link } from "../";
 
+const renderDate = (gig) => {
+  if (!gig.toDate) {
+    return dayjs(gig.date).format("DD MMM");
+  } else {
+    return dayjs(gig.date).month() === dayjs(gig.toDate).month()
+      ? `${dayjs(gig.date).format("DD")}\u2013${dayjs(gig.toDate).format(
+          "DD MMM"
+        )}`
+      : `${dayjs(gig.date).format("DD MMM")} \u2013 ${dayjs(gig.toDate).format(
+          "DD MMM"
+        )}`;
+  }
+};
+
 const Gig = ({ gig }) => {
   return (
     <tr className={`${dayjs(gig.date) > dayjs() ? styles.Gig__upcoming : ""}`}>
-      <td style={{ whiteSpace: "nowrap" }}>
-        {dayjs(gig.date).format("MMM D")}
-        {gig.toDate &&
-          `\u2013${
-            dayjs(gig.date).month() === dayjs(gig.toDate).month()
-              ? dayjs(gig.toDate).format("D")
-              : dayjs(gig.toDate).format("MMM D")
-          }`}
-      </td>
+      <td style={{ whiteSpace: "nowrap" }}>{renderDate(gig)}</td>
       <td>
         {gig.artistUrl ? (
           <Link target="_blank" href={gig.artistUrl}>
