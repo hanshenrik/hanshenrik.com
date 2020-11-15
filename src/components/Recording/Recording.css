@@ -21,6 +21,11 @@
 :local(.Cover) {
   margin-bottom: 1rem;
 }
+:local(.Cover) img {
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+}
 :local(.Name) {
   /* padding: 0.5rem; */
   font-weight: 700;

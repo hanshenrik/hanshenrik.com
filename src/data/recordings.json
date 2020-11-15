@@ -31,7 +31,6 @@
     "name": "Lots of fun and some serious stuff [Album]",
     "description": "The album \"Lots of fun and some serious stuff\" is the result of Andreas Nergård's project \"Acid Pilgrims\" and was recorded in Trøndertun Studio during the spring of 2010. I made contributions on \"Lobotomies in the Supermarket\" and \"Nessie\".",
     "appleLink": "https://music.apple.com/no/album/lots-of-fun-and-some-serious-stuff/450778934",
-    "youtubeLink": "https://www.youtube.com/watch?v=J82CJuVXwPE&list=OLAK5uy_nQzUxUGXuKWCaowmtflnllqWU1rZ35h-s&index=2",
     "spotifyLink": "https://open.spotify.com/album/2FNMLis7sXUFvR6vwEOgVn",
     "image": "https://m.media-amazon.com/images/I/81LkCJG-Q6L._SS500_.jpg"
   },
@@ -39,18 +38,32 @@
     "artist": "ER4",
     "name": "Stella By Starlight (Take 3)",
     "description": "Rune Nielsen (guitar), Hans Henrik Grønsleth (piano), Mathias Holtedahl Thorp (double bass), Egil Reistadbakk (drums). Reharmonized by Rune Nielsen. Recorded May 2012 at Olavskvartalet, Trondheim. Mixed and produced by Trond Hustad and Gunnar Andreas Berg.",
-    "soundcloudLink": "https://soundcloud.com/hanshenrik/er4-stella-by-starlight-take-3/s-JGT08"
+    "soundcloudLink": "https://soundcloud.com/hanshenrik/er4-stella-by-starlight-take-3/s-JGT08",
+    "image": "https://images.unsplash.com/photo-1507272931001-fc06c17e4f43?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+    "imageAttribution": "Johny Goerend"
   },
   {
     "artist": "BeHop",
     "name": "You Don't Know What Love Is (Reggie Got Beats remix)",
     "description": "Reggie Got Beats' remix of BeHop's cover of Raye and de Paul's \"You Don't Know What Love Is\". Meta much?",
-    "soundcloudLink": "https://soundcloud.com/behop/you-dont-know-what-love-is"
+    "soundcloudLink": "https://soundcloud.com/behop/you-dont-know-what-love-is",
+    "image": "https://i1.sndcdn.com/artworks-000064334294-dotd8g-t500x500.jpg"
+  },
+  {
+    "artist": "Larschens Lævende Lydmageri",
+    "name": "UKErevyen-13: Jubalong [Live]",
+    "description": "A 2 hour review, part of the student festival UKA in 2013 in Trondheim. Over 30 performances for full houses at Studentdersamfundet. Music by Christian Aftret Eriksen and Gaute Eliassen. The band was Ingrid Gausemel Remøy (violin), Helge Huldt-Nystrøm (saxophones), Andrea Otterstad Johansen (flute, saxophones), Kristina Rystad (trumpet), Einar Kjensmo Fuglerud (guitar, banjo, mandolin), Hans Henrik Grønsleth (keys and accordion), Magnus Leite (bass) and Kristoffer Rystad (drums).",
+    "youtubeLink": "https://www.youtube.com/watch?v=BrbUZ4347zc&list=PLvn-5EU3t_JIRse4GlxZ81UDl6GFvRNHb&index=4",
+    "image": "http://frontlosjen.com/wp-content/uploads/2013/10/digfi0894.jpg",
+    "imageAttribution": "foto.samfundet.no"
   },
   {
     "artist": "Passion for Glory",
+    "name": "Best of the 80s [Live]",
     "description": "Got to play all those guilty pleasures for our fellow students at a packed 80's party at Samfundet in Trondheim back in 2013. Great fun! Mathias Molund Indergård (vocals), Hans Henrik Grønsleth (synths), Hans Christian Bollingmo (guitars), Arnstein Dahle Svanholm (guitars), Magnus Molund Indergård (bass), Martin Fjellseth (drums), Elisa Keeling (backing vocals), Mia Katrine Nilsen (backing vocals), Lina Hopaneng Ingeborgrud (backing vocals).",
-    "youtubeLink": "https://www.youtube.com/watch?v=OAw55u1sTVs&index=4&list=PLGta0xPJBfuAqHC4FG-eCFOZujyT368Z1"
+    "youtubeLink": "https://www.youtube.com/watch?v=OAw55u1sTVs&index=4&list=PLGta0xPJBfuAqHC4FG-eCFOZujyT368Z1",
+    "image": "https://foto.samfundet.no/media/alle/web/DIGFH/digfh0529.jpg",
+    "imageAttribution": "foto.samfundet.no"
   },
   {
     "artist": "Eline Hellerud Åsbakk",
@@ -82,12 +95,12 @@
   },
   {
     "artist": "Kjellerbandet + Knut Riisnæs & Øyvind Brække",
-    "name": "What Goes Around",
+    "name": "What Goes Around [Live]",
     "description": "During the fall of 2011 Kjellerbandet did a series of concerts playing music by Dave Holland. This is a live recording from the final gig at Dokkhuset (Trondheim) November 19th.",
     "soundcloudLink": "https://soundcloud.com/kjellerbandet/what-goes-around"
   },
   {
-    "name": "Revamp",
+    "name": "Revamp [Live]",
     "description": "Håkon Hammer (sax), Hans Henrik Grønsleth (grand piano), Kjetil Torset Voldhaug (double bass), Egil Reistadbakk (drums). Originally Jan Gunnar Hoff. Recorded June 2011 live at NTNU Dragvoll, Trondheim. Recording by Egil Reistadbakk.",
     "soundcloudLink": "https://soundcloud.com/hanshenrik/hh4-revamp/s-AFryk"
   },

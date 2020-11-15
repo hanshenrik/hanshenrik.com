@@ -11,3 +11,6 @@
   transform: scale(1.075) rotateZ(-1deg);
   color: var(--lightblue);
 }
+:local(.ImageLink):hover {
+  transform: scale(1.025) rotateZ(-1deg);
+}

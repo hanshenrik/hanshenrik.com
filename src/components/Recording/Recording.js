@@ -9,8 +9,16 @@ import {
 
 import { Link, ListItem } from "../";
 import styles from "./Recording.css";
+import linkStyles from "../Link/Link.css";
 
 const separator = ". ";
+
+const getMostImportantLink = (recording) => {
+  if (recording.youtubeLink) return recording.youtubeLink;
+  if (recording.spotifyLink) return recording.spotifyLink;
+  if (recording.soundcloudLink) return recording.soundcloudLink;
+  if (recording.appleLink) return recording.appleLink;
+};
 
 const Recording = ({ recording, ...props }) => {
   return (
@@ -18,14 +26,32 @@ const Recording = ({ recording, ...props }) => {
       <div className={styles.Recording}>
         <div className={styles.CoverAndLinks}>
           {recording.image && (
-            <img
-              className={`rounded ${styles.Cover}`}
-              src={recording.image}
-              alt={recording.name}
-              width="200px"
-            />
+            <figure className={styles.Cover}>
+              <Link
+                target="_blank"
+                className={linkStyles.ImageLink}
+                href={getMostImportantLink(recording)}
+              >
+                <img
+                  className="rounded"
+                  src={recording.image}
+                  alt={recording.name}
+                  width="200px"
+                />
+              </Link>
+              {recording.imageAttribution && (
+                <div className="attribution">
+                  Foto: {recording.imageAttribution}
+                </div>
+              )}
+            </figure>
           )}
           <div className={styles.Links}>
+            {recording.youtubeLink && (
+              <Link target="_blank" href={recording.youtubeLink}>
+                <FontAwesomeIcon icon={faYoutube} />
+              </Link>
+            )}
             {recording.spotifyLink && (
               <Link target="_blank" href={recording.spotifyLink}>
                 <FontAwesomeIcon icon={faSpotify} />
@@ -41,16 +67,19 @@ const Recording = ({ recording, ...props }) => {
                 <FontAwesomeIcon icon={faSoundcloud} />
               </Link>
             )}
-            {recording.youtubeLink && (
-              <Link target="_blank" href={recording.youtubeLink}>
-                <FontAwesomeIcon icon={faYoutube} />
-              </Link>
-            )}
           </div>
         </div>
         <div>
-          {recording.name && <span className={`${styles.Name} ${recording.image && styles.MoveLeft}`}>{recording.name && `${recording.name}${separator}`}</span>}
-          <span className={styles.Artist}>{recording.artist && `${recording.artist}${separator}`}</span>
+          {recording.name && (
+            <span
+              className={`${styles.Name} ${recording.image && styles.MoveLeft}`}
+            >
+              {recording.name && `${recording.name}${separator}`}
+            </span>
+          )}
+          <span className={styles.Artist}>
+            {recording.artist && `${recording.artist}${separator}`}
+          </span>
           <ListItem.Detail>{recording.description}</ListItem.Detail>
         </div>
       </div>

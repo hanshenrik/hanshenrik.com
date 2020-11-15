@@ -1,10 +1,15 @@
 import React from "react";
+import classnames from "classnames";
 
 import styles from "./Link.css";
 
-const Link = ({ children, ...props }) => {
+const Link = ({ children, className, ...props }) => {
   return (
-    <a className={styles.Link} {...props} rel="noopener noreferrer">
+    <a
+      className={classnames(styles.Link, className)}
+      {...props}
+      rel="noopener noreferrer"
+    >
       {children}
     </a>
   );
