@@ -19,8 +19,9 @@
   },
   {
     "name": "kickmap",
-    "description": "A map showing upcoming concerts in a city. Displaying data from Songkick with Mapbox GL JS.",
-    "githubUrl": "https://github.com/hanshenrik/kickmap"
+    "description": "A map showing upcoming concerts in a city. Displaying data from Songkick with Mapbox GL JS. Written in Svelte ✌️",
+    "url": "https://kickmap.hanshenrik.com",
+    "githubUrl": "https://github.com/hanshenrik/kickmap-svelte"
   },
   {
     "name": "when.fm",
