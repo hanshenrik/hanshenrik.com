@@ -2362,7 +2362,7 @@
   {
     "date": "2019-05-24",
     "venue": "No. 53",
-    "venueUrl": "",
+    "venueUrl": "https://www.facebook.com/No-53-139168752824276/",
     "city": "Oslo",
     "artist": "Kjør Romskip",
     "artistUrl": "https://www.facebook.com/kjorromskip",
@@ -2527,5 +2527,31 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2020-04-01T20:00:00.000Z"
+  },
+  {
+    "date": "2021-08-13",
+    "venue": "No. 53",
+    "venueUrl": "https://www.facebook.com/No-53-139168752824276/",
+    "city": "Oslo",
+    "artist": "Kjør Romskip",
+    "artistUrl": "https://www.facebook.com/kjorromskip",
+    "eventDescription": "",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2021-07-15T10:00:00.000Z"
+  },
+  {
+    "date": "2021-09-24",
+    "venue": "Kulturfabrikken",
+    "venueUrl": "https://www.kulturfabrikkensortland.no/",
+    "city": "Sortland",
+    "artist": "Peer and the Moondogs",
+    "artistUrl": "https://www.facebook.com/peerandthemoondogs",
+    "eventDescription": "Sortland Jazzfestival",
+    "eventUrl": "https://sortlandjazzfestival.no/",
+    "facebookUrl": "https://fb.me/e/GBBDlnbw",
+    "ticketsUrl": "https://checkout.ebillett.no/197/events/37267/purchase/corona",
+    "createdAt": "2021-07-15T10:00:00.000Z"
   }
 ]
