@@ -2542,6 +2542,19 @@
     "createdAt": "2021-07-15T10:00:00.000Z"
   },
   {
+    "date": "2021-08-28",
+    "venue": "Øvrefoss 4",
+    "venueUrl": "",
+    "city": "Oslo",
+    "artist": "Kjør Romskip",
+    "artistUrl": "https://www.facebook.com/kjorromskip",
+    "eventDescription": "",
+    "eventUrl": "",
+    "facebookUrl": "https://www.facebook.com/events/4291685947614499",
+    "ticketsUrl": "",
+    "createdAt": "2021-08-27T10:00:00.000Z"
+  },
+  {
     "date": "2021-09-24",
     "venue": "Kulturfabrikken",
     "venueUrl": "https://www.kulturfabrikkensortland.no/",
