@@ -23,11 +23,7 @@ const SoftwareList = () => (
       <Link target="_blank" href="https://folq.no">
         Folq
       </Link>
-      , where we write most of our{" "}
-      <Link target="_blank" href="https://github.com/folq">
-        code
-      </Link>{" "}
-      in Elm and Haskell.
+      .
     </p>
   </>
 );
