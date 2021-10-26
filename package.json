@@ -13,7 +13,7 @@
     "dayjs": "^1.8.16",
     "lodash": "^4.17.21",
     "react": "^16.8.6",
-    "react-accessible-accordion": "^3.0.0",
+    "react-accessible-accordion": "^4.0.0",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
     "smoothscroll-polyfill": "^0.4.4",
