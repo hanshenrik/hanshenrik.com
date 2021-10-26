@@ -2465,8 +2465,8 @@
   },
   {
     "date": "2019-10-05",
-    "venue": "",
-    "venueUrl": "Eidsvoll",
+    "venue": "Eidsvoll",
+    "venueUrl": "",
     "city": "",
     "artist": "Helt Greit Band",
     "artistUrl": "https://www.last.fm/music/Helt+Greit+Band",
@@ -2579,5 +2579,18 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2021-10-26T22:00:00.000Z"
+  },
+  {
+    "date": "2021-11-13",
+    "venue": "Eidsvoll",
+    "venueUrl": "",
+    "city": "",
+    "artist": "Helt Greit Band",
+    "artistUrl": "https://www.last.fm/music/Helt+Greit+Band",
+    "eventDescription": "Private",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2021-10-26T22:10:00.000Z"
   }
 ]
