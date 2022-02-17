@@ -6,6 +6,7 @@ import {
   faSpotify,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import { SiTidal } from "react-icons/si";
 
 import { Link, ListItem } from "../";
 import styles from "./Recording.css";
@@ -16,6 +17,7 @@ const separator = ". ";
 const getMostImportantLink = (recording) => {
   if (recording.youtubeLink) return recording.youtubeLink;
   if (recording.spotifyLink) return recording.spotifyLink;
+  if (recording.tidalLink) return recording.tidalLink;
   if (recording.soundcloudLink) return recording.soundcloudLink;
   if (recording.appleLink) return recording.appleLink;
 };
@@ -50,6 +52,15 @@ const Recording = ({ recording, ...props }) => {
             {recording.youtubeLink && (
               <Link target="_blank" href={recording.youtubeLink}>
                 <FontAwesomeIcon icon={faYoutube} />
+              </Link>
+            )}
+            {recording.tidalLink && (
+              <Link
+                target="_blank"
+                href={recording.tidalLink}
+                style={{ display: "inline-flex" }}
+              >
+                <SiTidal />
               </Link>
             )}
             {recording.spotifyLink && (

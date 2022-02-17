@@ -15,6 +15,7 @@
     "react": "^16.8.6",
     "react-accessible-accordion": "^4.0.0",
     "react-dom": "^16.8.6",
+    "react-icons": "^4.3.1",
     "react-scripts": "2.1.8",
     "smoothscroll-polyfill": "^0.4.4",
     "typeface-muli": "^0.0.71"

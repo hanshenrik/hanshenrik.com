@@ -4,7 +4,7 @@
   align-items: center;
 }
 :local(.Recording > div) {
-  padding: 0.5rem;
+  padding: 1rem;
 }
 @media only screen and (min-width: 920px) {
   :local(.Recording) {
@@ -25,6 +25,12 @@
   object-fit: cover;
   width: 200px;
   height: 200px;
+}
+:local(.Links) {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 :local(.Name) {
   /* padding: 0.5rem; */
