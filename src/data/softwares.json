@@ -1,15 +1,15 @@
 [
   {
-    "name": "rønsenrock.no",
-    "description": "Website for the music festival RønsenROCK. Written in Elm ✌️.",
-    "url": "https://rønsenrock.no",
-    "githubUrl": "https://github.com/hanshenrik/ronsenrock"
-  },
-  {
     "name": "mandaljazz.no",
     "description": "Website for the jazz festival Mandaljazz.",
     "url": "https://mandaljazz.no",
     "githubUrl": "https://github.com/mandaljazz/mandaljazz.no"
+  },
+  {
+    "name": "rønsenrock.no",
+    "description": "Website for the music festival RønsenROCK.",
+    "url": "https://ronsenrock.hanshenrik.com",
+    "githubUrl": "https://github.com/hanshenrik/ronsenrock"
   },
   {
     "name": "Jazzkart",
@@ -30,14 +30,14 @@
   },
   {
     "name": "kjorromskip.no",
-    "description": "Website for the band Kjør Romskip. Written in Svelte ✌️.",
+    "description": "Website for the band Kjør Romskip.",
     "url": "https://kjorromskip.no",
     "githubUrl": "https://github.com/hanshenrik/kjorromskip.no"
   },
   {
     "name": "eliaseine.no",
     "description": "Website for the artist Elias Eine.",
-    "url": "https://eliaseine.no",
+    "url": "https://eliaseine.hanshenrik.com",
     "githubUrl": "https://github.com/hanshenrik/eliaseine.no"
   },
   {
