@@ -12,6 +12,12 @@
     "githubUrl": "https://github.com/hanshenrik/ronsenrock"
   },
   {
+    "name": "rishatt.no",
+    "description": "Portfolio page for Birgitte Rishatt",
+    "url": "https://rishatt.no",
+    "githubUrl": "https://github.com/hanshenrik/rishatt"
+  },
+  {
     "name": "Jazzkart",
     "description": "An interactive map showing the events at Mandaljazz 2017.",
     "url": "https://mandaljazz.github.io/jazzatlas",
