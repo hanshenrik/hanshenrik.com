@@ -1,19 +1,30 @@
+
 :local(.Recording) {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   align-items: center;
-}
-:local(.Recording > div) {
+
   padding: 1rem;
 }
-@media only screen and (min-width: 920px) {
+@media only screen and (min-width: 720px) {
   :local(.Recording) {
-    flex-direction: row;
-    align-items: flex-start;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem 3rem;
+  }
+  /* Make images appear on left and right every second time */
+  :local(.Recording):nth-child(2n) :local(.CoverAndLinks) {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  :local(.Recording):nth-child(2n) :local(.Info) {
+    grid-row: 1;
+    grid-column: 1;
   }
 }
 
 :local(.CoverAndLinks) {
+  place-self: center;
+
   display: flex;
   flex-direction: column;
   align-items: center;

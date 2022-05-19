@@ -3,33 +3,54 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import { Link, ListItem } from "../";
+import linkStyles from "../Link/Link.css";
+import styles from "./Software.css";
 
 const separator = ". ";
 
+const getImageUrl = ({ image }) => require(`../../assets/images/${image}`);
+
 const Software = ({ software, ...props }) => {
   return (
-    <ListItem {...props}>
-      {software.url ? (
-        <Link target="_blank" href={software.url}>
-          {software.name}
-        </Link>
-      ) : (
-        software.name
+    <ListItem {...props} className={styles.Software}>
+      {software.image && (
+        <figure className={styles.Cover}>
+          <Link
+            target="_blank"
+            className={linkStyles.ImageLink}
+            href={software.url}
+          >
+            <img
+              className="rounded"
+              src={getImageUrl(software)}
+              alt={software.name}
+            />
+          </Link>
+        </figure>
       )}
-      {separator}
-      <ListItem.Detail>
-        {software.description}{" "}
-        {software.githubUrl && (
-          <>
-            Code at{" "}
-            <Link target="_blank" href={software.githubUrl}>
-              <FontAwesomeIcon icon={faGithub} />
-              GitHub
-            </Link>
-            .
-          </>
+      <div className={styles.Info}>
+        {software.url ? (
+          <Link target="_blank" href={software.url}>
+            {software.name}
+          </Link>
+        ) : (
+          software.name
         )}
-      </ListItem.Detail>
+        {separator}
+        <ListItem.Detail>
+          {software.description}{" "}
+          {software.githubUrl && (
+            <>
+              Code at{" "}
+              <Link target="_blank" href={software.githubUrl}>
+                <FontAwesomeIcon icon={faGithub} />
+                GitHub
+              </Link>
+              .
+            </>
+          )}
+        </ListItem.Detail>
+      </div>
     </ListItem>
   );
 };

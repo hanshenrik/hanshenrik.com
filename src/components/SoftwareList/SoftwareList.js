@@ -14,7 +14,7 @@ const SoftwareList = () => (
       ))}
     </List>
     <p>
-      More hobby code at{" "}
+      More code at{" "}
       <Link target="_blank" href="https://github.com/hanshenrik">
         <FontAwesomeIcon icon={faGithub} />
         GitHub

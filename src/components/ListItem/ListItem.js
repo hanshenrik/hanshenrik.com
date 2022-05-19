@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 
 import styles from "./ListItem.css";
@@ -9,9 +10,9 @@ const Detail = ({ children }) => (
   <span className={styles.ListItem__detail}>{children}</span>
 );
 
-const ListItem = ({ children, detail, ...props }) => {
+const ListItem = ({ children, detail, className, ...props }) => {
   return (
-    <li className={styles.ListItem} {...props}>
+    <li className={classNames(styles.ListItem, className)} {...props}>
       {children}
     </li>
   );

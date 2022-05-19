@@ -3,53 +3,62 @@
     "name": "mandaljazz.no",
     "description": "Website for the jazz festival Mandaljazz.",
     "url": "https://mandaljazz.no",
-    "githubUrl": "https://github.com/mandaljazz/mandaljazz.no"
+    "githubUrl": "https://github.com/mandaljazz/mandaljazz.no",
+    "image": "mandaljazz.png"
   },
   {
     "name": "rønsenrock.no",
     "description": "Website for the music festival RønsenROCK.",
     "url": "https://ronsenrock.hanshenrik.com",
-    "githubUrl": "https://github.com/hanshenrik/ronsenrock"
+    "githubUrl": "https://github.com/hanshenrik/ronsenrock",
+    "image": "ronsenrock.png"
   },
   {
     "name": "rishatt.no",
-    "description": "Portfolio page for Birgitte Rishatt.",
+    "description": "Portfolio website for Birgitte Rishatt.",
     "url": "https://rishatt.no",
-    "githubUrl": "https://github.com/hanshenrik/rishatt"
+    "githubUrl": "https://github.com/hanshenrik/rishatt",
+    "image": "rishatt.png"
   },
   {
     "name": "Jazzkart",
     "description": "An interactive map showing the events at Mandaljazz 2017.",
     "url": "https://mandaljazz.github.io/jazzatlas",
-    "githubUrl": "https://github.com/mandaljazz/jazzatlas"
+    "githubUrl": "https://github.com/mandaljazz/jazzatlas",
+    "image": "jazzkart.png"
   },
   {
     "name": "kickmap",
     "description": "A map showing upcoming concerts in a city. Displaying data from Songkick with Mapbox GL JS. Written in Svelte ✌️",
     "url": "https://kickmap.hanshenrik.com",
-    "githubUrl": "https://github.com/hanshenrik/kickmap-svelte"
+    "githubUrl": "https://github.com/hanshenrik/kickmap-svelte",
+    "image": "kickmap.png"
   },
   {
     "name": "when.fm",
     "description": "What hours of the day do you listen to music the most? Displaying data from last.fm with react-highcharts.",
-    "githubUrl": "https://github.com/hanshenrik/when.fm"
+    "githubUrl": "https://github.com/hanshenrik/when.fm",
+    "image": "when-fm.png"
   },
   {
     "name": "kjorromskip.no",
     "description": "Website for the band Kjør Romskip.",
     "url": "https://kjorromskip.no",
-    "githubUrl": "https://github.com/hanshenrik/kjorromskip.no"
+    "githubUrl": "https://github.com/hanshenrik/kjorromskip.no",
+    "image": "kjorromskip.png"
   },
   {
     "name": "eliaseine.no",
     "description": "Website for the artist Elias Eine.",
     "url": "https://eliaseine.hanshenrik.com",
-    "githubUrl": "https://github.com/hanshenrik/eliaseine.no"
+    "githubUrl": "https://github.com/hanshenrik/eliaseine.no",
+    "image": "eliaseine.png"
   },
   {
     "name": "hakonhammer.no",
     "description": "Website for the musician Håkon Hammer.",
     "url": "https://hakonhammer.no",
     "githubUrl": "https://github.com/hanshenrik/hakonhammer.no"
+    ,"image": "hakonhammer.png"
   }
 ]

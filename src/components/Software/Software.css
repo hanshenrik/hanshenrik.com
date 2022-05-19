@@ -1,0 +1,32 @@
+:local(.Software) {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+
+  padding: 1rem;
+}
+@media only screen and (min-width: 720px) {
+  :local(.Software) {
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem 3rem;
+  }
+  /* Make images appear on left and right every second time */
+  :local(.Software):nth-child(2n) :local(.Cover) {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  :local(.Software):nth-child(2n) :local(.Info) {
+    grid-row: 1;
+    grid-column: 1;
+  }
+}
+
+:local(.Cover) {
+  place-self: center;
+}
+:local(.Cover) img {
+  object-fit: cover;
+  width: 340px;
+  max-width: 100%;
+  height: 200px;
+}
