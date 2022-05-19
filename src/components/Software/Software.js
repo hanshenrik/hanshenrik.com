@@ -21,7 +21,7 @@ const Software = ({ software, ...props }) => {
             href={software.url}
           >
             <img
-              className="rounded"
+              loading="lazy"
               src={getImageUrl(software)}
               alt={software.name}
             />
