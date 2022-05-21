@@ -4,12 +4,12 @@
   align-items: center;
   gap: 0.5rem;
 
-  padding: 1rem;
+  padding: 3rem 1rem;
 }
 @media only screen and (min-width: 720px) {
   :local(.Software) {
     grid-template-columns: 1fr 1fr;
-    padding: 2rem 3rem;
+    padding: 4rem 3rem;
     gap: 1rem;
   }
   /* Make images appear on left and right every second time */
