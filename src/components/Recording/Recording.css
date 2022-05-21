@@ -1,9 +1,9 @@
-
 :local(.Recording) {
   display: grid;
   grid-template-columns: 1fr;
-  align-items: center;
-  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+  gap: 0.5rem;
 
   padding: 1rem;
 }
@@ -11,6 +11,7 @@
   :local(.Recording) {
     grid-template-columns: 1fr 1fr;
     padding: 2rem 3rem;
+    gap: 1rem;
   }
   /* Make images appear on left and right every second time */
   :local(.Recording):nth-child(2n) :local(.CoverAndLinks) {
@@ -24,14 +25,12 @@
 }
 
 :local(.CoverAndLinks) {
-  place-self: center;
-
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 :local(.Cover) {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 :local(.Cover) img {
   object-fit: cover;
