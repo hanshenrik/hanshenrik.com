@@ -16,7 +16,7 @@ import styles from "./GigList.css";
 const sortedGigs = orderBy(gigs, ["date", "artist"], ["desc", "asc"]);
 const gigsByYear = groupBy(sortedGigs, gig => dayjs(gig.date).format("YYYY"));
 const preExpandedYears = Object.keys(gigsByYear).filter(
-  year => year >= dayjs().format("YYYY")
+  year => year >= dayjs(sortedGigs[0].date).format("YYYY")
 );
 
 const GigList = () => (
