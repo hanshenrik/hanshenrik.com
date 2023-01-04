@@ -53,3 +53,10 @@
 .accordion__arrow::after {
   transition: transform var(--slow) ease;
 }
+
+.accordion__button {
+  border-bottom: 2px solid transparent;
+}
+.accordion__button[aria-expanded="true"] {
+  border-color: var(--lightblack);
+}
