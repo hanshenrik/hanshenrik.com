@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 import { faTicketAlt } from "@fortawesome/free-solid-svg-icons";
 
-import styles from "./Gig.css";
 import { Link } from "../";
 
 const renderDate = (gig) => {
@@ -23,7 +22,7 @@ const renderDate = (gig) => {
 
 const Gig = ({ gig }) => {
   return (
-    <tr className={`${dayjs(gig.date) > dayjs() ? styles.Gig__upcoming : ""}`}>
+    <tr>
       <td style={{ whiteSpace: "nowrap" }}>{renderDate(gig)}</td>
       <td>
         {gig.artistUrl ? (
@@ -54,15 +53,19 @@ const Gig = ({ gig }) => {
         )}
       </td>
       <td>
-        {gig.facebookUrl && (
-          <Link target="_blank" href={gig.facebookUrl}>
-            <FontAwesomeIcon icon={faFacebookSquare} />
-          </Link>
-        )}
-        {gig.ticketsUrl && (
-          <Link target="_blank" href={gig.ticketsUrl}>
-            <FontAwesomeIcon icon={faTicketAlt} />
-          </Link>
+        {dayjs(gig.date) > dayjs() && (
+          <>
+            {gig.facebookUrl && (
+              <Link target="_blank" href={gig.facebookUrl}>
+                <FontAwesomeIcon icon={faFacebookSquare} />
+              </Link>
+            )}
+            {gig.ticketsUrl && (
+              <Link target="_blank" href={gig.ticketsUrl}>
+                <FontAwesomeIcon icon={faTicketAlt} />
+              </Link>
+            )}
+          </>
         )}
       </td>
     </tr>
