@@ -11,16 +11,18 @@ tr:last-child {
 }
 
 td {
-  padding: 0.5rem;
+  padding: 1rem 0.5rem;
 }
 td:not(:first-child):not(:last-child) {
   word-break: break-word;
 }
 td:first-child {
   border-radius: 2px 0 0 2px;
+  padding-left: 1rem;
 }
 td:last-child {
   border-radius: 0 2px 2px 0;
+  padding-right: 1rem;
 }
 
 @media only screen and (max-width: 1100px) {
