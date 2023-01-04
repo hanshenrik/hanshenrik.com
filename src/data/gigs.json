@@ -2579,5 +2579,31 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2021-10-26T22:10:00.000Z"
+  },
+  {
+    "date": "2022-10-22",
+    "venue": "Eidsvoll",
+    "venueUrl": "",
+    "city": "",
+    "artist": "Helt Greit Band",
+    "artistUrl": "https://www.last.fm/music/Helt+Greit+Band",
+    "eventDescription": "Private",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2023-01-04T22:40:00.000Z"
+  },
+  {
+    "date": "2023-03-17",
+    "venue": "Mir",
+    "venueUrl": "http://lufthavna.no/mir-3/",
+    "city": "Oslo",
+    "artist": "Kjør Romskip",
+    "artistUrl": "https://www.facebook.com/kjorromskip",
+    "eventDescription": "Release concert",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2023-01-04T22:45:00.000Z"
   }
 ]
