@@ -1,6 +1,25 @@
 [
   {
     "artist": "Lisa Nybrott",
+    "name": "Tilbake i tid",
+    "description": "Lisa Nybrott (vocals), Hans Henrik Grønsleth (keyboards), Kjell Audun Holestøl (bass), Mats Lillehaug (drums), Marius Solevågseide (vocals) and Jarand Nygaard Strømdal (vocals).",
+    "spotifyLink": "https://open.spotify.com/album/38oDpbco4Bj9bCdm34SFDV?si=e9l9SLCURFiPvPDmDI7pGA",
+    "tidalLink": "https://tidal.com/browse/album/274722700",
+    "appleLink": "https://music.apple.com/no/album/tilbake-i-tid-single/1669492073",
+    "image": "https://resources.tidal.com/images/583bd2d4/5942/4cc2/ac94/45e71b3bdc10/640x640.jpg"
+  },
+  {
+    "artist": "Kjør Romskip",
+    "name": "mr rino",
+    "description": "Jørgen Reitan (guitar), Hans Henrik Grønsleth (keyboards), Vegard Storaas (bass) and Maria Storaas (drums), with Isak Heim (backing vocals).",
+    "soundcloudLink": "https://soundcloud.com/kjorromskip/mr-rino",
+    "spotifyLink": "https://open.spotify.com/album/0bsPAQLkV2WcRfhP94Lt4S?si=MU6JZQwtR4uogKE6lWyLyA",
+    "tidalLink": "https://tidal.com/browse/track/272881885",
+    "appleLink": "https://music.apple.com/zm/album/mr-rino/1667172884?i=1667172885",
+    "image": "https://i1.sndcdn.com/artworks-rjAKbKgxRT3NSpcG-5OQ9JQ-t500x500.jpg"
+  },
+  {
+    "artist": "Lisa Nybrott",
     "name": "Visker ut",
     "description": "Lisa Nybrott (vocals), Hans Henrik Grønsleth (keyboards), Kjell Audun Holestøl (bass), Mats Lillehaug (drums), Marius Solevågseide (vocals) and Jarand Nygaard Strømdal (vocals).",
     "spotifyLink": "https://open.spotify.com/album/790R8WJhroHRg7kTvncAe8?si=C0zNsAsdSoSyo6br6uBXuA",
