@@ -1,5 +1,15 @@
 [
   {
+    "artist": "Kjør Romskip",
+    "name": "natteting",
+    "description": "Jørgen Reitan (guitar), Hans Henrik Grønsleth (keyboards), Vegard Storaas (bass) and Maria Storaas (drums), with Isak Heim (backing vocals).",
+    "soundcloudLink": "https://soundcloud.com/kjorromskip/sets/natteting",
+    "spotifyLink": "https://open.spotify.com/album/7rmzPefl4J4BmEhnz51nY3?si=dVkAuarDRSCEzf8uOOFLmA",
+    "tidalLink": "https://tidal.com/browse/album/276383946",
+    "appleLink": "https://music.apple.com/no/album/natteting/1671449344",
+    "image": "https://i1.sndcdn.com/artworks-SM3C4SGPruyWAyOL-zZZREg-t500x500.jpg"
+  },
+  {
     "artist": "Lisa Nybrott",
     "name": "Tilbake i tid",
     "description": "Lisa Nybrott (vocals), Hans Henrik Grønsleth (keyboards), Kjell Audun Holestøl (bass), Mats Lillehaug (drums), Marius Solevågseide (vocals) and Jarand Nygaard Strømdal (vocals).",
@@ -10,12 +20,22 @@
   },
   {
     "artist": "Kjør Romskip",
+    "name": "oslo gigolo",
+    "description": "Jørgen Reitan (guitar), Hans Henrik Grønsleth (keyboards), Vegard Storaas (bass) and Maria Storaas (drums), with Isak Heim (backing vocals).",
+    "soundcloudLink": "https://soundcloud.com/kjorromskip/oslo-gigolo",
+    "spotifyLink": "https://open.spotify.com/album/30dbAUFXOE4mIucjYTShWU?si=9zyF3aSCQceZN90dQu38PA",
+    "tidalLink": "https://tidal.com/browse/album/276383977",
+    "appleLink": "https://music.apple.com/no/album/oslo-gigolo-single/1671448592",
+    "image": "https://i1.sndcdn.com/artworks-5qC0wHTkn8GHAWBg-KgbP0g-t500x500.jpg"
+  },
+  {
+    "artist": "Kjør Romskip",
     "name": "mr rino",
     "description": "Jørgen Reitan (guitar), Hans Henrik Grønsleth (keyboards), Vegard Storaas (bass) and Maria Storaas (drums), with Isak Heim (backing vocals).",
     "soundcloudLink": "https://soundcloud.com/kjorromskip/mr-rino",
     "spotifyLink": "https://open.spotify.com/album/0bsPAQLkV2WcRfhP94Lt4S?si=MU6JZQwtR4uogKE6lWyLyA",
     "tidalLink": "https://tidal.com/browse/track/272881885",
-    "appleLink": "https://music.apple.com/zm/album/mr-rino/1667172884?i=1667172885",
+    "appleLink": "https://music.apple.com/no/album/mr-rino/1667172884?i=1667172885",
     "image": "https://i1.sndcdn.com/artworks-rjAKbKgxRT3NSpcG-5OQ9JQ-t500x500.jpg"
   },
   {
