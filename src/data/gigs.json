@@ -2605,5 +2605,31 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2023-01-04T22:45:00.000Z"
+  },
+  {
+    "date": "2023-06-03",
+    "venue": "byMad",
+    "venueUrl": "https://bymad.no/",
+    "city": "Oslo",
+    "artist": "Kjør Romskip",
+    "artistUrl": "https://kjorromskip.no",
+    "eventDescription": "Musikkfest Oslo",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2023-04-26T14:45:00.000Z"
+  },
+  {
+    "date": "2023-09-16",
+    "venue": "",
+    "venueUrl": "",
+    "city": "Eidsvoll",
+    "artist": "TBA",
+    "artistUrl": "",
+    "eventDescription": "Private",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2023-04-26T14:46:00.000Z"
   }
 ]
