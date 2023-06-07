@@ -2607,17 +2607,30 @@
     "createdAt": "2023-01-04T22:45:00.000Z"
   },
   {
-    "date": "2023-06-03",
-    "venue": "byMad",
-    "venueUrl": "https://bymad.no/",
-    "city": "Oslo",
+    "date": "2023-07-07",
+    "venue": "Arnehagen",
+    "venueUrl": "",
+    "city": "Fredrikstad",
     "artist": "Kjør Romskip",
     "artistUrl": "https://kjorromskip.no",
-    "eventDescription": "Musikkfest Oslo",
+    "eventDescription": "Arnehagen Musikkfestival",
+    "eventUrl": "https://www.arnehagen.no/",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2023-06-07T21:40:00.000Z"
+  },
+  {
+    "date": "2023-07-08",
+    "venue": "Odal",
+    "venueUrl": "",
+    "city": "",
+    "artist": "Helt Greit Band",
+    "artistUrl": "https://www.last.fm/music/Helt+Greit+Band",
+    "eventDescription": "Private",
     "eventUrl": "",
     "facebookUrl": "",
     "ticketsUrl": "",
-    "createdAt": "2023-04-26T14:45:00.000Z"
+    "createdAt": "2023-06-07T21:45:00.000Z"
   },
   {
     "date": "2023-09-16",
