@@ -2644,5 +2644,18 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2023-04-26T14:46:00.000Z"
+  },
+  {
+    "date": "2023-06-10",
+    "venue": "Ullevål hageby",
+    "venueUrl": "",
+    "city": "Oslo",
+    "artist": "PwC-bandet",
+    "artistUrl": "",
+    "eventDescription": "Private",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2023-06-17T14:46:00.000Z"
   }
 ]
