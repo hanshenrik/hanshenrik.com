@@ -2644,5 +2644,18 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2023-06-17T14:46:00.000Z"
+  },
+  {
+    "date": "2023-09-09",
+    "venue": "Huser Gård",
+    "venueUrl": "",
+    "city": "",
+    "artist": "Helt Greit Band",
+    "artistUrl": "https://www.last.fm/music/Helt+Greit+Band",
+    "eventDescription": "Private",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2023-06-27T09:45:00.000Z"
   }
 ]
