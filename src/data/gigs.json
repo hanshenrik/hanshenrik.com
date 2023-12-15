@@ -2657,5 +2657,18 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2023-06-27T09:45:00.000Z"
+  },
+  {
+    "date": "2024-01-19",
+    "venue": "Hamar Teater",
+    "venueUrl": "https://www.hamarteater.no/",
+    "city": "Hamar",
+    "artist": "Lisa Nybrott",
+    "artistUrl": "https://www.lisanybrott.com/",
+    "eventDescription": "Monofon Monologfestival",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2023-12-15T14:45:00.000Z"
   }
 ]
