@@ -1,0 +1,20 @@
+---
+import MobileMenu from "./MobileMenu.astro";
+import DesktopMenu from "./DesktopMenu.astro";
+
+const navItems = [
+  { href: "/", title: "Hjem" },
+  // { href: "/program", title: "Program" },
+  { href: "/billetter", title: "Billetter" },
+  { href: "/praktisk", title: "Praktisk" },
+  { href: "/frivillig", title: "Frivillig" },
+  { href: "/festivalkomite", title: "Festivalkomite" },
+  { href: "/historikk", title: "Historikk" },
+  { href: "#kontakt", title: "Kontakt" },
+];
+---
+
+<header class="z-20">
+  <MobileMenu class="block md:hidden" navItems={navItems} />
+  <DesktopMenu class="hidden md:block" navItems={navItems} />
+</header>

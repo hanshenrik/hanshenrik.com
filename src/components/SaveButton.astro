@@ -1,0 +1,25 @@
+---
+import { Icon } from "astro-icon";
+
+export interface Props {
+  id: string;
+  namespace: string;
+}
+
+const { id, namespace } = Astro.props;
+---
+
+<button class="save-button" id={id} data-namespace={namespace}>
+  <Icon pack="ion" name="star-outline" size={24} />
+</button>
+
+<script>
+  const saveButtons = document.querySelectorAll("button.save-button");
+
+  saveButtons.forEach((saveButton) => {
+    saveButton.addEventListener("click", () => {
+      const id = saveButton.id;
+      const namespace = saveButton.dataset.namespace;
+    });
+  });
+</script>

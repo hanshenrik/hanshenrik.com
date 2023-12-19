@@ -1,0 +1,25 @@
+---
+import { randomBackgroundColor } from "../utils/colors";
+
+export interface Props {
+  title: string;
+  href: string;
+  id: string;
+}
+
+const { href, title, id } = Astro.props;
+---
+
+<li
+  class={`rounded-xl w-full h-96 sm:h-72 bg-cover bg-bottom sm:bg-center bg-no-repeat transition-transform group hover:rotate-1`}
+  style={`background-image: url('/artist/${id}.jpg')`}
+>
+  <a href={href} class="relative block h-full w-full">
+    <h2
+      class={`absolute bottom-0 right-0 w-full translate-x-2 translate-y-4 sm:translate-x-4 sm:translate-y-4  text-xl text-white text-center
+      p-4 rounded-xl transition-transform group-hover:-rotate-2 ${randomBackgroundColor()}`}
+    >
+      {title}
+    </h2>
+  </a>
+</li>

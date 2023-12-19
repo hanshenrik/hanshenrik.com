@@ -1,0 +1,86 @@
+---
+import { Icon } from "astro-icon";
+import Link from "./Link.astro";
+
+export interface Props {
+  class?: string;
+  navItems: {
+    href: string;
+    title: string;
+  }[];
+}
+
+const { class: extraClasses, navItems } = Astro.props;
+---
+
+<div class={`relative ${extraClasses}`}>
+  <div
+    class="absolute w-56 h-56 top-0 -left-32 sm:left-20 -translate-y-1/2 bg-pink rounded-full"
+  >
+  </div>
+  <div
+    class="absolute w-44 h-44 top-0 -left-0 sm:left-48 -translate-y-1/2 bg-dark-blue rounded-full"
+  >
+  </div>
+  <div class="absolute w-10 h-10 top-[70px] right-1 bg-indigo rounded-full">
+  </div>
+  <div
+    class="absolute w-3 h-3 top-[70px] right-8 bg-yellow rounded-full animate-orbit"
+  >
+  </div>
+  <nav
+    class="fixed w-full text-2xl top-0 left-0 transition-transform duration-500 ease-in-out -translate-y-full bg-pink text-white rounded-lg off-screen-nav-items flex flex-col gap-4 items-center py-24 shadow-lg"
+  >
+    {
+      navItems.map(({ href, title }) => (
+        <div class="relative">
+          {Astro.url.pathname === href || Astro.url.pathname === `${href}/` ? (
+            <div class="absolute top-1.5 -left-5 bg-yellow w-3 h-3 rounded-full" />
+          ) : null}
+          <a href={href} title={title} class={`mobile-nav-link relative z-10`}>
+            {title}
+          </a>
+        </div>
+      ))
+    }
+  </nav>
+  <nav
+    class="menu fixed w-full top-0 px-4 flex items-center justify-between gap-10 bg-pink rounded-b-lg text-white z-10 shadow-lg transition-shadow duration-500"
+  >
+    <a href="/" class="m-3"
+      ><img src="/jazzlaug-white.png" class="w-7 h-auto" /></a
+    >
+    <button class="hamburger">
+      <Icon
+        class="group-hover:-translate-y-0.5 transition-transform p-2"
+        pack="ion"
+        name="menu"
+        size={48}
+      /></button
+    >
+  </nav>
+</div>
+
+<script>
+  const hamburger = document.querySelector("button.hamburger");
+  const offScreenNavItemsList = document.querySelector(".off-screen-nav-items");
+
+  const toggleMobileMenu = () => {
+    const menu = document.querySelector(".menu");
+    menu.classList.toggle("shadow-lg");
+    ["-translate-y-full", "translate-y-12", "translate-x-0"].map((c) =>
+      offScreenNavItemsList.classList.toggle(c)
+    );
+  };
+
+  hamburger.addEventListener("click", () => {
+    toggleMobileMenu();
+  });
+
+  const navLinks = document.querySelectorAll(".mobile-nav-link");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      toggleMobileMenu();
+    });
+  });
+</script>

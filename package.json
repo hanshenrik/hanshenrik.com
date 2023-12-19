@@ -1,46 +1,37 @@
 {
-  "name": "hanshenrik.com-react",
-  "version": "0.1.0",
+  "name": "hanshenrik.com",
+  "type": "module",
+  "version": "0.0.1",
   "private": true,
-  "homepage": "https://hanshenrik.com",
-  "author": "Hans Henrik Grønsleth <hh.gronsleth@gmail.com>",
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.22",
-    "@fortawesome/free-brands-svg-icons": "^5.10.2",
-    "@fortawesome/free-solid-svg-icons": "^5.10.2",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "classnames": "^2.2.6",
-    "dayjs": "^1.8.16",
-    "lodash": "^4.17.21",
-    "react": "^16.8.6",
-    "react-accessible-accordion": "^4.0.0",
-    "react-dom": "^16.8.6",
-    "react-icons": "^4.3.1",
-    "react-scripts": "2.1.8",
-    "smoothscroll-polyfill": "^0.4.4",
-    "typeface-muli": "^0.0.71"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build",
-    "eject": "react-scripts eject"
+    "dev": "astro dev",
+    "network": "astro dev --host",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@astrojs/mdx": "^0.17.2",
+    "@astrojs/prefetch": "^0.1.2",
+    "@astrojs/sitemap": "^1.1.0",
+    "@astrojs/tailwind": "^3.0.1",
+    "@astropub/icons": "^0.2.0",
+    "astro": "^2.0.17",
+    "astro-icon": "^0.8.0",
+    "astro-integration-lottie": "^0.2.3",
+    "astro-robots-txt": "^0.4.0",
+    "astro-seo": "^0.7.1",
+    "date-fns": "^2.29.3",
+    "lodash": "^4.17.21",
+    "lottie-web": "^5.11.0",
+    "mapbox-gl": "^2.13.0",
+    "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
-    "prettier": "^2.8.1"
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/lodash": "^4.14.202",
+    "prettier": "^2.8.4",
+    "prettier-plugin-astro": "^0.8.0"
   }
 }

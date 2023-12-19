@@ -1,0 +1,185 @@
+---
+import "mapbox-gl/dist/mapbox-gl.css";
+import "../styles/mapbox-overrides.css";
+---
+
+<div id="map" class="w-full h-72 sm:h-96 md:h-[480px]"></div>
+
+<script>
+  import mapboxgl from "mapbox-gl";
+
+  mapboxgl.accessToken =
+    "pk.eyJ1IjoiaGFuc2hlbnJpayIsImEiOiJjaXpjdTc5a3AwMDhrMndwZW1ucWdkdXdwIn0.a15J4-cKGPIZClcvh-LeTQ";
+
+  const venues = [
+    {
+      id: "teltet",
+      directionsLink: "https://goo.gl/maps/tyHoBufCjgKrQuVWA",
+      name: "Teltet",
+      supportText: "på Kulturfabrikken",
+      coordinates: [7.457609, 58.024953],
+    },
+    {
+      id: "elvesalen",
+      directionsLink: "https://goo.gl/maps/DFWhAkxsG79Z6XsSA",
+      name: "Elvesalen",
+      supportText: "i Buen",
+      coordinates: [7.456102489810863, 58.025413017347816],
+    },
+    {
+      id: "sjoboden",
+      directionsLink: "https://goo.gl/maps/Zckod9cgSsvwETBi7",
+      name: "Sjøboden",
+      coordinates: [7.451948, 58.025868],
+    },
+    {
+      id: "piren",
+      directionsLink: "https://goo.gl/maps/wUtGQW5PBwdmxqvW8",
+      name: "Piren Kulturrom",
+      coordinates: [7.45642627188327, 58.02126823756139],
+    },
+    {
+      id: "scene-hobby",
+      directionsLink: "https://goo.gl/maps/6ZMtR921b1Spj9uF7",
+      name: "Scene & Hobby",
+      coordinates: [7.4556629215051355, 58.02751486008526],
+    },
+    {
+      id: "hestetroa",
+      directionsLink: "https://goo.gl/maps/7jcZQyep46oVotuA6",
+      name: "Hestetroa",
+      coordinates: [7.455256960080562, 58.027854579180655],
+    },
+    {
+      id: "hekkholmen",
+      directionsLink: "https://maps.app.goo.gl/BPpfGRV2btB3VaMM8",
+      name: "Hekkholmen",
+      coordinates: [7.421073, 58.016544],
+    },
+  ];
+
+  const center = [7.45436325431531, 58.02442355659143];
+  const navigationControl = new mapboxgl.NavigationControl();
+  const fullscreenControl = new mapboxgl.FullscreenControl();
+  const geolocateControl = new mapboxgl.GeolocateControl();
+
+  const map = new mapboxgl.Map({
+    container: "map",
+    style: "mapbox://styles/mapbox/streets-v12",
+    center,
+    zoom: 13,
+  });
+
+  map.addControl(navigationControl, "top-left");
+  map.addControl(geolocateControl, "top-left");
+  map.addControl(fullscreenControl, "top-right");
+
+  map.on("style.load", () => {
+    // Insert the layer beneath any symbol layer.
+    const layers = map.getStyle().layers;
+    const labelLayerId = layers.find(
+      ({ type, layout }) => type === "symbol" && layout["text-field"]
+    ).id;
+
+    // The 'building' layer in the Mapbox Streets
+    // vector tileset contains building height data
+    // from OpenStreetMap.
+    map.addLayer(
+      {
+        id: "add-3d-buildings",
+        source: "composite",
+        "source-layer": "building",
+        filter: ["==", "extrude", "true"],
+        type: "fill-extrusion",
+        minzoom: 14,
+        paint: {
+          "fill-extrusion-color": "#fff",
+          "fill-extrusion-height": { type: "identity", property: "height" },
+          "fill-extrusion-base": { type: "identity", property: "min_height" },
+          "fill-extrusion-opacity": 0.6,
+        },
+      },
+      labelLayerId
+    );
+
+    // Define a source before using it to create a new layer
+    map.addSource("venues-source", {
+      type: "geojson",
+      data: {
+        type: "FeatureCollection",
+        features: venues.map(
+          ({ name, supportText, directionsLink, coordinates }) => ({
+            type: "Feature",
+            properties: {
+              name: name,
+              supportText: supportText,
+              directionsLink: directionsLink,
+            },
+            geometry: {
+              type: "Point",
+              coordinates: coordinates,
+            },
+          })
+        ),
+      },
+    });
+
+    map.addLayer({
+      type: "circle",
+      id: "venues-layer",
+      source: "venues-source",
+      paint: {
+        "circle-radius": 8,
+        "circle-color": "#ff0054",
+        "circle-opacity": 0.95,
+      },
+    });
+  });
+
+  // Center the map on the coordinates of any clicked venues-layer from the 'venues-layer' layer.
+  map.on("click", "venues-layer", ({ features, lngLat }) => {
+    // Copy coordinates array.
+    const coordinates = features[0].geometry.coordinates.slice();
+    const { name, directionsLink, supportText } = features[0].properties;
+
+    // Ensure that if the map is zoomed out such that multiple
+    // copies of the feature are visible, the popup appears
+    // over the copy being pointed to.
+    while (Math.abs(lngLat.lng - coordinates[0]) > 180) {
+      coordinates[0] += lngLat.lng > coordinates[0] ? 360 : -360;
+    }
+
+    new mapboxgl.Popup({ offset: 25 })
+      .setHTML(
+        `<div class="space-y-2">
+          <div>
+            <h3 class="font-display text-lg">${name}</h3>
+            ${supportText ? `<div>${supportText}</div>` : ""}
+          </div>
+          ${
+            directionsLink &&
+            `<div><a class="link" href=${directionsLink}>Åpne i Google Maps</a></div>`
+          }
+        </div>
+        `
+      )
+      .setLngLat(coordinates)
+      .addTo(map);
+
+    map.flyTo({
+      center: [lngLat.lng, lngLat.lat],
+      speed: 0.5,
+      curve: 2,
+    });
+  });
+
+  // Change the cursor to a pointer when the it enters a feature in the 'venues-layer' layer.
+  map.on("mouseenter", "venues-layer", () => {
+    map.getCanvas().style.cursor = "pointer";
+  });
+
+  // Change it back to a pointer when it leaves.
+  map.on("mouseleave", "venues-layer", () => {
+    map.getCanvas().style.cursor = "";
+  });
+</script>

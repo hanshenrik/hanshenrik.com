@@ -1,0 +1,14 @@
+---
+import LottieAnimation from "astro-integration-lottie/Lottie.astro";
+
+export interface Props {
+  name: string;
+  class?: string;
+}
+
+const { name, class: extraClasses } = Astro.props;
+---
+
+<div class={extraClasses}>
+  <LottieAnimation src={`/profil/lottie/${name}.json`} autoplay="visible" />
+</div>

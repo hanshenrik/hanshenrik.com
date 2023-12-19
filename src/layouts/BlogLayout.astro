@@ -1,0 +1,58 @@
+---
+import ImageAndLabel from "../components/ImageAndLabel.astro";
+import Layout from "./Layout.astro";
+import { formatDate } from "../utils/date";
+
+const {
+  frontmatter: {
+    title,
+    author,
+    authorImage,
+    ingress,
+    image,
+    createdAt,
+    updatedAt,
+  },
+} = Astro.props;
+---
+
+<Layout title="Blogg // mandaljazz 2024" description={ingress} image={image}>
+  <main class="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 py-24 sm:py-40">
+    <section class="max-w-3xl mx-auto space-y-24">
+      <div class="space-y-12">
+        <div class="space-y-6">
+          <h1 class="font-display text-5xl md:text-7xl">{title}</h1>
+          <p class="text-xl">
+            {ingress}
+          </p>
+        </div>
+        <div class="col-span-2 space-y-4">
+          {
+            author && (
+              <ImageAndLabel
+                image={`/people/${authorImage}`}
+                alt={`Bilde av ${author}`}
+              >
+                <div>
+                  <div>Tekst: {author}</div>
+                  <div>
+                    Publisert: {formatDate(createdAt)}{" "}
+                    {updatedAt && <em>(endret {formatDate(updatedAt)})</em>}
+                  </div>
+                </div>
+              </ImageAndLabel>
+            )
+          }
+        </div>
+        <div
+          class="bg-no-repeat bg-cover bg-top w-full h-80 md:h-[420px] lg:h-[480px] rounded"
+          style={`background-image: url('${image}');`}
+        >
+        </div>
+      </div>
+      <article class="prose prose-quoteless-blockquotes w-full max-w-full">
+        <slot />
+      </article>
+    </section>
+  </main>
+</Layout>

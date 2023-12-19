@@ -1,0 +1,19 @@
+---
+export interface Props {
+  author: string;
+}
+
+const { author } = Astro.props;
+---
+
+<figure
+  class="bg-pink/10 p-8 rounded-lg text-xl space-y-8 max-w-3xl mx-auto leading-8"
+>
+  <blockquote class="space-y-6">
+    <span
+      class="text-[20rem] float-left font-display w-40 h-28"
+      style="line-height: 1;">”</span
+    ><slot />
+  </blockquote>
+  <figcaption class="text-right text-2xl">– {author}</figcaption>
+</figure>

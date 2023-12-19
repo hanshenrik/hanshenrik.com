@@ -1,0 +1,101 @@
+---
+import partition from "lodash/partition";
+
+import Card from "../components/Card.astro";
+import Lottie from "../components/Lottie.astro";
+// import Spotify from "../components/Spotify.astro";
+import Layout from "../layouts/Layout.astro";
+import PlaceholderCard from "../components/PlaceholderCard.astro";
+
+const artists = await Astro.glob("../pages/artist/*.mdx");
+const [upcomingArtists, pastArtists] = partition(artists, (artist) => {
+  const {
+    frontmatter: { concertStartAt },
+  } = artist;
+
+  return new Date(concertStartAt) > new Date();
+});
+
+const byOrder = (a, b) => {
+  const aOrder = a.frontmatter.order || 0;
+  const bOrder = b.frontmatter.order || 0;
+  if (aOrder > bOrder) {
+    return -1;
+  } else if (aOrder < bOrder) {
+    return 1;
+  } else {
+    return 0;
+  }
+};
+---
+
+<Layout title="mandaljazz 2024" description="Jazzfestivalen i Mandal">
+  <main
+    class="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 space-y-24 py-16 sm:pb-32"
+  >
+    <div class="max-w-5xl mx-auto flex flex-col items-center">
+      <div class="flex flex-col items-center w-full">
+        <div class="relative">
+          <Lottie
+            name="jazzlaug-med-armer-ut-av-hodet"
+            class="absolute max-w-xs w-full h-fit translate-y-[16px] scale-[1.11]"
+          />
+          <img
+            src="/profil/Jazzlaug04.png"
+            class="max-w-xs w-full transition-opacity lottie-placeholder"
+          />
+        </div>
+        <h1
+          class="p-6 text-2xl sm:text-4xl font-display text-center leading-snug bg-pink text-white rounded-xl"
+        >
+          27.–29. juni 2024
+        </h1>
+        <h2 class="font-display text-2xl text-center p-6">
+          Mandaljazz feirer <div class="inline-block skew-y-2 p-2 bg-blue">
+            <div class="inline-block -skew-y-2 text-4xl">10 år</div>
+          </div>
+        </h2>
+      </div>
+    </div>
+    <div class="mx-auto max-w-5xl space-y-4">
+      <h3 class="font-display text-3xl">Artister</h3>
+      <ul
+        role="list"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        {
+          [...upcomingArtists.sort(byOrder), ...pastArtists.sort(byOrder)].map(
+            (artist) => {
+              const {
+                frontmatter: { title, id, hideFromArtistList },
+              } = artist;
+
+              if (hideFromArtistList) {
+                return null;
+              }
+
+              return <Card href={`/artist/${id}`} title={title} id={id} />;
+            }
+          )
+        }
+        <PlaceholderCard title="Kul artist" />
+        <PlaceholderCard title="Hippe greier" />
+        <PlaceholderCard title="Fine ting" />
+        <PlaceholderCard title="Mer jazz" />
+        <PlaceholderCard title="Er det jazz da?" />
+      </ul>
+    </div>
+    <!-- <Spotify
+      src="https://open.spotify.com/playlist/3390Fw5R6RjQ7pYgIvTLgr?si=c3193c64b9eb460b"
+    /> -->
+  </main>
+</Layout>
+
+<script>
+  document.addEventListener("astro-lottie-loaded", (e) => {
+    // Hide Lottie placeholder images when Lottie has loaded
+    document.querySelectorAll(".lottie-placeholder").forEach((placeholder) => {
+      placeholder.classList.toggle("opacity-0");
+    });
+  });
+</script>

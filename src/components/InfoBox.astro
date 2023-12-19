@@ -1,0 +1,14 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<div class="rounded-lg p-4 bg-blue/50 flex flex-row gap-2 w-fit text-md">
+  <span
+    ><Icon
+      class="icon group-hover:-translate-y-0.5 transition-transform"
+      pack={"ion"}
+      name={"information-circle-outline"}
+      size={24}
+    /></span
+  ><slot />
+</div>

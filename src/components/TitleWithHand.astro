@@ -1,0 +1,40 @@
+---
+export interface Props {
+  type: "yellow" | "orange" | "blue";
+  title: string;
+  flip?: boolean;
+}
+
+const { type, title, flip } = Astro.props;
+
+const backgroundColor = {
+  yellow: "bg-yellow",
+  orange: "bg-orange",
+  blue: "bg-blue",
+}[type];
+
+const imageType = {
+  blue: "1",
+  yellow: "2",
+  orange: "3",
+}[type];
+---
+
+<div
+  class={`relative ${
+    flip ? "-skew-y-2" : "skew-y-2"
+  } w-fit flex flex-row ${backgroundColor} mt-16`}
+>
+  <h2
+    class={`${flip ? "skew-y-2" : "-skew-y-2"} font-display text-3xl p-4 my-2`}
+  >
+    {title}
+  </h2>
+  <img
+    src={`/profil/hand0${imageType}-cut.png`}
+    class={`hidden xl:block absolute w-20 ${
+      flip ? "-right-28 -scale-x-100 -rotate-45" : "-left-28 rotate-45"
+    }`}
+    alt="Fargerik hånd som peker på tittelen ved siden av"
+  />
+</div>

@@ -1,0 +1,42 @@
+---
+import { Icon } from "astro-icon";
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div>
+  <button
+    class="accordion bg-dark-blue text-white text-left p-4 w-full rounded-t flex justify-between group"
+  >
+    <span>{title}</span><span
+      ><Icon
+        class="icon group-hover:-translate-y-0.5 transition-transform"
+        pack="ion"
+        name="chevron-down"
+        size={24}
+      /></span
+    >
+  </button>
+  <div
+    class="bg-dark-blue/10 rounded-b transition-all px-4 h-0 overflow-y-hidden space-y-8"
+  >
+    <slot />
+  </div>
+</div>
+
+<script>
+  const accordions = document.querySelectorAll("button.accordion");
+
+  accordions.forEach((accordion) => {
+    accordion.addEventListener("click", () => {
+      accordion.querySelector(".icon").classList.toggle("rotate-180");
+      ["h-0", "h-auto", "py-8"].map((c) =>
+        accordion.nextElementSibling.classList.toggle(c)
+      );
+    });
+  });
+</script>

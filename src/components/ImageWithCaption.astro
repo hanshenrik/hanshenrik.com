@@ -1,0 +1,17 @@
+---
+export interface Props {
+  src: string;
+  caption?: string;
+  attribution?: string;
+}
+
+const { src, caption, attribution } = Astro.props;
+---
+
+<figure>
+  <img src={src} alt={caption} class="rounded-t-lg" />
+  <figcaption class="p-4 bg-dark-blue/10 rounded-b-lg flex justify-between">
+    {caption && <span>{caption}</span>}
+    {attribution && <span>{attribution}</span>}
+  </figcaption>
+</figure>

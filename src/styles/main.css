@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  letter-spacing: 0.05em;
+  hyphenate-character: "-";
+}
+
+::selection {
+  background: theme("colors.pink");
+  color: theme("colors.white");
+}
+
+.link {
+  background: linear-gradient(
+    to top,
+    theme("colors.pink") 80%,
+    transparent 80%
+  );
+  text-decoration: none;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: background-position 0.2s ease, color 0.2s ease;
+  background-position: 0% 14%;
+  background-size: 100% 1200%;
+}
+.link:hover {
+  background-position: 0 22%;
+  color: theme("colors.white");
+}
+
+@layer utilities {
+  .animate-pause {
+    animation-play-state: paused;
+  }
+}
