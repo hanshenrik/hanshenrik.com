@@ -2670,5 +2670,31 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2023-12-15T14:45:00.000Z"
+  },
+  {
+    "date": "2024-04-13",
+    "venue": "Quality Airport Hotel",
+    "venueUrl": "",
+    "city": "Stavanger",
+    "artist": "Lisa Nybrott",
+    "artistUrl": "https://www.lisanybrott.com/",
+    "eventDescription": "TBA",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2024-01-28T14:45:00.000Z"
+  },
+  {
+    "date": "2024-03-07",
+    "venue": "TBA",
+    "venueUrl": "",
+    "city": "TBA",
+    "artist": "Lisa Nybrott",
+    "artistUrl": "https://www.lisanybrott.com/",
+    "eventDescription": "TBA",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2024-01-28T14:46:00.000Z"
   }
 ]
