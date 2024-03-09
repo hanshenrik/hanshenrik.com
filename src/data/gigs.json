@@ -848,7 +848,7 @@
   },
   {
     "date": "2009-08-15",
-    "venue": "MM3",
+    "venue": "Marte Marjas vei 3",
     "venueUrl": "",
     "city": "Eidsvoll",
     "artist": "Helt Greit Band",
@@ -2683,5 +2683,18 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2024-01-28T14:45:00.000Z"
+  },
+  {
+    "date": "2024-06-14",
+    "venue": "Marte Marjas vei 11",
+    "venueUrl": "",
+    "city": "Eidsvoll",
+    "artist": "70-tallsbandet",
+    "artistUrl": "",
+    "eventDescription": "TBA",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2024-03-09T10:45:00.000Z"
   }
 ]
