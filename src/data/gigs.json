@@ -2696,5 +2696,18 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2024-03-09T10:45:00.000Z"
+  },
+  {
+    "date": "2024-04-19",
+    "venue": "Kongen Marina",
+    "venueUrl": "https://www.kongenmarina.no/",
+    "city": "Oslo",
+    "artist": "Kjør Romskip",
+    "artistUrl": "https://kjorromskip.no",
+    "eventDescription": "Den store fredagshilsen 2024",
+    "eventUrl": "https://www.kongenmarina.no/hva-skjer-kongen/event-den-store-fredagshilsen-ds5s4",
+    "facebookUrl": "https://www.facebook.com/events/913119269907812",
+    "ticketsUrl": "",
+    "createdAt": "2024-04-09T20:00:00.000Z"
   }
 ]
