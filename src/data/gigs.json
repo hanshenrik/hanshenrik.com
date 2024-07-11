@@ -2722,5 +2722,18 @@
     "facebookUrl": "https://www.facebook.com/events/913119269907812",
     "ticketsUrl": "",
     "createdAt": "2024-04-09T20:00:00.000Z"
+  },
+  {
+    "date": "2024-06-08",
+    "venue": "Fløyta",
+    "venueUrl": "",
+    "city": "Hurdal",
+    "artist": "Helt Greit Band",
+    "artistUrl": "https://www.last.fm/music/Helt+Greit+Band",
+    "eventDescription": "Private",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2024-07-11T09:45:00.000Z"
   }
 ]
