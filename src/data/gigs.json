@@ -2735,5 +2735,44 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2024-07-11T09:45:00.000Z"
+  },
+  {
+    "date": "2024-08-17",
+    "venue": "Flesvik Gård",
+    "venueUrl": "",
+    "city": "Feiring",
+    "artist": "Helt Greit Band",
+    "artistUrl": "https://www.last.fm/music/Helt+Greit+Band",
+    "eventDescription": "Private",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2024-10-17T11:51:00.000Z"
+  },
+  {
+    "date": "2024-09-06",
+    "venue": "Sagene Festivitetshus",
+    "venueUrl": "",
+    "city": "Oslo",
+    "artist": "Prophets of Jan Eggum",
+    "artistUrl": "",
+    "eventDescription": "Private",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2024-10-17T11:52:00.000Z"
+  },
+  {
+    "date": "2024-10-19",
+    "venue": "Arbeidern",
+    "venueUrl": "",
+    "city": "Kabelvåg",
+    "artist": "HHG",
+    "artistUrl": "",
+    "eventDescription": "Mølje",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2024-10-17T11:54:00.000Z"
   }
 ]
