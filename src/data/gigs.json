@@ -2774,5 +2774,18 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2024-10-17T11:54:00.000Z"
+  },
+  {
+    "date": "2024-12-07",
+    "venue": "Parksalongen",
+    "venueUrl": "http://parksalongen.no/",
+    "city": "Oslo",
+    "artist": "Kjør Romskip",
+    "artistUrl": "https://www.facebook.com/kjorromskip",
+    "eventDescription": "",
+    "eventUrl": "",
+    "facebookUrl": "https://www.facebook.com/events/923804309641149",
+    "ticketsUrl": "https://parksalongen.hoopla.no/event/3580379647",
+    "createdAt": "2024-11-29T19:34:00.000Z"
   }
 ]
