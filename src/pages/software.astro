@@ -1,7 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import softwares from "../data/softwares.json";
-import { Image } from "astro:assets";
+import { Picture } from 'astro:assets';
+
+// Import all images
+import mandaljazz from "../assets/images/mandaljazz.png";
+import ronsenrock from "../assets/images/ronsenrock.png";
+import rishatt from "../assets/images/rishatt.png";
+import jazzkart from "../assets/images/jazzkart.png";
+import kickmap from "../assets/images/kickmap.png";
+import whenfm from "../assets/images/when-fm.png";
+import kjorromskip from "../assets/images/kjorromskip.png";
+import eliaseine from "../assets/images/eliaseine.png";
+import hakonhammer from "../assets/images/hakonhammer.png";
+
+const imageMap = {
+  "mandaljazz.png": mandaljazz,
+  "ronsenrock.png": ronsenrock,
+  "rishatt.png": rishatt,
+  "jazzkart.png": jazzkart,
+  "kickmap.png": kickmap,
+  "when-fm.png": whenfm,
+  "kjorromskip.png": kjorromskip,
+  "eliaseine.png": eliaseine,
+  "hakonhammer.png": hakonhammer,
+};
 ---
 
 <Layout title="Software Projects">
@@ -13,10 +36,12 @@ import { Image } from "astro:assets";
           <div class="card group">
             {software.image && (
               <div class="relative aspect-video overflow-hidden">
-                <Image
-                  src={`assets/images/${software.image}`}
-                  width={100}
-                  height={100}
+                <!-- `alt` is mandatory on the Picture component -->
+                <Picture formats={['avif', 'webp']} 
+                  src={imageMap[software.image]}
+                  // width={500}
+                  // height={500}
+                  quality={100}
                   alt={software.name}
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
