@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -137,7 +137,7 @@
       canvas.width = canvas.offsetWidth;
       (canvas.height = canvas.offsetWidth), (amount = 1000);
       var img = new Image();
-      img.onload = function() {
+      img.onload = function () {
         ctx.drawImage(img, 0, 0, 800, 800, 0, 0, canvas.width, canvas.height);
         data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
         canvas2 = document.querySelector("#snowFlakes");
@@ -186,7 +186,7 @@
         this.r = Math.random() * 2;
         this.speedY = Math.random() + 0.2;
       }
-      Flake.prototype.render = function() {
+      Flake.prototype.render = function () {
         if (this.finalY > this.y) {
           this.y += this.speedY;
         }
@@ -209,18 +209,18 @@
         globeWrapper.removeEventListener("touchstart", shakeGlobe);
         var globe = document.querySelector("#globe");
         TweenMax.to(canvas2, 0.5, {
-          opacity: 0
+          opacity: 0,
         });
         TweenMax.to(globe, 0.1, {
           rotationZ: 25,
           ease: Quad.easeInOut,
           yoyo: true,
           repeat: 5,
-          onComplete: initSnow
+          onComplete: initSnow,
         });
         TweenMax.to(canvas2, 0.5, {
           opacity: 1,
-          delay: "0.6"
+          delay: "0.6",
         });
       }
     </script>

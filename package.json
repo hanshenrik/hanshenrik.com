@@ -1,46 +1,21 @@
 {
-  "name": "hanshenrik.com-react",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "https://hanshenrik.com",
-  "author": "Hans Henrik Grønsleth <hh.gronsleth@gmail.com>",
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.22",
-    "@fortawesome/free-brands-svg-icons": "^5.10.2",
-    "@fortawesome/free-solid-svg-icons": "^5.10.2",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "classnames": "^2.2.6",
-    "dayjs": "^1.8.16",
-    "lodash": "^4.17.21",
-    "react": "^16.8.6",
-    "react-accessible-accordion": "^4.0.0",
-    "react-dom": "^16.8.6",
-    "react-icons": "^4.3.1",
-    "react-scripts": "2.1.8",
-    "smoothscroll-polyfill": "^0.4.4",
-    "typeface-muli": "^0.0.71"
-  },
+  "name": "wretched-wavelength",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build",
-    "eject": "react-scripts eject"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write ."
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.5",
+    "astro": "^5.7.10",
+    "tailwindcss": "^4.1.5"
   },
   "devDependencies": {
-    "prettier": "^2.8.1"
+    "prettier": "3.5.3",
+    "prettier-plugin-astro": "0.14.1"
   }
 }
