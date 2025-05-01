@@ -15,7 +15,9 @@ const { artist, venue, date, eventDescription } = Astro.props;
   class="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800"
 >
   <td class="py-4 px-6">
-    <time datetime={date} class="text-sm text-gray-500 dark:text-gray-400"
+    <time
+      datetime={date}
+      class="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap"
       >{format(new Date(date), "dd MMM yyyy")}</time
     >
   </td>
