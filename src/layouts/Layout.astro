@@ -1,4 +1,8 @@
 ---
+import { ClientRouter } from "astro:transitions";
+
+import "../styles/global.css";
+
 interface Props {
   title: string;
   description?: string;
@@ -23,6 +27,7 @@ const { title, description = "Hans Henrik Grønsleth's personal website" } =
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <ClientRouter />
   </head>
   <body class="min-h-screen bg-white dark:bg-gray-900">
     <header class="border-b border-gray-200 dark:border-gray-800">
@@ -65,4 +70,3 @@ const { title, description = "Hans Henrik Grønsleth's personal website" } =
     </footer>
   </body>
 </html>
-

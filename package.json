@@ -12,9 +12,14 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.5",
     "astro": "^5.7.10",
+    "astro-icon": "^1.1.5",
+    "date-fns": "^4.1.0",
+    "lodash-es": "^4.17.21",
     "tailwindcss": "^4.1.5"
   },
   "devDependencies": {
+    "@iconify-json/arcticons": "^1.2.24",
+    "@types/lodash-es": "^4.17.12",
     "prettier": "3.5.3",
     "prettier-plugin-astro": "0.14.1"
   }

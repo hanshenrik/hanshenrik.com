@@ -1,26 +1,108 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import gigs from "../data/gigs.json";
+import { orderBy, partition } from "lodash-es";
+import GigRow from "../components/GigRow.astro";
+
+type Gig = {
+  date: string;
+  venue: string;
+  venueUrl: string;
+  city: string;
+  artist: string;
+  artistUrl: string;
+  eventDescription: string;
+  eventUrl: string;
+  facebookUrl: string;
+  ticketsUrl: string;
+  createdAt: string;
+};
+
+const sortedGigs: Gig[] = orderBy(gigs, "date", "desc");
+const [upcomingGigs, pastGigs] = partition(sortedGigs, (gig: Gig) => {
+  const date = new Date(gig.date);
+  return date > new Date();
+});
 ---
 
 <Layout title="Upcoming Gigs">
-  <h1 class="text-3xl font-bold mb-8">Upcoming Gigs</h1>
-  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-    {
-      gigs.map((gig) => (
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-          <div class="p-6">
-            <h2 class="text-xl font-semibold mb-2">{gig.artist}</h2>
-            <p class="text-gray-600 dark:text-gray-400 mb-4">{gig.venue}</p>
-            <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-              <time datetime={gig.date}>{gig.date}</time>
-              <span class="mx-2">•</span>
-              <span>{gig.time}</span>
-            </div>
-          </div>
-        </div>
-      ))
-    }
+  <h1 class="text-3xl font-bold mb-8">Gigs</h1>
+
+  <h2 class="text-xl font-semibold mb-4">Upcoming</h2>
+  <div class="overflow-x-auto">
+    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+      <thead class="bg-gray-50 dark:bg-gray-800">
+        <tr>
+          <th
+            scope="col"
+            class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider"
+            >Date</th
+          >
+          <th
+            scope="col"
+            class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider"
+            >Artist & Venue</th
+          >
+          <th
+            scope="col"
+            class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider"
+            >Description</th
+          >
+        </tr>
+      </thead>
+      <tbody
+        class="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700"
+      >
+        {
+          upcomingGigs.map((gig: Gig) => (
+            <GigRow
+              artist={gig.artist}
+              venue={gig.venue}
+              date={gig.date}
+              eventDescription={gig.eventDescription}
+            />
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="text-xl font-semibold mb-4 mt-8">Past</h2>
+  <div class="overflow-x-auto">
+    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+      <thead class="bg-gray-50 dark:bg-gray-800">
+        <tr>
+          <th
+            scope="col"
+            class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider"
+            >Date</th
+          >
+          <th
+            scope="col"
+            class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider"
+            >Artist & Venue</th
+          >
+          <th
+            scope="col"
+            class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider"
+            >Description</th
+          >
+        </tr>
+      </thead>
+      <tbody
+        class="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700"
+      >
+        {
+          pastGigs.map((gig: Gig) => (
+            <GigRow
+              artist={gig.artist}
+              venue={gig.venue}
+              date={gig.date}
+              eventDescription={gig.eventDescription}
+            />
+          ))
+        }
+      </tbody>
+    </table>
   </div>
 </Layout>
-
