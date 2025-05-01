@@ -1,10 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import softwares from "../data/softwares.json";
 import { Picture } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
-// Import all images
+import softwares from "../data/softwares.json";
+
 import mandaljazz from "../assets/images/mandaljazz.png";
 import ronsenrock from "../assets/images/ronsenrock.png";
 import rishatt from "../assets/images/rishatt.png";
@@ -46,9 +46,7 @@ const imageMap: Record<string, ImageMetadata> = {
             </div>
             <div class="card-content">
               <h2 class="mb-2">{software.name}</h2>
-              <p class="text-gray-600 mb-4">
-                {software.description}
-              </p>
+              <p class="text-gray-600 mb-4">{software.description}</p>
               <div class="flex flex-wrap gap-3">
                 {software.url && (
                   <a
