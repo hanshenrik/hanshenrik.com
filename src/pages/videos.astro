@@ -1,0 +1,28 @@
+---
+import { Icon } from "astro-icon/components";
+import { YouTube } from "astro-embed";
+
+import Layout from "../layouts/Layout.astro";
+import videos from "../data/videos.json";
+---
+
+<Layout title="Videos">
+  <div class="max-w-7xl mx-auto">
+    <h1 class="mb-12">Videos</h1>
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {
+        videos.map((video) => (
+          <div class="card group">
+            <div class="card-content">
+              <h2 class="mb-1">
+                {video.artist} - {video.name}
+              </h2>
+              {video.youtubeLink && <YouTube id={video.youtubeLink} />}
+              <p class="text-sm text-gray-500 mb-4">{video.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
