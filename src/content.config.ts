@@ -1,4 +1,4 @@
-import { glob } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 
 const blog = defineCollection({
@@ -13,6 +13,30 @@ const blog = defineCollection({
   }),
 });
 
+const recordings = defineCollection({
+  loader: file("src/data/recordings.json"),
+  schema: z.object({
+    id: z.string(),
+    artist: z.string(),
+    name: z.string(),
+    description: z.string(),
+    year: z.number().optional(),
+    tidalLink: z.string().optional(),
+    spotifyLink: z.string().optional(),
+    appleLink: z.string().optional(),
+    soundcloudLink: z.string().optional(),
+    youtubeLink: z.string().optional(),
+    image: z.string().optional(),
+    imageAttribution: z.string().optional(),
+    localFile: z
+      .object({
+        src: z.string(),
+        format: z.string().optional(),
+      })
+      .optional(),
+  }),
+});
 export const collections = {
   drypp: blog,
+  recordings,
 };

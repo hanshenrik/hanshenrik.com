@@ -1,89 +1,107 @@
 ---
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import recordings from "../data/recordings.json";
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+
+const recordings = await getCollection("recordings");
+
+const releasedRecordings = recordings.filter(
+  (recording) => !recording.data.localFile,
+);
+const localRecordings = recordings.filter(
+  (recording) => recording.data.localFile,
+);
 ---
 
 <Layout title="Recordings">
-  <div class="mx-auto max-w-7xl">
+  <div class="mx-auto max-w-7xl space-y-8">
     <h1 class="mb-12">Recordings</h1>
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <h2 class="mb-4">Official releases</h2>
+    <div class="space-y-2">
+      <iframe
+        class="rounded-none md:max-w-1/2"
+        src="https://open.spotify.com/embed/playlist/0HQEtUAwUe5VnLh42iIjSb?utm_source=generator&theme=0"
+        width="100%"
+        height="352"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"></iframe>
+      <a
+        href="https://tidal.com/browse/playlist/0a61d353-ade3-4efe-a517-a82d99b47354"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 rounded-full bg-black px-4 py-2 text-white transition-colors duration-200 hover:bg-gray-800 w-fit group"
+      >
+        <Icon name="arcticons:tidal" size={24} stroke-width={1.5} />
+        <span>Also available on Tidal</span>
+      </a>
+    </div>
+    <div class="grid gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
       {
-        recordings.map((recording) => (
+        releasedRecordings.map(({ data }) => (
           <div class="card group">
-            {recording.image && (
+            {data.image && (
               <div class="relative aspect-square overflow-hidden">
                 <Image
-                  src={recording.image}
+                  src={data.image}
                   width={400}
                   height={400}
                   quality={100}
-                  alt={`${recording.artist} - ${recording.name}`}
-                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  alt={`${data.artist} - ${data.name}`}
+                  class="h-full w-full object-cover"
                 />
               </div>
             )}
-            <div class="card-content">
-              <h2 class="mb-1">{recording.name}</h2>
-              <p class="mb-3 text-gray-600">{recording.artist}</p>
-              <p class="mb-4 line-clamp-2 text-sm text-gray-500">
-                {recording.description}
-              </p>
-              <div class="flex flex-wrap gap-3">
-                {recording.youtubeLink && (
+            <div class="card-content py-1">
+              <div class="mx-auto flex w-fit flex-wrap gap-1">
+                {data.tidalLink && (
                   <a
-                    href={recording.youtubeLink}
+                    href={data.tidalLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 rounded-full bg-red-100 px-3 py-1.5 text-sm text-red-700 transition-colors duration-200 hover:bg-red-200"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-full text-black transition-colors duration-200 hover:bg-black hover:text-white"
                   >
-                    <Icon name="arcticons:youtube" />
-                    <span>YouTube</span>
+                    <Icon name="arcticons:tidal" stroke-width={1.5} size={24} />
                   </a>
                 )}
-                {recording.spotifyLink && (
+                {data.spotifyLink && (
                   <a
-                    href={recording.spotifyLink}
+                    href={data.spotifyLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 rounded-full bg-green-100 px-3 py-1.5 text-sm text-green-700 transition-colors duration-200 hover:bg-green-200"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-full text-green-700 transition-colors duration-200 hover:bg-green-200"
                   >
-                    <Icon name="arcticons:spotify" />
-                    <span>Spotify</span>
+                    <Icon name="arcticons:spotify" size={24} />
                   </a>
                 )}
-                {recording.appleLink && (
+                {data.appleLink && (
                   <a
-                    href={recording.appleLink}
+                    href={data.appleLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 rounded-full bg-pink-100 px-3 py-1.5 text-sm text-pink-700 transition-colors duration-200 hover:bg-pink-200"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-full text-pink-700 transition-colors duration-200 hover:bg-pink-200"
                   >
-                    <Icon name="arcticons:apple" />
-                    <span>Apple Music</span>
+                    <Icon name="arcticons:apple" size={24} />
                   </a>
                 )}
-                {recording.tidalLink && (
+                {data.youtubeLink && (
                   <a
-                    href={recording.tidalLink}
+                    href={data.youtubeLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 rounded-full bg-blue-100 px-3 py-1.5 text-sm text-blue-700 transition-colors duration-200 hover:bg-blue-200"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-full text-red-700 transition-colors duration-200 hover:bg-red-200"
                   >
-                    <Icon name="arcticons:tidal" />
-                    <span>Tidal</span>
+                    <Icon name="arcticons:youtube" size={24} />
                   </a>
                 )}
-                {recording.soundcloudLink && (
+                {data.soundcloudLink && (
                   <a
-                    href={recording.soundcloudLink}
+                    href={data.soundcloudLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 rounded-full bg-orange-100 px-3 py-1.5 text-sm text-orange-700 transition-colors duration-200 hover:bg-orange-200"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-full text-orange-700 transition-colors duration-200 hover:bg-orange-200"
                   >
-                    <Icon name="arcticons:soundcloud" />
-                    <span>SoundCloud</span>
+                    <Icon name="arcticons:soundcloud" size={32} />
                   </a>
                 )}
               </div>
@@ -92,5 +110,74 @@ import Layout from "../layouts/Layout.astro";
         ))
       }
     </div>
+    <h2 class="mb-4">Unreleased stuff</h2>
+    <div class="space-y-6">
+      {
+        localRecordings.map(({ data }, index) => (
+          <div class="flex items-center gap-6 rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md">
+            {data.image && (
+              <div class="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-md">
+                <Image
+                  src={data.image}
+                  width={80}
+                  height={80}
+                  quality={100}
+                  alt={`${data.artist} - ${data.name}`}
+                  class="h-full w-full object-cover"
+                />
+              </div>
+            )}
+            <div class="flex-grow">
+              <h3 class="font-medium">{data.name}</h3>
+              <p class="text-sm text-gray-600">{data.artist}</p>
+              {data.year && <p class="text-sm text-gray-600">{data.year}</p>}
+              {data.description && (
+                <p class="text-sm text-gray-600">{data.description}</p>
+              )}
+              {data.localFile && (
+                <audio controls class="mt-2 w-full">
+                  <source
+                    src={`audio/${data.localFile.src}`}
+                    type={`audio/${data.localFile.format ? data.localFile.format : "mpeg"}`}
+                  />
+                  Your browser does not support the audio element.
+                </audio>
+              )}
+            </div>
+            {data.soundcloudLink && (
+              <a
+                href={data.soundcloudLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex-shrink-0"
+              >
+                <Icon
+                  name="arcticons:soundcloud"
+                  size={24}
+                  class="text-orange-500 transition-colors hover:text-orange-600"
+                />
+              </a>
+            )}
+          </div>
+        ))
+      }
+    </div>
   </div>
 </Layout>
+
+<script>
+  // Get all audio elements
+  const audioElements = document.querySelectorAll("audio");
+
+  // Add event listener to each audio element
+  audioElements.forEach((audio) => {
+    audio.addEventListener("play", () => {
+      // When one audio starts playing, pause all others
+      audioElements.forEach((otherAudio) => {
+        if (otherAudio !== audio) {
+          otherAudio.pause();
+        }
+      });
+    });
+  });
+</script>
