@@ -19,6 +19,19 @@ import videos from "../data/videos.json";
               </h2>
               {video.youtubeLink && <YouTube id={video.youtubeLink} />}
               <p class="text-sm text-gray-500 mb-4">{video.description}</p>
+              {video.isPlaylist && (
+                <p class="text-sm text-gray-500 mb-4">
+                  <a
+                    href={video.youtubeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 px-3 py-1.5 text-sm bg-red-100 text-red-700  rounded-full hover:bg-red-200 transition-colors duration-200"
+                  >
+                    <Icon name="arcticons:youtube" />
+                    View full playlist
+                  </a>
+                </p>
+              )}
             </div>
           </div>
         ))
