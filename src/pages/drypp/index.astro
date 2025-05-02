@@ -1,6 +1,6 @@
 ---
-import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
 
 const posts = (await getCollection("drypp")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -13,7 +13,7 @@ const sortedPosts = posts.sort(
 ---
 
 <Layout title="Drypp">
-  <div class="max-w-7xl mx-auto" transition:name="drypp-content">
+  <div class="mx-auto max-w-7xl" transition:name="drypp-content">
     <h1 class="mb-12" transition:name="drypp-title">Drypp</h1>
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
@@ -24,7 +24,7 @@ const sortedPosts = posts.sort(
                 <img
                   src={post.data.heroImage}
                   alt={post.data.title}
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
             )}
@@ -32,12 +32,12 @@ const sortedPosts = posts.sort(
               <h2 class="mb-1">
                 <a
                   href={`/drypp/${post.id}`}
-                  class="hover:text-blue-600 transition-colors"
+                  class="transition-colors hover:text-blue-600"
                 >
                   {post.data.title}
                 </a>
               </h2>
-              <p class="text-sm text-gray-500 mb-4">{post.data.description}</p>
+              <p class="mb-4 text-sm text-gray-500">{post.data.description}</p>
               <time
                 datetime={post.data.pubDate.toISOString()}
                 class="text-sm text-gray-400"

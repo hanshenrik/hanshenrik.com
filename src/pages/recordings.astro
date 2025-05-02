@@ -1,12 +1,12 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import recordings from "../data/recordings.json";
-import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import recordings from "../data/recordings.json";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Recordings">
-  <div class="max-w-7xl mx-auto">
+  <div class="mx-auto max-w-7xl">
     <h1 class="mb-12">Recordings</h1>
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
@@ -20,14 +20,14 @@ import { Icon } from "astro-icon/components";
                   height={400}
                   quality={100}
                   alt={`${recording.artist} - ${recording.name}`}
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
             )}
             <div class="card-content">
               <h2 class="mb-1">{recording.name}</h2>
-              <p class="text-gray-600  mb-3">{recording.artist}</p>
-              <p class="text-sm text-gray-500  mb-4 line-clamp-2">
+              <p class="mb-3 text-gray-600">{recording.artist}</p>
+              <p class="mb-4 line-clamp-2 text-sm text-gray-500">
                 {recording.description}
               </p>
               <div class="flex flex-wrap gap-3">
@@ -36,7 +36,7 @@ import { Icon } from "astro-icon/components";
                     href={recording.youtubeLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 px-3 py-1.5 text-sm bg-red-100 text-red-700  rounded-full hover:bg-red-200 transition-colors duration-200"
+                    class="inline-flex items-center gap-1 rounded-full bg-red-100 px-3 py-1.5 text-sm text-red-700 transition-colors duration-200 hover:bg-red-200"
                   >
                     <Icon name="arcticons:youtube" />
                     <span>YouTube</span>
@@ -47,7 +47,7 @@ import { Icon } from "astro-icon/components";
                     href={recording.spotifyLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 px-3 py-1.5 text-sm bg-green-100 text-green-700  rounded-full hover:bg-green-200 transition-colors duration-200"
+                    class="inline-flex items-center gap-1 rounded-full bg-green-100 px-3 py-1.5 text-sm text-green-700 transition-colors duration-200 hover:bg-green-200"
                   >
                     <Icon name="arcticons:spotify" />
                     <span>Spotify</span>
@@ -58,7 +58,7 @@ import { Icon } from "astro-icon/components";
                     href={recording.appleLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 px-3 py-1.5 text-sm bg-pink-100 text-pink-700  rounded-full hover:bg-pink-200 transition-colors duration-200"
+                    class="inline-flex items-center gap-1 rounded-full bg-pink-100 px-3 py-1.5 text-sm text-pink-700 transition-colors duration-200 hover:bg-pink-200"
                   >
                     <Icon name="arcticons:apple" />
                     <span>Apple Music</span>
@@ -69,7 +69,7 @@ import { Icon } from "astro-icon/components";
                     href={recording.tidalLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 px-3 py-1.5 text-sm bg-blue-100 text-blue-700  rounded-full hover:bg-blue-200  transition-colors duration-200"
+                    class="inline-flex items-center gap-1 rounded-full bg-blue-100 px-3 py-1.5 text-sm text-blue-700 transition-colors duration-200 hover:bg-blue-200"
                   >
                     <Icon name="arcticons:tidal" />
                     <span>Tidal</span>
@@ -80,7 +80,7 @@ import { Icon } from "astro-icon/components";
                     href={recording.soundcloudLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 px-3 py-1.5 text-sm bg-orange-100 text-orange-700 rounded-full hover:bg-orange-200  transition-colors duration-200"
+                    class="inline-flex items-center gap-1 rounded-full bg-orange-100 px-3 py-1.5 text-sm text-orange-700 transition-colors duration-200 hover:bg-orange-200"
                   >
                     <Icon name="arcticons:soundcloud" />
                     <span>SoundCloud</span>

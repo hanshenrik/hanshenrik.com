@@ -1,13 +1,13 @@
 ---
-import { Icon } from "astro-icon/components";
 import { YouTube } from "astro-embed";
+import { Icon } from "astro-icon/components";
 
-import Layout from "../layouts/Layout.astro";
 import videos from "../data/videos.json";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Videos">
-  <div class="max-w-7xl mx-auto">
+  <div class="mx-auto max-w-7xl">
     <h1 class="mb-12">Videos</h1>
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
@@ -18,14 +18,14 @@ import videos from "../data/videos.json";
                 {video.artist} - {video.name}
               </h2>
               {video.youtubeLink && <YouTube id={video.youtubeLink} />}
-              <p class="text-sm text-gray-500 mb-4">{video.description}</p>
+              <p class="mb-4 text-sm text-gray-500">{video.description}</p>
               {video.isPlaylist && (
-                <p class="text-sm text-gray-500 mb-4">
+                <p class="mb-4 text-sm text-gray-500">
                   <a
                     href={video.youtubeLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 px-3 py-1.5 text-sm bg-red-100 text-red-700  rounded-full hover:bg-red-200 transition-colors duration-200"
+                    class="inline-flex items-center gap-1 rounded-full bg-red-100 px-3 py-1.5 text-sm text-red-700 transition-colors duration-200 hover:bg-red-200"
                   >
                     <Icon name="arcticons:youtube" />
                     View full playlist

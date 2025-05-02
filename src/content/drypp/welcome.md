@@ -14,4 +14,4 @@ Welcome to Drypp, my personal blog where I share thoughts, ideas, and creative e
 - Personal reflections
 - Creative writing
 
-Stay tuned for more content coming soon! 
+Stay tuned for more content coming soon!

@@ -1,19 +1,19 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { Picture } from "astro:assets";
 import { Icon } from "astro-icon/components";
+import { Picture } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
 
 import softwares from "../data/softwares.json";
 
-import mandaljazz from "../assets/images/mandaljazz.png";
-import ronsenrock from "../assets/images/ronsenrock.png";
-import rishatt from "../assets/images/rishatt.png";
-import jazzkart from "../assets/images/jazzkart.png";
-import kickmap from "../assets/images/kickmap.png";
-import whenfm from "../assets/images/when-fm.png";
-import kjorromskip from "../assets/images/kjorromskip.png";
 import eliaseine from "../assets/images/eliaseine.png";
 import hakonhammer from "../assets/images/hakonhammer.png";
+import jazzkart from "../assets/images/jazzkart.png";
+import kickmap from "../assets/images/kickmap.png";
+import kjorromskip from "../assets/images/kjorromskip.png";
+import mandaljazz from "../assets/images/mandaljazz.png";
+import rishatt from "../assets/images/rishatt.png";
+import ronsenrock from "../assets/images/ronsenrock.png";
+import whenfm from "../assets/images/when-fm.png";
 
 const imageMap: Record<string, ImageMetadata> = {
   "mandaljazz.no": mandaljazz,
@@ -29,7 +29,7 @@ const imageMap: Record<string, ImageMetadata> = {
 ---
 
 <Layout title="Software Projects">
-  <div class="max-w-7xl mx-auto">
+  <div class="mx-auto max-w-7xl">
     <h1 class="mb-12">Software Projects</h1>
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
@@ -41,19 +41,19 @@ const imageMap: Record<string, ImageMetadata> = {
                 src={imageMap[software.name]}
                 quality={100}
                 alt={software.name}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
             <div class="card-content">
               <h2 class="mb-2">{software.name}</h2>
-              <p class="text-gray-600 mb-4">{software.description}</p>
+              <p class="mb-4 text-gray-600">{software.description}</p>
               <div class="flex flex-wrap gap-3">
                 {software.url && (
                   <a
                     href={software.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 px-3 py-1.5 text-sm bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition-colors duration-200"
+                    class="inline-flex items-center gap-1 rounded-full bg-blue-100 px-3 py-1.5 text-sm text-blue-700 transition-colors duration-200 hover:bg-blue-200"
                   >
                     <Icon name="arcticons:emoji-globe-with-meridians" />
                     Visit Site
@@ -64,7 +64,7 @@ const imageMap: Record<string, ImageMetadata> = {
                     href={software.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 px-3 py-1.5 text-sm bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-colors duration-200"
+                    class="inline-flex items-center gap-1 rounded-full bg-gray-100 px-3 py-1.5 text-sm text-gray-700 transition-colors duration-200 hover:bg-gray-200"
                   >
                     <Icon name="arcticons:github" />
                     GitHub
