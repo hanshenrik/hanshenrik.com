@@ -1,0 +1,93 @@
+---
+import { Icon } from "astro-icon/components";
+
+const noteIcons = [
+  "arcticons:music",
+  "arcticons:emoji-multiple-musical-notes",
+  "arcticons:lineage-music",
+  "arcticons:line-music",
+  "arcticons:music-alt-3",
+  "arcticons:music-alt-1",
+  "arcticons:nintendo-music",
+];
+
+const soundFiles = Array.from({ length: 14 }, (_, i) => {
+  const num = i + 1;
+  return `${num.toString().padStart(2, "0")}.mp3`;
+});
+---
+
+<div class="relative">
+  <div class="pointer-events-none absolute inset-0">
+    {
+      noteIcons.map((icon) => (
+        <Icon
+          class="piano-plukk-note hidden"
+          name={icon}
+          size={48}
+          stroke-width={1.5}
+        />
+      ))
+    }
+  </div>
+  <button
+    class="inline-flex cursor-pointer items-center gap-2 rounded-full px-3 py-1.5 text-sm text-gray-700 transition-colors duration-200 hover:bg-gray-200"
+    id="piano-plukk-trigger"
+  >
+    <Icon name="arcticons:piano" size={20} />
+  </button>
+</div>
+
+<style>
+  .piano-plukk-note {
+    position: fixed;
+    opacity: 0.3;
+  }
+</style>
+
+<script define:vars={{ soundFiles }}>
+  const button = document.getElementById("piano-plukk-trigger");
+  const notes = document.querySelectorAll(".piano-plukk-note");
+  const audioCache = new Map();
+  let previousFile = "";
+
+  // Preload all audio files
+  soundFiles.forEach((file) => {
+    const audio = new Audio(`/audio/pianoplukk/mp3/${file}`);
+    audio.preload = "auto";
+    audioCache.set(file, audio);
+  });
+
+  function showNote(note) {
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+
+    note.setAttribute("style", `left: ${x}px; top: ${y}px;`);
+    note.classList.remove("hidden");
+
+    setTimeout(() => note.classList.add("hidden"), 500);
+  }
+
+  function playRandomSound() {
+    const filteredFiles = soundFiles.filter((file) => file !== previousFile);
+    const randomFile =
+      filteredFiles[Math.floor(Math.random() * filteredFiles.length)];
+    previousFile = randomFile;
+
+    const audio = audioCache.get(randomFile).cloneNode();
+    audio.play();
+
+    audio.addEventListener("ended", () => {
+      const index = Array.from(audioCache.values()).indexOf(audio);
+      if (index > -1) {
+        audioCache.delete(soundFiles[index]);
+      }
+    });
+  }
+
+  button?.addEventListener("click", () => {
+    const randomNote = notes[Math.floor(Math.random() * notes.length)];
+    showNote(randomNote);
+    playRandomSound();
+  });
+</script>
