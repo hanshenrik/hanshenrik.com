@@ -53,7 +53,7 @@ const soundFiles = Array.from({ length: 20 }, (_, i) => {
 
   // Preload all audio files
   soundFiles.forEach((file) => {
-    const audio = new Audio(`/audio/pianoplukk/mp3/${file}`);
+    const audio = new Audio(`/audio/pianoplukk/${file}`);
     audio.preload = "auto";
     audioCache.set(file, audio);
   });
