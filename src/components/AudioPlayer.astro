@@ -1,0 +1,179 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  recordings: any[];
+  title: string;
+}
+
+const { recordings, title } = Astro.props;
+---
+
+<div>
+  <h3 class="mb-4">{title}</h3>
+  <div class="max-w-full rounded-lg border border-gray-200 bg-white shadow-sm">
+    <!-- Player Controls -->
+    <div class="flex items-center gap-4 border-b border-gray-100 p-4">
+      <button
+        id="prev-track"
+        class="rounded-full p-2 text-gray-600 hover:bg-gray-100"
+        aria-label="Previous track"
+      >
+        ⏮️
+      </button>
+      <button
+        id="play-pause"
+        class="rounded-full p-2 text-gray-600 hover:bg-gray-100"
+        aria-label="Play/Pause"
+      >
+        ⏯️
+      </button>
+      <button
+        id="next-track"
+        class="rounded-full p-2 text-gray-600 hover:bg-gray-100"
+        aria-label="Next track"
+      >
+        ⏭️
+      </button>
+      <div class="flex-1">
+        <div class="text-sm font-medium text-gray-900" id="now-playing">
+          Select a track to play
+        </div>
+        <div class="text-xs text-gray-500" id="now-playing-artist"></div>
+      </div>
+    </div>
+    <!-- Track List -->
+    <div class="divide-y divide-gray-100">
+      {
+        recordings.map(({ data }, index) => (
+          <button
+            class="flex w-full items-center gap-4 p-3 text-left hover:bg-gray-50"
+            data-track-index={index}
+          >
+            <div class="flex min-w-0 flex-1 items-center gap-4">
+              {data.image && (
+                <div class="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded">
+                  <Image
+                    src={data.image}
+                    width={48}
+                    height={48}
+                    quality={100}
+                    alt={`${data.artist} - ${data.name}`}
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+              )}
+              <div class="min-w-0 flex-1">
+                <h3 class="max-w-full truncate font-medium whitespace-break-spaces text-gray-900">
+                  {data.name}
+                </h3>
+                <p class="truncate text-sm text-gray-600">{data.artist}</p>
+              </div>
+              {data.localFile && (
+                <source
+                  src={`audio/recordings/${data.localFile.src}`}
+                  type={`audio/${data.localFile.format ? data.localFile.format : "mpeg"}`}
+                />
+              )}
+            </div>
+          </button>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  const tracks =
+    document.querySelectorAll<HTMLButtonElement>("[data-track-index]");
+  const playPauseBtn = document.getElementById("play-pause");
+  const prevBtn = document.getElementById("prev-track");
+  const nextBtn = document.getElementById("next-track");
+  const nowPlaying = document.getElementById("now-playing");
+  const nowPlayingArtist = document.getElementById("now-playing-artist");
+
+  if (
+    !playPauseBtn ||
+    !prevBtn ||
+    !nextBtn ||
+    !nowPlaying ||
+    !nowPlayingArtist
+  ) {
+    throw new Error("Required player elements not found");
+  }
+
+  const playPauseBtnNonNull = playPauseBtn!;
+  const nowPlayingNonNull = nowPlaying!;
+  const nowPlayingArtistNonNull = nowPlayingArtist!;
+
+  let currentTrack: HTMLButtonElement | null = null;
+  let currentIndex = -1;
+  const audio = new Audio();
+
+  function updateNowPlaying(track: HTMLButtonElement): void {
+    const name = track.querySelector("h3")?.textContent ?? "";
+    const artist = track.querySelector("p")?.textContent ?? "";
+    nowPlayingNonNull.textContent = name;
+    nowPlayingArtistNonNull.textContent = artist;
+  }
+
+  function setActiveTrack(track: HTMLButtonElement): void {
+    tracks.forEach((t) => t.classList.remove("bg-gray-50"));
+    track.classList.add("bg-gray-50");
+  }
+
+  function playTrack(index: number): void {
+    const track = tracks[index];
+    const source = track.querySelector("source");
+    if (!source?.src) return;
+
+    currentIndex = index;
+    currentTrack = track;
+    audio.src = source.src;
+    audio.play();
+    updateNowPlaying(track);
+    setActiveTrack(track);
+    playPauseBtnNonNull.textContent = "⏸️";
+  }
+
+  function togglePlayPause(): void {
+    if (!currentTrack) return;
+
+    if (audio.paused) {
+      audio.play();
+      playPauseBtnNonNull.textContent = "⏸️";
+    } else {
+      audio.pause();
+      playPauseBtnNonNull.textContent = "⏯️";
+    }
+  }
+
+  function playNext(): void {
+    if (currentIndex < tracks.length - 1) {
+      playTrack(currentIndex + 1);
+    }
+  }
+
+  function playPrev(): void {
+    if (currentIndex > 0) {
+      playTrack(currentIndex - 1);
+    }
+  }
+
+  // Event Listeners
+  tracks.forEach((track, index) => {
+    track.addEventListener("click", () => playTrack(index));
+  });
+
+  playPauseBtnNonNull.addEventListener("click", togglePlayPause);
+  prevBtn.addEventListener("click", playPrev);
+  nextBtn.addEventListener("click", playNext);
+
+  audio.addEventListener("ended", playNext);
+  audio.addEventListener("pause", () => {
+    playPauseBtnNonNull.textContent = "⏯️";
+  });
+  audio.addEventListener("play", () => {
+    playPauseBtnNonNull.textContent = "⏸️";
+  });
+</script>

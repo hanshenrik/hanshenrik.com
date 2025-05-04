@@ -33,6 +33,7 @@ const recordings = defineCollection({
       .object({
         src: z.string(),
         format: z.string().optional(),
+        type: z.enum(["band", "solo"]),
       })
       .optional(),
   }),

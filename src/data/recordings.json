@@ -144,7 +144,8 @@
     "imageAttribution": "Johny Goerend",
     "localFile": {
       "src": "er4-stella-by-starlight-take-3.mp4",
-      "format": "mp4"
+      "format": "mp4",
+      "type": "band"
     }
   },
   {
@@ -157,7 +158,8 @@
     "imageAttribution": "Annie Spratt",
     "localFile": {
       "src": "er4-luger.mp4",
-      "format": "mp4"
+      "format": "mp4",
+      "type": "band"
     }
   },
   {
@@ -170,7 +172,8 @@
     "imageAttribution": "Jr Korpa",
     "localFile": {
       "src": "eline-hellerud-asbakk-bad-news.mp3",
-      "format": "mp3"
+      "format": "mp3",
+      "type": "band"
     }
   },
   {
@@ -183,7 +186,8 @@
     "imageAttribution": "Mae Mu",
     "localFile": {
       "src": "eline-hellerud-asbakk-quiet-quark-quintet-hit-me-baby-one-more-time.mp3",
-      "format": "mp3"
+      "format": "mp3",
+      "type": "band"
     }
   },
   {
@@ -196,7 +200,8 @@
     "imageAttribution": "Amador Loureiro",
     "localFile": {
       "src": "quiet-quark-quintet-lars-olav-berg-frontpage-story.mp3",
-      "format": "mp3"
+      "format": "mp3",
+      "type": "band"
     }
   },
   {
@@ -209,7 +214,8 @@
     "imageAttribution": "Tim Mossholder",
     "localFile": {
       "src": "sarah-fullerton-andre-aamas-hans-henrik-gronsleth-september.mp3",
-      "format": "mp3"
+      "format": "mp3",
+      "type": "band"
     }
   },
   {
@@ -222,7 +228,8 @@
     "imageAttribution": "Milad Fakurian",
     "localFile": {
       "src": "lady-music-sounds-better-with-you-freestyler.mp3",
-      "format": "mp3"
+      "format": "mp3",
+      "type": "band"
     }
   },
   {
@@ -244,7 +251,8 @@
     "imageAttribution": "Orfeas Green",
     "localFile": {
       "src": "hh4-revamp.mp3",
-      "format": "mp3"
+      "format": "mp3",
+      "type": "band"
     }
   },
   {
@@ -257,7 +265,8 @@
     "imageAttribution": "Orfeas Green",
     "localFile": {
       "src": "hh4-revamp.mp3",
-      "format": "mp3"
+      "format": "mp3",
+      "type": "band"
     }
   },
   {
@@ -270,7 +279,8 @@
     "imageAttribution": ". liane .",
     "localFile": {
       "src": "dereks-oh-woman.mp3",
-      "format": "mp3"
+      "format": "mp3",
+      "type": "band"
     }
   },
   {
@@ -281,7 +291,8 @@
     "image": "https://images.unsplash.com/photo-1590005608858-67892d55ae86?q=80&w=500&auto=format&fit=crop",
     "localFile": {
       "src": "dereks-feel-so-bad.mp3",
-      "format": "mp3"
+      "format": "mp3",
+      "type": "band"
     }
   }
 ]
