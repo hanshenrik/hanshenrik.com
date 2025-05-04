@@ -29,7 +29,7 @@ const sortYearsDesc = (years: Record<string, Gig[]>) => {
 };
 ---
 
-<Layout title="Upcoming Gigs">
+<Layout title="Gigs">
   <h1 class="mb-8 text-3xl font-bold">Gigs</h1>
   {
     sortYearsDesc(groupGigsByYear(sortedGigs)).map(

@@ -28,21 +28,37 @@ const imageMap: Record<string, ImageMetadata> = {
 };
 ---
 
-<Layout title="Software Projects">
+<Layout title="Software">
   <div class="mx-auto max-w-7xl">
-    <h1 class="mb-12">Software Projects</h1>
+    <h1 class="mb-12">Software</h1>
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
         softwares.map((software) => (
           <div class="card group">
             <div class="relative aspect-video overflow-hidden">
-              <Picture
-                formats={["avif", "webp"]}
-                src={imageMap[software.name]}
-                quality={100}
-                alt={software.name}
-                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
+              {software.url ? (
+                <a
+                  href={software.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Picture
+                    formats={["avif", "webp"]}
+                    src={imageMap[software.name]}
+                    quality={100}
+                    alt={software.name}
+                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </a>
+              ) : (
+                <Picture
+                  formats={["avif", "webp"]}
+                  src={imageMap[software.name]}
+                  quality={100}
+                  alt={software.name}
+                  class="h-full w-full object-cover"
+                />
+              )}
             </div>
             <div class="card-content">
               <h2 class="mb-2">{software.name}</h2>
