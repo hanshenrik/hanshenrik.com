@@ -2,17 +2,20 @@
   {
     "artist": "Lisa Nybrott",
     "name": "By the Water",
-    "youtubeLink": "https://www.youtube.com/watch?v=76NksO2YNcQ"
+    "youtubeLink": "https://www.youtube.com/watch?v=76NksO2YNcQ",
+    "description": "Music video."
   },
   {
     "artist": "Kjør Romskip",
     "name": "Romturist",
-    "youtubeLink": "https://www.youtube.com/watch?v=-GzNoOeA7ho"
+    "youtubeLink": "https://www.youtube.com/watch?v=-GzNoOeA7ho",
+    "description": "Music video by Jørgen Jensås."
   },
   {
     "artist": "Kjør Romskip",
     "name": "Gnist",
-    "youtubeLink": "https://www.youtube.com/watch?v=qOg_ieDhuS4"
+    "youtubeLink": "https://www.youtube.com/watch?v=qOg_ieDhuS4",
+    "description": "Music video by Lasse Røed."
   },
   {
     "artist": "Larschens Lævende Lydmageri",

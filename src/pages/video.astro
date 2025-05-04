@@ -6,18 +6,18 @@ import videos from "../data/videos.json";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Videos">
+<Layout title="Video">
   <div class="mx-auto max-w-7xl">
-    <h1 class="mb-12">Videos</h1>
+    <h1 class="mb-12">Video</h1>
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
         videos.map((video) => (
-          <div class="card group">
+          <div class="card group space-y-2">
+            {video.youtubeLink && <YouTube id={video.youtubeLink} />}
             <div class="card-content">
               <h2 class="mb-1">
                 {video.artist} - {video.name}
               </h2>
-              {video.youtubeLink && <YouTube id={video.youtubeLink} />}
               <p class="mb-4 text-sm text-gray-500">{video.description}</p>
               {video.isPlaylist && (
                 <p class="mb-4 text-sm text-gray-500">

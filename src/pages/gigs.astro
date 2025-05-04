@@ -38,67 +38,65 @@ const sortYearsDesc = (years: Record<string, Gig[]>) => {
           <summary class="cursor-pointer text-lg font-medium hover:text-gray-600">
             {year}
           </summary>
-          <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 group-open:grid-rows-[1fr]">
-            <div class="overflow-hidden">
-              <div class="mt-2">
-                <div class="grid grid-cols-[120px_1fr_1fr] gap-4 bg-gray-50 px-6 py-3 text-xs font-medium tracking-wider text-gray-500 uppercase">
-                  <div>Date</div>
-                  <div>Artist & Venue</div>
-                  <div>Description</div>
-                </div>
-                <div class="divide-y divide-gray-200">
-                  {yearGigs.map((gig: Gig) => (
-                    <div class="grid grid-cols-[120px_1fr_1fr] gap-4 px-6 py-4 hover:bg-gray-50">
-                      <time
-                        datetime={gig.date}
-                        class="text-sm whitespace-nowrap text-gray-500"
-                      >
-                        {format(new Date(gig.date), "MMMM do")}
-                      </time>
-                      <div>
-                        <div class="font-medium text-gray-900">
-                          {gig.artistUrl ? (
-                            <a
-                              href={gig.artistUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              {gig.artist}
-                            </a>
-                          ) : (
-                            gig.artist
-                          )}
-                        </div>
-                        <div class="text-sm text-gray-500">
-                          {gig.venueUrl ? (
-                            <a
-                              href={gig.venueUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              {gig.venue}
-                            </a>
-                          ) : (
-                            gig.venue
-                          )}
-                        </div>
-                      </div>
-                      <div>
-                        {gig.eventUrl ? (
+          <div class="grid">
+            <div class="mt-2">
+              <div class="grid grid-cols-[120px_1fr_1fr] gap-4 bg-gray-50 px-6 py-3 text-xs font-medium tracking-wider text-gray-500 uppercase">
+                <div>Date</div>
+                <div>Artist & Venue</div>
+                <div>Description</div>
+              </div>
+              <div class="divide-y divide-gray-200">
+                {yearGigs.map((gig: Gig) => (
+                  <div class="grid grid-cols-[120px_1fr_1fr] gap-4 px-6 py-4 hover:bg-gray-50">
+                    <time
+                      datetime={gig.date}
+                      class="text-sm whitespace-nowrap text-gray-500"
+                    >
+                      {format(new Date(gig.date), "MMMM do")}
+                    </time>
+                    <div>
+                      <div class="font-medium text-gray-900">
+                        {gig.artistUrl ? (
                           <a
-                            href={gig.eventUrl}
+                            href={gig.artistUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            {gig.eventDescription}
+                            {gig.artist}
                           </a>
                         ) : (
-                          gig.eventDescription
+                          gig.artist
+                        )}
+                      </div>
+                      <div class="text-sm text-gray-500">
+                        {gig.venueUrl ? (
+                          <a
+                            href={gig.venueUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {gig.venue}
+                          </a>
+                        ) : (
+                          gig.venue
                         )}
                       </div>
                     </div>
-                  ))}
-                </div>
+                    <div>
+                      {gig.eventUrl ? (
+                        <a
+                          href={gig.eventUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {gig.eventDescription}
+                        </a>
+                      ) : (
+                        gig.eventDescription
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

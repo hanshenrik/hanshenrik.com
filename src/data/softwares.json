@@ -1,12 +1,12 @@
 [
   {
-    "name": "mandaljazz.no",
+    "name": "Mandaljazz",
     "description": "Website for the jazz festival Mandaljazz.",
     "url": "https://mandaljazz.no",
     "githubUrl": "https://github.com/mandaljazz/mandaljazz-astro"
   },
   {
-    "name": "rønsenrock.no",
+    "name": "RønsenROCK",
     "description": "Website for the music festival RønsenROCK.",
     "url": "https://ronsenrock.hanshenrik.com",
     "githubUrl": "https://github.com/hanshenrik/ronsenrock"
@@ -35,19 +35,19 @@
     "githubUrl": "https://github.com/hanshenrik/when.fm"
   },
   {
-    "name": "kjorromskip.no",
+    "name": "Kjør Romskip",
     "description": "Website for the band Kjør Romskip.",
     "url": "https://kjorromskip.no",
     "githubUrl": "https://github.com/hanshenrik/kjorromskip.no"
   },
   {
-    "name": "eliaseine.no",
+    "name": "Elias Eine",
     "description": "Website for the artist Elias Eine.",
     "url": "https://eliaseine.hanshenrik.com",
     "githubUrl": "https://github.com/hanshenrik/eliaseine.no"
   },
   {
-    "name": "hakonhammer.no",
+    "name": "Håkon Hammer",
     "description": "Website for the musician Håkon Hammer.",
     "url": "https://hakonhammer.no",
     "githubUrl": "https://github.com/hanshenrik/hakonhammer.no"

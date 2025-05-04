@@ -16,25 +16,32 @@ import ronsenrock from "../assets/images/ronsenrock.png";
 import whenfm from "../assets/images/when-fm.png";
 
 const imageMap: Record<string, ImageMetadata> = {
-  "mandaljazz.no": mandaljazz,
-  "rønsenrock.no": ronsenrock,
+  Mandaljazz: mandaljazz,
+  RønsenROCK: ronsenrock,
   "rishatt.no": rishatt,
   Jazzkart: jazzkart,
   kickmap: kickmap,
   "when.fm": whenfm,
-  "kjorromskip.no": kjorromskip,
-  "eliaseine.no": eliaseine,
-  "hakonhammer.no": hakonhammer,
+  "Kjør Romskip": kjorromskip,
+  "Elias Eine": eliaseine,
+  "Håkon Hammer": hakonhammer,
 };
 ---
 
 <Layout title="Software">
-  <div class="mx-auto max-w-7xl">
+  <div class="mx-auto max-w-7xl space-y-8">
     <h1 class="mb-12">Software</h1>
+    <p>
+      I currently work at <a
+        href="https://www.folq.no"
+        target="_blank"
+        rel="noopener noreferrer">Folq</a
+      >. Below are some of my personal projects.
+    </p>
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
         softwares.map((software) => (
-          <div class="card group">
+          <div class="card group space-y-2">
             <div class="relative aspect-video overflow-hidden">
               {software.url ? (
                 <a
