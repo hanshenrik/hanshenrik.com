@@ -53,16 +53,48 @@ const sortYearsDesc = (years: Record<string, Gig[]>) => {
                         datetime={gig.date}
                         class="text-sm whitespace-nowrap text-gray-500"
                       >
-                        {format(new Date(gig.date), "dd MMM yyyy")}
+                        {format(new Date(gig.date), "MMMM do")}
                       </time>
                       <div>
                         <div class="font-medium text-gray-900">
-                          {gig.artist}
+                          {gig.artistUrl ? (
+                            <a
+                              href={gig.artistUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {gig.artist}
+                            </a>
+                          ) : (
+                            gig.artist
+                          )}
                         </div>
-                        <div class="text-sm text-gray-500">{gig.venue}</div>
+                        <div class="text-sm text-gray-500">
+                          {gig.venueUrl ? (
+                            <a
+                              href={gig.venueUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {gig.venue}
+                            </a>
+                          ) : (
+                            gig.venue
+                          )}
+                        </div>
                       </div>
-                      <div class="text-sm text-gray-500">
-                        {gig.eventDescription}
+                      <div>
+                        {gig.eventUrl ? (
+                          <a
+                            href={gig.eventUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {gig.eventDescription}
+                          </a>
+                        ) : (
+                          gig.eventDescription
+                        )}
                       </div>
                     </div>
                   ))}
