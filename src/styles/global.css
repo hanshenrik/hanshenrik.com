@@ -16,6 +16,14 @@
   h2 {
     @apply text-2xl font-semibold tracking-tight;
   }
+
+  button {
+    @apply cursor-pointer;
+  }
+
+  summary {
+    @apply cursor-pointer;
+  }
 }
 
 @layer components {

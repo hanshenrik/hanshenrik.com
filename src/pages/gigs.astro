@@ -24,7 +24,7 @@ const sortYearsDesc = (years: Record<string, CollectionEntry<"gigs">[]>) => {
     sortYearsDesc(groupGigsByYear(sortedGigs)).map(
       ([year, yearGigs], index) => (
         <details class="group mb-4" open={index === 0}>
-          <summary class="cursor-pointer text-lg font-medium hover:text-gray-600">
+          <summary class="text-lg font-medium hover:text-gray-600">
             {year}
           </summary>
           <div class="grid">

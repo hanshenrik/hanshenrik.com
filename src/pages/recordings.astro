@@ -54,17 +54,15 @@ const localRecordings = recordings.filter(
               </div>
             )}
             <div class="card-content py-1">
-              <div class="mx-auto flex w-fit flex-wrap gap-1">
-                {data.tidalLink && (
-                  <a
-                    href={data.tidalLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-full text-black transition-colors duration-200 hover:bg-black hover:text-white"
-                  >
-                    <Icon name="arcticons:tidal" stroke-width={1.5} size={24} />
-                  </a>
-                )}
+              <h3 class="text-lg font-medium">{data.artist}</h3>
+              <h4 class="text-sm text-gray-500">{data.name}</h4>
+              <details class="text-sm text-gray-500">
+                <summary>More</summary>
+                <div class="mt-2">
+                  <p class="text-sm text-gray-500">{data.description}</p>
+                </div>
+              </details>
+              <div class="flex w-fit flex-wrap gap-1">
                 {data.spotifyLink && (
                   <a
                     href={data.spotifyLink}
@@ -75,6 +73,16 @@ const localRecordings = recordings.filter(
                     <Icon name="arcticons:spotify" size={24} />
                   </a>
                 )}
+                {data.tidalLink && (
+                  <a
+                    href={data.tidalLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-full text-black transition-colors duration-200 hover:bg-black hover:text-white"
+                  >
+                    <Icon name="arcticons:tidal" stroke-width={1.5} size={24} />
+                  </a>
+                )}
                 {data.appleLink && (
                   <a
                     href={data.appleLink}
@@ -83,16 +91,6 @@ const localRecordings = recordings.filter(
                     class="inline-flex h-10 w-10 items-center justify-center rounded-full text-pink-700 transition-colors duration-200 hover:bg-pink-200"
                   >
                     <Icon name="arcticons:apple" size={24} />
-                  </a>
-                )}
-                {data.youtubeLink && (
-                  <a
-                    href={data.youtubeLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-full text-red-700 transition-colors duration-200 hover:bg-red-200"
-                  >
-                    <Icon name="arcticons:youtube" size={24} />
                   </a>
                 )}
                 {data.soundcloudLink && (
@@ -112,6 +110,18 @@ const localRecordings = recordings.filter(
       }
     </div>
     <h2 class="mb-4">Unreleased stuff</h2>
+    <p>
+      More music at
+      <Link
+        href="https://soundcloud.com/hanshenrik"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex w-fit items-center gap-1"
+      >
+        <Icon name="arcticons:soundcloud" />
+        <span>SoundCloud</span>
+      </Link>.
+    </p>
     <div class="rounded-lg border border-gray-200 bg-white shadow-sm">
       <!-- Player Controls -->
       <div class="flex items-center gap-4 border-b border-gray-100 p-4">
@@ -175,17 +185,6 @@ const localRecordings = recordings.filter(
                     src={`audio/recordings/${data.localFile.src}`}
                     type={`audio/${data.localFile.format ? data.localFile.format : "mpeg"}`}
                   />
-                )}
-                {data.soundcloudLink && (
-                  <a
-                    href={data.soundcloudLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="flex-shrink-0 text-orange-500 transition-colors hover:text-orange-600"
-                    onclick="event.stopPropagation()"
-                  >
-                    <Icon name="arcticons:soundcloud" size={20} />
-                  </a>
                 )}
               </div>
             </button>
