@@ -1,30 +1,19 @@
 ---
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import { format } from "date-fns";
 import { groupBy, orderBy } from "lodash-es";
-import gigs from "../data/gigs.json";
+import Link from "../components/Link.astro";
 import Layout from "../layouts/Layout.astro";
 
-type Gig = {
-  date: string;
-  venue: string;
-  venueUrl: string;
-  city: string;
-  artist: string;
-  artistUrl: string;
-  eventDescription: string;
-  eventUrl: string;
-  facebookUrl: string;
-  ticketsUrl: string;
-  createdAt: string;
+const gigs = await getCollection("gigs");
+const sortedGigs = orderBy(gigs, "data.date", "desc");
+
+const groupGigsByYear = (gigs: CollectionEntry<"gigs">[]) => {
+  return groupBy(gigs, (gig) => new Date(gig.data.date).getFullYear());
 };
 
-const sortedGigs: Gig[] = orderBy(gigs, "date", "desc");
-
-const groupGigsByYear = (gigs: Gig[]) => {
-  return groupBy(gigs, (gig) => new Date(gig.date).getFullYear());
-};
-
-const sortYearsDesc = (years: Record<string, Gig[]>) => {
+const sortYearsDesc = (years: Record<string, CollectionEntry<"gigs">[]>) => {
   return orderBy(Object.entries(years), ([year]) => Number(year), "desc");
 };
 ---
@@ -46,53 +35,60 @@ const sortYearsDesc = (years: Record<string, Gig[]>) => {
                 <div>Description</div>
               </div>
               <div class="divide-y divide-gray-200">
-                {yearGigs.map((gig: Gig) => (
+                {yearGigs.map((gig: CollectionEntry<"gigs">) => (
                   <div class="grid grid-cols-[120px_1fr_1fr] gap-4 px-6 py-4 hover:bg-gray-50">
                     <time
-                      datetime={gig.date}
+                      datetime={gig.data.date}
                       class="text-sm whitespace-nowrap text-gray-500"
                     >
-                      {format(new Date(gig.date), "MMMM do")}
+                      {format(new Date(gig.data.date), "MMMM do")}
                     </time>
-                    <div>
-                      <div class="font-medium text-gray-900">
-                        {gig.artistUrl ? (
-                          <a
-                            href={gig.artistUrl}
+                    <div class="space-y-1">
+                      <div class="font-medium">
+                        {gig.data.artistUrl ? (
+                          <Link
+                            href={gig.data.artistUrl}
                             target="_blank"
                             rel="noopener noreferrer"
+                            class="hover:text-gray-600"
                           >
-                            {gig.artist}
-                          </a>
+                            {gig.data.artist}
+                          </Link>
                         ) : (
-                          gig.artist
+                          gig.data.artist
                         )}
                       </div>
                       <div class="text-sm text-gray-500">
-                        {gig.venueUrl ? (
-                          <a
-                            href={gig.venueUrl}
+                        {gig.data.venueUrl ? (
+                          <Link
+                            href={gig.data.venueUrl}
                             target="_blank"
                             rel="noopener noreferrer"
+                            class="hover:text-gray-600"
                           >
-                            {gig.venue}
-                          </a>
+                            {gig.data.venue}
+                            {gig.data.city && <span>, {gig.data.city}</span>}
+                          </Link>
                         ) : (
-                          gig.venue
+                          // prettier-ignore
+                          <span>
+                            {gig.data.venue}{gig.data.city && <span>, {gig.data.city}</span>}
+                          </span>
                         )}
                       </div>
                     </div>
-                    <div>
-                      {gig.eventUrl ? (
-                        <a
-                          href={gig.eventUrl}
+                    <div class="text-sm text-gray-500">
+                      {gig.data.eventUrl ? (
+                        <Link
+                          href={gig.data.eventUrl}
                           target="_blank"
                           rel="noopener noreferrer"
+                          class="hover:text-gray-600"
                         >
-                          {gig.eventDescription}
-                        </a>
+                          {gig.data.eventDescription}
+                        </Link>
                       ) : (
-                        gig.eventDescription
+                        gig.data.eventDescription
                       )}
                     </div>
                   </div>

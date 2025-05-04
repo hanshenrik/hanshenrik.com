@@ -1,6 +1,12 @@
 ---
 import { Icon } from "astro-icon/components";
 
+interface Props {
+  class?: string;
+}
+
+const { class: className }: Props = Astro.props;
+
 const noteIcons = [
   "arcticons:music",
   "arcticons:emoji-multiple-musical-notes",
@@ -17,12 +23,12 @@ const soundFiles = Array.from({ length: 20 }, (_, i) => {
 });
 ---
 
-<div class="relative">
+<div class:list={["relative", className]}>
   <div class="pointer-events-none absolute inset-0">
     {
       noteIcons.map((icon) => (
         <Icon
-          class="piano-plukk-note hidden"
+          class="piano-plukk-note z-50 hidden text-gray-300 opacity-0 transition-opacity duration-[3s] ease-linear"
           name={icon}
           size={48}
           stroke-width={1.5}
@@ -41,7 +47,6 @@ const soundFiles = Array.from({ length: 20 }, (_, i) => {
 <style>
   .piano-plukk-note {
     position: fixed;
-    opacity: 0.3;
   }
 </style>
 
@@ -64,8 +69,14 @@ const soundFiles = Array.from({ length: 20 }, (_, i) => {
 
     note.setAttribute("style", `left: ${x}px; top: ${y}px;`);
     note.classList.remove("hidden");
+    // Force a reflow to ensure the transition works
+    note.offsetHeight;
+    note.classList.remove("opacity-0");
 
-    setTimeout(() => note.classList.add("hidden"), 500);
+    setTimeout(() => {
+      note.classList.add("opacity-0");
+      setTimeout(() => note.classList.add("hidden"), 3000);
+    }, 1);
   }
 
   function playRandomSound() {

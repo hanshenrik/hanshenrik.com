@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import Link from "../../components/Link.astro";
 import Layout from "../../layouts/Layout.astro";
 
 const posts = (await getCollection("drypp")).sort(
@@ -30,12 +31,7 @@ const sortedPosts = posts.sort(
             )}
             <div class="card-content">
               <h2 class="mb-1">
-                <a
-                  href={`/drypp/${post.id}`}
-                  class="transition-colors hover:text-blue-600"
-                >
-                  {post.data.title}
-                </a>
+                <Link href={`/drypp/${post.id}`}>{post.data.title}</Link>
               </h2>
               <p class="mb-4 text-sm text-gray-500">{post.data.description}</p>
               <time

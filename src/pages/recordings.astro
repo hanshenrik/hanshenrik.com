@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+import Link from "../components/Link.astro";
 import Layout from "../layouts/Layout.astro";
 
 const recordings = await getCollection("recordings");
@@ -20,21 +21,21 @@ const localRecordings = recordings.filter(
     <h2 class="mb-4">Official releases</h2>
     <div class="space-y-2">
       <iframe
-        class="rounded-none md:max-w-1/2"
+        class="h-[600px] rounded-none md:h-[620px] md:max-w-1/2"
         src="https://open.spotify.com/embed/playlist/0HQEtUAwUe5VnLh42iIjSb?utm_source=generator&theme=0"
         width="100%"
-        height="352"
+        height="100%"
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"></iframe>
-      <a
+      <Link
         href="https://tidal.com/browse/playlist/0a61d353-ade3-4efe-a517-a82d99b47354"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center gap-2"
+        class="flex w-fit items-center gap-2"
       >
         <Icon name="arcticons:tidal" size={24} stroke-width={1.5} />
         <span>Also available on Tidal</span>
-      </a>
+      </Link>
     </div>
     <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
       {

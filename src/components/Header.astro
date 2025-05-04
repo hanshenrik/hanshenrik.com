@@ -1,23 +1,117 @@
 ---
+import { Icon } from "astro-icon/components";
+import Link from "./Link.astro";
 import PianoPlukk from "./PianoPlukk.astro";
+
+const menuItems = [
+  { href: "/gigs", label: "Gigs" },
+  { href: "/recordings", label: "Recordings" },
+  { href: "/software", label: "Software" },
+  { href: "/video", label: "Video" },
+];
 ---
 
 <header class="border-b border-gray-200">
   <nav class="container mx-auto px-4 py-4">
     <div class="flex items-center justify-between">
-      <a href="/" class="text-xl font-semibold text-gray-900">hanshenrik.com</a>
-      <div class="flex items-center space-x-6">
-        <a href="/gigs" class="text-gray-600 hover:text-gray-900">Gigs</a>
-        <a href="/recordings" class="text-gray-600 hover:text-gray-900"
-          >Recordings</a
-        >
-        <a href="/software" class="text-gray-600 hover:text-gray-900"
-          >Software</a
-        >
-        <a href="/video" class="text-gray-600 hover:text-gray-900">Video</a>
-        <!-- <a href="/drypp" class="text-gray-600 hover:text-gray-900">Drypp</a> -->
+      <div class="flex items-center gap-1">
         <PianoPlukk />
+        <Link
+          href="/"
+          class="wave-link hide-initial-underline text-xl font-semibold text-gray-900"
+          >hanshenrik.com</Link
+        >
       </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden items-center space-x-6 md:flex">
+        {
+          menuItems.map(({ href, label }) => (
+            <Link
+              href={href}
+              class="wave-link text-gray-600 hover:text-gray-900"
+            >
+              {label}
+            </Link>
+          ))
+        }
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="menu-button"
+        class="rounded-md p-2 text-gray-600 md:hidden"
+        aria-label="Toggle menu"
+      >
+        <Icon name="arcticons:hamburger-menu" size={24} stroke-width={1.5} />
+      </button>
     </div>
   </nav>
 </header>
+
+<!-- Mobile Navigation Drawer -->
+<div
+  id="mobile-menu"
+  class="fixed inset-y-0 right-0 z-50 w-64 translate-x-full transform bg-white shadow-lg transition-transform duration-300 ease-in-out"
+>
+  <div class="flex h-full flex-col">
+    <div class="flex justify-end p-4">
+      <button
+        id="close-button"
+        class="rounded-md p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-inset"
+        aria-label="Close menu"
+      >
+        <Icon name="arcticons:plexus" size={24} stroke-width={1.5} />
+      </button>
+    </div>
+    <nav class="flex-1 space-y-6 px-4 py-6">
+      {
+        menuItems.map(({ href, label }) => (
+          <Link
+            href={href}
+            class="w-fit wave-link block text-lg text-gray-600 hover:text-gray-900"
+          >
+            {label}
+          </Link>
+        ))
+      }
+    </nav>
+  </div>
+</div>
+
+<!-- Backdrop -->
+<div
+  id="backdrop"
+  class="bg-opacity-50 pointer-events-none fixed inset-0 z-40 bg-black/30 opacity-0 transition-opacity duration-300 ease-in-out"
+>
+</div>
+
+<script>
+  const menuButton = document.getElementById("menu-button");
+  const closeButton = document.getElementById("close-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const backdrop = document.getElementById("backdrop");
+
+  function openMenu() {
+    mobileMenu?.classList.remove("translate-x-full");
+    backdrop?.classList.remove("opacity-0", "pointer-events-none");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMenu() {
+    mobileMenu?.classList.add("translate-x-full");
+    backdrop?.classList.add("opacity-0", "pointer-events-none");
+    document.body.style.overflow = "";
+  }
+
+  menuButton?.addEventListener("click", openMenu);
+  closeButton?.addEventListener("click", closeMenu);
+  backdrop?.addEventListener("click", closeMenu);
+
+  // Close menu on escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeMenu();
+    }
+  });
+</script>
