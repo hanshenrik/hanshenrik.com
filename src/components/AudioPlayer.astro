@@ -36,15 +36,15 @@ const { recordings, title, playerId } = Astro.props;
       >
         ⏭️
       </button>
-      <div class="flex-1">
+      <div class="min-w-0 flex-1">
         <div
-          class="text-sm font-medium text-gray-900"
+          class="text-sm font-medium break-words text-gray-900"
           id={`now-playing-${playerId}`}
         >
           Select a track to play
         </div>
         <div
-          class="text-xs text-gray-500"
+          class="text-xs break-words text-gray-500"
           id={`now-playing-artist-${playerId}`}
         >
         </div>
@@ -73,9 +73,16 @@ const { recordings, title, playerId } = Astro.props;
                 </div>
               )}
               <div class="min-w-0 flex-1">
-                {/* prettier-ignore */}
-                <h3 class="max-w-full truncate font-medium whitespace-break-spaces text-gray-900">{data.name}</h3>
-                <p class="truncate text-sm text-gray-600">{data.artist}</p>
+                <h3 class="font-medium break-words text-gray-900">
+                  {data.name}
+                </h3>
+                <p class="text-sm break-words text-gray-600">{data.artist}</p>
+              </div>
+              <div
+                class="flex-shrink-0 opacity-0 transition-opacity duration-200"
+                data-playing-indicator
+              >
+                ⏸️
               </div>
               {data.localFile && (
                 <source
@@ -92,14 +99,24 @@ const { recordings, title, playerId } = Astro.props;
 </div>
 
 <script define:vars={{ playerId }}>
-  const tracks = document.querySelectorAll(`[data-track-index][data-player-id="${playerId}"]`);
+  const tracks = document.querySelectorAll(
+    `[data-track-index][data-player-id="${playerId}"]`,
+  );
   const playPauseBtn = document.getElementById(`play-pause-${playerId}`);
   const prevBtn = document.getElementById(`prev-track-${playerId}`);
   const nextBtn = document.getElementById(`next-track-${playerId}`);
   const nowPlaying = document.getElementById(`now-playing-${playerId}`);
-  const nowPlayingArtist = document.getElementById(`now-playing-artist-${playerId}`);
+  const nowPlayingArtist = document.getElementById(
+    `now-playing-artist-${playerId}`,
+  );
 
-  if (!playPauseBtn || !prevBtn || !nextBtn || !nowPlaying || !nowPlayingArtist) {
+  if (
+    !playPauseBtn ||
+    !prevBtn ||
+    !nextBtn ||
+    !nowPlaying ||
+    !nowPlayingArtist
+  ) {
     throw new Error("Required player elements not found");
   }
 
@@ -115,14 +132,32 @@ const { recordings, title, playerId } = Astro.props;
   }
 
   function setActiveTrack(track) {
-    tracks.forEach((t) => t.classList.remove("bg-gray-50"));
+    tracks.forEach((t) => {
+      t.classList.remove("bg-gray-50");
+      const indicator = t.querySelector("[data-playing-indicator]");
+      if (indicator) {
+        indicator.classList.remove("playing");
+        indicator.classList.add("opacity-0");
+      }
+    });
     track.classList.add("bg-gray-50");
+    const indicator = track.querySelector("[data-playing-indicator]");
+    if (indicator) {
+      indicator.classList.add("playing");
+      indicator.classList.remove("opacity-0");
+    }
   }
 
   function playTrack(index) {
     const track = tracks[index];
     const source = track.querySelector("source");
     if (!source?.src) return;
+
+    // If clicking the currently playing track, toggle play/pause
+    if (currentTrack === track) {
+      togglePlayPause();
+      return;
+    }
 
     currentIndex = index;
     currentTrack = track;
@@ -169,8 +204,20 @@ const { recordings, title, playerId } = Astro.props;
   audio.addEventListener("ended", playNext);
   audio.addEventListener("pause", () => {
     playPauseBtn.textContent = "⏯️";
+    if (currentTrack) {
+      const indicator = currentTrack.querySelector("[data-playing-indicator]");
+      if (indicator) {
+        indicator.classList.remove("playing");
+      }
+    }
   });
   audio.addEventListener("play", () => {
     playPauseBtn.textContent = "⏸️";
+    if (currentTrack) {
+      const indicator = currentTrack.querySelector("[data-playing-indicator]");
+      if (indicator) {
+        indicator.classList.add("playing");
+      }
+    }
   });
 </script>
