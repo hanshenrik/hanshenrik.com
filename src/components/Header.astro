@@ -1,18 +1,24 @@
 ---
 import { Icon } from "astro-icon/components";
+import {
+  GIGS_ICON,
+  RECORDINGS_ICON,
+  SOFTWARE_ICON,
+  VIDEO_ICON,
+} from "../constants";
 import Link from "./Link.astro";
 import PianoPlukk from "./PianoPlukk.astro";
 
 const menuItems = [
-  { href: "/gigs", label: "Gigs" },
-  { href: "/recordings", label: "Recordings" },
-  { href: "/software", label: "Software" },
-  { href: "/video", label: "Video" },
+  { href: "/gigs", label: "Gigs", icon: GIGS_ICON },
+  { href: "/recordings", label: "Recordings", icon: RECORDINGS_ICON },
+  { href: "/video", label: "Video", icon: VIDEO_ICON },
+  { href: "/software", label: "Software", icon: SOFTWARE_ICON },
 ];
 ---
 
 <header
-  class="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-sm transition-all duration-200"
+  class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm transition-all duration-200"
 >
   <nav
     class="container mx-auto px-4 py-4 transition-all duration-200"
@@ -31,11 +37,12 @@ const menuItems = [
       <!-- Desktop Navigation -->
       <div class="hidden items-center space-x-6 md:flex">
         {
-          menuItems.map(({ href, label }) => (
+          menuItems.map(({ href, label, icon }) => (
             <Link
               href={href}
-              class="wave-link text-gray-600 hover:text-gray-900"
+              class="wave-link flex items-center gap-2 hover:text-gray-900"
             >
+              <Icon name={icon} size={24} />
               {label}
             </Link>
           ))
@@ -45,7 +52,7 @@ const menuItems = [
       <!-- Mobile Menu Button -->
       <button
         id="menu-button"
-        class="rounded-md p-2 text-gray-600 md:hidden"
+        class="rounded-md p-2 md:hidden"
         aria-label="Toggle menu"
       >
         <Icon name="arcticons:hamburger-menu" size={24} stroke-width={1.5} />
@@ -63,7 +70,7 @@ const menuItems = [
     <div class="flex justify-end p-4">
       <button
         id="close-button"
-        class="rounded-md p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-inset"
+        class="rounded-md p-2 hover:bg-gray-100 hover:text-gray-900 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-inset"
         aria-label="Close menu"
       >
         <Icon name="arcticons:plexus" size={24} stroke-width={1.5} />
@@ -71,11 +78,12 @@ const menuItems = [
     </div>
     <nav class="flex-1 space-y-6 px-4 py-6">
       {
-        menuItems.map(({ href, label }) => (
+        menuItems.map(({ href, label, icon }) => (
           <Link
             href={href}
-            class="wave-link block w-fit text-lg text-gray-600 hover:text-gray-900"
+            class="wave-link flex w-fit items-center gap-2 text-lg hover:text-gray-900"
           >
+            <Icon name={icon} size={24} />
             {label}
           </Link>
         ))
@@ -107,12 +115,12 @@ const menuItems = [
 
     if (currentScrollY > 50) {
       header?.classList.add("shadow-sm");
-      headerNav?.classList.add("py-2");
+      headerNav?.classList.add("py-1.5");
       headerNav?.classList.remove("py-4");
       logo?.classList.add("text-lg");
     } else {
       header?.classList.remove("shadow-sm");
-      headerNav?.classList.remove("py-2");
+      headerNav?.classList.remove("py-1.5");
       headerNav?.classList.add("py-4");
       logo?.classList.remove("text-lg");
     }

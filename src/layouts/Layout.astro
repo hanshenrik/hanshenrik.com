@@ -28,9 +28,9 @@ const { title, description = "hanshenrik.com / Sounds and code" } = Astro.props;
       rel="stylesheet"
     />
   </head>
-  <body class="min-h-screen bg-white">
+  <body class="flex min-h-screen flex-col bg-white">
     <Header />
-    <main class="container mx-auto px-4 py-8">
+    <main class="container mx-auto flex-1 px-4 py-8">
       <slot />
     </main>
     <footer class="border-t border-gray-200">
