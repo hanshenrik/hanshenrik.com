@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+
+  h1 {
+    @apply text-4xl font-bold tracking-tight;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+
+  h3 {
+    @apply text-xl font-semibold tracking-tight;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+
+  summary {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .playing {
+    @apply animate-spin;
+  }
+
+  .wave-link {
+    @apply relative no-underline;
+  }
+
+  .wave-link:not(.hide-initial-underline)::before {
+    @apply absolute -bottom-1 left-0 h-0.5 w-full bg-current opacity-30 content-[''];
+  }
+
+  .wave-link::after {
+    @apply absolute -bottom-1 left-0 h-0.5 w-full bg-current opacity-0 content-[''];
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition:
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.3s ease;
+  }
+
+  .wave-link:hover::after {
+    @apply opacity-100;
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}

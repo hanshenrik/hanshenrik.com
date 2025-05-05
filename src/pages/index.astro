@@ -1,0 +1,68 @@
+---
+import { Icon } from "astro-icon/components";
+import {
+  GIGS_ICON,
+  RECORDINGS_ICON,
+  SOFTWARE_ICON,
+  VIDEO_ICON,
+} from "../constants";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="hanshenrik.com">
+  <div class="mx-auto w-fit sm:my-32">
+    <div class="grid gap-12 sm:grid-cols-2 sm:gap-32">
+      <a href="/gigs" class="card group">
+        <div class="card-content flex items-center gap-4">
+          <Icon
+            name={GIGS_ICON}
+            size={72}
+            class="transition-transform group-hover:scale-105"
+          />
+          <div>
+            <h2>Gigs</h2>
+          </div>
+        </div>
+      </a>
+
+      <a href="/recordings" class="card group">
+        <div class="card-content flex items-center gap-4">
+          <Icon
+            name={RECORDINGS_ICON}
+            size={72}
+            class="transition-transform group-hover:animate-spin"
+          />
+          <div>
+            <h2>Recordings</h2>
+          </div>
+        </div>
+      </a>
+
+      <a href="/video" class="card group">
+        <div class="card-content flex items-center gap-4">
+          <Icon
+            name={VIDEO_ICON}
+            size={72}
+            class="transition-transform group-hover:scale-105"
+          />
+          <div>
+            <h2>Video</h2>
+          </div>
+        </div>
+      </a>
+
+      <a href="/software" class="card group">
+        <div class="card-content flex items-center gap-4">
+          <Icon
+            name={SOFTWARE_ICON}
+            size={72}
+            class="transition-transform group-hover:scale-105"
+          />
+          <div>
+            <h2>Software</h2>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</Layout>

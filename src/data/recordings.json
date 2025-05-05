@@ -1,5 +1,6 @@
 [
   {
+    "id": "han-ser",
     "artist": "Lisa Nybrott",
     "name": "Han ser",
     "description": "Lisa Nybrott (vocals), Hans Henrik Grønsleth (keyboards), Kjell Audun Holestøl (bass), Mats Lillehaug (drums), Marius Solevågseide (vocals) and Jarand Nygaard Strømdal (vocals).",
@@ -9,6 +10,7 @@
     "image": "https://resources.tidal.com/images/86acfc39/634a/4ae2/834b/5f316b5e326b/640x640.jpg"
   },
   {
+    "id": "kanskje-kommer-du",
     "artist": "Lisa Nybrott",
     "name": "Kanskje kommer du",
     "description": "Lisa Nybrott (vocals), Hans Henrik Grønsleth (keyboards), Kjell Audun Holestøl (bass), Mats Lillehaug (drums), Marius Solevågseide (vocals) and Jarand Nygaard Strømdal (vocals).",
@@ -18,6 +20,7 @@
     "image": "https://resources.tidal.com/images/4cdfe412/03fc/4c90/bc97/cbd59517111c/640x640.jpg"
   },
   {
+    "id": "natteting",
     "artist": "Kjør Romskip",
     "name": "natteting",
     "description": "Jørgen Reitan (guitar), Hans Henrik Grønsleth (keyboards), Vegard Storaas (bass) and Maria Storaas (drums), with Isak Heim (backing vocals). Cover art by Birgitte Rishatt.",
@@ -28,6 +31,7 @@
     "image": "https://i1.sndcdn.com/artworks-SM3C4SGPruyWAyOL-zZZREg-t500x500.jpg"
   },
   {
+    "id": "tilbake-i-tid",
     "artist": "Lisa Nybrott",
     "name": "Tilbake i tid",
     "description": "Lisa Nybrott (vocals), Hans Henrik Grønsleth (keyboards), Kjell Audun Holestøl (bass), Mats Lillehaug (drums), Marius Solevågseide (vocals) and Jarand Nygaard Strømdal (vocals).",
@@ -37,6 +41,7 @@
     "image": "https://resources.tidal.com/images/583bd2d4/5942/4cc2/ac94/45e71b3bdc10/640x640.jpg"
   },
   {
+    "id": "oslo-gigolo",
     "artist": "Kjør Romskip",
     "name": "oslo gigolo",
     "description": "Jørgen Reitan (guitar), Hans Henrik Grønsleth (keyboards), Vegard Storaas (bass) and Maria Storaas (drums), with Isak Heim (backing vocals).",
@@ -47,6 +52,7 @@
     "image": "https://i1.sndcdn.com/artworks-5qC0wHTkn8GHAWBg-KgbP0g-t500x500.jpg"
   },
   {
+    "id": "mr-rino",
     "artist": "Kjør Romskip",
     "name": "mr rino",
     "description": "Jørgen Reitan (guitar), Hans Henrik Grønsleth (keyboards), Vegard Storaas (bass) and Maria Storaas (drums), with Isak Heim (backing vocals).",
@@ -57,6 +63,7 @@
     "image": "https://i1.sndcdn.com/artworks-rjAKbKgxRT3NSpcG-5OQ9JQ-t500x500.jpg"
   },
   {
+    "id": "visker-ut",
     "artist": "Lisa Nybrott",
     "name": "Visker ut",
     "description": "Lisa Nybrott (vocals), Hans Henrik Grønsleth (keyboards), Kjell Audun Holestøl (bass), Mats Lillehaug (drums), Marius Solevågseide (vocals) and Jarand Nygaard Strømdal (vocals).",
@@ -66,6 +73,7 @@
     "image": "https://resources.tidal.com/images/2805b525/099d/4065/bf13/c021ef8f3a2a/640x640.jpg"
   },
   {
+    "id": "chili-cheese-premadonna",
     "artist": "Kjør Romskip",
     "name": "Chili Cheese / Premadonna",
     "description": "Jørgen Reitan (guitar), Hans Henrik Grønsleth (keyboards), Vegard Storaas (bass) and Maria Storaas (drums). Cover art by Jens Christian Midtgarden.",
@@ -76,6 +84,7 @@
     "image": "https://i1.sndcdn.com/artworks-rb5N8WJKUzH34n3f-0tMdjA-t500x500.jpg"
   },
   {
+    "id": "romturist",
     "artist": "Kjør Romskip",
     "name": "Romturist",
     "description": "Jørgen Reitan (guitar), Hans Henrik Grønsleth (keyboards), Vegard Storaas (bass) and Maria Storaas (drums). Cover art by Jens Christian Midtgarden.",
@@ -87,6 +96,7 @@
     "image": "https://i1.sndcdn.com/artworks-000572129276-8kpg9o-t500x500.jpg"
   },
   {
+    "id": "just-pretend",
     "artist": "Reggie Got Beats",
     "name": "Just Pretend",
     "description": "Had the pleasure of adding some keys on this funky tune by Reggie Got Beats.",
@@ -97,6 +107,7 @@
     "image": "https://i1.sndcdn.com/artworks-000173549632-gue4by-t500x500.jpg"
   },
   {
+    "id": "behagelig-melankoli",
     "artist": "Elias Eine",
     "name": "Behagelig Melankoli [EP]",
     "description": "3-piece EP recorded in Øra Studio with Karl Klaseie. Elias Eine is Gaute Einebakken Eliassen. The band is Einar Kjensmo Fuglerud (guitar), Hans Henrik Grønsleth (keys), Eirik Myhre Lauvås (bass) and Isak Seltveit (drums).",
@@ -106,6 +117,7 @@
     "image": "https://i1.sndcdn.com/artworks-000160875993-bdp0d5-t500x500.jpg"
   },
   {
+    "id": "lots-of-fun-and-some-serious-stuff",
     "artist": "Acid Pilgrims",
     "name": "Lots of fun and some serious stuff [Album]",
     "description": "The album \"Lots of fun and some serious stuff\" is the result of Andreas Nergård's project \"Acid Pilgrims\" and was recorded in Trøndertun Studio during the spring of 2010. I made contributions on \"Lobotomies in the Supermarket\" and \"Nessie\".",
@@ -115,14 +127,7 @@
     "image": "https://m.media-amazon.com/images/I/81LkCJG-Q6L._SS500_.jpg"
   },
   {
-    "artist": "ER4",
-    "name": "Stella By Starlight (Take 3)",
-    "description": "Rune Nielsen (guitar), Hans Henrik Grønsleth (piano), Mathias Holtedahl Thorp (double bass), Egil Reistadbakk (drums). Reharmonized by Rune Nielsen. Recorded May 2012 at Olavskvartalet, Trondheim. Mixed and produced by Trond Hustad and Gunnar Andreas Berg.",
-    "soundcloudLink": "https://soundcloud.com/hanshenrik/er4-stella-by-starlight-take-3/s-JGT08",
-    "image": "https://images.unsplash.com/photo-1507272931001-fc06c17e4f43?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
-    "imageAttribution": "Johny Goerend"
-  },
-  {
+    "id": "you-dont-know-what-love-is",
     "artist": "BeHop",
     "name": "You Don't Know What Love Is (Reggie Got Beats remix)",
     "description": "Reggie Got Beats' remix of BeHop's cover of Raye and de Paul's \"You Don't Know What Love Is\". Meta much?",
@@ -130,80 +135,164 @@
     "image": "https://i1.sndcdn.com/artworks-000064334294-dotd8g-t500x500.jpg"
   },
   {
-    "artist": "Larschens Lævende Lydmageri",
-    "name": "UKErevyen-13: Jubalong [Live]",
-    "description": "A 2 hour review, part of the student festival UKA in 2013 in Trondheim. Over 30 performances for full houses at Studentdersamfundet. Music by Christian Aftret Eriksen and Gaute Eliassen. The band was Ingrid Gausemel Remøy (violin), Helge Huldt-Nystrøm (saxophones), Andrea Otterstad Johansen (flute, saxophones), Kristina Rystad (trumpet), Einar Kjensmo Fuglerud (guitar, banjo, mandolin), Hans Henrik Grønsleth (keys and accordion), Magnus Leite (bass) and Kristoffer Rystad (drums).",
-    "youtubeLink": "https://www.youtube.com/watch?v=BrbUZ4347zc&list=PLvn-5EU3t_JIRse4GlxZ81UDl6GFvRNHb&index=4",
-    "image": "https://foto.samfundet.no/media/alle/web/DIGFI/digfi0914.jpg",
-    "imageAttribution": "foto.samfundet.no"
+    "id": "stella-by-starlight-take-3",
+    "artist": "ER4",
+    "name": "Stella By Starlight (Take 3)",
+    "description": "Rune Nielsen (guitar), Hans Henrik Grønsleth (piano), Mathias Holtedahl Thorp (double bass), Egil Reistadbakk (drums). Reharmonized by Rune Nielsen. Recorded May 2012 at Olavskvartalet, Trondheim. Mixed and produced by Trond Hustad and Gunnar Andreas Berg.",
+    "soundcloudLink": "https://soundcloud.com/hanshenrik/er4-stella-by-starlight-take-3",
+    "image": "https://images.unsplash.com/photo-1507272931001-fc06c17e4f43?auto=format&fit=crop&w=500&q=80",
+    "imageAttribution": "Johny Goerend",
+    "localFile": {
+      "src": "er4-stella-by-starlight-take-3.mp4",
+      "format": "mp4",
+      "type": "band"
+    }
   },
   {
-    "artist": "Passion for Glory",
-    "name": "Best of the 80s [Live]",
-    "description": "Got to play all those guilty pleasures for our fellow students at a packed 80's party at Samfundet in Trondheim back in 2013. Great fun! Mathias Molund Indergård (vocals), Hans Henrik Grønsleth (synths), Hans Christian Bollingmo (guitars), Arnstein Dahle Svanholm (guitars), Magnus Molund Indergård (bass), Martin Fjellseth (drums), Elisa Keeling (backing vocals), Mia Katrine Nilsen (backing vocals), Lina Hopaneng Ingeborgrud (backing vocals).",
-    "youtubeLink": "https://www.youtube.com/watch?v=OAw55u1sTVs&index=4&list=PLGta0xPJBfuAqHC4FG-eCFOZujyT368Z1",
-    "image": "https://foto.samfundet.no/media/alle/web/DIGFH/digfh0529.jpg",
-    "imageAttribution": "foto.samfundet.no"
+    "id": "luger",
+    "artist": "ER4",
+    "name": "Lüger",
+    "description": "Rune Nielsen (guitar), Hans Henrik Grønsleth (piano), Mathias Holtedahl Thorp (double bass), Egil Reistadbakk (drums). Reharmonized by Rune Nielsen. Recorded May 2012 at Olavskvartalet, Trondheim. Mixed and produced by Trond Hustad and Gunnar Andreas Berg.",
+    "soundcloudLink": "https://soundcloud.com/hanshenrik/er4-luger",
+    "image": "https://images.unsplash.com/photo-1612863216924-691800a26677?q=80&w=500&auto=format",
+    "imageAttribution": "Annie Spratt",
+    "localFile": {
+      "src": "er4-luger.mp4",
+      "format": "mp4",
+      "type": "band"
+    }
   },
   {
+    "id": "bad-news",
     "artist": "Eline Hellerud Åsbakk",
     "name": "Bad News",
     "description": "Eline Hellerud Åsbakk (vocals), Hans Henrik Grønsleth (Wurlitzer). Written by Eline Hellerud Åsbakk. Recorded Mars 2010 at Trøndertun Studio, Melhus. Mixed by Nina Hagen Kaldhol.",
     "soundcloudLink": "https://soundcloud.com/hanshenrik/eline-hellerud-asbakk-bad-news/s-3YVTf",
-    "image": "https://images.unsplash.com/photo-1550638958-1300100d7cef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
-    "imageAttribution": "Jr Korpa"
+    "image": "https://images.unsplash.com/photo-1550638958-1300100d7cef?auto=format&fit=crop&w=500&q=80",
+    "imageAttribution": "Jr Korpa",
+    "localFile": {
+      "src": "eline-hellerud-asbakk-bad-news.mp3",
+      "format": "mp3",
+      "type": "band"
+    }
   },
   {
+    "id": "hit-me-baby-one-more-time",
     "artist": "Eline Hellerud Åsbakk + quiet quark quintet",
     "name": "Hit Me Baby One More Time",
     "description": "Eline Hellerud Åsbakk (vocals), Eiliv Andreas Myren Ribe (violin), Einar Kjensmo Fuglerud (guitar), Hans Henrik Grønsleth (piano), Brynjar Blomvik (bass), Tord Vangen (drums). Originally Britney Spears. Recorded October 2009 at Trøndertun Studio, Melhus. Mixed by Simen Toften.",
     "soundcloudLink": "https://soundcloud.com/hanshenrik/eline-hellerud-asbakk-feat-quiet-quark-quintet-hit-me-baby-one-more-time/s-kEDQH",
-    "image": "https://images.unsplash.com/photo-1559703248-dcaaec9fab78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
-    "imageAttribution": "Mae Mu"
+    "image": "https://images.unsplash.com/photo-1559703248-dcaaec9fab78?auto=format&fit=crop&w=500&q=80",
+    "imageAttribution": "Mae Mu",
+    "localFile": {
+      "src": "eline-hellerud-asbakk-quiet-quark-quintet-hit-me-baby-one-more-time.mp3",
+      "format": "mp3",
+      "type": "band"
+    }
   },
   {
+    "id": "frontpage-story",
     "artist": "quiet quark quintet + Lars Olav Berg",
     "name": "Frontpage Story",
     "description": "Lars Olav Berg (soprano saxophone), Eiliv Andreas Myren Ribe (violin), Einar Kjensmo Fuglerud (guitar), Hans Henrik Grønsleth (Rhodes), Brynjar Blomvik (bass), Tord Vangen (drums). Written by quiet quark quintet. Recorded April 2010 at Trøndertun Studio, Melhus. Mixed by Daniel Johansson, produced by Gunnar Andreas Berg.",
     "soundcloudLink": "https://soundcloud.com/hanshenrik/quiet-quark-quintet-feat-lars-olav-berg-frontpage-story/s-BTCbl",
-    "image": "https://images.unsplash.com/reserve/uZYSV4nuQeyq64azfVIn_15130980706_64134efc6e_o.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
-    "imageAttribution": "Amador Loureiro"
+    "image": "https://images.unsplash.com/reserve/uZYSV4nuQeyq64azfVIn_15130980706_64134efc6e_o.jpg?auto=format&fit=crop&w=500&q=80",
+    "imageAttribution": "Amador Loureiro",
+    "localFile": {
+      "src": "quiet-quark-quintet-lars-olav-berg-frontpage-story.mp3",
+      "format": "mp3",
+      "type": "band"
+    }
   },
   {
+    "id": "september",
+    "artist": "Sarah Fullerton + André Aamås + Hans Henrik Grønsleth",
     "name": "September",
     "description": "Sarah Fullerton (vocals), André Aamås (guitars), Hans Henrik Grønsleth (Wurlitzer and Hammond B3). Originally Earth, Wind & Fire. Recorded May 2010 at Trøndertun Studio, Melhus. Mixed by Fullerton, Aamås and Grønsleth.",
     "soundcloudLink": "https://soundcloud.com/hanshenrik/fullerton-aamas-gronsleth-september/s-cYUFU",
-    "image": "https://images.unsplash.com/photo-1579736170791-e7ce1a38e203?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
-    "imageAttribution": "Tim Mossholder"
+    "image": "https://images.unsplash.com/photo-1579736170791-e7ce1a38e203?auto=format&fit=crop&w=500&q=80",
+    "imageAttribution": "Tim Mossholder",
+    "localFile": {
+      "src": "sarah-fullerton-andre-aamas-hans-henrik-gronsleth-september.mp3",
+      "format": "mp3",
+      "type": "band"
+    }
   },
   {
+    "id": "lady-music-sounds-better-with-you-freestyler",
+    "artist": "Dancebandet",
     "name": "Lady / Music Sounds Better With You / Freestyler",
     "description": "Alexander Andersen (vocals), Eirik Kråkenes (guitars), Hans Henrik Grønsleth (keys), Jørgen Wassvik (bass), Jostein Haseth (drums). Originally Modjo / Stardust / Bomfunk MC's. Recorded October 2009 at Trøndertun Studio, Melhus. Mixed and produced by Daniel Johansson.",
     "soundcloudLink": "https://soundcloud.com/hanshenrik/lady-music-sounds-better-with-you-freestyler/s-XHP73",
-    "image": "https://images.unsplash.com/photo-1617791160588-241658c0f566?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
-    "imageAttribution": "Milad Fakurian"
+    "image": "https://images.unsplash.com/photo-1617791160588-241658c0f566?auto=format&fit=crop&w=500&q=80",
+    "imageAttribution": "Milad Fakurian",
+    "localFile": {
+      "src": "lady-music-sounds-better-with-you-freestyler.mp3",
+      "format": "mp3",
+      "type": "band"
+    }
   },
   {
+    "id": "what-goes-around-live",
     "artist": "Kjellerbandet + Knut Riisnæs & Øyvind Brække",
     "name": "What Goes Around [Live]",
     "description": "During the fall of 2011 Kjellerbandet did a series of concerts playing music by Dave Holland. This is a live recording from the final gig at Dokkhuset (Trondheim) November 19th.",
     "soundcloudLink": "https://soundcloud.com/kjellerbandet/what-goes-around",
-    "image": "https://images.unsplash.com/photo-1530669244764-0909211cd8e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
+    "image": "https://images.unsplash.com/photo-1530669244764-0909211cd8e8?auto=format&fit=crop&w=500&q=80",
     "imageAttribution": "Nathan Duck"
   },
   {
+    "id": "revamp-live",
+    "artist": "HH4",
     "name": "Revamp [Live]",
     "description": "Håkon Hammer (sax), Hans Henrik Grønsleth (grand piano), Kjetil Torset Voldhaug (double bass), Egil Reistadbakk (drums). Originally Jan Gunnar Hoff. Recorded June 2011 live at NTNU Dragvoll, Trondheim. Recording by Egil Reistadbakk.",
-    "soundcloudLink": "https://soundcloud.com/hanshenrik/hh4-revamp/s-AFryk",
-    "image": "https://images.unsplash.com/photo-1558865869-c93f6f8482af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
-    "imageAttribution": "Orfeas Green"
+    "soundcloudLink": "https://soundcloud.com/hanshenrik/hh4-revamp",
+    "image": "https://images.unsplash.com/photo-1558865869-c93f6f8482af?auto=format&fit=crop&w=500&q=80",
+    "imageAttribution": "Orfeas Green",
+    "localFile": {
+      "src": "hh4-revamp.mp3",
+      "format": "mp3",
+      "type": "band"
+    }
   },
   {
+    "id": "you-say-tomidant-live",
+    "artist": "HH4",
+    "name": "You Say tomiDant [Live]",
+    "description": "Hans Henrik Grønsleth (grand piano), Torgeir Hovden Standal (guitar), Kjetil Torset Voldhaug (double bass), Egil Reistadbakk (drums). Written by Hans Henrik Grønsleth. Recorded June 2011 live at NTNU Dragvoll, Trondheim. Recording by Egil Reistadbakk.",
+    "soundcloudLink": "https://soundcloud.com/hanshenrik/hh4-you-say-tomidant",
+    "image": "https://images.unsplash.com/photo-1624253428622-e6a9f1136882?auto=format&fit=crop&w=500&q=80",
+    "imageAttribution": "Orfeas Green",
+    "localFile": {
+      "src": "hh4-revamp.mp3",
+      "format": "mp3",
+      "type": "band"
+    }
+  },
+  {
+    "id": "oh-woman",
     "artist": "Derek's",
     "name": "Oh Woman",
     "description": "Øyvind Ramsøy-Halle (vocals and guitar), André Aamås (vocals and guitar), Hans Henrik Grønsleth (piano and Hammond B3), Eiliv Andreas Myren Ribe (violin), Stian Brungot (bass), Andreas Voie Juliebø (drums). Recorded 2009 at Trøndertun Studio, Melhus.",
     "soundcloudLink": "https://soundcloud.com/hanshenrik/dereks-oh-woman/s-zoVTN",
-    "image": "https://images.unsplash.com/photo-1529432337323-223e988a90fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
-    "imageAttribution": ". liane ."
+    "image": "https://images.unsplash.com/photo-1529432337323-223e988a90fb?auto=format&fit=crop&w=500&q=80",
+    "imageAttribution": ". liane .",
+    "localFile": {
+      "src": "dereks-oh-woman.mp3",
+      "format": "mp3",
+      "type": "band"
+    }
+  },
+  {
+    "id": "feel-so-bad",
+    "artist": "Derek's",
+    "name": "Feel So Bad",
+    "description": "Øyvind Ramsøy-Halle (vocals and guitar), André Aamås (vocals and guitar), Hans Henrik Grønsleth (piano and Hammond B3), Eiliv Andreas Myren Ribe (violin), Stian Brungot (bass), Andreas Voie Juliebø (drums). Originally The Derek Trucks Band. Recorded 2009 at Trøndertun Studio, Melhus.",
+    "image": "https://images.unsplash.com/photo-1590005608858-67892d55ae86?q=80&w=500&auto=format&fit=crop",
+    "localFile": {
+      "src": "dereks-feel-so-bad.mp3",
+      "format": "mp3",
+      "type": "band"
+    }
   }
 ]

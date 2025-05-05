@@ -1,0 +1,103 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import { format } from "date-fns";
+import { groupBy, orderBy } from "lodash-es";
+import Link from "../components/Link.astro";
+import Layout from "../layouts/Layout.astro";
+
+const gigs = await getCollection("gigs");
+const sortedGigs = orderBy(gigs, "data.date", "desc");
+
+const groupGigsByYear = (gigs: CollectionEntry<"gigs">[]) => {
+  return groupBy(gigs, (gig) => new Date(gig.data.date).getFullYear());
+};
+
+const sortYearsDesc = (years: Record<string, CollectionEntry<"gigs">[]>) => {
+  return orderBy(Object.entries(years), ([year]) => Number(year), "desc");
+};
+---
+
+<Layout title="Gigs">
+  <h1 class="mb-8 text-3xl font-bold">Gigs</h1>
+  {
+    sortYearsDesc(groupGigsByYear(sortedGigs)).map(
+      ([year, yearGigs], index) => (
+        <details class="group mb-4" open={index === 0}>
+          <summary class="text-lg font-medium hover:text-gray-600">
+            {year}
+          </summary>
+          <div class="grid">
+            <div class="mt-2">
+              <div class="grid grid-cols-[120px_1fr_1fr] gap-4 bg-gray-50 px-6 py-3 text-xs font-medium tracking-wider text-gray-500 uppercase">
+                <div>Date</div>
+                <div>Artist & Venue</div>
+                <div>Description</div>
+              </div>
+              <div class="divide-y divide-gray-200">
+                {yearGigs.map((gig: CollectionEntry<"gigs">) => (
+                  <div class="grid grid-cols-[120px_1fr_1fr] gap-4 px-6 py-4 hover:bg-gray-50">
+                    <time
+                      datetime={gig.data.date}
+                      class="text-sm whitespace-nowrap text-gray-500"
+                    >
+                      {format(new Date(gig.data.date), "MMMM do")}
+                    </time>
+                    <div class="space-y-1">
+                      <div class="font-medium">
+                        {gig.data.artistUrl ? (
+                          <Link
+                            href={gig.data.artistUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="hover:text-gray-600"
+                          >
+                            {gig.data.artist}
+                          </Link>
+                        ) : (
+                          gig.data.artist
+                        )}
+                      </div>
+                      <div class="text-sm text-gray-500">
+                        {gig.data.venueUrl ? (
+                          <Link
+                            href={gig.data.venueUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="hover:text-gray-600"
+                          >
+                            {gig.data.venue}
+                            {gig.data.city && <span>, {gig.data.city}</span>}
+                          </Link>
+                        ) : (
+                          // prettier-ignore
+                          <span>
+                            {gig.data.venue}{gig.data.city && <span>, {gig.data.city}</span>}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <div class="text-sm text-gray-500">
+                      {gig.data.eventUrl ? (
+                        <Link
+                          href={gig.data.eventUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="hover:text-gray-600"
+                        >
+                          {gig.data.eventDescription}
+                        </Link>
+                      ) : (
+                        gig.data.eventDescription
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </details>
+      ),
+    )
+  }
+</Layout>

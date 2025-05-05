@@ -1,0 +1,89 @@
+---
+import { getCollection } from "astro:content";
+import Link from "../../components/Link.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const posts = (await getCollection("drypp")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+// Sort posts by date
+const sortedPosts = posts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<Layout title="Drypp">
+  <div class="mx-auto max-w-7xl" transition:name="drypp-content">
+    <h1 class="mb-12" transition:name="drypp-title">Drypp</h1>
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {
+        sortedPosts.map((post) => (
+          <article class="card group" transition:name={`post-${post.id}`}>
+            {post.data.heroImage && (
+              <div class="relative aspect-video overflow-hidden">
+                <img
+                  src={post.data.heroImage}
+                  alt={post.data.title}
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+            )}
+            <div class="card-content">
+              <h2 class="mb-1">
+                <Link href={`/drypp/${post.id}`}>{post.data.title}</Link>
+              </h2>
+              <p class="mb-4 text-sm text-gray-500">{post.data.description}</p>
+              <time
+                datetime={post.data.pubDate.toISOString()}
+                class="text-sm text-gray-400"
+              >
+                {post.data.pubDate.toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
+
+<style>
+  ::view-transition-old(drypp-content),
+  ::view-transition-new(drypp-content) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  ::view-transition-old(drypp-content) {
+    z-index: 1;
+  }
+  ::view-transition-new(drypp-content) {
+    z-index: 2;
+  }
+
+  .dark::view-transition-old(drypp-content) {
+    z-index: 2;
+  }
+  .dark::view-transition-new(drypp-content) {
+    z-index: 1;
+  }
+
+  ::view-transition-old(drypp-content),
+  ::view-transition-new(drypp-content) {
+    animation: slide 0.3s ease-in-out;
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+</style>
