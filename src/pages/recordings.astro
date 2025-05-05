@@ -127,9 +127,17 @@ const localSoloRecordings = recordings.filter(
         <span>SoundCloud</span>
       </Link>.
     </p>
-    <div class="grid md:grid-cols-2 gap-2">
-      <AudioPlayer recordings={localSoloRecordings} title="Solo" />
-      <AudioPlayer recordings={localBandRecordings} title="Bands" />
+    <div class="grid gap-2 md:grid-cols-2">
+      <AudioPlayer
+        recordings={localSoloRecordings}
+        title="Solo"
+        playerId="solo"
+      />
+      <AudioPlayer
+        recordings={localBandRecordings}
+        title="Bands"
+        playerId="bands"
+      />
     </div>
   </div>
 </Layout>
