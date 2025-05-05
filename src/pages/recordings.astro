@@ -25,95 +25,103 @@ const localSoloRecordings = recordings.filter(
   <div class="mx-auto max-w-7xl space-y-8">
     <h1 class="mb-12">Recordings</h1>
     <h2 class="mb-4">Official releases</h2>
-    <div class="flex flex-col gap-2 md:max-w-1/2">
-      <iframe
-        class="h-[400px] rounded-none md:h-[520px]"
-        src="https://open.spotify.com/embed/playlist/0HQEtUAwUe5VnLh42iIjSb?utm_source=generator&theme=0"
-        width="100%"
-        height="100%"
-        allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy"></iframe>
-      <Link
-        href="https://tidal.com/browse/playlist/0a61d353-ade3-4efe-a517-a82d99b47354"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex w-fit items-center gap-2 self-end"
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="flex flex-col gap-2">
+        <iframe
+          class="h-[420px] rounded-none sm:h-full"
+          src="https://open.spotify.com/embed/playlist/0HQEtUAwUe5VnLh42iIjSb?utm_source=generator&theme=0"
+          width="100%"
+          height="100%"
+          allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"></iframe>
+        <Link
+          href="https://tidal.com/browse/playlist/0a61d353-ade3-4efe-a517-a82d99b47354"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex w-fit items-center gap-2 self-end"
+        >
+          <Icon name="arcticons:tidal" size={24} stroke-width={1.5} />
+          <span>Also available on Tidal</span>
+        </Link>
+      </div>
+      <div
+        class="grid grid-cols-2 gap-8 lg:col-span-2 lg:grid-cols-3 xl:grid-cols-4"
       >
-        <Icon name="arcticons:tidal" size={24} stroke-width={1.5} />
-        <span>Also available on Tidal</span>
-      </Link>
-    </div>
-    <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
-      {
-        releasedRecordings.map(({ data }) => (
-          <div class="card group">
-            {data.image && (
-              <div class="relative aspect-square overflow-hidden">
-                <Image
-                  src={data.image}
-                  width={400}
-                  height={400}
-                  quality={100}
-                  alt={`${data.artist} - ${data.name}`}
-                  class="h-full w-full object-cover"
-                />
-              </div>
-            )}
-            <div class="card-content py-1">
-              <h3 class="text-lg font-medium">{data.artist}</h3>
-              <h4 class="text-sm text-gray-500">{data.name}</h4>
-              <details class="text-sm text-gray-500">
-                <summary>More</summary>
-                <div class="mt-2">
-                  <p class="text-sm text-gray-500">{data.description}</p>
+        {
+          releasedRecordings.map(({ data }) => (
+            <div class="card group">
+              {data.image && (
+                <div class="relative aspect-square overflow-hidden">
+                  <Image
+                    src={data.image}
+                    width={400}
+                    height={400}
+                    quality={100}
+                    alt={`${data.artist} - ${data.name}`}
+                    class="h-full w-full object-cover"
+                  />
                 </div>
-              </details>
-              <div class="flex w-fit flex-wrap gap-1">
-                {data.spotifyLink && (
-                  <a
-                    href={data.spotifyLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-full text-green-700 transition-colors duration-200 hover:bg-green-200"
-                  >
-                    <Icon name="arcticons:spotify" size={24} />
-                  </a>
-                )}
-                {data.tidalLink && (
-                  <a
-                    href={data.tidalLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-full text-black transition-colors duration-200 hover:bg-black hover:text-white"
-                  >
-                    <Icon name="arcticons:tidal" stroke-width={1.5} size={24} />
-                  </a>
-                )}
-                {data.appleLink && (
-                  <a
-                    href={data.appleLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-full text-pink-700 transition-colors duration-200 hover:bg-pink-200"
-                  >
-                    <Icon name="arcticons:apple" size={24} />
-                  </a>
-                )}
-                {data.soundcloudLink && (
-                  <a
-                    href={data.soundcloudLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-full text-orange-700 transition-colors duration-200 hover:bg-orange-200"
-                  >
-                    <Icon name="arcticons:soundcloud" size={32} />
-                  </a>
-                )}
+              )}
+              <div class="card-content py-1">
+                <h3 class="text-lg font-medium">{data.artist}</h3>
+                <h4 class="text-sm text-gray-500">{data.name}</h4>
+                <details class="text-sm text-gray-500">
+                  <summary>More</summary>
+                  <div class="mt-2">
+                    <p class="text-sm text-gray-500">{data.description}</p>
+                  </div>
+                </details>
+                <div class="flex w-fit flex-wrap gap-1">
+                  {data.spotifyLink && (
+                    <a
+                      href={data.spotifyLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex h-10 w-10 items-center justify-center rounded-full text-green-700 transition-colors duration-200 hover:bg-green-200"
+                    >
+                      <Icon name="arcticons:spotify" size={24} />
+                    </a>
+                  )}
+                  {data.tidalLink && (
+                    <a
+                      href={data.tidalLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex h-10 w-10 items-center justify-center rounded-full text-black transition-colors duration-200 hover:bg-black hover:text-white"
+                    >
+                      <Icon
+                        name="arcticons:tidal"
+                        stroke-width={1.5}
+                        size={24}
+                      />
+                    </a>
+                  )}
+                  {data.appleLink && (
+                    <a
+                      href={data.appleLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex h-10 w-10 items-center justify-center rounded-full text-pink-700 transition-colors duration-200 hover:bg-pink-200"
+                    >
+                      <Icon name="arcticons:apple" size={24} />
+                    </a>
+                  )}
+                  {data.soundcloudLink && (
+                    <a
+                      href={data.soundcloudLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex h-10 w-10 items-center justify-center rounded-full text-orange-700 transition-colors duration-200 hover:bg-orange-200"
+                    >
+                      <Icon name="arcticons:soundcloud" size={32} />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        ))
-      }
+          ))
+        }
+      </div>
     </div>
     <h2 class="mb-4">Unreleased stuff</h2>
     <p>
