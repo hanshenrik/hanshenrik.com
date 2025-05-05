@@ -11,14 +11,19 @@ const menuItems = [
 ];
 ---
 
-<header class="border-b border-gray-200">
-  <nav class="container mx-auto px-4 py-4">
+<header
+  class="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-sm transition-all duration-200"
+>
+  <nav
+    class="container mx-auto px-4 py-4 transition-all duration-200"
+    id="header-nav"
+  >
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-1">
         <PianoPlukk />
         <Link
           href="/"
-          class="wave-link hide-initial-underline text-xl font-semibold text-gray-900"
+          class="wave-link hide-initial-underline text-xl font-semibold text-gray-900 transition-all duration-200"
           >hanshenrik.com</Link
         >
       </div>
@@ -69,7 +74,7 @@ const menuItems = [
         menuItems.map(({ href, label }) => (
           <Link
             href={href}
-            class="w-fit wave-link block text-lg text-gray-600 hover:text-gray-900"
+            class="wave-link block w-fit text-lg text-gray-600 hover:text-gray-900"
           >
             {label}
           </Link>
@@ -91,6 +96,35 @@ const menuItems = [
   const closeButton = document.getElementById("close-button");
   const mobileMenu = document.getElementById("mobile-menu");
   const backdrop = document.getElementById("backdrop");
+  const headerNav = document.getElementById("header-nav");
+  const header = document.querySelector("header");
+  const logo = document.querySelector(".wave-link.hide-initial-underline");
+
+  let lastScrollY = window.scrollY;
+
+  function updateHeader() {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > 50) {
+      header?.classList.add("shadow-sm");
+      headerNav?.classList.add("py-2");
+      headerNav?.classList.remove("py-4");
+      logo?.classList.add("text-lg");
+    } else {
+      header?.classList.remove("shadow-sm");
+      headerNav?.classList.remove("py-2");
+      headerNav?.classList.add("py-4");
+      logo?.classList.remove("text-lg");
+    }
+
+    lastScrollY = currentScrollY;
+  }
+
+  // Initial check
+  updateHeader();
+
+  // Add scroll event listener
+  window.addEventListener("scroll", updateHeader, { passive: true });
 
   function openMenu() {
     mobileMenu?.classList.remove("translate-x-full");
