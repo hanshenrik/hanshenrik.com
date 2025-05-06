@@ -51,7 +51,7 @@ const { recordings, title, playerId } = Astro.props;
       </div>
     </div>
     <!-- Track List -->
-    <div class="divide-y divide-gray-100">
+    <div class="max-h-[420px] divide-y divide-gray-100 overflow-y-auto">
       {
         recordings.map(({ data }, index) => (
           <button
@@ -86,7 +86,7 @@ const { recordings, title, playerId } = Astro.props;
               </div>
               {data.localFile && (
                 <source
-                  src={`audio/recordings/${data.localFile.src}`}
+                  src={`audio/recordings/${data.localFile.type}/${data.localFile.src}`}
                   type={`audio/${data.localFile.format ? data.localFile.format : "mpeg"}`}
                 />
               )}

@@ -277,7 +277,7 @@
     "image": "https://images.unsplash.com/photo-1624253428622-e6a9f1136882?auto=format&fit=crop&w=500&q=80",
     "imageAttribution": "Orfeas Green",
     "localFile": {
-      "src": "hh4-revamp.mp3",
+      "src": "hh4-you-say-tomidant.mp3",
       "format": "mp3",
       "type": "band"
     }
@@ -306,6 +306,189 @@
       "src": "dereks-feel-so-bad.mp3",
       "format": "mp3",
       "type": "band"
+    }
+  },
+  {
+    "id": "var",
+    "artist": "HHG",
+    "name": "Vår",
+    "image": "https://images.unsplash.com/photo-1743179398628-b7bc5dc8243d?q=80&w=500&auto=format&fit=crop",
+    "imageAttribution": "Klaudia Borowie",
+    "localFile": {
+      "src": "var.mp3",
+      "format": "mp3",
+      "type": "solo"
+    }
+  },
+  {
+    "id": "det-er-enkelt",
+    "artist": "HHG",
+    "name": "Det er enkelt",
+    "image": "https://images.unsplash.com/photo-1703454467617-98f8b6ef99f6?q=80&w=500&auto=format",
+    "imageAttribution": "Benjamin Elliott",
+    "localFile": {
+      "src": "det-er-enkelt.mp3",
+      "format": "mp3",
+      "type": "solo"
+    }
+  },
+  {
+    "id": "enna",
+    "artist": "HHG",
+    "name": "Ennå",
+    "image": "https://images.unsplash.com/photo-1614505155911-607077d15932?q=80&w=500&auto=format&fit=crop",
+    "imageAttribution": "Jan Kohl",
+    "localFile": {
+      "src": "enna.mp3",
+      "format": "mp3",
+      "type": "solo"
+    }
+  },
+  {
+    "id": "skisse-21",
+    "artist": "HHG",
+    "name": "Skisse 21",
+    "image": "https://images.unsplash.com/photo-1654172150857-ba4755645c2a?q=80&w=500&auto=format",
+    "imageAttribution": "Maarten Zuidhoorn",
+    "localFile": {
+      "src": "skisse-21.mp3",
+      "format": "mp3",
+      "type": "solo"
+    }
+  },
+  {
+    "id": "kveldskvitter",
+    "artist": "HHG",
+    "name": "Kveldskvitter",
+    "image": "https://images.unsplash.com/photo-1607301138744-158fc2bc2757?q=80&w=500&auto=format&fit=crop",
+    "imageAttribution": "Jakub Pabis",
+    "localFile": {
+      "src": "kveldskvitter.mp3",
+      "format": "mp3",
+      "type": "solo"
+    }
+  },
+  {
+    "id": "71",
+    "artist": "HHG",
+    "name": "71",
+    "image": "https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=500&auto=format&fit=crop",
+    "imageAttribution": "Luke Stackpoole",
+    "localFile": {
+      "src": "71.mp3",
+      "format": "mp3",
+      "type": "solo"
+    }
+  },
+  {
+    "id": "vandring",
+    "artist": "HHG",
+    "name": "Vandring",
+    "image": "https://images.unsplash.com/photo-1507041957456-9c397ce39c97?q=80&w=500&auto=format&fit=crop",
+    "imageAttribution": "Degleex Ganzorig",
+    "localFile": {
+      "src": "vandring.mp3",
+      "format": "mp3",
+      "type": "solo"
+    }
+  },
+  {
+    "id": "stille",
+    "artist": "HHG",
+    "name": "Stille",
+    "image": "",
+    "localFile": {
+      "src": "stille.mp3",
+      "format": "mp3",
+      "type": "solo"
+    }
+  },
+  {
+    "id": "vuggesang",
+    "artist": "HHG",
+    "name": "Vuggesang",
+    "image": "",
+    "localFile": {
+      "src": "vuggesang.mp3",
+      "format": "mp3",
+      "type": "solo"
+    }
+  },
+  {
+    "id": "det-gynger",
+    "artist": "HHG",
+    "name": "Det gynger",
+    "image": "",
+    "localFile": {
+      "src": "det-gynger.mp3",
+      "format": "mp3",
+      "type": "solo"
+    }
+  },
+  {
+    "id": "nordperla",
+    "artist": "HHG",
+    "name": "Nordperla",
+    "image": "",
+    "localFile": {
+      "src": "nordperla.mp3",
+      "format": "mp3",
+      "type": "solo"
+    }
+  },
+  {
+    "id": "oreklokke",
+    "artist": "HHG",
+    "name": "Øreklokke",
+    "image": "",
+    "localFile": {
+      "src": "oreklokke.mp3",
+      "format": "mp3",
+      "type": "solo"
+    }
+  },
+  {
+    "id": "70",
+    "artist": "HHG",
+    "name": "70",
+    "image": "",
+    "localFile": {
+      "src": "70.mp3",
+      "format": "mp3",
+      "type": "solo"
+    }
+  },
+  {
+    "id": "fortsatt-rolig",
+    "artist": "HHG",
+    "name": "Fortsatt rolig",
+    "image": "",
+    "localFile": {
+      "src": "fortsatt-rolig.mp3",
+      "format": "mp3",
+      "type": "solo"
+    }
+  },
+  {
+    "id": "kveldssang",
+    "artist": "HHG",
+    "name": "Kveldssang",
+    "image": "",
+    "localFile": {
+      "src": "kveldssang.mp3",
+      "format": "mp3",
+      "type": "solo"
+    }
+  },
+  {
+    "id": "stille-snart",
+    "artist": "HHG",
+    "name": "Stille snart",
+    "image": "",
+    "localFile": {
+      "src": "stille-snart.mp3",
+      "format": "mp3",
+      "type": "solo"
     }
   }
 ]

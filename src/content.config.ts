@@ -20,7 +20,7 @@ const recordings = defineCollection({
     id: z.string(),
     artist: z.string(),
     name: z.string(),
-    description: z.string(),
+    description: z.string().optional(),
     year: z.number().optional(),
     tidalLink: z.string().optional(),
     spotifyLink: z.string().optional(),
@@ -32,7 +32,7 @@ const recordings = defineCollection({
     localFile: z
       .object({
         src: z.string(),
-        format: z.string().optional(),
+        format: z.string(),
         type: z.enum(["band", "solo"]),
       })
       .optional(),
