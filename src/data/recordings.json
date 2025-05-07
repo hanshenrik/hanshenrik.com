@@ -396,7 +396,7 @@
     "id": "stille",
     "artist": "HHG",
     "name": "Stille",
-    "image": "",
+    "image": "/images/stille.jpg",
     "localFile": {
       "src": "stille.mp3",
       "format": "mp3",
@@ -407,7 +407,8 @@
     "id": "vuggesang",
     "artist": "HHG",
     "name": "Vuggesang",
-    "image": "",
+    "image": "https://images.unsplash.com/photo-1548391350-1a529f6ea42d?q=80&w=500&auto=format&fit=crop",
+    "imageAttribution": "Sanni Sahil",
     "localFile": {
       "src": "vuggesang.mp3",
       "format": "mp3",
@@ -418,7 +419,8 @@
     "id": "det-gynger",
     "artist": "HHG",
     "name": "Det gynger",
-    "image": "",
+    "image": "https://images.unsplash.com/photo-1685141928183-1e8eb0cdb33f?q=80&w=500&auto=format&fit=crop",
+    "imageAttribution": "Petr Slováček",
     "localFile": {
       "src": "det-gynger.mp3",
       "format": "mp3",
@@ -429,7 +431,7 @@
     "id": "nordperla",
     "artist": "HHG",
     "name": "Nordperla",
-    "image": "",
+    "image": "/images/nordperla.png",
     "localFile": {
       "src": "nordperla.mp3",
       "format": "mp3",
@@ -440,7 +442,8 @@
     "id": "oreklokke",
     "artist": "HHG",
     "name": "Øreklokke",
-    "image": "",
+    "image": "https://images.unsplash.com/photo-1594916973877-0ce410768437?q=80&w=500&auto=format&fit=crop",
+    "imageAttribution": "Md Mahdi",
     "localFile": {
       "src": "oreklokke.mp3",
       "format": "mp3",
@@ -451,7 +454,8 @@
     "id": "70",
     "artist": "HHG",
     "name": "70",
-    "image": "",
+    "image": "https://images.unsplash.com/photo-1638086739120-ce7f3d328c45?q=80&w=500&auto=format&fit=crop",
+    "imageAttribution": "Florian Pinkert",
     "localFile": {
       "src": "70.mp3",
       "format": "mp3",
@@ -462,7 +466,7 @@
     "id": "fortsatt-rolig",
     "artist": "HHG",
     "name": "Fortsatt rolig",
-    "image": "",
+    "image": "/images/fortsatt-rolig.jpg",
     "localFile": {
       "src": "fortsatt-rolig.mp3",
       "format": "mp3",
@@ -473,7 +477,7 @@
     "id": "kveldssang",
     "artist": "HHG",
     "name": "Kveldssang",
-    "image": "",
+    "image": "/images/kveldssang.jpg",
     "localFile": {
       "src": "kveldssang.mp3",
       "format": "mp3",
@@ -484,7 +488,7 @@
     "id": "stille-snart",
     "artist": "HHG",
     "name": "Stille snart",
-    "image": "",
+    "image": "/images/stille-snart.jpg",
     "localFile": {
       "src": "stille-snart.mp3",
       "format": "mp3",
