@@ -1,5 +1,7 @@
 ---
+import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
+import { RECORDINGS_ICON } from "../constants";
 
 interface Props {
   recordings: any[];
@@ -82,7 +84,7 @@ const { recordings, title, playerId } = Astro.props;
                 class="flex-shrink-0 opacity-0 transition-opacity duration-200"
                 data-playing-indicator
               >
-                ⏸️
+                <Icon name={RECORDINGS_ICON} />
               </div>
               {data.localFile && (
                 <source
