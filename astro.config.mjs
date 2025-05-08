@@ -21,6 +21,6 @@ export default defineConfig({
     }),
     mdx(),
     sitemap(),
-    yeskunallumami({ id: "082e225-af96-4b65-affb-cd3700eaa208" }),
+    yeskunallumami({ id: "2082e225-af96-4b65-affb-cd3700eaa208" }),
   ],
 });
