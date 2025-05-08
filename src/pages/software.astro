@@ -38,10 +38,7 @@ const softwares = await getCollection("software");
         href="https://www.folq.no"
         target="_blank"
         rel="noopener noreferrer">Folq</Link
-      >.
-    </p>
-    <p>
-      Previously, I worked at <Link
+      >. Previously, I worked at NSB and <Link
         href="https://entur.no"
         target="_blank"
         rel="noopener noreferrer">Entur</Link
@@ -49,8 +46,9 @@ const softwares = await getCollection("software");
         href="https://knowit.no"
         target="_blank"
         rel="noopener noreferrer">Knowit</Link
-      >). Below are some of my personal projects.
+      >).
     </p>
+    <p>Below are some of my personal projects.</p>
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
         softwares.map((software) => (

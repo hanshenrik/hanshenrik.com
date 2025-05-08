@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import { RECORDINGS_ICON } from "../constants";
+import { stringToHtmlTagId } from "../utils";
 
 interface Props {
   recordings: any[];
@@ -13,7 +14,7 @@ const { recordings, title, playerId } = Astro.props;
 ---
 
 <div>
-  <h3 class="mb-4">{title}</h3>
+  <h3 class="mb-4" id={stringToHtmlTagId(title)}>{title}</h3>
   <div class="max-w-full rounded-lg border border-gray-200 bg-white shadow-sm">
     <!-- Player Controls -->
     <div class="flex items-center gap-4 border-b border-gray-100 p-4">
