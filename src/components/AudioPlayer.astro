@@ -7,7 +7,8 @@ import {
   PAUSE_ICON,
   PLAY_ICON,
   PREVIOUS_ICON,
-} from "../constants";
+} from "../icons";
+import { PLAY_LOCAL_TRACK } from "../umamiEvents";
 import { stringToHtmlTagId } from "../utils";
 
 interface Props {
@@ -182,7 +183,7 @@ const { recordings, title, playerId } = Astro.props;
     const trackName = track.querySelector("#name")?.textContent ?? "";
     const artist = track.querySelector("#artist")?.textContent ?? "";
     if (window.umami) {
-      window.umami.track("audio_play", {
+      window.umami.track(PLAY_LOCAL_TRACK, {
         track: trackName,
         artist: artist,
       });

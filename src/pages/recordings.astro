@@ -2,7 +2,6 @@
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-import { capitalize } from "lodash-es";
 import AudioPlayer from "../components/AudioPlayer.astro";
 import Link from "../components/Link.astro";
 import {
@@ -10,7 +9,7 @@ import {
   SOUNDCLOUD_ICON,
   SPOTIFY_ICON,
   TIDAL_ICON,
-} from "../constants";
+} from "../icons";
 import Layout from "../layouts/Layout.astro";
 const recordings = await getCollection("recordings");
 
