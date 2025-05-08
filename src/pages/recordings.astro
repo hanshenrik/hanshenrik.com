@@ -4,8 +4,13 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import AudioPlayer from "../components/AudioPlayer.astro";
 import Link from "../components/Link.astro";
+import {
+  APPLE_MUSIC_ICON,
+  SOUNDCLOUD_ICON,
+  SPOTIFY_ICON,
+  TIDAL_ICON,
+} from "../constants";
 import Layout from "../layouts/Layout.astro";
-
 const recordings = await getCollection("recordings");
 
 const releasedRecordings = recordings.filter(
@@ -40,7 +45,7 @@ const localSoloRecordings = recordings.filter(
           rel="noopener noreferrer"
           class="flex w-fit items-center gap-2 self-end"
         >
-          <Icon name="arcticons:tidal" size={24} stroke-width={1.5} />
+          <Icon name={TIDAL_ICON} size={24} />
           <span>Also available on Tidal</span>
         </Link>
       </div>
@@ -79,7 +84,7 @@ const localSoloRecordings = recordings.filter(
                       rel="noopener noreferrer"
                       class="inline-flex h-10 w-10 items-center justify-center rounded-full text-green-700 transition-colors duration-200 hover:bg-green-200"
                     >
-                      <Icon name="arcticons:spotify" size={24} />
+                      <Icon name={SPOTIFY_ICON} size={24} />
                     </a>
                   )}
                   {data.tidalLink && (
@@ -89,11 +94,7 @@ const localSoloRecordings = recordings.filter(
                       rel="noopener noreferrer"
                       class="inline-flex h-10 w-10 items-center justify-center rounded-full text-black transition-colors duration-200 hover:bg-black hover:text-white"
                     >
-                      <Icon
-                        name="arcticons:tidal"
-                        stroke-width={1.5}
-                        size={24}
-                      />
+                      <Icon name={TIDAL_ICON} size={24} />
                     </a>
                   )}
                   {data.appleLink && (
@@ -103,7 +104,7 @@ const localSoloRecordings = recordings.filter(
                       rel="noopener noreferrer"
                       class="inline-flex h-10 w-10 items-center justify-center rounded-full text-pink-700 transition-colors duration-200 hover:bg-pink-200"
                     >
-                      <Icon name="arcticons:apple" size={24} />
+                      <Icon name={APPLE_MUSIC_ICON} size={24} />
                     </a>
                   )}
                   {data.soundcloudLink && (
@@ -113,7 +114,7 @@ const localSoloRecordings = recordings.filter(
                       rel="noopener noreferrer"
                       class="inline-flex h-10 w-10 items-center justify-center rounded-full text-orange-700 transition-colors duration-200 hover:bg-orange-200"
                     >
-                      <Icon name="arcticons:soundcloud" size={32} />
+                      <Icon name={SOUNDCLOUD_ICON} size={24} />
                     </a>
                   )}
                 </div>

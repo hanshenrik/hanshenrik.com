@@ -1,30 +1,12 @@
 ---
 import { Icon } from "astro-icon/components";
-import { PIANO_PLUKK_ICON } from "../constants";
+import { PIANO_PLUKK_ICON, PIANO_PLUKK_NOTE_ICONS } from "../constants";
 
 interface Props {
   class?: string;
 }
 
 const { class: className }: Props = Astro.props;
-
-const noteIcons = [
-  "arcticons:music",
-  "arcticons:emoji-multiple-musical-notes",
-  "arcticons:lineage-music",
-  "arcticons:line-music",
-  "arcticons:music-alt-3",
-  "arcticons:music-alt-1",
-  "arcticons:nintendo-music",
-  "arcticons:huawei-music",
-  "arcticons:music-you",
-  "arcticons:fossify-musicplayer",
-  "arcticons:emoji-musical-note",
-  "arcticons:emoji-musical-score",
-  "arcticons:applemusic",
-  "arcticons:samsung-music",
-  "arcticons:unpopular-music-player",
-];
 
 const soundFiles = Array.from({ length: 31 }, (_, i) => {
   const num = i + 1;
@@ -35,12 +17,11 @@ const soundFiles = Array.from({ length: 31 }, (_, i) => {
 <div class:list={["relative", className]}>
   <div class="pointer-events-none absolute inset-0">
     {
-      noteIcons.map((icon) => (
+      PIANO_PLUKK_NOTE_ICONS.map((icon) => (
         <Icon
           class="piano-plukk-note z-50 hidden text-gray-400 opacity-0 transition-opacity duration-[3s] ease-linear"
           name={icon}
           size={48}
-          stroke-width={1.5}
         />
       ))
     }

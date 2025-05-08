@@ -23,7 +23,6 @@
     "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "@iconify-json/arcticons": "^1.2.24",
     "@iconify-json/ph": "^1.2.2",
     "@iconify-json/solar": "^1.2.2",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
