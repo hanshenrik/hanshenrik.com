@@ -38,11 +38,8 @@ const menuItems = [
       <div class="hidden items-center space-x-6 md:flex">
         {
           menuItems.map(({ href, label, icon }) => (
-            <Link
-              href={href}
-              class="wave-link flex items-center gap-2 hover:text-gray-900"
-            >
-              <Icon name={icon} size={24} />
+            <Link href={href} class="group flex items-center gap-2" noWave>
+              <Icon name={icon} size={24} class="group-hover:scale-105" />
               {label}
             </Link>
           ))
@@ -81,7 +78,7 @@ const menuItems = [
         menuItems.map(({ href, label, icon }) => (
           <Link
             href={href}
-            class="wave-link flex w-fit items-center gap-2 text-lg hover:text-gray-900"
+            class="wave-link group flex w-fit items-center gap-2 text-lg"
           >
             <Icon name={icon} size={24} />
             {label}

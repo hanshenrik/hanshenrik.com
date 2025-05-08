@@ -24,6 +24,8 @@
   },
   "devDependencies": {
     "@iconify-json/arcticons": "^1.2.24",
+    "@iconify-json/ph": "^1.2.2",
+    "@iconify-json/solar": "^1.2.2",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/lodash-es": "^4.17.12",
     "prettier": "^3.5.3",

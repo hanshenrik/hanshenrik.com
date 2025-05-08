@@ -1,7 +1,13 @@
 ---
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import { RECORDINGS_ICON } from "../constants";
+import {
+  IS_PLAYING_ICON,
+  NEXT_ICON,
+  PAUSE_ICON,
+  PLAY_ICON,
+  PREVIOUS_ICON,
+} from "../constants";
 import { stringToHtmlTagId } from "../utils";
 
 interface Props {
@@ -20,24 +26,25 @@ const { recordings, title, playerId } = Astro.props;
     <div class="flex items-center gap-4 border-b border-gray-100 p-4">
       <button
         id={`prev-track-${playerId}`}
-        class="rounded-full p-2 text-gray-600 hover:bg-gray-100"
+        class="rounded-full p-2 text-cyan-700 hover:bg-gray-100"
         aria-label="Previous track"
       >
-        ⏮️
+        <Icon name={PREVIOUS_ICON} size={20} />
       </button>
       <button
         id={`play-pause-${playerId}`}
-        class="rounded-full p-2 text-gray-600 hover:bg-gray-100"
+        class="rounded-full p-2 text-cyan-700 hover:bg-gray-100"
         aria-label="Play/Pause"
       >
-        ⏯️
+        <Icon name={PLAY_ICON} size={32} class="play-icon" />
+        <Icon name={PAUSE_ICON} size={32} class="pause-icon hidden" />
       </button>
       <button
         id={`next-track-${playerId}`}
-        class="rounded-full p-2 text-gray-600 hover:bg-gray-100"
+        class="rounded-full p-2 text-cyan-700 hover:bg-gray-100"
         aria-label="Next track"
       >
-        ⏭️
+        <Icon name={NEXT_ICON} size={20} />
       </button>
       <div class="min-w-0 flex-1">
         <div
@@ -76,16 +83,18 @@ const { recordings, title, playerId } = Astro.props;
                 </div>
               )}
               <div class="min-w-0 flex-1">
-                <h3 class="font-medium break-words text-gray-900">
+                <h4 id="name" class="font-medium break-words text-gray-900">
                   {data.name}
-                </h3>
-                <p class="text-sm break-words text-gray-600">{data.artist}</p>
+                </h4>
+                <p id="artist" class="text-sm break-words text-gray-600">
+                  {data.artist}
+                </p>
               </div>
               <div
-                class="flex-shrink-0 opacity-0 transition-opacity duration-200"
+                class="flex-shrink-0 text-cyan-700 opacity-0 transition-opacity duration-200"
                 data-playing-indicator
               >
-                <Icon name={RECORDINGS_ICON} />
+                <Icon name={IS_PLAYING_ICON} size={24} />
               </div>
               {data.localFile && (
                 <source
@@ -128,8 +137,8 @@ const { recordings, title, playerId } = Astro.props;
   const audio = new Audio();
 
   function updateNowPlaying(track) {
-    const name = track.querySelector("h3")?.textContent ?? "";
-    const artist = track.querySelector("p")?.textContent ?? "";
+    const name = track.querySelector("#name")?.textContent ?? "";
+    const artist = track.querySelector("#artist")?.textContent ?? "";
     nowPlaying.textContent = name;
     nowPlayingArtist.textContent = artist;
   }
@@ -168,18 +177,30 @@ const { recordings, title, playerId } = Astro.props;
     audio.play();
     updateNowPlaying(track);
     setActiveTrack(track);
-    playPauseBtn.textContent = "⏸️";
   }
 
   function togglePlayPause() {
-    if (!currentTrack) return;
+    if (!currentTrack) {
+      playTrack(0);
+      return;
+    }
 
     if (audio.paused) {
       audio.play();
-      playPauseBtn.textContent = "⏸️";
+      const playIcon = playPauseBtn.querySelector(".play-icon");
+      const pauseIcon = playPauseBtn.querySelector(".pause-icon");
+      if (playIcon && pauseIcon) {
+        playIcon.classList.add("hidden");
+        pauseIcon.classList.remove("hidden");
+      }
     } else {
       audio.pause();
-      playPauseBtn.textContent = "⏯️";
+      const playIcon = playPauseBtn.querySelector(".play-icon");
+      const pauseIcon = playPauseBtn.querySelector(".pause-icon");
+      if (playIcon && pauseIcon) {
+        playIcon.classList.remove("hidden");
+        pauseIcon.classList.add("hidden");
+      }
     }
   }
 
@@ -206,7 +227,12 @@ const { recordings, title, playerId } = Astro.props;
 
   audio.addEventListener("ended", playNext);
   audio.addEventListener("pause", () => {
-    playPauseBtn.textContent = "⏯️";
+    const playIcon = playPauseBtn.querySelector(".play-icon");
+    const pauseIcon = playPauseBtn.querySelector(".pause-icon");
+    if (playIcon && pauseIcon) {
+      playIcon.classList.remove("hidden");
+      pauseIcon.classList.add("hidden");
+    }
     if (currentTrack) {
       const indicator = currentTrack.querySelector("[data-playing-indicator]");
       if (indicator) {
@@ -215,7 +241,12 @@ const { recordings, title, playerId } = Astro.props;
     }
   });
   audio.addEventListener("play", () => {
-    playPauseBtn.textContent = "⏸️";
+    const playIcon = playPauseBtn.querySelector(".play-icon");
+    const pauseIcon = playPauseBtn.querySelector(".pause-icon");
+    if (playIcon && pauseIcon) {
+      playIcon.classList.add("hidden");
+      pauseIcon.classList.remove("hidden");
+    }
     if (currentTrack) {
       const indicator = currentTrack.querySelector("[data-playing-indicator]");
       if (indicator) {

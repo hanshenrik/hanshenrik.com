@@ -31,10 +31,6 @@
 }
 
 @layer components {
-  .playing {
-    @apply animate-spin;
-  }
-
   .wave-link {
     @apply relative no-underline;
   }

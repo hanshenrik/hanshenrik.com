@@ -1,4 +1,10 @@
-export const RECORDINGS_ICON = "arcticons:vinyl";
-export const GIGS_ICON = "arcticons:simple-calendar";
-export const VIDEO_ICON = "arcticons:emoji-videocassette";
-export const SOFTWARE_ICON = "arcticons:code-studio";
+export const RECORDINGS_ICON = "solar:radio-minimalistic-line-duotone";
+export const GIGS_ICON = "solar:calendar-line-duotone";
+export const VIDEO_ICON = "solar:tv-line-duotone";
+export const SOFTWARE_ICON = "solar:diskette-line-duotone";
+export const PLAY_ICON = "solar:play-bold";
+export const PAUSE_ICON = "solar:pause-bold";
+export const PREVIOUS_ICON = "solar:skip-previous-bold-duotone";
+export const NEXT_ICON = "solar:skip-next-bold-duotone";
+export const IS_PLAYING_ICON = "solar:volume-loud-line-duotone";
+export const PIANO_PLUKK_ICON = "ph:piano-keys-duotone";
