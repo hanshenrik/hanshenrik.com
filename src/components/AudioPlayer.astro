@@ -177,6 +177,16 @@ const { recordings, title, playerId } = Astro.props;
     audio.play();
     updateNowPlaying(track);
     setActiveTrack(track);
+
+    // Track play event in Umami
+    const trackName = track.querySelector("#name")?.textContent ?? "";
+    const artist = track.querySelector("#artist")?.textContent ?? "";
+    if (window.umami) {
+      window.umami.track("audio_play", {
+        track: trackName,
+        artist: artist,
+      });
+    }
   }
 
   function togglePlayPause() {
