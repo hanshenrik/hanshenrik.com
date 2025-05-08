@@ -72,8 +72,8 @@ const soundFiles = Array.from({ length: 31 }, (_, i) => {
   });
 
   function showNote(note) {
-    const x = Math.random() * window.innerWidth;
-    const y = Math.random() * window.innerHeight;
+    const x = Math.random() * (window.innerWidth - 48);
+    const y = Math.random() * (window.innerHeight - 48);
 
     note.setAttribute("style", `left: ${x}px; top: ${y}px;`);
     note.classList.remove("hidden");
