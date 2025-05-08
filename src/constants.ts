@@ -11,7 +11,7 @@ export const SOFTWARE_ICON = "solar:diskette-line-duotone";
 // Logos
 export const TIDAL_ICON = "ph:tidal-logo-duotone";
 export const SPOTIFY_ICON = "ph:spotify-logo-duotone";
-export const APPLE_MUSIC_ICON = "ph:apple-music-logo-duotone";
+export const APPLE_MUSIC_ICON = "ph:apple-logo-duotone";
 export const SOUNDCLOUD_ICON = "ph:soundcloud-logo-duotone";
 export const GITHUB_ICON = "ph:github-logo-duotone";
 export const YOUTUBE_ICON = "ph:youtube-logo-duotone";
