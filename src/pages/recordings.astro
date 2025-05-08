@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+import { capitalize } from "lodash-es";
 import AudioPlayer from "../components/AudioPlayer.astro";
 import Link from "../components/Link.astro";
 import {
@@ -43,10 +44,9 @@ const localSoloRecordings = recordings.filter(
           href="https://tidal.com/browse/playlist/0a61d353-ade3-4efe-a517-a82d99b47354"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex w-fit items-center gap-2 self-end"
+          class="flex w-fit items-center gap-1 self-end"
         >
-          <Icon name={TIDAL_ICON} size={24} />
-          <span>Also available on Tidal</span>
+          Also available on <Icon name={TIDAL_ICON} />Tidal
         </Link>
       </div>
       <div
@@ -65,59 +65,64 @@ const localSoloRecordings = recordings.filter(
                     alt={`${data.artist} - ${data.name}`}
                     class="h-full w-full object-cover"
                   />
+                  {data.type && (
+                    <span class="absolute right-1 bottom-1 h-fit rounded-md bg-gray-100/90 px-2 py-1 text-xs shadow-inner backdrop-blur-xs">
+                      {data.type}
+                    </span>
+                  )}
                 </div>
               )}
               <div class="card-content py-1">
-                <h3 class="text-lg font-medium">{data.artist}</h3>
-                <h4 class="text-sm text-gray-500">{data.name}</h4>
+                <h3 class="text-lg font-medium">{data.name}</h3>
+                <h4 class="text-sm text-gray-500">{data.artist}</h4>
                 <details class="text-sm text-gray-500">
                   <summary>More</summary>
                   <div class="mt-2">
+                    <div class="-ml-2 flex w-fit flex-wrap gap-1">
+                      {data.spotifyLink && (
+                        <a
+                          href={data.spotifyLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="inline-flex h-10 w-10 items-center justify-center rounded-full text-green-700 transition-colors duration-200 hover:bg-green-200"
+                        >
+                          <Icon name={SPOTIFY_ICON} size={24} />
+                        </a>
+                      )}
+                      {data.tidalLink && (
+                        <a
+                          href={data.tidalLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="inline-flex h-10 w-10 items-center justify-center rounded-full text-black transition-colors duration-200 hover:bg-black hover:text-white"
+                        >
+                          <Icon name={TIDAL_ICON} size={24} />
+                        </a>
+                      )}
+                      {data.appleLink && (
+                        <a
+                          href={data.appleLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="inline-flex h-10 w-10 items-center justify-center rounded-full text-pink-700 transition-colors duration-200 hover:bg-pink-200"
+                        >
+                          <Icon name={APPLE_MUSIC_ICON} size={24} />
+                        </a>
+                      )}
+                      {data.soundcloudLink && (
+                        <a
+                          href={data.soundcloudLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="inline-flex h-10 w-10 items-center justify-center rounded-full text-orange-700 transition-colors duration-200 hover:bg-orange-200"
+                        >
+                          <Icon name={SOUNDCLOUD_ICON} size={24} />
+                        </a>
+                      )}
+                    </div>
                     <p class="text-sm text-gray-500">{data.description}</p>
                   </div>
                 </details>
-                <div class="flex w-fit flex-wrap gap-1">
-                  {data.spotifyLink && (
-                    <a
-                      href={data.spotifyLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="inline-flex h-10 w-10 items-center justify-center rounded-full text-green-700 transition-colors duration-200 hover:bg-green-200"
-                    >
-                      <Icon name={SPOTIFY_ICON} size={24} />
-                    </a>
-                  )}
-                  {data.tidalLink && (
-                    <a
-                      href={data.tidalLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="inline-flex h-10 w-10 items-center justify-center rounded-full text-black transition-colors duration-200 hover:bg-black hover:text-white"
-                    >
-                      <Icon name={TIDAL_ICON} size={24} />
-                    </a>
-                  )}
-                  {data.appleLink && (
-                    <a
-                      href={data.appleLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="inline-flex h-10 w-10 items-center justify-center rounded-full text-pink-700 transition-colors duration-200 hover:bg-pink-200"
-                    >
-                      <Icon name={APPLE_MUSIC_ICON} size={24} />
-                    </a>
-                  )}
-                  {data.soundcloudLink && (
-                    <a
-                      href={data.soundcloudLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="inline-flex h-10 w-10 items-center justify-center rounded-full text-orange-700 transition-colors duration-200 hover:bg-orange-200"
-                    >
-                      <Icon name={SOUNDCLOUD_ICON} size={24} />
-                    </a>
-                  )}
-                </div>
               </div>
             </div>
           ))
@@ -133,7 +138,7 @@ const localSoloRecordings = recordings.filter(
         rel="noopener noreferrer"
         class="inline-flex w-fit items-center gap-1"
       >
-        <span>SoundCloud</span>
+        <Icon name={SOUNDCLOUD_ICON} />SoundCloud
       </Link>.
     </p>
     <div class="grid gap-2 md:grid-cols-2">

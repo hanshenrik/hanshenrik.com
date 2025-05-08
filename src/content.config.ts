@@ -21,6 +21,7 @@ const recordings = defineCollection({
     artist: z.string(),
     name: z.string(),
     description: z.string().optional(),
+    type: z.enum(["Album", "Single", "EP", "Live"]).optional(),
     year: z.number().optional(),
     tidalLink: z.string().optional(),
     spotifyLink: z.string().optional(),
