@@ -41,7 +41,11 @@ const menuItems = [
         {
           menuItems.map(({ href, label, icon }) => (
             <Link href={href} class="group flex items-center gap-2" noWave>
-              <Icon name={icon} size={24} class="group-hover:scale-105" />
+              <Icon
+                name={icon}
+                size={24}
+                class="transition-transform group-hover:scale-110"
+              />
               {label}
             </Link>
           ))
