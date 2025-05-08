@@ -184,8 +184,8 @@ const { recordings, title, playerId } = Astro.props;
     const artist = track.querySelector("#artist")?.textContent ?? "";
     if (window.umami) {
       window.umami.track(PLAY_LOCAL_TRACK, {
-        track: trackName,
-        artist: artist,
+        track: trackName?.trim(),
+        artist: artist?.trim(),
       });
     }
   }
