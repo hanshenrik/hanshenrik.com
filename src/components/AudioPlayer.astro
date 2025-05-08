@@ -111,7 +111,7 @@ const { recordings, title, playerId } = Astro.props;
   </div>
 </div>
 
-<script define:vars={{ playerId }}>
+<script define:vars={{ playerId, PLAY_LOCAL_TRACK }}>
   const tracks = document.querySelectorAll(
     `[data-track-index][data-player-id="${playerId}"]`,
   );
