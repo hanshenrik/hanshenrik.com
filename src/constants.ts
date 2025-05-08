@@ -1,5 +1,14 @@
+// UI
 export const HAMBURGER_MENU_ICON = "solar:hamburger-menu-line-duotone";
 export const CLOSE_ICON = "solar:close-circle-line-duotone";
+
+// Pages
+export const RECORDINGS_ICON = "solar:radio-minimalistic-line-duotone";
+export const GIGS_ICON = "solar:calendar-line-duotone";
+export const VIDEO_ICON = "solar:tv-line-duotone";
+export const SOFTWARE_ICON = "solar:diskette-line-duotone";
+
+// Logos
 export const TIDAL_ICON = "ph:tidal-logo-duotone";
 export const SPOTIFY_ICON = "ph:spotify-logo-duotone";
 export const APPLE_MUSIC_ICON = "ph:apple-music-logo-duotone";
@@ -8,15 +17,14 @@ export const GITHUB_ICON = "ph:github-logo-duotone";
 export const YOUTUBE_ICON = "ph:youtube-logo-duotone";
 export const WEBSITE_ICON = "ph:globe-duotone";
 
-export const RECORDINGS_ICON = "solar:radio-minimalistic-line-duotone";
-export const GIGS_ICON = "solar:calendar-line-duotone";
-export const VIDEO_ICON = "solar:tv-line-duotone";
-export const SOFTWARE_ICON = "solar:diskette-line-duotone";
+// Audio player
 export const PLAY_ICON = "solar:play-bold";
 export const PAUSE_ICON = "solar:pause-bold";
 export const PREVIOUS_ICON = "solar:skip-previous-bold-duotone";
 export const NEXT_ICON = "solar:skip-next-bold-duotone";
 export const IS_PLAYING_ICON = "solar:volume-loud-line-duotone";
+
+// Piano plukk
 export const PIANO_PLUKK_ICON = "ph:piano-keys-duotone";
 export const PIANO_PLUKK_NOTE_ICONS = [
   "solar:music-note-bold",
