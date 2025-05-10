@@ -31,6 +31,18 @@
 }
 
 @layer components {
+  .header.stuck {
+    @apply shadow-sm;
+  }
+
+  .header.stuck #header-nav {
+    @apply py-1.5;
+  }
+
+  .header:not(.stuck) #header-nav {
+    @apply py-4;
+  }
+
   .wave-link {
     @apply relative no-underline;
   }

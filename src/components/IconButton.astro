@@ -1,0 +1,20 @@
+---
+import { Icon } from "astro-icon/components";
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<'button'> {
+  icon: string;
+  size?: number;
+  label: string;
+}
+
+const { icon, size = 24, label, class: className = "", ...rest } = Astro.props;
+---
+
+<button
+  class={`rounded-full p-2 transition-colors duration-200 hover:bg-gray-100 ${className}`}
+  aria-label={label}
+  {...rest}
+>
+  <Icon name={icon} size={size} />
+</button>

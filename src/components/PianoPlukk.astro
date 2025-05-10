@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import { PIANO_PLUKK_ICON, PIANO_PLUKK_NOTE_ICONS } from "../icons";
+import IconButton from "./IconButton.astro";
 
 interface Props {
   class?: string;
@@ -26,12 +27,12 @@ const soundFiles = Array.from({ length: 31 }, (_, i) => {
       ))
     }
   </div>
-  <button
-    class="mt-0.5 inline-flex items-center gap-2 rounded-full p-2 text-sm text-gray-700 transition-colors duration-200 hover:bg-gray-200"
+  <IconButton
     id="piano-plukk-trigger"
-  >
-    <Icon name={PIANO_PLUKK_ICON} size={20} />
-  </button>
+    icon={PIANO_PLUKK_ICON}
+    label="Play piano plukk sound"
+    class="mt-0.5 -ml-3 text-sm"
+  />
 </div>
 
 <style>

@@ -10,6 +10,7 @@ import {
 } from "../icons";
 import Link from "./Link.astro";
 import PianoPlukk from "./PianoPlukk.astro";
+import IconButton from "./IconButton.astro";
 
 const menuItems = [
   { href: "/gigs", label: "Gigs", icon: GIGS_ICON },
@@ -19,11 +20,12 @@ const menuItems = [
 ];
 ---
 
+<div class="h-16"></div>
 <header
-  class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm transition-all duration-200"
+  class="header fixed top-0 right-0 left-0 z-50 bg-white/80 backdrop-blur-sm transition-all duration-300"
 >
   <nav
-    class="container mx-auto px-4 py-4 transition-all duration-200"
+    class="container mx-auto px-4 transition-all duration-300"
     id="header-nav"
   >
     <div class="flex items-center justify-between">
@@ -53,13 +55,12 @@ const menuItems = [
       </div>
 
       <!-- Mobile Menu Button -->
-      <button
+      <IconButton
         id="menu-button"
-        class="rounded-md p-2 md:hidden"
-        aria-label="Toggle menu"
-      >
-        <Icon name={HAMBURGER_MENU_ICON} size={24} />
-      </button>
+        icon={HAMBURGER_MENU_ICON}
+        label="Toggle menu"
+        class="md:hidden"
+      />
     </div>
   </nav>
 </header>
@@ -71,13 +72,11 @@ const menuItems = [
 >
   <div class="flex h-full flex-col">
     <div class="flex justify-end p-4">
-      <button
+      <IconButton
         id="close-button"
-        class="rounded-md p-2 hover:bg-gray-100 hover:text-gray-900 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-inset"
-        aria-label="Close menu"
-      >
-        <Icon name={CLOSE_ICON} size={24} />
-      </button>
+        icon={CLOSE_ICON}
+        label="Close menu"
+      />
     </div>
     <nav class="flex-1 space-y-6 px-4 py-6">
       {
@@ -107,9 +106,7 @@ const menuItems = [
   const closeButton = document.getElementById("close-button");
   const mobileMenu = document.getElementById("mobile-menu");
   const backdrop = document.getElementById("backdrop");
-  const headerNav = document.getElementById("header-nav");
   const header = document.querySelector("header");
-  const logo = document.querySelector(".wave-link.hide-initial-underline");
 
   let lastScrollY = window.scrollY;
 
@@ -117,15 +114,9 @@ const menuItems = [
     const currentScrollY = window.scrollY;
 
     if (currentScrollY > 50) {
-      header?.classList.add("shadow-sm");
-      headerNav?.classList.add("py-1.5");
-      headerNav?.classList.remove("py-4");
-      logo?.classList.add("text-lg");
+      header?.classList.add("stuck");
     } else {
-      header?.classList.remove("shadow-sm");
-      headerNav?.classList.remove("py-1.5");
-      headerNav?.classList.add("py-4");
-      logo?.classList.remove("text-lg");
+      header?.classList.remove("stuck");
     }
 
     lastScrollY = currentScrollY;

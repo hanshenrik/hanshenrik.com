@@ -1,0 +1,6 @@
+---
+description: 
+globs: *.astro
+alwaysApply: false
+---
+Remember to add two `---` lines at the top where imports and such are placed
