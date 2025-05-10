@@ -47,17 +47,24 @@ const { recordings, title, playerId } = Astro.props;
       >
         <Icon name={NEXT_ICON} size={20} />
       </button>
-      <div class="min-w-0 flex-1">
+      <div class="min-w-0 flex-1 overflow-x-hidden">
         <div
           class="text-sm font-medium break-words text-gray-900"
           id={`now-playing-${playerId}`}
         >
-          Select a track to play
+          <br />
         </div>
         <div
           class="text-xs break-words text-gray-500"
           id={`now-playing-artist-${playerId}`}
         >
+          Select a track to play
+        </div>
+        <div
+          class="text-xs whitespace-nowrap text-gray-500"
+          id={`now-playing-description-${playerId}`}
+        >
+          <br />
         </div>
       </div>
     </div>
@@ -90,6 +97,14 @@ const { recordings, title, playerId } = Astro.props;
                 <p id="artist" class="text-sm break-words text-gray-600">
                   {data.artist}
                 </p>
+                {data.description && (
+                  <p
+                    id="description"
+                    class="hidden text-xs break-words text-gray-500"
+                  >
+                    {data.description}
+                  </p>
+                )}
               </div>
               <div
                 class="flex-shrink-0 text-cyan-700 opacity-0 transition-opacity duration-200"
@@ -122,6 +137,9 @@ const { recordings, title, playerId } = Astro.props;
   const nowPlayingArtist = document.getElementById(
     `now-playing-artist-${playerId}`,
   );
+  const nowPlayingDescription = document.getElementById(
+    `now-playing-description-${playerId}`,
+  );
 
   if (
     !playPauseBtn ||
@@ -140,8 +158,20 @@ const { recordings, title, playerId } = Astro.props;
   function updateNowPlaying(track) {
     const name = track.querySelector("#name")?.textContent ?? "";
     const artist = track.querySelector("#artist")?.textContent ?? "";
+    const description = track.querySelector("#description")?.textContent ?? "";
     nowPlaying.textContent = name;
     nowPlayingArtist.textContent = artist;
+    nowPlayingDescription.textContent = description;
+
+    // Always reset the animation
+    nowPlayingDescription.style.animation = "none";
+
+    setTimeout(() => {
+      // Add marquee effect if there's a description
+      if (description) {
+        nowPlayingDescription.style.animation = "marquee 15s linear infinite";
+      }
+    }, 2000);
   }
 
   function setActiveTrack(track) {
@@ -266,3 +296,14 @@ const { recordings, title, playerId } = Astro.props;
     }
   });
 </script>
+
+<style>
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>
