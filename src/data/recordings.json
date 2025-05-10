@@ -172,20 +172,6 @@
     }
   },
   {
-    "id": "luger",
-    "artist": "ER4",
-    "name": "Lüger",
-    "description": "Rune Nielsen (guitar), Hans Henrik Grønsleth (piano), Mathias Holtedahl Thorp (double bass), Egil Reistadbakk (drums). Reharmonized by Rune Nielsen. Recorded May 2012 at Olavskvartalet, Trondheim. Mixed and produced by Trond Hustad and Gunnar Andreas Berg.",
-    "soundcloudLink": "https://soundcloud.com/hanshenrik/er4-luger",
-    "image": "https://images.unsplash.com/photo-1612863216924-691800a26677?q=80&w=500&auto=format",
-    "imageAttribution": "Annie Spratt",
-    "localFile": {
-      "src": "er4-luger.mp4",
-      "format": "mp4",
-      "type": "band"
-    }
-  },
-  {
     "id": "bad-news",
     "artist": "Eline Hellerud Åsbakk",
     "name": "Bad News",
@@ -214,15 +200,15 @@
     }
   },
   {
-    "id": "frontpage-story",
-    "artist": "quiet quark quintet + Lars Olav Berg",
-    "name": "Frontpage Story",
-    "description": "Lars Olav Berg (soprano saxophone), Eiliv Andreas Myren Ribe (violin), Einar Kjensmo Fuglerud (guitar), Hans Henrik Grønsleth (Rhodes), Brynjar Blomvik (bass), Tord Vangen (drums). Written by quiet quark quintet. Recorded April 2010 at Trøndertun Studio, Melhus. Mixed by Daniel Johansson, produced by Gunnar Andreas Berg.",
-    "soundcloudLink": "https://soundcloud.com/hanshenrik/quiet-quark-quintet-feat-lars-olav-berg-frontpage-story/s-BTCbl",
-    "image": "https://images.unsplash.com/reserve/uZYSV4nuQeyq64azfVIn_15130980706_64134efc6e_o.jpg?auto=format&fit=crop&w=500&q=80",
-    "imageAttribution": "Amador Loureiro",
+    "id": "lady-music-sounds-better-with-you-freestyler",
+    "artist": "Dancebandet",
+    "name": "Lady / Music Sounds Better With You / Freestyler",
+    "description": "Alexander Andersen (vocals), Eirik Kråkenes (guitars), Hans Henrik Grønsleth (keys), Jørgen Wassvik (bass), Jostein Haseth (drums). Originally Modjo / Stardust / Bomfunk MC's. Recorded October 2009 at Trøndertun Studio, Melhus. Mixed and produced by Daniel Johansson.",
+    "soundcloudLink": "https://soundcloud.com/hanshenrik/lady-music-sounds-better-with-you-freestyler/s-XHP73",
+    "image": "https://images.unsplash.com/photo-1617791160588-241658c0f566?auto=format&fit=crop&w=500&q=80",
+    "imageAttribution": "Milad Fakurian",
     "localFile": {
-      "src": "quiet-quark-quintet-lars-olav-berg-frontpage-story.mp3",
+      "src": "lady-music-sounds-better-with-you-freestyler.mp3",
       "format": "mp3",
       "type": "band"
     }
@@ -242,6 +228,34 @@
     }
   },
   {
+    "id": "frontpage-story",
+    "artist": "quiet quark quintet + Lars Olav Berg",
+    "name": "Frontpage Story",
+    "description": "Lars Olav Berg (soprano saxophone), Eiliv Andreas Myren Ribe (violin), Einar Kjensmo Fuglerud (guitar), Hans Henrik Grønsleth (Rhodes), Brynjar Blomvik (bass), Tord Vangen (drums). Written by quiet quark quintet. Recorded April 2010 at Trøndertun Studio, Melhus. Mixed by Daniel Johansson, produced by Gunnar Andreas Berg.",
+    "soundcloudLink": "https://soundcloud.com/hanshenrik/quiet-quark-quintet-feat-lars-olav-berg-frontpage-story/s-BTCbl",
+    "image": "https://images.unsplash.com/reserve/uZYSV4nuQeyq64azfVIn_15130980706_64134efc6e_o.jpg?auto=format&fit=crop&w=500&q=80",
+    "imageAttribution": "Amador Loureiro",
+    "localFile": {
+      "src": "quiet-quark-quintet-lars-olav-berg-frontpage-story.mp3",
+      "format": "mp3",
+      "type": "band"
+    }
+  },
+  {
+    "id": "luger",
+    "artist": "ER4",
+    "name": "Lüger",
+    "description": "Rune Nielsen (guitar), Hans Henrik Grønsleth (piano), Mathias Holtedahl Thorp (double bass), Egil Reistadbakk (drums). Reharmonized by Rune Nielsen. Recorded May 2012 at Olavskvartalet, Trondheim. Mixed and produced by Trond Hustad and Gunnar Andreas Berg.",
+    "soundcloudLink": "https://soundcloud.com/hanshenrik/er4-luger",
+    "image": "https://images.unsplash.com/photo-1612863216924-691800a26677?q=80&w=500&auto=format",
+    "imageAttribution": "Annie Spratt",
+    "localFile": {
+      "src": "er4-luger.mp4",
+      "format": "mp4",
+      "type": "band"
+    }
+  },
+  {
     "id": "that-sunday-that-summer",
     "artist": "Sarah Evelyn Fullerton feat. quiet quark quintet",
     "name": "That Sunday, That Summer",
@@ -254,16 +268,17 @@
       "type": "band"
     }
   },
+
   {
-    "id": "lady-music-sounds-better-with-you-freestyler",
-    "artist": "Dancebandet",
-    "name": "Lady / Music Sounds Better With You / Freestyler",
-    "description": "Alexander Andersen (vocals), Eirik Kråkenes (guitars), Hans Henrik Grønsleth (keys), Jørgen Wassvik (bass), Jostein Haseth (drums). Originally Modjo / Stardust / Bomfunk MC's. Recorded October 2009 at Trøndertun Studio, Melhus. Mixed and produced by Daniel Johansson.",
-    "soundcloudLink": "https://soundcloud.com/hanshenrik/lady-music-sounds-better-with-you-freestyler/s-XHP73",
-    "image": "https://images.unsplash.com/photo-1617791160588-241658c0f566?auto=format&fit=crop&w=500&q=80",
-    "imageAttribution": "Milad Fakurian",
+    "id": "oh-woman",
+    "artist": "Derek's",
+    "name": "Oh Woman",
+    "description": "Øyvind Ramsøy-Halle (vocals and guitar), André Aamås (vocals and guitar), Hans Henrik Grønsleth (piano and Hammond B3), Eiliv Andreas Myren Ribe (violin), Stian Brungot (bass), Andreas Voie Juliebø (drums). Recorded 2009 at Trøndertun Studio, Melhus.",
+    "soundcloudLink": "https://soundcloud.com/hanshenrik/dereks-oh-woman/s-zoVTN",
+    "image": "https://images.unsplash.com/photo-1529432337323-223e988a90fb?auto=format&fit=crop&w=500&q=80",
+    "imageAttribution": ". liane .",
     "localFile": {
-      "src": "lady-music-sounds-better-with-you-freestyler.mp3",
+      "src": "dereks-oh-woman.mp3",
       "format": "mp3",
       "type": "band"
     }
@@ -283,6 +298,18 @@
     }
   },
   {
+    "id": "feel-so-bad",
+    "artist": "Derek's",
+    "name": "Feel So Bad",
+    "description": "Øyvind Ramsøy-Halle (vocals and guitar), André Aamås (vocals and guitar), Hans Henrik Grønsleth (piano and Hammond B3), Eiliv Andreas Myren Ribe (violin), Stian Brungot (bass), Andreas Voie Juliebø (drums). Originally The Derek Trucks Band. Recorded 2009 at Trøndertun Studio, Melhus.",
+    "image": "https://images.unsplash.com/photo-1590005608858-67892d55ae86?q=80&w=500&auto=format&fit=crop",
+    "localFile": {
+      "src": "dereks-feel-so-bad.mp3",
+      "format": "mp3",
+      "type": "band"
+    }
+  },
+  {
     "id": "you-say-tomidant-live",
     "artist": "HH4",
     "name": "You Say tomiDant [Live]",
@@ -292,32 +319,6 @@
     "imageAttribution": "Orfeas Green",
     "localFile": {
       "src": "hh4-you-say-tomidant.mp3",
-      "format": "mp3",
-      "type": "band"
-    }
-  },
-  {
-    "id": "oh-woman",
-    "artist": "Derek's",
-    "name": "Oh Woman",
-    "description": "Øyvind Ramsøy-Halle (vocals and guitar), André Aamås (vocals and guitar), Hans Henrik Grønsleth (piano and Hammond B3), Eiliv Andreas Myren Ribe (violin), Stian Brungot (bass), Andreas Voie Juliebø (drums). Recorded 2009 at Trøndertun Studio, Melhus.",
-    "soundcloudLink": "https://soundcloud.com/hanshenrik/dereks-oh-woman/s-zoVTN",
-    "image": "https://images.unsplash.com/photo-1529432337323-223e988a90fb?auto=format&fit=crop&w=500&q=80",
-    "imageAttribution": ". liane .",
-    "localFile": {
-      "src": "dereks-oh-woman.mp3",
-      "format": "mp3",
-      "type": "band"
-    }
-  },
-  {
-    "id": "feel-so-bad",
-    "artist": "Derek's",
-    "name": "Feel So Bad",
-    "description": "Øyvind Ramsøy-Halle (vocals and guitar), André Aamås (vocals and guitar), Hans Henrik Grønsleth (piano and Hammond B3), Eiliv Andreas Myren Ribe (violin), Stian Brungot (bass), Andreas Voie Juliebø (drums). Originally The Derek Trucks Band. Recorded 2009 at Trøndertun Studio, Melhus.",
-    "image": "https://images.unsplash.com/photo-1590005608858-67892d55ae86?q=80&w=500&auto=format&fit=crop",
-    "localFile": {
-      "src": "dereks-feel-so-bad.mp3",
       "format": "mp3",
       "type": "band"
     }
