@@ -19,17 +19,15 @@ const sortYearsDesc = (years: Record<string, CollectionEntry<"gigs">[]>) => {
 ---
 
 <Layout title="Gigs">
-  <h1 class="mb-8 text-3xl font-bold">Gigs</h1>
+  <h1 class="mb-12">Gigs</h1>
   {
     sortYearsDesc(groupGigsByYear(sortedGigs)).map(
       ([year, yearGigs], index) => (
         <details class="group mb-4" open={index === 0}>
-          <summary class="text-lg font-medium hover:text-gray-600">
-            {year}
-          </summary>
+          <summary class="text-xl font-medium">{year}</summary>
           <div class="grid">
             <div class="mt-2">
-              <div class="hidden grid-cols-[120px_1fr_1fr] gap-4 bg-gray-50 px-6 py-3 text-xs font-medium tracking-wider text-gray-500 uppercase md:grid">
+              <div class="hidden grid-cols-[120px_1fr_1fr] gap-4 bg-gray-50 px-6 py-3 text-sm font-medium tracking-wider text-gray-500 uppercase md:grid">
                 <div>Date</div>
                 <div>Artist & Venue</div>
                 <div>Description</div>
@@ -37,10 +35,7 @@ const sortYearsDesc = (years: Record<string, CollectionEntry<"gigs">[]>) => {
               <div class="divide-y divide-gray-200">
                 {yearGigs.map((gig: CollectionEntry<"gigs">) => (
                   <div class="flex flex-col gap-4 px-6 py-4 hover:bg-gray-50 md:grid md:grid-cols-[120px_1fr_1fr]">
-                    <time
-                      datetime={gig.data.date}
-                      class="text-sm whitespace-nowrap text-gray-500"
-                    >
+                    <time datetime={gig.data.date} class="whitespace-nowrap">
                       {format(new Date(gig.data.date), "MMMM do")}
                     </time>
                     <div class="space-y-1">
@@ -50,7 +45,6 @@ const sortYearsDesc = (years: Record<string, CollectionEntry<"gigs">[]>) => {
                             href={gig.data.artistUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="hover:text-gray-600"
                           >
                             {gig.data.artist}
                           </Link>
@@ -58,13 +52,12 @@ const sortYearsDesc = (years: Record<string, CollectionEntry<"gigs">[]>) => {
                           gig.data.artist
                         )}
                       </div>
-                      <div class="text-sm text-gray-500">
+                      <div class="">
                         {gig.data.venueUrl ? (
                           <Link
                             href={gig.data.venueUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="hover:text-gray-600"
                           >
                             {gig.data.venue}
                             {gig.data.city && <span>, {gig.data.city}</span>}
@@ -77,13 +70,12 @@ const sortYearsDesc = (years: Record<string, CollectionEntry<"gigs">[]>) => {
                         )}
                       </div>
                     </div>
-                    <div class="text-sm text-gray-500">
+                    <div class="">
                       {gig.data.eventUrl ? (
                         <Link
                           href={gig.data.eventUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          class="hover:text-gray-600"
                         >
                           {gig.data.eventDescription}
                         </Link>

@@ -18,13 +18,11 @@ const { title, description = "hanshenrik.com / Sounds and code" } = Astro.props;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{`hanshenrik.com / ${title}`}</title>
     <meta name="author" content="Hans Henrik Grønsleth" />
     <meta name="description" content={description} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://api.fontshare.com/v2/css?f[]=erode@1,2&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -34,7 +32,7 @@ const { title, description = "hanshenrik.com / Sounds and code" } = Astro.props;
       <slot />
     </main>
     <footer class="border-t border-gray-200">
-      <div class="container mx-auto px-4 py-6 text-center text-gray-600">
+      <div class="container mx-auto px-4 py-6 text-center">
         <p>© {new Date().getFullYear()} Hans Henrik Grønsleth</p>
       </div>
     </footer>

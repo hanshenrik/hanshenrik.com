@@ -15,18 +15,18 @@ const videos = await getCollection("videos");
         videos.map((video) => (
           <div class="card group space-y-2">
             {video.data.youtubeLink && <YouTube id={video.data.youtubeLink} />}
-            <div class="card-content">
-              <h2 class="mb-1">
-                {video.data.artist} - {video.data.name}
+            <div class="card-content space-y-4">
+              <h2>
+                {video.data.artist} – {video.data.name}
               </h2>
-              <p class="mb-4 text-sm text-gray-500">{video.data.description}</p>
+              <p>{video.data.description}</p>
               {video.data.isPlaylist && (
-                <p class="mb-4 text-sm text-gray-500">
+                <p class="mb-4">
                   <a
                     href={video.data.youtubeLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 rounded-full bg-red-100 px-3 py-1.5 text-sm text-red-700 transition-colors duration-200 hover:bg-red-200"
+                    class="inline-flex items-center gap-1 rounded-full bg-red-100 px-3 py-1.5 text-red-700 transition-colors duration-200 hover:bg-red-200"
                   >
                     <Icon name={YOUTUBE_ICON} />
                     View full playlist

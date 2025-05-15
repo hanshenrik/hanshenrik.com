@@ -19,8 +19,8 @@ const { title, description, pubDate, updatedDate } = post.data;
   <article class="mx-auto max-w-3xl" transition:name={`post-${post.id}`}>
     <header class="mb-8">
       <h1 class="mb-4" transition:name={`post-title-${post.id}`}>{title}</h1>
-      <p class="mb-4 text-gray-600">{description}</p>
-      <div class="text-sm text-gray-500">
+      <p class="mb-4">{description}</p>
+      <div class="">
         <time datetime={pubDate.toISOString()}>
           Published {
             pubDate.toLocaleDateString("en-US", {

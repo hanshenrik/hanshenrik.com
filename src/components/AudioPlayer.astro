@@ -27,14 +27,14 @@ const { recordings, title, playerId } = Astro.props;
     <div class="flex items-center gap-4 border-b border-gray-100 p-4">
       <button
         id={`prev-track-${playerId}`}
-        class="rounded-full p-2 text-cyan-700 hover:bg-gray-100"
+        class="rounded-full p-2 text-sky-600 hover:bg-gray-100"
         aria-label="Previous track"
       >
         <Icon name={PREVIOUS_ICON} size={20} />
       </button>
       <button
         id={`play-pause-${playerId}`}
-        class="rounded-full p-2 text-cyan-700 hover:bg-gray-100"
+        class="rounded-full p-2 text-sky-600 hover:bg-gray-100"
         aria-label="Play/Pause"
       >
         <Icon name={PLAY_ICON} size={32} class="play-icon" />
@@ -42,26 +42,23 @@ const { recordings, title, playerId } = Astro.props;
       </button>
       <button
         id={`next-track-${playerId}`}
-        class="rounded-full p-2 text-cyan-700 hover:bg-gray-100"
+        class="rounded-full p-2 text-sky-600 hover:bg-gray-100"
         aria-label="Next track"
       >
         <Icon name={NEXT_ICON} size={20} />
       </button>
       <div class="min-w-0 flex-1 overflow-x-hidden">
         <div
-          class="text-sm font-medium break-words text-gray-900"
+          class="font-medium break-words text-gray-900"
           id={`now-playing-${playerId}`}
         >
           <br />
         </div>
-        <div
-          class="text-xs break-words text-gray-500"
-          id={`now-playing-artist-${playerId}`}
-        >
+        <div class="text-sm break-words" id={`now-playing-artist-${playerId}`}>
           Select a track to play
         </div>
         <div
-          class="text-xs whitespace-nowrap text-gray-500"
+          class="text-sm whitespace-nowrap"
           id={`now-playing-description-${playerId}`}
         >
           <br />
@@ -94,20 +91,17 @@ const { recordings, title, playerId } = Astro.props;
                 <h4 id="name" class="font-medium break-words text-gray-900">
                   {data.name}
                 </h4>
-                <p id="artist" class="text-sm break-words text-gray-600">
+                <p id="artist" class="break-words text-gray-600">
                   {data.artist}
                 </p>
                 {data.description && (
-                  <p
-                    id="description"
-                    class="hidden text-xs break-words text-gray-500"
-                  >
+                  <p id="description" class="hidden text-sm break-words">
                     {data.description}
                   </p>
                 )}
               </div>
               <div
-                class="flex-shrink-0 text-cyan-700 opacity-0 transition-opacity duration-200"
+                class="flex-shrink-0 text-sky-600 opacity-0 transition-opacity duration-200"
                 data-playing-indicator
               >
                 <Icon name={IS_PLAYING_ICON} size={24} />

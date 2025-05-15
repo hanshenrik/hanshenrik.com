@@ -65,16 +65,16 @@ const localSoloRecordings = recordings.filter(
                     class="h-full w-full object-cover"
                   />
                   {data.type && (
-                    <span class="absolute right-1 bottom-1 h-fit rounded-md bg-gray-100/90 px-2 py-1 text-xs shadow-inner backdrop-blur-xs">
+                    <span class="absolute right-1 bottom-1 h-fit rounded-md bg-gray-100/90 px-2 py-1 text-sm shadow-inner backdrop-blur-xs">
                       {data.type}
                     </span>
                   )}
                 </div>
               )}
               <div class="card-content py-1">
-                <h3 class="text-lg font-medium">{data.name}</h3>
-                <h4 class="text-sm text-gray-500">{data.artist}</h4>
-                <details class="text-sm text-gray-500">
+                <h3 class="text-xl">{data.name}</h3>
+                <h4 class="font-medium">{data.artist}</h4>
+                <details class="">
                   <summary>More</summary>
                   <div class="mt-2">
                     <div class="-ml-2 flex w-fit flex-wrap gap-1">
@@ -119,7 +119,7 @@ const localSoloRecordings = recordings.filter(
                         </a>
                       )}
                     </div>
-                    <p class="text-sm text-gray-500">{data.description}</p>
+                    <p class="text-gray-500">{data.description}</p>
                   </div>
                 </details>
               </div>

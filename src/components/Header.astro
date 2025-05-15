@@ -8,9 +8,9 @@ import {
   SOFTWARE_ICON,
   VIDEO_ICON,
 } from "../icons";
+import IconButton from "./IconButton.astro";
 import Link from "./Link.astro";
 import PianoPlukk from "./PianoPlukk.astro";
-import IconButton from "./IconButton.astro";
 
 const menuItems = [
   { href: "/gigs", label: "Gigs", icon: GIGS_ICON },
@@ -33,7 +33,7 @@ const menuItems = [
         <PianoPlukk />
         <Link
           href="/"
-          class="wave-link hide-initial-underline text-xl font-semibold text-gray-900 transition-all duration-200"
+          class="wave-link hide-initial-underline text-base font-medium text-gray-900 transition-all duration-200 md:text-xl"
           >hanshenrik.com</Link
         >
       </div>
@@ -42,7 +42,11 @@ const menuItems = [
       <div class="hidden items-center space-x-6 md:flex">
         {
           menuItems.map(({ href, label, icon }) => (
-            <Link href={href} class="group flex items-center gap-2" noWave>
+            <Link
+              href={href}
+              class="group flex items-center gap-2 font-medium"
+              noWave
+            >
               <Icon
                 name={icon}
                 size={24}
@@ -72,18 +76,14 @@ const menuItems = [
 >
   <div class="flex h-full flex-col">
     <div class="flex justify-end p-4">
-      <IconButton
-        id="close-button"
-        icon={CLOSE_ICON}
-        label="Close menu"
-      />
+      <IconButton id="close-button" icon={CLOSE_ICON} label="Close menu" />
     </div>
     <nav class="flex-1 space-y-6 px-4 py-6">
       {
         menuItems.map(({ href, label, icon }) => (
           <Link
             href={href}
-            class="wave-link group flex w-fit items-center gap-2 text-lg"
+            class="wave-link group flex w-fit items-center gap-2 text-xl"
           >
             <Icon name={icon} size={24} />
             {label}

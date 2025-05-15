@@ -33,10 +33,10 @@ const sortedPosts = posts.sort(
               <h2 class="mb-1">
                 <Link href={`/drypp/${post.id}`}>{post.data.title}</Link>
               </h2>
-              <p class="mb-4 text-sm text-gray-500">{post.data.description}</p>
+              <p class="mb-4 text-gray-500">{post.data.description}</p>
               <time
                 datetime={post.data.pubDate.toISOString()}
-                class="text-sm text-gray-400"
+                class="text-gray-400"
               >
                 {post.data.pubDate.toLocaleDateString("en-US", {
                   year: "numeric",
