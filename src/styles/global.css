@@ -65,4 +65,21 @@
     transform: scaleX(1);
     transform-origin: bottom left;
   }
+
+  .marquee-container {
+    animation: marquee var(--duration, 15s) linear var(--delay, 2s) infinite;
+  }
+
+  .marquee-container:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(var(--translate-x-width, -100%));
+  }
 }

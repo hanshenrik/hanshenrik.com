@@ -164,12 +164,21 @@ const { recordings, title, playerId } = Astro.props;
     nowPlayingDescription.textContent = description;
 
     // Always reset the animation
-    nowPlayingDescription.style.animation = "none";
+    nowPlayingDescription.classList.remove("marquee-container");
 
     setTimeout(() => {
       // Add marquee effect if there's a description
       if (description) {
-        nowPlayingDescription.style.animation = "marquee 15s linear infinite";
+        const scrollWidth = nowPlayingDescription.scrollWidth;
+        const duration = scrollWidth / 30;
+
+        nowPlayingDescription.style.setProperty(
+          "--translate-x-width",
+          `-${nowPlayingDescription.scrollWidth}px`,
+        );
+        nowPlayingDescription.style.setProperty("--duration", `${duration}s`);
+        nowPlayingDescription.style.setProperty("--delay", "2s");
+        nowPlayingDescription.classList.add("marquee-container");
       }
     }, 2000);
   }
@@ -296,14 +305,3 @@ const { recordings, title, playerId } = Astro.props;
     }
   });
 </script>
-
-<style>
-  @keyframes marquee {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-</style>
