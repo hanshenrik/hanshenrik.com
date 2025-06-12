@@ -1,23 +1,10 @@
 ---
 import { Icon } from "astro-icon/components";
-import {
-  CLOSE_ICON,
-  GIGS_ICON,
-  HAMBURGER_MENU_ICON,
-  RECORDINGS_ICON,
-  SOFTWARE_ICON,
-  VIDEO_ICON,
-} from "../icons";
+import { CLOSE_ICON, HAMBURGER_MENU_ICON } from "../icons";
+import { pages } from "../pages/index.astro";
 import IconButton from "./IconButton.astro";
 import Link from "./Link.astro";
 import PianoPlukk from "./PianoPlukk.astro";
-
-const menuItems = [
-  { href: "/gigs", label: "Gigs", icon: GIGS_ICON },
-  { href: "/recordings", label: "Recordings", icon: RECORDINGS_ICON },
-  { href: "/video", label: "Video", icon: VIDEO_ICON },
-  { href: "/software", label: "Software", icon: SOFTWARE_ICON },
-];
 ---
 
 <div class="h-16"></div>
@@ -41,7 +28,7 @@ const menuItems = [
       <!-- Desktop Navigation -->
       <div class="hidden items-center space-x-6 md:flex">
         {
-          menuItems.map(({ href, label, icon }) => (
+          pages.map(({ href, title, icon }) => (
             <Link
               href={href}
               class="group flex items-center gap-2 font-medium"
@@ -52,7 +39,7 @@ const menuItems = [
                 size={24}
                 class="transition-transform group-hover:scale-110"
               />
-              {label}
+              {title}
             </Link>
           ))
         }
@@ -72,23 +59,43 @@ const menuItems = [
 <!-- Mobile Navigation Drawer -->
 <div
   id="mobile-menu"
-  class="fixed inset-y-0 right-0 z-50 w-64 translate-x-full transform bg-white shadow-lg transition-transform duration-300 ease-in-out"
+  class="fixed inset-y-0 right-0 z-50 w-80 translate-x-full transform bg-white shadow-lg transition-transform duration-300 ease-in-out"
 >
   <div class="flex h-full flex-col">
     <div class="flex justify-end p-4">
       <IconButton id="close-button" icon={CLOSE_ICON} label="Close menu" />
     </div>
-    <nav class="flex-1 space-y-6 px-4 py-6">
+    <nav class="flex-1 space-y-4 px-4 py-4">
       {
-        menuItems.map(({ href, label, icon }) => (
-          <Link
-            href={href}
-            class="wave-link group flex w-fit items-center gap-2 text-xl"
-          >
-            <Icon name={icon} size={24} />
-            {label}
-          </Link>
-        ))
+        pages.map(
+          ({ href, title, icon, image, imageAttribution, textColor }) => (
+            <a
+              href={href}
+              class:list={[
+                "group relative flex h-32 w-full items-center gap-3 rounded-lg p-4",
+                textColor,
+              ]}
+            >
+              {image && (
+                <div class="absolute inset-0 overflow-hidden rounded-lg">
+                  <div
+                    class="h-full w-full bg-cover bg-center"
+                    style={`background-image: url(${image.src});`}
+                  />
+                </div>
+              )}
+              {imageAttribution && (
+                <div class="absolute right-2 bottom-1 z-10 flex items-center gap-2 rounded-lg p-1 text-[10px] text-gray-400 backdrop-blur-sm">
+                  {imageAttribution}
+                </div>
+              )}
+              <div class="absolute bottom-2 left-1 z-10 flex items-center gap-2 rounded-lg p-2 backdrop-blur-sm">
+                <Icon name={icon} size={24} class="shrink-0" />
+                <span class="text-lg font-medium">{title}</span>
+              </div>
+            </a>
+          ),
+        )
       }
     </nav>
   </div>

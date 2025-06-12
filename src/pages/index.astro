@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import gigsImage from "../assets/images/passion-for-glory-samfundet-2013-foto.samfundet.no.jpg";
 import recordingsImage from "../assets/images/recordings.jpg";
 import softwareImage from "../assets/images/software.png";
 import videosImage from "../assets/images/videos.jpg";
@@ -11,30 +12,33 @@ import {
 } from "../icons";
 import Layout from "../layouts/Layout.astro";
 
-const pages = [
+export const pages = [
   {
     href: "/gigs",
     icon: GIGS_ICON,
+    image: gigsImage,
+    imageAttribution: "Foto: foto.samfundet.no",
+    textColor: "text-white",
     title: "Gigs",
   },
   {
     href: "/recordings",
     icon: RECORDINGS_ICON,
-    img: recordingsImage,
+    image: recordingsImage,
     textColor: "text-white",
     title: "Recordings",
   },
   {
     href: "/video",
     icon: VIDEO_ICON,
-    img: videosImage,
+    image: videosImage,
     textColor: "text-white",
     title: "Video",
   },
   {
     href: "/software",
     icon: SOFTWARE_ICON,
-    img: softwareImage,
+    image: softwareImage,
     textColor: "text-black",
     title: "Software",
   },
@@ -43,7 +47,7 @@ const pages = [
 
 <Layout title="Sounds and code">
   <div class="mx-auto max-w-5xl sm:my-16">
-    <div class="grid gap-4 sm:grid-cols-2 sm:gap-16">
+    <div class="grid gap-4 sm:grid-cols-2 sm:gap-8 md:gap-12 lg:gap-16">
       {
         pages.map((page) => (
           <a
@@ -53,12 +57,17 @@ const pages = [
               page.textColor,
             ]}
           >
-            {page.img && (
+            {page.image && (
               <div class="absolute inset-0 overflow-hidden">
                 <div
                   class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                  style={`background-image: url(${page.img.src});`}
+                  style={`background-image: url(${page.image.src});`}
                 />
+              </div>
+            )}
+            {page.imageAttribution && (
+              <div class="absolute bottom-1 left-2 z-10 flex items-center gap-2 rounded-lg p-1 text-[10px] text-gray-400 backdrop-blur-sm">
+                {page.imageAttribution}
               </div>
             )}
             <div class="absolute right-4 bottom-4 z-10 flex items-center gap-2 rounded-lg p-2 backdrop-blur-sm">
@@ -67,7 +76,12 @@ const pages = [
                 size={24}
                 class="shrink-0 transition-transform group-hover:scale-110"
               />
-              <h2 class:list={["text-shadow text-lg", page.textColor]}>
+              <h2
+                class:list={[
+                  "text-shadow text-lgt md:text-2xl",
+                  page.textColor,
+                ]}
+              >
                 {page.title}
               </h2>
             </div>
