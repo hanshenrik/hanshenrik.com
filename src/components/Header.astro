@@ -72,12 +72,12 @@ import PianoPlukk from "./PianoPlukk.astro";
             <a
               href={href}
               class:list={[
-                "group relative flex h-32 w-full items-center gap-3 rounded-lg p-4",
+                "group relative flex h-28 w-full items-center gap-3",
                 textColor,
               ]}
             >
               {image && (
-                <div class="absolute inset-0 overflow-hidden rounded-lg">
+                <div class="absolute inset-0 overflow-hidden">
                   <div
                     class="h-full w-full bg-cover bg-center"
                     style={`background-image: url(${image.src});`}

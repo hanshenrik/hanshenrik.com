@@ -39,17 +39,20 @@ const sortYearsDesc = (years: Record<string, CollectionEntry<"gigs">[]>) => {
                       {format(new Date(gig.data.date), "MMMM do")}
                     </time>
                     <div class="space-y-1">
-                      <div class="font-medium">
+                      <div class="w-full font-medium">
                         {gig.data.artistUrl ? (
                           <Link
                             href={gig.data.artistUrl}
                             target="_blank"
                             rel="noopener noreferrer"
+                            class="wrap-anywhere break-all hyphens-auto"
                           >
                             {gig.data.artist}
                           </Link>
                         ) : (
-                          gig.data.artist
+                          <span class="w-full wrap-anywhere break-all hyphens-auto">
+                            {gig.data.artist}
+                          </span>
                         )}
                       </div>
                       <div class="">
