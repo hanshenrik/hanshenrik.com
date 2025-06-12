@@ -30,6 +30,25 @@ const localSoloRecordings = recordings.filter(
   <div class="mx-auto max-w-7xl space-y-8">
     <h1 class="mb-12">Recordings</h1>
     <h2 class="mb-4">Official releases</h2>
+    <p>
+      I've contributed on recordings by Lisa Nybrott, Kjør Romskip, Elias Eine,
+      Reggie Got Beats, Kjellerbandet and Acid Pilgrims. Check out playlists on
+      <Link
+        href="https://open.spotify.com/playlist/0HQEtUAwUe5VnLh42iIjSb?si=1234567890"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex w-fit items-center gap-1"
+      >
+        Spotify
+      </Link> or <Link
+        href="https://tidal.com/browse/playlist/0a61d353-ade3-4efe-a517-a82d99b47354"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex w-fit items-center gap-1"
+      >
+        Tidal
+      </Link>.
+    </p>
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       <div class="flex flex-col gap-2">
         <iframe
@@ -83,6 +102,8 @@ const localSoloRecordings = recordings.filter(
                           href={data.spotifyLink}
                           target="_blank"
                           rel="noopener noreferrer"
+                          title={`${data.name} on Spotify`}
+                          aria-label={`${data.name} on Spotify`}
                           class="inline-flex h-10 w-10 items-center justify-center rounded-full text-green-700 transition-colors duration-200 hover:bg-green-200"
                         >
                           <Icon name={SPOTIFY_ICON} size={24} />
@@ -93,6 +114,8 @@ const localSoloRecordings = recordings.filter(
                           href={data.tidalLink}
                           target="_blank"
                           rel="noopener noreferrer"
+                          title={`${data.name} on Tidal`}
+                          aria-label={`${data.name} on Tidal`}
                           class="inline-flex h-10 w-10 items-center justify-center rounded-full text-black transition-colors duration-200 hover:bg-black hover:text-white"
                         >
                           <Icon name={TIDAL_ICON} size={24} />
@@ -103,6 +126,8 @@ const localSoloRecordings = recordings.filter(
                           href={data.appleLink}
                           target="_blank"
                           rel="noopener noreferrer"
+                          title={`${data.name} on Apple Music`}
+                          aria-label={`${data.name} on Apple Music`}
                           class="inline-flex h-10 w-10 items-center justify-center rounded-full text-pink-700 transition-colors duration-200 hover:bg-pink-200"
                         >
                           <Icon name={APPLE_MUSIC_ICON} size={24} />
@@ -113,6 +138,8 @@ const localSoloRecordings = recordings.filter(
                           href={data.soundcloudLink}
                           target="_blank"
                           rel="noopener noreferrer"
+                          title={`${data.name} on SoundCloud`}
+                          aria-label={`${data.name} on SoundCloud`}
                           class="inline-flex h-10 w-10 items-center justify-center rounded-full text-orange-700 transition-colors duration-200 hover:bg-orange-200"
                         >
                           <Icon name={SOUNDCLOUD_ICON} size={24} />
@@ -130,15 +157,15 @@ const localSoloRecordings = recordings.filter(
     </div>
     <h2 class="mb-4">Unreleased stuff</h2>
     <p>
-      More music at
+      Most of my unreleased music is on
       <Link
         href="https://soundcloud.com/hanshenrik"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex w-fit items-center gap-1"
+        class="inline-flex w-fit items-center"
       >
-        <Icon name={SOUNDCLOUD_ICON} />SoundCloud
-      </Link>.
+        SoundCloud
+      </Link>, but you can listen here as well.
     </p>
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
       <AudioPlayer

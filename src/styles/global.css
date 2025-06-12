@@ -61,7 +61,7 @@
   }
 
   .wave-link {
-    @apply relative no-underline;
+    @apply relative leading-5 no-underline;
   }
 
   .wave-link:not(.hide-initial-underline)::before {

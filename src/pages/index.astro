@@ -1,5 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
+import recordingsImage from "../assets/images/recordings.jpg";
+import softwareImage from "../assets/images/software.png";
+import videosImage from "../assets/images/videos.jpg";
 import {
   GIGS_ICON,
   RECORDINGS_ICON,
@@ -17,36 +20,56 @@ const pages = [
   {
     href: "/recordings",
     icon: RECORDINGS_ICON,
+    img: recordingsImage,
+    textColor: "text-white",
     title: "Recordings",
   },
   {
     href: "/video",
     icon: VIDEO_ICON,
+    img: videosImage,
+    textColor: "text-white",
     title: "Video",
   },
   {
     href: "/software",
     icon: SOFTWARE_ICON,
+    img: softwareImage,
+    textColor: "text-black",
     title: "Software",
   },
 ];
 ---
 
 <Layout title="Sounds and code">
-  <div class="w-fit sm:my-32 md:mx-auto">
-    <div class="grid gap-12 sm:grid-cols-2 sm:gap-32">
+  <div class="mx-auto max-w-5xl sm:my-16">
+    <div class="grid gap-4 sm:grid-cols-2 sm:gap-16">
       {
         pages.map((page) => (
-          <a href={page.href} class="card group">
-            <div class="card-content flex items-center gap-4">
+          <a
+            href={page.href}
+            class:list={[
+              "card group relative aspect-video w-full px-8 py-12 md:px-24 md:py-24",
+              page.textColor,
+            ]}
+          >
+            {page.img && (
+              <div class="absolute inset-0 overflow-hidden">
+                <div
+                  class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                  style={`background-image: url(${page.img.src});`}
+                />
+              </div>
+            )}
+            <div class="absolute right-4 bottom-4 z-10 flex items-center gap-2 rounded-lg p-2 backdrop-blur-sm">
               <Icon
                 name={page.icon}
-                size={72}
-                class="transition-transform group-hover:scale-110"
+                size={24}
+                class="shrink-0 transition-transform group-hover:scale-110"
               />
-              <div>
-                <h2>{page.title}</h2>
-              </div>
+              <h2 class:list={["text-shadow text-lg", page.textColor]}>
+                {page.title}
+              </h2>
             </div>
           </a>
         ))
