@@ -91,9 +91,14 @@ const { recordings, title, playerId } = Astro.props;
                 <h4 id="name" class="font-medium break-words text-gray-900">
                   {data.name}
                 </h4>
-                <p id="artist" class="break-words text-gray-600">
-                  {data.artist}
-                </p>
+                <span class="flex items-end justify-between gap-2">
+                  <p id="artist" class="truncate text-gray-600">
+                    {data.artist}
+                  </p>
+                  <p id="year" class="text-xs break-words text-gray-600">
+                    {data.year}
+                  </p>
+                </span>
                 {data.description && (
                   <p id="description" class="hidden text-sm break-words">
                     {data.description}

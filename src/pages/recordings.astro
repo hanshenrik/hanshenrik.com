@@ -31,7 +31,8 @@ const localSoloRecordings = recordings.filter(
     <h1 class="mb-12">Recordings</h1>
     <h2 class="mb-4">Official releases</h2>
     <p>
-      I've contributed on recordings by Lisa Nybrott, Kjør Romskip, Elias Eine and Reggie Got Beats, amongst others. Check out playlists on
+      I've contributed on recordings by Lisa Nybrott, Kjør Romskip, Elias Eine
+      and Reggie Got Beats, amongst others. Check out playlists on
       <Link
         href="https://open.spotify.com/playlist/0HQEtUAwUe5VnLh42iIjSb?si=1234567890"
         target="_blank"
@@ -48,10 +49,10 @@ const localSoloRecordings = recordings.filter(
         Tidal
       </Link>.
     </p>
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       <div class="flex flex-col gap-2">
         <iframe
-          class="h-[420px] rounded-none sm:h-full"
+          class="h-[420px] rounded-none md:h-full"
           src="https://open.spotify.com/embed/playlist/0HQEtUAwUe5VnLh42iIjSb?utm_source=generator&theme=0"
           width="100%"
           height="100%"
@@ -67,7 +68,7 @@ const localSoloRecordings = recordings.filter(
         </Link>
       </div>
       <div
-        class="grid grid-cols-2 gap-8 lg:col-span-2 lg:grid-cols-3 xl:grid-cols-4"
+        class="grid grid-cols-2 gap-4 lg:col-span-2 lg:grid-cols-3 xl:grid-cols-4"
       >
         {
           releasedRecordings.map(({ data }) => (
@@ -91,9 +92,12 @@ const localSoloRecordings = recordings.filter(
               )}
               <div class="card-content py-1">
                 <h3 class="text-xl">{data.name}</h3>
-                <h4 class="font-medium">{data.artist}</h4>
+                <h4 class="font-medium">
+                  {data.artist}
+                  {data.year && ` (${data.year})`}
+                </h4>
                 <details class="">
-                  <summary>More</summary>
+                  <summary>Details</summary>
                   <div class="mt-2">
                     <div class="-ml-2 flex w-fit flex-wrap gap-1">
                       {data.spotifyLink && (
