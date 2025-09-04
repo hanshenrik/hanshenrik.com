@@ -1,12 +1,14 @@
 // UI
 export const HAMBURGER_MENU_ICON = "solar:hamburger-menu-line-duotone";
 export const CLOSE_ICON = "solar:close-circle-line-duotone";
+export const RSS_ICON = "ph:rss-duotone";
 
 // Pages
 export const RECORDINGS_ICON = "solar:radio-minimalistic-line-duotone";
 export const GIGS_ICON = "solar:calendar-line-duotone";
 export const VIDEO_ICON = "solar:tv-line-duotone";
 export const SOFTWARE_ICON = "solar:diskette-line-duotone";
+export const DRYPP_ICON = "solar:notebook-line-duotone";
 
 // Logos
 export const TIDAL_ICON = "ph:tidal-logo-duotone";

@@ -28,20 +28,22 @@ import PianoPlukk from "./PianoPlukk.astro";
       <!-- Desktop Navigation -->
       <div class="hidden items-center space-x-6 md:flex">
         {
-          pages.map(({ href, title, icon }) => (
-            <Link
-              href={href}
-              class="group flex items-center gap-2 font-medium"
-              noWave
-            >
-              <Icon
-                name={icon}
-                size={24}
-                class="transition-transform group-hover:scale-110"
-              />
-              {title}
-            </Link>
-          ))
+          pages
+            .filter((page) => !page.hidden)
+            .map(({ href, title, icon }) => (
+              <Link
+                href={href}
+                class="group flex items-center gap-2 font-medium"
+                noWave
+              >
+                <Icon
+                  name={icon}
+                  size={24}
+                  class="transition-transform group-hover:scale-110"
+                />
+                {title}
+              </Link>
+            ))
         }
       </div>
 
@@ -67,8 +69,9 @@ import PianoPlukk from "./PianoPlukk.astro";
     </div>
     <nav class="flex-1 space-y-4 px-4 py-4">
       {
-        pages.map(
-          ({ href, title, icon, image, imageAttribution, textColor }) => (
+        pages
+          .filter((page) => !page.hidden)
+          .map(({ href, title, icon, image, imageAttribution, textColor }) => (
             <a
               href={href}
               class:list={[
@@ -94,8 +97,7 @@ import PianoPlukk from "./PianoPlukk.astro";
                 <span class="text-lg font-medium">{title}</span>
               </div>
             </a>
-          ),
-        )
+          ))
       }
     </nav>
   </div>

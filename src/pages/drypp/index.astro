@@ -1,29 +1,56 @@
 ---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+import { format } from "date-fns";
+import { nb } from "date-fns/locale";
 import Link from "../../components/Link.astro";
+import { RSS_ICON } from "../../icons";
 import Layout from "../../layouts/Layout.astro";
+import { hasRequiredRssPostFields } from "../../utils.ts";
 
-const posts = (await getCollection("drypp")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = await getCollection("drypp");
 
-// Sort posts by date
-const sortedPosts = posts.sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+// Sort posts by date, filtering out posts without required fields
+const sortedPosts = posts
+  .filter(hasRequiredRssPostFields)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const description = "En blogg med drypp fra musikk og podkast";
+const title = "Drypp";
 ---
 
-<Layout title="Drypp">
-  <div class="mx-auto max-w-7xl" transition:name="drypp-content">
-    <h1 class="mb-12" transition:name="drypp-title">Drypp</h1>
+<Layout title={title} description={description} showRssLink={true}>
+  <div class="mx-auto max-w-7xl space-y-8">
+    <div class="flex items-end gap-2">
+      <h1>{title}</h1>
+      <a
+        href="/drypp/rss.xml"
+        class="group flex items-center justify-center gap-1"
+        title="Abonner på RSS-feed"
+      >
+        <Icon
+          name={RSS_ICON}
+          size={24}
+          class="block transition-transform group-hover:scale-110"
+        />
+        <div class="text-base">RSS</div>
+      </a>
+    </div>
+    <div>
+      <p class="text-gray-500">{description}</p>
+    </div>
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
         sortedPosts.map((post) => (
           <article class="card group" transition:name={`post-${post.id}`}>
-            {post.data.heroImage && (
+            {post.data.image && (
               <div class="relative aspect-video overflow-hidden">
-                <img
-                  src={post.data.heroImage}
+                <Image
+                  src={post.data.image}
+                  width={400}
+                  height={400}
+                  quality={100}
                   alt={post.data.title}
                   class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
@@ -38,11 +65,7 @@ const sortedPosts = posts.sort(
                 datetime={post.data.pubDate.toISOString()}
                 class="text-gray-400"
               >
-                {post.data.pubDate.toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
+                {format(post.data.pubDate, "d. MMMM yyyy", { locale: nb })}
               </time>
             </div>
           </article>

@@ -6,9 +6,10 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description?: string;
+  showRssLink?: boolean;
 }
 
-const { title, description = "hanshenrik.com / Sounds and code" } = Astro.props;
+const { title, description = "hanshenrik.com / Sounds and code", showRssLink = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -18,6 +19,16 @@ const { title, description = "hanshenrik.com / Sounds and code" } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    {
+      showRssLink && (
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Drypp RSS Feed"
+          href={new URL("rss.xml", Astro.site)}
+        />
+      )
+    }
     <meta name="generator" content={Astro.generator} />
     <title>{`hanshenrik.com / ${title}`}</title>
     <meta name="author" content="Hans Henrik Grønsleth" />
