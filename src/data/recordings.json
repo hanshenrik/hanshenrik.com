@@ -269,7 +269,6 @@
       "type": "band"
     }
   },
-
   {
     "id": "oh-woman",
     "artist": "Derek's",
@@ -281,6 +280,22 @@
     "imageAttribution": ". liane .",
     "localFile": {
       "src": "dereks-oh-woman.mp3",
+      "format": "mp3",
+      "type": "band"
+    }
+  },
+  {
+    "id": "rak",
+    "artist": "Reh",
+    "name": "Rak",
+    "description": "Hans Henrik Grønsleth (keys), Runar Furenes (bass). Soundscape recordings from Einars vei bus stop, Helsfyr subway station and Skullerud skistadion in Oslo.",
+    "year": 2024,
+    "album": "Hurdal EP",
+    "soundcloudLink": "https://soundcloud.com/hanshenrik/rak?in=hanshenrik/sets/hurdal-ep",
+    "image": "https://i1.sndcdn.com/artworks-R3yzShxLsO8PxixG-xshijw-t500x500.jpg",
+    "imageAttribution": "Runar Furenes",
+    "localFile": {
+      "src": "reh-rak.mp3",
       "format": "mp3",
       "type": "band"
     }
@@ -329,6 +344,22 @@
     }
   },
   {
+    "id": "rev",
+    "artist": "Reh",
+    "name": "Rev",
+    "description": "Hans Henrik Grønsleth (keys), Runar Furenes (bass)",
+    "year": 2024,
+    "album": "Hurdal EP",
+    "soundcloudLink": "https://soundcloud.com/hanshenrik/rev?in=hanshenrik/sets/hurdal-ep",
+    "image": "https://i1.sndcdn.com/artworks-Kje3eN82ziMPgH6k-3w7TPg-t500x500.jpg",
+    "imageAttribution": "Hans Henrik Grønsleth",
+    "localFile": {
+      "src": "reh-rev.mp3",
+      "format": "mp3",
+      "type": "band"
+    }
+  },
+  {
     "id": "var",
     "artist": "HHG",
     "name": "Vår",
@@ -363,6 +394,20 @@
     "imageAttribution": "Jan Kohl",
     "localFile": {
       "src": "enna.mp3",
+      "format": "mp3",
+      "type": "solo"
+    }
+  },
+  {
+    "id": "daydreaming",
+    "artist": "HHG",
+    "name": "Daydreaming (Radiohead cover)",
+    "description": "I'll remove it if you don't want it here, Thom, Colin, Ed, Jonny and Phil. Ocean waves recording from «Stranda under fjellet» in Svolvær",
+    "year": 2025,
+    "image": "https://i1.sndcdn.com/artworks-5ymtarGpxswEt87Z-Q0j4Gg-t500x500.jpg",
+    "imageAttribution": "Maxx Sas",
+    "localFile": {
+      "src": "daydreaming.mp3",
       "format": "mp3",
       "type": "solo"
     }
