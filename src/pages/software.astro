@@ -6,6 +6,8 @@ import Link from "../components/Link.astro";
 import Layout from "../layouts/Layout.astro";
 
 import eliaseine from "../assets/images/eliaseine.png";
+import entur from "../assets/images/entur.png";
+import folq from "../assets/images/folq.png";
 import hakonhammer from "../assets/images/hakonhammer.png";
 import jazzkart from "../assets/images/jazzkart.png";
 import kickmap from "../assets/images/kickmap.png";
@@ -25,6 +27,8 @@ const imageMap: Record<string, ImageMetadata> = {
   "kjorromskip.no": kjorromskip,
   "eliaseine.no": eliaseine,
   "hakonhammer.no": hakonhammer,
+  entur: entur,
+  folq: folq,
 };
 
 const softwares = await getCollection("software");

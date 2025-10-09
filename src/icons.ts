@@ -9,7 +9,7 @@ export const RECORDINGS_ICON = "solar:radio-minimalistic-line-duotone";
 export const GIGS_ICON = "solar:calendar-line-duotone";
 export const VIDEO_ICON = "solar:tv-line-duotone";
 export const SOFTWARE_ICON = "solar:diskette-line-duotone";
-export const DRYPP_ICON = "solar:notebook-line-duotone";
+export const DRYPP_ICON = "solar:armchair-2-line-duotone";
 
 // Logos
 export const TIDAL_ICON = "ph:tidal-logo-duotone";

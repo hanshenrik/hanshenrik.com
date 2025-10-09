@@ -360,6 +360,19 @@
     }
   },
   {
+    "id": "jeg-drommer-deg-frisk",
+    "artist": "HHG",
+    "name": "Jeg drømmer deg frisk",
+    "year": 2025,
+    "image": "https://images.unsplash.com/photo-1629196912832-c8d4a01f6c25?q=80&w=500&auto=format&fit=crop",
+    "imageAttribution": "Kseniya Lapteva",
+    "localFile": {
+      "src": "jeg-drommer-deg-frisk.mp3",
+      "format": "mp3",
+      "type": "solo"
+    }
+  },
+  {
     "id": "var",
     "artist": "HHG",
     "name": "Vår",

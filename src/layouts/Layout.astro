@@ -9,7 +9,11 @@ interface Props {
   showRssLink?: boolean;
 }
 
-const { title, description = "hanshenrik.com / Sounds and code", showRssLink = false } = Astro.props;
+const {
+  title,
+  description = "hanshenrik.com / Sounds and code",
+  showRssLink = false,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -30,7 +34,7 @@ const { title, description = "hanshenrik.com / Sounds and code", showRssLink = f
       )
     }
     <meta name="generator" content={Astro.generator} />
-    <title>{`hanshenrik.com / ${title}`}</title>
+    <title>{`${title} / hanshenrik.com`}</title>
     <meta name="author" content="Hans Henrik Grønsleth" />
     <meta name="description" content={description} />
     <link

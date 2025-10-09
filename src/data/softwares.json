@@ -1,5 +1,19 @@
 [
   {
+    "id": "folq",
+    "name": "Folq",
+    "description": "Developer at Folq.",
+    "url": "https://folq.no",
+    "githubUrl": "https://github.com/folq"
+  },
+  {
+    "id": "entur",
+    "name": "Entur Sørvis",
+    "description": "Internal admin app for Entur.",
+    "url": "https://entur.no",
+    "githubUrl": "https://github.com/entur"
+  },
+  {
     "id": "mandaljazz.no",
     "name": "mandaljazz.no",
     "description": "Website for the jazz festival Mandaljazz.",
