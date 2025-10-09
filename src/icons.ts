@@ -2,6 +2,7 @@
 export const HAMBURGER_MENU_ICON = "solar:hamburger-menu-line-duotone";
 export const CLOSE_ICON = "solar:close-circle-line-duotone";
 export const RSS_ICON = "ph:rss-duotone";
+export const SOLAR_CHEVRON_DOWN_ICON = "solar:double-alt-arrow-down-line-duotone";
 
 // Pages
 export const RECORDINGS_ICON = "solar:radio-minimalistic-line-duotone";

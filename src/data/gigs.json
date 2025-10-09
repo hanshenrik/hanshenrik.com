@@ -2691,7 +2691,7 @@
     "city": "Eidsvoll",
     "artist": "70-tallsbandet",
     "artistUrl": "",
-    "eventDescription": "70s concert",
+    "eventDescription": "Grønstokk (til pappa)",
     "eventUrl": "",
     "facebookUrl": "",
     "ticketsUrl": "",
@@ -2787,5 +2787,31 @@
     "facebookUrl": "https://www.facebook.com/events/923804309641149",
     "ticketsUrl": "https://parksalongen.hoopla.no/event/3580379647",
     "createdAt": "2024-11-29T19:34:00.000Z"
+  },
+  {
+    "date": "2025-07-17",
+    "venue": "Effata",
+    "venueUrl": "",
+    "city": "Eidsvoll",
+    "artist": "HHG",
+    "artistUrl": "",
+    "eventDescription": "Private",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2025-10-09T11:34:00.000Z"
+  },
+  {
+    "date": "2025-09-19",
+    "venue": "Mir",
+    "venueUrl": "https://www.lufthavna.no/mir-events",
+    "city": "Oslo",
+    "artist": "Kjør Romskip",
+    "artistUrl": "https://kjorromskip.no",
+    "eventDescription": "Support for Gamle Oslo Gammaldans",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2025-10-09T11:34:00.000Z"
   }
 ]
