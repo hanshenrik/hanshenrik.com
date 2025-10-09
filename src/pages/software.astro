@@ -50,53 +50,31 @@ const softwares = await getCollection("software");
         href="https://knowit.no"
         target="_blank"
         rel="noopener noreferrer">Knowit</Link
-      >).
+      >). I also do some hobby projects from time to time.
     </p>
-    <p>Below are some personal projects.</p>
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
         softwares.map((software) => (
           <div class="card group space-y-2">
             <div class="relative aspect-video overflow-hidden">
-              {software.data.url ? (
-                <a
-                  href={software.data.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Picture
-                    formats={["avif", "webp"]}
-                    src={imageMap[software.data.id]}
-                    quality={100}
-                    alt={software.data.name}
-                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </a>
-              ) : (
+              <a
+                href={software.data.url || software.data.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Picture
                   formats={["avif", "webp"]}
-                  src={imageMap[software.data.name]}
+                  src={imageMap[software.data.id]}
                   quality={100}
                   alt={software.data.name}
-                  class="h-full w-full object-cover"
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-              )}
+              </a>
             </div>
             <div class="card-content">
               <h2 class="mb-2">{software.data.name}</h2>
               <p class="mb-4 text-gray-600">{software.data.description}</p>
               <div class="flex flex-wrap gap-3">
-                {software.data.url && (
-                  <a
-                    href={software.data.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 rounded-full bg-sky-100 px-3 py-1.5 text-sky-700 transition-colors duration-200 hover:bg-sky-200"
-                  >
-                    <Icon name={WEBSITE_ICON} />
-                    Visit Site
-                  </a>
-                )}
                 {software.data.githubUrl && (
                   <a
                     href={software.data.githubUrl}
