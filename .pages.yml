@@ -139,7 +139,7 @@ content:
       primary: name
       sort: [order, name]
       default:
-        sort: name
+        sort: order
         order: asc
     fields:
       - name: name
@@ -171,7 +171,7 @@ content:
       primary: name
       sort: [order, name, artist]
       default:
-        sort: artist
+        sort: order
         order: asc
     fields:
       - name: artist
