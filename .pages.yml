@@ -135,7 +135,7 @@ content:
     path: src/content/software
     filename: "{primary}.mdx"
     view:
-      fields: [name, description, url]
+      fields: [name, description, url, order]
       primary: name
       sort: [order, name]
       default:
