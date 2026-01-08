@@ -202,7 +202,14 @@ content:
     label: Blog Posts (Drypp)
     type: collection
     path: src/content/drypp
-    format: markdown
+    filename: "{primary}.mdx"
+    view:
+      fields: [title, description, pubDate, updatedAt, author, image, tags]
+      primary: title
+      sort: [pubDate, updatedAt, title]
+      default:
+        sort: pubDate
+        order: desc
     fields:
       - name: title
         label: Title
