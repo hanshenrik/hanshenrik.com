@@ -66,6 +66,7 @@ const software = defineCollection({
     description: z.string(),
     url: z.string().optional(),
     githubUrl: z.string().optional(),
+    order: z.number().optional(),
   }),
 });
 
@@ -77,6 +78,7 @@ const videos = defineCollection({
     youtubeLink: z.string(),
     description: z.string(),
     isPlaylist: z.boolean().optional(),
+    order: z.number().optional(),
   }),
 });
 
