@@ -7,7 +7,7 @@ media:
 content:
   - name: recordings
     label: Recordings
-    type: collection
+    type: file
     path: src/data/recordings.json
     format: json
     fields:
@@ -80,7 +80,7 @@ content:
 
   - name: gigs
     label: Gigs
-    type: collection
+    type: file
     path: src/data/gigs.json
     format: json
     fields:
@@ -131,7 +131,7 @@ content:
 
   - name: software
     label: Software
-    type: collection
+    type: file
     path: src/data/softwares.json
     format: json
     fields:
@@ -156,7 +156,7 @@ content:
 
   - name: videos
     label: Videos
-    type: collection
+    type: file
     path: src/data/videos.json
     format: json
     fields:
