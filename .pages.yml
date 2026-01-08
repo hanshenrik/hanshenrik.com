@@ -1,0 +1,221 @@
+media:
+  input: public
+  output: public
+  path: public
+  extensions: [png, jpg, jpeg, gif, svg, webp, avif, mp3, mp4]
+
+content:
+  - name: recordings
+    label: Recordings
+    type: collection
+    path: src/data/recordings.json
+    format: json
+    fields:
+      - name: id
+        label: ID
+        type: string
+        required: true
+      - name: artist
+        label: Artist
+        type: string
+        required: true
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+      - name: year
+        label: Year
+        type: number
+      - name: type
+        label: Type
+        type: select
+        options:
+          - Album
+          - Single
+          - EP
+          - Live
+      - name: album
+        label: Album
+        type: string
+      - name: spotifyLink
+        label: Spotify Link
+        type: string
+      - name: tidalLink
+        label: Tidal Link
+        type: string
+      - name: appleLink
+        label: Apple Music Link
+        type: string
+      - name: soundcloudLink
+        label: SoundCloud Link
+        type: string
+      - name: youtubeLink
+        label: YouTube Link
+        type: string
+      - name: image
+        label: Image URL
+        type: string
+      - name: imageAttribution
+        label: Image Attribution
+        type: string
+      - name: localFile
+        label: Local File
+        type: object
+        fields:
+          - name: src
+            label: Source
+            type: string
+          - name: format
+            label: Format
+            type: string
+          - name: type
+            label: Type
+            type: select
+            options:
+              - band
+              - solo
+
+  - name: gigs
+    label: Gigs
+    type: collection
+    path: src/data/gigs.json
+    format: json
+    fields:
+      - name: id
+        label: ID
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: toDate
+        label: To Date
+        type: date
+      - name: venue
+        label: Venue
+        type: string
+        required: true
+      - name: venueUrl
+        label: Venue URL
+        type: string
+      - name: city
+        label: City
+        type: string
+        required: true
+      - name: artist
+        label: Artist
+        type: string
+        required: true
+      - name: artistUrl
+        label: Artist URL
+        type: string
+      - name: eventDescription
+        label: Event Description
+        type: text
+      - name: eventUrl
+        label: Event URL
+        type: string
+      - name: facebookUrl
+        label: Facebook URL
+        type: string
+      - name: ticketsUrl
+        label: Tickets URL
+        type: string
+      - name: createdAt
+        label: Created At
+        type: date
+
+  - name: software
+    label: Software
+    type: collection
+    path: src/data/softwares.json
+    format: json
+    fields:
+      - name: id
+        label: ID
+        type: string
+        required: true
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        required: true
+      - name: url
+        label: URL
+        type: string
+      - name: githubUrl
+        label: GitHub URL
+        type: string
+
+  - name: videos
+    label: Videos
+    type: collection
+    path: src/data/videos.json
+    format: json
+    fields:
+      - name: id
+        label: ID
+        type: string
+        required: true
+      - name: artist
+        label: Artist
+        type: string
+        required: true
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: youtubeLink
+        label: YouTube Link
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        required: true
+      - name: isPlaylist
+        label: Is Playlist
+        type: boolean
+
+  - name: drypp
+    label: Blog Posts (Drypp)
+    type: collection
+    path: src/content/drypp
+    format: markdown
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        required: true
+      - name: pubDate
+        label: Publication Date
+        type: date
+        required: true
+      - name: updatedAt
+        label: Updated At
+        type: date
+      - name: author
+        label: Author
+        type: string
+      - name: image
+        label: Image URL
+        type: string
+      - name: draft
+        label: Draft
+        type: boolean
+      - name: tags
+        label: Tags
+        type: list
+        items:
+          type: string
