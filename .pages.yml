@@ -156,14 +156,10 @@ content:
 
   - name: videos
     label: Videos
-    type: file
-    path: src/data/videos.json
-    format: json
+    type: collection
+    path: src/content/videos
+    filename: "{primary}.mdx"
     fields:
-      - name: id
-        label: ID
-        type: string
-        required: true
       - name: artist
         label: Artist
         type: string

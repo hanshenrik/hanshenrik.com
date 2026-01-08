@@ -1,6 +1,7 @@
 import { file, glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 import { v4 as uuidv4 } from "uuid";
+
 import { postDataSchema } from "./utils";
 
 const blog = defineCollection({
@@ -70,9 +71,8 @@ const software = defineCollection({
 });
 
 const videos = defineCollection({
-  loader: file("src/data/videos.json"),
+  type: "content",
   schema: z.object({
-    id: z.string(),
     artist: z.string(),
     name: z.string(),
     youtubeLink: z.string(),
