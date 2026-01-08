@@ -134,6 +134,13 @@ content:
     type: collection
     path: src/content/software
     filename: "{primary}.mdx"
+    view:
+      fields: [name, description, url]
+      primary: name
+      sort: [order, name]
+      default:
+        sort: name
+        order: asc
     fields:
       - name: name
         label: Name
@@ -149,6 +156,10 @@ content:
       - name: githubUrl
         label: GitHub URL
         type: string
+      - name: order
+        label: Order
+        type: number
+        description: Lowest first
 
   - name: videos
     label: Videos
@@ -156,9 +167,9 @@ content:
     path: src/content/videos
     filename: "{primary}.mdx"
     view:
-      fields: [artist, name]
+      fields: [artist, name, order]
       primary: name
-      sort: [artist, name]
+      sort: [order, artist, name]
       default:
         sort: artist
         order: asc
