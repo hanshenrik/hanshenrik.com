@@ -60,9 +60,8 @@ const gigs = defineCollection({
 });
 
 const software = defineCollection({
-  loader: file("src/data/softwares.json"),
+  type: "content",
   schema: z.object({
-    id: z.string(),
     name: z.string(),
     description: z.string(),
     url: z.string().optional(),

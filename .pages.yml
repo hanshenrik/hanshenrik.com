@@ -131,14 +131,10 @@ content:
 
   - name: software
     label: Software
-    type: file
-    path: src/data/softwares.json
-    format: json
+    type: collection
+    path: src/content/software
+    filename: "{primary}.mdx"
     fields:
-      - name: id
-        label: ID
-        type: string
-        required: true
       - name: name
         label: Name
         type: string
@@ -159,6 +155,13 @@ content:
     type: collection
     path: src/content/videos
     filename: "{primary}.mdx"
+    view:
+      fields: [artist, name]
+      primary: name
+      sort: [artist, name]
+      default:
+        sort: artist
+        order: asc
     fields:
       - name: artist
         label: Artist
@@ -177,8 +180,12 @@ content:
         type: text
         required: true
       - name: isPlaylist
-        label: Is Playlist
+        label: Is playlist
         type: boolean
+      - name: order
+        label: Order
+        type: number
+        description: Lowest first
 
   - name: drypp
     label: Blog Posts (Drypp)
