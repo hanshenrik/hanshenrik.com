@@ -167,9 +167,9 @@ content:
     path: src/content/videos
     filename: "{primary}.mdx"
     view:
-      fields: [artist, name, order]
+      fields: [name, artist, order]
       primary: name
-      sort: [order, artist, name]
+      sort: [order, name, artist]
       default:
         sort: artist
         order: asc
