@@ -2,18 +2,17 @@
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-import { format } from "date-fns";
+import { format, isPast } from "date-fns";
 import { nb } from "date-fns/locale";
 import Link from "../../components/Link.astro";
 import { RSS_ICON } from "../../icons";
 import Layout from "../../layouts/Layout.astro";
-import { hasRequiredRssPostFields } from "../../utils.ts";
 
 const posts = await getCollection("drypp");
 
 // Sort posts by date, filtering out posts without required fields
 const sortedPosts = posts
-  .filter(hasRequiredRssPostFields)
+  .filter((post) => (import.meta.env.DEV ? true : isPast(post.data.pubDate)))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const description = "En blogg med drypp fra musikk og podkast";

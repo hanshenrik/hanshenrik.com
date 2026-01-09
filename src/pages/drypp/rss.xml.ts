@@ -3,11 +3,11 @@ import type { APIContext } from "astro";
 import { type CollectionEntry, getCollection } from "astro:content";
 import { isBefore } from "date-fns";
 
-import { type PostData, hasRequiredRssPostFields } from "../../utils";
+import { type BlogPostData, hasRequiredRssPostFields } from "../../utils";
 
 const includePostInRssFeed = (
-  post: CollectionEntry<"drypp"> & { data: PostData },
-) => !post.data.draft && isBefore(post.data.pubDate, new Date());
+  post: CollectionEntry<"drypp"> & { data: BlogPostData },
+) => isBefore(post.data.pubDate, new Date());
 
 export async function GET(context: APIContext) {
   const posts = await getCollection("drypp");
@@ -28,9 +28,9 @@ export async function GET(context: APIContext) {
       // Include image if it exists
       ...(post.data.image && { image: post.data.image }),
       // Include any other custom fields you want in the RSS feed
-      ...(post.data.author && { author: post.data.author }),
+      author: "Hans Henrik Grønsleth",
     })),
     // (optional) inject custom xml
-    customData: `<language>en-us</language>`,
+    customData: `<language>nb-no</language>`,
   });
 }
