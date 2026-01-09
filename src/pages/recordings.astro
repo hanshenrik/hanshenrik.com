@@ -21,7 +21,7 @@ const releasedRecordings = recordings.filter(
 
 const sortedReleasedRecordings = orderBy(
   releasedRecordings,
-  ["data.order", "data.year", "data.name"],
+  ["data.year", "data.name"],
   "desc",
 );
 
@@ -41,7 +41,7 @@ const localSoloRecordings = recordings.filter(
 );
 const sortedLocalSoloRecordings = orderBy(
   localSoloRecordings,
-  ["data.order", "data.year", "data.name"],
+  ["data.year", "data.name"],
   "desc",
 );
 ---
