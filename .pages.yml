@@ -228,8 +228,12 @@ content:
         type: text
         required: true
       - name: image
-        label: Image URL
-        type: string
+        label: Image
+        type: image
+        options:
+          media: public-images
+          path: public/images/drypp
+          extensions: [png, jpg, jpeg, gif, svg, webp, avif]
       - name: imageAttribution
         label: Image Attribution
         type: string

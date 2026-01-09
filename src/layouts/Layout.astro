@@ -6,12 +6,14 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description?: string;
+  image?: string;
   showRssLink?: boolean;
 }
 
 const {
   title,
   description = "hanshenrik.com / Sounds and code",
+  image = null,
   showRssLink = false,
 } = Astro.props;
 ---
@@ -23,6 +25,7 @@ const {
     <meta name="viewport" content="width=device-width" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    {image && <meta property="og:image" content={image} />}
     {
       showRssLink && (
         <link

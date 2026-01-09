@@ -20,7 +20,12 @@ const { title, description, pubDate, updatedAt, image, imageAttribution } =
   post.data;
 ---
 
-<Layout title={title} showRssLink={true}>
+<Layout
+  title={title}
+  image={image}
+  description={description}
+  showRssLink={true}
+>
   <article class="mx-auto max-w-3xl pt-16 pb-24">
     <header class="mb-8">
       <h1 class="mb-4">
