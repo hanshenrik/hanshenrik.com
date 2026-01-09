@@ -66,6 +66,7 @@ const topImageAttribution = "Photo: foto.samfundet.no";
                           href={gig.data.artistUrl}
                           target="_blank"
                           rel="noopener noreferrer"
+                          title={gig.data.artist}
                           class="wrap-anywhere break-all hyphens-auto"
                         >
                           {gig.data.artist}
@@ -82,6 +83,7 @@ const topImageAttribution = "Photo: foto.samfundet.no";
                           href={gig.data.venueUrl}
                           target="_blank"
                           rel="noopener noreferrer"
+                          title={gig.data.venue}
                         >
                           {gig.data.venue}
                           {gig.data.city && <span>, {gig.data.city}</span>}
@@ -100,6 +102,7 @@ const topImageAttribution = "Photo: foto.samfundet.no";
                         href={gig.data.eventUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        title={gig.data.eventDescription}
                       >
                         {gig.data.eventDescription}
                       </Link>
