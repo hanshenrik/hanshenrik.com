@@ -104,8 +104,7 @@ content:
     type: file
     path: src/data/gigs.json
     format: json
-    options:
-      list: true
+    list: true
     fields:
       - name: date
         label: Date
