@@ -109,7 +109,7 @@ const topImageAttribution = "Photo: Jørgen Reitan";
               ? imageToUrl(data.image, Astro.url.origin)
               : null;
             return (
-              <div class="card group">
+              <div class="group">
                 {imageUrl && (
                   <div class="relative aspect-square overflow-hidden">
                     <Image
@@ -127,7 +127,7 @@ const topImageAttribution = "Photo: Jørgen Reitan";
                     )}
                   </div>
                 )}
-                <div class="card-content py-1">
+                <div class="py-1">
                   <h3 class="text-xl">{data.name}</h3>
                   <h4 class="font-medium">
                     {data.artist}
