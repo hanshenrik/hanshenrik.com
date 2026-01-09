@@ -223,26 +223,16 @@ content:
         label: Title
         type: string
         required: true
-      - name: description
-        label: Description
+      - name: ingress
+        label: Ingress
         type: text
         required: true
       - name: pubDate
         label: Publication Date
         type: date
-        required: true
       - name: updatedAt
         label: Updated At
         type: date
-      - name: author
-        label: Author
-        type: string
-      - name: image
-        label: Image URL
-        type: string
-      - name: draft
-        label: Draft
-        type: boolean
       - name: tags
         label: Tags
         type: list
