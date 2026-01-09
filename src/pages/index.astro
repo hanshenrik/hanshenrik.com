@@ -1,9 +1,5 @@
 ---
 import { Icon } from "astro-icon/components";
-import gigsImage from "../assets/images/passion-for-glory-samfundet-2013-foto.samfundet.no.jpg";
-import recordingsImage from "../assets/images/recordings.jpg";
-import softwareImage from "../assets/images/software.png";
-import videosImage from "../assets/images/videos.jpg";
 import {
   DRYPP_ICON,
   GIGS_ICON,
@@ -17,29 +13,37 @@ export const pages = [
   {
     href: "/gigs",
     icon: GIGS_ICON,
-    image: gigsImage,
-    imageAttribution: "Foto: foto.samfundet.no",
+    image: {
+      src: "/images/gigs.jpg",
+    },
+    imageAttribution: "Photo: foto.samfundet.no",
     textColor: "text-white",
     title: "Gigs",
   },
   {
     href: "/recordings",
     icon: RECORDINGS_ICON,
-    image: recordingsImage,
+    image: {
+      src: "/images/recordings.jpg",
+    },
     textColor: "text-white",
     title: "Recordings",
   },
   {
     href: "/video",
     icon: VIDEO_ICON,
-    image: videosImage,
+    image: {
+      src: "/images/videos.jpg",
+    },
     textColor: "text-white",
     title: "Video",
   },
   {
     href: "/software",
     icon: SOFTWARE_ICON,
-    image: softwareImage,
+    image: {
+      src: "/images/software.png",
+    },
     textColor: "text-black",
     title: "Software",
   },
@@ -80,16 +84,11 @@ export const pages = [
                 </div>
               )}
               {page.imageAttribution && (
-                <div class="absolute bottom-1 left-2 z-10 flex items-center gap-2 rounded-lg p-1 text-[10px] text-gray-400 backdrop-blur-sm">
+                <div class="absolute right-2 bottom-4 z-10 flex items-center gap-2 rounded-lg p-2 text-[10px] text-gray-400 backdrop-blur-sm">
                   {page.imageAttribution}
                 </div>
               )}
-              <div class="absolute right-4 bottom-4 z-10 flex items-center gap-2 rounded-lg p-2 backdrop-blur-sm">
-                <Icon
-                  name={page.icon}
-                  size={24}
-                  class="shrink-0 transition-transform group-hover:scale-110"
-                />
+              <div class="absolute bottom-4 left-4 z-10 flex items-center gap-2 rounded-lg p-2 backdrop-blur-sm">
                 <h2
                   class:list={[
                     "text-shadow text-lgt md:text-2xl",

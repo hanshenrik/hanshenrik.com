@@ -5,6 +5,7 @@ import { getCollection } from "astro:content";
 import { orderBy } from "lodash-es";
 import AudioPlayer from "../components/AudioPlayer.astro";
 import Link from "../components/Link.astro";
+import TopImage from "../components/TopImage.astro";
 import {
   APPLE_MUSIC_ICON,
   SOUNDCLOUD_ICON,
@@ -12,6 +13,7 @@ import {
   TIDAL_ICON,
 } from "../icons";
 import Layout from "../layouts/Layout.astro";
+import { imageToUrl } from "../utils";
 
 const recordings = await getCollection("recordings");
 
@@ -44,11 +46,21 @@ const sortedLocalSoloRecordings = orderBy(
   ["data.year", "data.name"],
   "desc",
 );
+
+const image = "/images/recordings.jpg";
+const imageUrl = imageToUrl(image);
+const imageAttribution = "Photo: Jørgen Reitan";
 ---
 
-<Layout title="Recordings">
+<Layout title="Recordings" image={imageUrl}>
   <div class="mx-auto max-w-7xl space-y-8">
-    <h1 class="mb-12">Recordings</h1>
+    <TopImage
+      imageUrl={imageUrl}
+      title="Recordings"
+      alt="Recordings"
+      imageAttribution={imageAttribution}
+    />
+
     <h2 class="mb-4">Official releases</h2>
     <p>
       I've contributed on recordings by Lisa Nybrott, Kjør Romskip, Elias Eine
@@ -72,12 +84,13 @@ const sortedLocalSoloRecordings = orderBy(
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       <div class="flex flex-col gap-2">
         <iframe
+          title="Spotify playlist"
           class="h-[420px] rounded-none md:h-full"
           src="https://open.spotify.com/embed/playlist/0HQEtUAwUe5VnLh42iIjSb?utm_source=generator&theme=0"
           width="100%"
           height="100%"
           allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"></iframe>
+          loading="eager"></iframe>
         <Link
           href="https://tidal.com/browse/playlist/0a61d353-ade3-4efe-a517-a82d99b47354"
           target="_blank"

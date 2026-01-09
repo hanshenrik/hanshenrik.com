@@ -5,8 +5,10 @@ import { getCollection } from "astro:content";
 import { format } from "date-fns";
 import { groupBy, orderBy } from "lodash-es";
 import Link from "../components/Link.astro";
+import TopImage from "../components/TopImage.astro";
 import { SOLAR_CHEVRON_DOWN_ICON } from "../icons";
 import Layout from "../layouts/Layout.astro";
+import { imageToUrl } from "../utils";
 
 const gigs = await getCollection("gigs");
 const sortedGigs = orderBy(gigs, "data.date", "desc");
@@ -18,88 +20,99 @@ const groupGigsByYear = (gigs: CollectionEntry<"gigs">[]) => {
 const sortYearsDesc = (years: Record<string, CollectionEntry<"gigs">[]>) => {
   return orderBy(Object.entries(years), ([year]) => Number(year), "desc");
 };
+
+const image = "/images/gigs.jpg";
+const imageUrl = imageToUrl(image);
+const imageAttribution = "Photo: foto.samfundet.no";
 ---
 
-<Layout title="Gigs">
-  <h1 class="mb-12">Gigs</h1>
-  <div
-    class="top-12 z-10 mb-4 hidden grid-cols-[120px_1fr_1fr] gap-4 bg-white px-6 py-4 text-sm font-medium md:sticky md:grid"
-  >
-    <div>When?</div>
-    <div>Who, where?</div>
-    <div>What?</div>
-  </div>
-  {
-    sortYearsDesc(groupGigsByYear(sortedGigs)).map(
-      ([year, yearGigs], index) => (
-        <details class="group" open={index === 0}>
-          <summary class="sticky top-12 z-10 flex list-none flex-row items-center justify-between px-6 text-3xl font-medium">
-            <span class="bg-white py-1.5">{year}</span>
-            <Icon
-              class="origin-center bg-white transition-transform group-open:scale-150 group-open:rotate-180 group-hover:scale-110 group-hover:not-group-open:rotate-6 group-hover:group-open:rotate-[174deg]"
-              name={SOLAR_CHEVRON_DOWN_ICON}
-              size={24}
-            />
-          </summary>
-          <div class="divide-y divide-gray-200">
-            {yearGigs.map((gig: CollectionEntry<"gigs">) => (
-              <div class="flex flex-col gap-4 px-6 py-4 hover:bg-gray-50 md:grid md:grid-cols-[120px_1fr_1fr]">
-                <time datetime={gig.data.date} class="whitespace-nowrap">
-                  {format(new Date(gig.data.date), "MMMM do")}
-                </time>
-                <div class="space-y-1">
-                  <div class="w-full font-medium">
-                    {gig.data.artistUrl ? (
-                      <Link
-                        href={gig.data.artistUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="wrap-anywhere break-all hyphens-auto"
-                      >
-                        {gig.data.artist}
-                      </Link>
-                    ) : (
-                      <span class="w-full wrap-anywhere break-all hyphens-auto">
-                        {gig.data.artist}
-                      </span>
-                    )}
-                  </div>
-                  <div class="">
-                    {gig.data.venueUrl ? (
-                      <Link
-                        href={gig.data.venueUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {gig.data.venue}
-                        {gig.data.city && <span>, {gig.data.city}</span>}
-                      </Link>
-                    ) : (
-                      // prettier-ignore
-                      <span>
+<Layout title="Gigs" image={imageUrl}>
+  <div class="mx-auto max-w-7xl space-y-8">
+    <TopImage
+      imageUrl={imageUrl}
+      title="Gigs"
+      alt="Gigs"
+      imageAttribution={imageAttribution}
+    />
+    <div
+      class="top-12 z-10 mb-4 hidden grid-cols-[120px_1fr_1fr] gap-4 bg-white px-6 py-4 text-sm font-medium md:sticky md:grid"
+    >
+      <div>When?</div>
+      <div>Who, where?</div>
+      <div>What?</div>
+    </div>
+    {
+      sortYearsDesc(groupGigsByYear(sortedGigs)).map(
+        ([year, yearGigs], index) => (
+          <details class="group" open={index === 0}>
+            <summary class="sticky top-12 z-10 flex list-none flex-row items-center justify-between px-6 text-3xl font-medium">
+              <span class="bg-white py-1.5">{year}</span>
+              <Icon
+                class="origin-center bg-white transition-transform group-open:scale-150 group-open:rotate-180 group-hover:scale-110 group-hover:not-group-open:rotate-6 group-hover:group-open:rotate-[174deg]"
+                name={SOLAR_CHEVRON_DOWN_ICON}
+                size={24}
+              />
+            </summary>
+            <div class="divide-y divide-gray-200">
+              {yearGigs.map((gig: CollectionEntry<"gigs">) => (
+                <div class="flex flex-col gap-4 px-6 py-4 hover:bg-gray-50 md:grid md:grid-cols-[120px_1fr_1fr]">
+                  <time datetime={gig.data.date} class="whitespace-nowrap">
+                    {format(new Date(gig.data.date), "MMMM do")}
+                  </time>
+                  <div class="space-y-1">
+                    <div class="w-full font-medium">
+                      {gig.data.artistUrl ? (
+                        <Link
+                          href={gig.data.artistUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="wrap-anywhere break-all hyphens-auto"
+                        >
+                          {gig.data.artist}
+                        </Link>
+                      ) : (
+                        <span class="w-full wrap-anywhere break-all hyphens-auto">
+                          {gig.data.artist}
+                        </span>
+                      )}
+                    </div>
+                    <div class="">
+                      {gig.data.venueUrl ? (
+                        <Link
+                          href={gig.data.venueUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {gig.data.venue}
+                          {gig.data.city && <span>, {gig.data.city}</span>}
+                        </Link>
+                      ) : (
+                        // prettier-ignore
+                        <span>
                             {gig.data.venue}{gig.data.city && <span>, {gig.data.city}</span>}
                           </span>
+                      )}
+                    </div>
+                  </div>
+                  <div class="">
+                    {gig.data.eventUrl ? (
+                      <Link
+                        href={gig.data.eventUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {gig.data.eventDescription}
+                      </Link>
+                    ) : (
+                      gig.data.eventDescription
                     )}
                   </div>
                 </div>
-                <div class="">
-                  {gig.data.eventUrl ? (
-                    <Link
-                      href={gig.data.eventUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {gig.data.eventDescription}
-                    </Link>
-                  ) : (
-                    gig.data.eventDescription
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </details>
-      ),
-    )
-  }
+              ))}
+            </div>
+          </details>
+        ),
+      )
+    }
+  </div>
 </Layout>

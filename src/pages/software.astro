@@ -4,7 +4,9 @@ import { Picture } from "astro:assets";
 import { getCollection } from "astro:content";
 import { orderBy } from "lodash-es";
 import Link from "../components/Link.astro";
+import TopImage from "../components/TopImage.astro";
 import Layout from "../layouts/Layout.astro";
+import { imageToUrl } from "../utils";
 
 import eliaseine from "../assets/images/eliaseine.png";
 import entur from "../assets/images/entur.png";
@@ -34,9 +36,12 @@ const imageMap: Record<string, ImageMetadata> = {
 };
 
 const softwares = await getCollection("software");
+
+const image = "/images/software.png";
+const imageUrl = imageToUrl(image);
 ---
 
-<Layout title="Software">
+<Layout title="Software" image={imageUrl}>
   <div class="mx-auto max-w-7xl space-y-8">
     <h1 class="mb-12">Software</h1>
     <p>

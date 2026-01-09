@@ -16,6 +16,12 @@ const {
   image = null,
   showRssLink = false,
 } = Astro.props;
+
+const imageUrl = image
+  ? image.startsWith("http")
+    ? image
+    : new URL(image, Astro.site || Astro.url.origin).toString()
+  : null;
 ---
 
 <!doctype html>
@@ -25,7 +31,7 @@ const {
     <meta name="viewport" content="width=device-width" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    {image && <meta property="og:image" content={image} />}
+    {imageUrl && <meta property="og:image" content={imageUrl} />}
     {
       showRssLink && (
         <link

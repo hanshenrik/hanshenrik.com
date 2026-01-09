@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  imageUrl: string;
+  title: string;
+  alt: string;
+  imageAttribution?: string;
+  imageClassName?: string;
+}
+
+const { imageUrl, title, alt, imageAttribution, imageClassName } = Astro.props;
+---
+
+<figure>
+  <div class="relative aspect-video max-h-[460px] w-full overflow-hidden">
+    <Image
+      src={imageUrl}
+      width={1000}
+      height={1000}
+      quality={100}
+      alt={alt}
+      class:list={["h-full w-full object-cover", imageClassName]}
+      loading="eager"
+    />
+    <div
+      class="absolute bottom-4 left-4 z-10 flex items-center gap-2 rounded-lg p-2 backdrop-blur-sm"
+    >
+      <h1 class="text-6xl text-white">{title}</h1>
+    </div>
+    {
+      imageAttribution && (
+        <figcaption class="absolute right-2 bottom-4 z-10 flex items-center gap-2 rounded-lg p-2 text-sm text-gray-200 backdrop-blur-sm">
+          <small>{imageAttribution}</small>
+        </figcaption>
+      )
+    }
+  </div>
+</figure>
