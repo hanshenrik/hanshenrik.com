@@ -4,6 +4,7 @@ import { type CollectionEntry, getCollection, render } from "astro:content";
 import { format } from "date-fns";
 import { nb } from "date-fns/locale";
 import Layout from "../../layouts/Layout.astro";
+import { imageToUrl } from "../../utils";
 
 export async function getStaticPaths() {
   const posts = await getCollection("drypp");
@@ -18,11 +19,13 @@ const { Content } = await render(post);
 
 const { title, description, pubDate, updatedAt, image, imageAttribution } =
   post.data;
+
+const imageUrl = image ? imageToUrl(image, Astro.url.origin) : undefined;
 ---
 
 <Layout
   title={title}
-  image={image}
+  image={imageUrl}
   description={description}
   showRssLink={true}
 >
@@ -49,7 +52,7 @@ const { title, description, pubDate, updatedAt, image, imageAttribution } =
       image && (
         <figure class="relative aspect-video overflow-hidden">
           <Image
-            src={image}
+            src={imageUrl!}
             width={400}
             height={400}
             quality={100}
@@ -57,9 +60,7 @@ const { title, description, pubDate, updatedAt, image, imageAttribution } =
             class="h-full w-full object-cover"
           />
           <figcaption>
-            <small class="text-sm text-gray-500">
-              {post.data.imageAttribution}
-            </small>
+            <small class="text-sm text-gray-500">{imageAttribution}</small>
           </figcaption>
         </figure>
       )

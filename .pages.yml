@@ -2,13 +2,13 @@ media:
   - name: public-images
     label: Images
     input: public/images
-    output: public
+    output: /images
     path: public/images
     extensions: [png, jpg, jpeg, gif, svg, webp, avif]
   - name: public-audio
     label: Audio
     input: public/audio
-    output: public
+    output: /audio
     path: public/audio
     extensions: [mp3, mp4, wav, ogg, webm]
 

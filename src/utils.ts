@@ -4,6 +4,13 @@ export const stringToHtmlTagId = (str: string) => {
   return str.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase();
 };
 
+export const imageToUrl = (image: string, baseUrl?: string) => {
+  const url =
+    baseUrl ||
+    (import.meta.env.DEV ? "http://localhost:4321" : import.meta.env.SITE);
+  return new URL(image, url).toString();
+};
+
 const rssPostDataSchema = z.object({
   title: z.string(),
   description: z.string(),
