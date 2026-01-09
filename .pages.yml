@@ -20,14 +20,17 @@ media:
 content:
   - name: recordings
     label: Recordings
-    type: file
-    path: src/data/recordings.json
-    format: json
+    type: collection
+    path: src/content/recordings
+    filename: "{primary}.mdx"
+    view:
+      fields: [image, artist, name, description, year, type]
+      primary: name
+      sort: [name, artist, year, type]
+      default:
+        sort: year
+        order: desc
     fields:
-      - name: id
-        label: ID
-        type: string
-        required: true
       - name: artist
         label: Artist
         type: string
@@ -50,6 +53,11 @@ content:
       - name: album
         label: Album
         type: string
+      - name: order
+        label: Order
+        type: number
+        description: Highest first
+        default: 0
       - name: spotifyLink
         label: Spotify Link
         type: string
@@ -149,7 +157,7 @@ content:
       sort: [order, name]
       default:
         sort: order
-        order: asc
+        order: desc
     fields:
       - name: name
         label: Name
@@ -168,7 +176,7 @@ content:
       - name: order
         label: Order
         type: number
-        description: Lowest first
+        description: Highest first
 
   - name: videos
     label: Videos
@@ -181,7 +189,7 @@ content:
       sort: [order, name, artist]
       default:
         sort: order
-        order: asc
+        order: desc
     fields:
       - name: artist
         label: Artist
@@ -205,7 +213,7 @@ content:
       - name: order
         label: Order
         type: number
-        description: Lowest first
+        description: Highest first
 
   - name: drypp
     label: Drypp
@@ -213,7 +221,7 @@ content:
     path: src/content/drypp
     filename: "{primary}.mdx"
     view:
-      fields: [title, description, pubDate, updatedAt, author, image, tags]
+      fields: [image, title, description, pubDate, updatedAt, author, tags]
       primary: title
       sort: [pubDate, updatedAt, title]
       default:

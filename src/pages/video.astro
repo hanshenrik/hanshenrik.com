@@ -2,7 +2,7 @@
 import { YouTube } from "astro-embed";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
-import { sortBy } from "lodash-es";
+import { orderBy } from "lodash-es";
 import { YOUTUBE_ICON } from "../icons";
 import Layout from "../layouts/Layout.astro";
 
@@ -14,7 +14,7 @@ const videos = await getCollection("videos");
     <h1 class="mb-12">Video</h1>
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
-        sortBy(videos, "data.order").map((video) => (
+        orderBy(videos, "data.order", "desc").map((video) => (
           <div class="card group space-y-2">
             {video.data.youtubeLink && <YouTube id={video.data.youtubeLink} />}
             <div class="card-content space-y-2">

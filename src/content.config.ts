@@ -5,19 +5,19 @@ import { v4 as uuidv4 } from "uuid";
 import { blogPostDataSchema } from "./utils";
 
 const blog = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/drypp" }),
+  type: "content",
   schema: blogPostDataSchema,
 });
 
 const recordings = defineCollection({
-  loader: file("src/data/recordings.json"),
+  type: "content",
   schema: z.object({
-    id: z.string(),
     artist: z.string(),
     name: z.string(),
     description: z.string().optional(),
     type: z.enum(["Album", "Single", "EP", "Live"]).optional(),
     year: z.number().optional(),
+    album: z.string().optional(),
     tidalLink: z.string().optional(),
     spotifyLink: z.string().optional(),
     appleLink: z.string().optional(),
@@ -25,6 +25,7 @@ const recordings = defineCollection({
     youtubeLink: z.string().optional(),
     image: z.string().optional(),
     imageAttribution: z.string().optional(),
+    order: z.number().optional().default(0),
     localFile: z
       .object({
         src: z.string(),

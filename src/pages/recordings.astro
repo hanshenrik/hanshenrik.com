@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+import { orderBy } from "lodash-es";
 import AudioPlayer from "../components/AudioPlayer.astro";
 import Link from "../components/Link.astro";
 import {
@@ -11,18 +12,37 @@ import {
   TIDAL_ICON,
 } from "../icons";
 import Layout from "../layouts/Layout.astro";
+
 const recordings = await getCollection("recordings");
 
 const releasedRecordings = recordings.filter(
   (recording) => !recording.data.localFile,
 );
+
+const sortedReleasedRecordings = orderBy(
+  releasedRecordings,
+  ["data.order", "data.year", "data.name"],
+  "desc",
+);
+
 const localBandRecordings = recordings.filter(
   (recording) =>
     recording.data.localFile && recording.data.localFile.type === "band",
 );
+const sortedLocalBandRecordings = orderBy(
+  localBandRecordings,
+  ["data.order", "data.year", "data.name"],
+  "desc",
+);
+
 const localSoloRecordings = recordings.filter(
   (recording) =>
     recording.data.localFile && recording.data.localFile.type === "solo",
+);
+const sortedLocalSoloRecordings = orderBy(
+  localSoloRecordings,
+  ["data.order", "data.year", "data.name"],
+  "desc",
 );
 ---
 
@@ -71,7 +91,7 @@ const localSoloRecordings = recordings.filter(
         class="grid grid-cols-2 gap-4 lg:col-span-2 lg:grid-cols-3 xl:grid-cols-4"
       >
         {
-          releasedRecordings.map(({ data }) => (
+          sortedReleasedRecordings.map(({ data }) => (
             <div class="card group">
               {data.image && (
                 <div class="relative aspect-square overflow-hidden">
@@ -172,12 +192,12 @@ const localSoloRecordings = recordings.filter(
     </p>
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
       <AudioPlayer
-        recordings={localSoloRecordings}
+        recordings={sortedLocalSoloRecordings}
         title="Solo"
         playerId="solo"
       />
       <AudioPlayer
-        recordings={localBandRecordings}
+        recordings={sortedLocalBandRecordings}
         title="Bands"
         playerId="bands"
       />
