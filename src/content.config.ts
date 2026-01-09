@@ -2,11 +2,11 @@ import { file, glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 import { v4 as uuidv4 } from "uuid";
 
-import { postDataSchema } from "./utils";
+import { blogPostDataSchema } from "./utils";
 
 const blog = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/drypp" }),
-  schema: postDataSchema,
+  schema: blogPostDataSchema,
 });
 
 const recordings = defineCollection({
