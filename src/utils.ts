@@ -14,6 +14,7 @@ export type RssPostData = z.infer<typeof rssPostDataSchema>;
 
 export const blogPostDataSchema = rssPostDataSchema.extend({
   image: z.string().optional(),
+  imageAttribution: z.string(),
   updatedAt: z.date().optional(),
   tags: z.array(z.string()).optional().default([]),
 });

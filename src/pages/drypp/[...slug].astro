@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { type CollectionEntry, getCollection, render } from "astro:content";
 import { format } from "date-fns";
 import { nb } from "date-fns/locale";
@@ -38,6 +39,25 @@ const { title, description, pubDate, updatedAt } = post.data;
         }
       </div>
     </header>
+    {
+      post.data.image && (
+        <figure class="relative aspect-video overflow-hidden">
+          <Image
+            src={post.data.image}
+            width={400}
+            height={400}
+            quality={100}
+            alt={post.data.title}
+            class="h-full w-full object-cover"
+          />
+          <figcaption>
+            <small class="text-sm text-gray-500">
+              {post.data.imageAttribution}
+            </small>
+          </figcaption>
+        </figure>
+      )
+    }
     <div class="prose prose-a:no-underline">
       <Content />
     </div>
