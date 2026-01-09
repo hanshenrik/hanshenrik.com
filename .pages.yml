@@ -41,10 +41,7 @@ content:
         label: Type
         type: select
         options:
-          - Album
-          - Single
-          - EP
-          - Live
+          values: [Album, Single, EP, Live]
       - name: album
         label: Album
         type: string
@@ -83,8 +80,7 @@ content:
             label: Type
             type: select
             options:
-              - band
-              - solo
+              values: [solo, band]
 
   - name: gigs
     label: Gigs
