@@ -235,9 +235,11 @@ content:
         type: date
       - name: tags
         label: Tags
-        type: list
-        items:
-          type: string
+        type: select
+        options:
+          - multiple: true
+            creatable: true
+            values: [Musikk, Podkast, Levende bilder, Programmering]
       - name: body
         label: Body
         type: rich-text
