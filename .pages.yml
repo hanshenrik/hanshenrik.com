@@ -105,9 +105,9 @@ content:
     path: src/data/gigs.json
     format: json
     list:
-    collapsible:
-      collapsed: true # Default collapsed state
-      summary: "{artist} - {venue} - {date}" # Template string using field values and {index}
+      collapsible:
+        collapsed: true # Default collapsed state
+        summary: "{artist} - {venue} - {date}" # Template string using field values and {index}
     fields:
       - name: date
         label: Date
