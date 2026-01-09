@@ -44,7 +44,6 @@ const gigs = defineCollection({
     },
   }),
   schema: z.object({
-    id: z.string(),
     date: z.string(),
     toDate: z.string().optional(),
     venue: z.string(),
