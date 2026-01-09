@@ -223,10 +223,16 @@ content:
         label: Title
         type: string
         required: true
-      - name: ingress
+      - name: description
         label: Ingress
         type: text
         required: true
+      - name: image
+        label: Image URL
+        type: string
+      - name: imageAttribution
+        label: Image Attribution
+        type: string
       - name: pubDate
         label: Publication Date
         type: date
