@@ -1,46 +1,20 @@
 ---
 import { Icon } from "astro-icon/components";
-import { Picture } from "astro:assets";
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { orderBy } from "lodash-es";
 import Link from "../components/Link.astro";
 import Layout from "../layouts/Layout.astro";
 import { imageToUrl } from "../utils";
-
-import eliaseine from "../assets/images/eliaseine.png";
-import entur from "../assets/images/entur.png";
-import folq from "../assets/images/folq.png";
-import hakonhammer from "../assets/images/hakonhammer.png";
-import jazzkart from "../assets/images/jazzkart.png";
-import kickmap from "../assets/images/kickmap.png";
-import kjorromskip from "../assets/images/kjorromskip.png";
-import mandaljazz from "../assets/images/mandaljazz.png";
-import rishatt from "../assets/images/rishatt.png";
-import ronsenrock from "../assets/images/ronsenrock.png";
-import whenfm from "../assets/images/when-fm.png";
 import { GITHUB_ICON } from "../icons";
-
-const imageMap: Record<string, ImageMetadata> = {
-  "mandaljazz-no": mandaljazz,
-  "ronsenrock-no": ronsenrock,
-  "rishatt-no": rishatt,
-  jazzkart: jazzkart,
-  kickmap: kickmap,
-  "when-fm": whenfm,
-  "kjorromskip-no": kjorromskip,
-  "eliaseine-no": eliaseine,
-  "hakonhammer-no": hakonhammer,
-  entur: entur,
-  folq: folq,
-};
 
 const softwares = await getCollection("software");
 
-const image = "/images/software.png";
-const imageUrl = imageToUrl(image);
+const topImage = "/images/software.png";
+const topImageUrl = imageToUrl(topImage);
 ---
 
-<Layout title="Software" image={imageUrl}>
+<Layout title="Software" image={topImageUrl}>
   <div class="mx-auto max-w-7xl space-y-8">
     <h1 class="mb-12">Software</h1>
     <p>
@@ -61,23 +35,29 @@ const imageUrl = imageToUrl(image);
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
         orderBy(softwares, "data.order", "desc").map((software) => {
+          const imageUrl = software.data.image
+            ? imageToUrl(software.data.image, Astro.url.origin)
+            : null;
           return (
             <div class="card group space-y-2">
-              <div class="relative aspect-video overflow-hidden">
-                <a
-                  href={software.data.url || software.data.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Picture
-                    formats={["avif", "webp"]}
-                    src={imageMap[software.slug]}
-                    quality={100}
-                    alt={software.data.name}
-                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </a>
-              </div>
+              {imageUrl && (
+                <div class="relative aspect-video overflow-hidden">
+                  <a
+                    href={software.data.url || software.data.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src={imageUrl}
+                      width={800}
+                      height={450}
+                      quality={100}
+                      alt={software.data.name}
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </a>
+                </div>
+              )}
               <div class="card-content">
                 <h2 class="mb-2">{software.data.name}</h2>
                 <p class="mb-4 text-gray-600">{software.data.description}</p>

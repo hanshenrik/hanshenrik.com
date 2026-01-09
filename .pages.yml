@@ -74,8 +74,12 @@ content:
         label: YouTube Link
         type: string
       - name: image
-        label: Image URL
-        type: string
+        label: Image
+        type: image
+        options:
+          media: public-images
+          path: public/images/recordings
+          extensions: [png, jpg, jpeg, gif, svg, webp, avif]
       - name: imageAttribution
         label: Image Attribution
         type: string
@@ -152,7 +156,7 @@ content:
     path: src/content/software
     filename: "{primary}.mdx"
     view:
-      fields: [name, description, url, order]
+      fields: [image, name, description, url, order]
       primary: name
       sort: [order, name]
       default:
@@ -173,6 +177,13 @@ content:
       - name: githubUrl
         label: GitHub URL
         type: string
+      - name: image
+        label: Image
+        type: image
+        options:
+          media: public-images
+          path: public/images/software
+          extensions: [png, jpg, jpeg, gif, svg, webp, avif]
       - name: order
         label: Order
         type: number

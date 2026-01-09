@@ -9,11 +9,11 @@ import { imageToUrl } from "../utils";
 
 const videos = await getCollection("videos");
 
-const image = "/images/videos.jpg";
-const imageUrl = imageToUrl(image);
+const topImage = "/images/videos.jpg";
+const topImageUrl = imageToUrl(topImage);
 ---
 
-<Layout title="Video" image={imageUrl}>
+<Layout title="Video" image={topImageUrl}>
   <div class="mx-auto max-w-7xl space-y-8">
     <h1 class="mb-12">Video</h1>
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

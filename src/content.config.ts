@@ -68,6 +68,7 @@ const software = defineCollection({
     url: z.string().optional(),
     githubUrl: z.string().optional(),
     order: z.number().optional(),
+    image: z.string().optional(),
   }),
 });
 

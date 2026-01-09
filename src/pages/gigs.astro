@@ -21,18 +21,18 @@ const sortYearsDesc = (years: Record<string, CollectionEntry<"gigs">[]>) => {
   return orderBy(Object.entries(years), ([year]) => Number(year), "desc");
 };
 
-const image = "/images/gigs.jpg";
-const imageUrl = imageToUrl(image);
-const imageAttribution = "Photo: foto.samfundet.no";
+const topImage = "/images/gigs.jpg";
+const topImageUrl = imageToUrl(topImage);
+const topImageAttribution = "Photo: foto.samfundet.no";
 ---
 
-<Layout title="Gigs" image={imageUrl}>
+<Layout title="Gigs" image={topImageUrl}>
   <div class="mx-auto max-w-7xl space-y-8">
     <TopImage
-      imageUrl={imageUrl}
+      imageUrl={topImageUrl}
       title="Gigs"
       alt="Gigs"
-      imageAttribution={imageAttribution}
+      imageAttribution={topImageAttribution}
     />
     <div
       class="top-12 z-10 mb-4 hidden grid-cols-[120px_1fr_1fr] gap-4 bg-white px-6 py-4 text-sm font-medium md:sticky md:grid"

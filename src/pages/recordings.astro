@@ -47,18 +47,18 @@ const sortedLocalSoloRecordings = orderBy(
   "desc",
 );
 
-const image = "/images/recordings.jpg";
-const imageUrl = imageToUrl(image);
-const imageAttribution = "Photo: Jørgen Reitan";
+const topImage = "/images/recordings.jpg";
+const topImageUrl = imageToUrl(topImage);
+const topImageAttribution = "Photo: Jørgen Reitan";
 ---
 
-<Layout title="Recordings" image={imageUrl}>
+<Layout title="Recordings" image={topImageUrl}>
   <div class="mx-auto max-w-7xl space-y-8">
     <TopImage
-      imageUrl={imageUrl}
+      imageUrl={topImageUrl}
       title="Recordings"
       alt="Recordings"
-      imageAttribution={imageAttribution}
+      imageAttribution={topImageAttribution}
     />
 
     <h2 class="mb-4">Official releases</h2>
@@ -104,90 +104,95 @@ const imageAttribution = "Photo: Jørgen Reitan";
         class="grid grid-cols-2 gap-4 lg:col-span-2 lg:grid-cols-3 xl:grid-cols-4"
       >
         {
-          sortedReleasedRecordings.map(({ data }) => (
-            <div class="card group">
-              {data.image && (
-                <div class="relative aspect-square overflow-hidden">
-                  <Image
-                    src={data.image}
-                    width={400}
-                    height={400}
-                    quality={100}
-                    alt={`${data.artist} - ${data.name}`}
-                    class="h-full w-full object-cover"
-                  />
-                  {data.type && (
-                    <span class="absolute right-1 bottom-1 h-fit rounded-md bg-gray-100/90 px-2 py-1 text-sm shadow-inner backdrop-blur-xs">
-                      {data.type}
-                    </span>
-                  )}
-                </div>
-              )}
-              <div class="card-content py-1">
-                <h3 class="text-xl">{data.name}</h3>
-                <h4 class="font-medium">
-                  {data.artist}
-                  {data.year && ` (${data.year})`}
-                </h4>
-                <details class="">
-                  <summary>Details</summary>
-                  <div class="mt-2">
-                    <div class="-ml-2 flex w-fit flex-wrap gap-1">
-                      {data.spotifyLink && (
-                        <a
-                          href={data.spotifyLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title={`${data.name} on Spotify`}
-                          aria-label={`${data.name} on Spotify`}
-                          class="inline-flex h-10 w-10 items-center justify-center rounded-full text-green-700 transition-colors duration-200 hover:bg-green-200"
-                        >
-                          <Icon name={SPOTIFY_ICON} size={24} />
-                        </a>
-                      )}
-                      {data.tidalLink && (
-                        <a
-                          href={data.tidalLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title={`${data.name} on Tidal`}
-                          aria-label={`${data.name} on Tidal`}
-                          class="inline-flex h-10 w-10 items-center justify-center rounded-full text-black transition-colors duration-200 hover:bg-black hover:text-white"
-                        >
-                          <Icon name={TIDAL_ICON} size={24} />
-                        </a>
-                      )}
-                      {data.appleLink && (
-                        <a
-                          href={data.appleLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title={`${data.name} on Apple Music`}
-                          aria-label={`${data.name} on Apple Music`}
-                          class="inline-flex h-10 w-10 items-center justify-center rounded-full text-pink-700 transition-colors duration-200 hover:bg-pink-200"
-                        >
-                          <Icon name={APPLE_MUSIC_ICON} size={24} />
-                        </a>
-                      )}
-                      {data.soundcloudLink && (
-                        <a
-                          href={data.soundcloudLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title={`${data.name} on SoundCloud`}
-                          aria-label={`${data.name} on SoundCloud`}
-                          class="inline-flex h-10 w-10 items-center justify-center rounded-full text-orange-700 transition-colors duration-200 hover:bg-orange-200"
-                        >
-                          <Icon name={SOUNDCLOUD_ICON} size={24} />
-                        </a>
-                      )}
-                    </div>
-                    <p class="text-gray-500">{data.description}</p>
+          sortedReleasedRecordings.map(({ data }) => {
+            const imageUrl = data.image
+              ? imageToUrl(data.image, Astro.url.origin)
+              : null;
+            return (
+              <div class="card group">
+                {imageUrl && (
+                  <div class="relative aspect-square overflow-hidden">
+                    <Image
+                      src={imageUrl}
+                      width={400}
+                      height={400}
+                      quality={100}
+                      alt={`${data.artist} - ${data.name}`}
+                      class="h-full w-full object-cover"
+                    />
+                    {data.type && (
+                      <span class="absolute right-1 bottom-1 h-fit rounded-md bg-gray-100/90 px-2 py-1 text-sm shadow-inner backdrop-blur-xs">
+                        {data.type}
+                      </span>
+                    )}
                   </div>
-                </details>
+                )}
+                <div class="card-content py-1">
+                  <h3 class="text-xl">{data.name}</h3>
+                  <h4 class="font-medium">
+                    {data.artist}
+                    {data.year && ` (${data.year})`}
+                  </h4>
+                  <details class="">
+                    <summary>Details</summary>
+                    <div class="mt-2">
+                      <div class="-ml-2 flex w-fit flex-wrap gap-1">
+                        {data.spotifyLink && (
+                          <a
+                            href={data.spotifyLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title={`${data.name} on Spotify`}
+                            aria-label={`${data.name} on Spotify`}
+                            class="inline-flex h-10 w-10 items-center justify-center rounded-full text-green-700 transition-colors duration-200 hover:bg-green-200"
+                          >
+                            <Icon name={SPOTIFY_ICON} size={24} />
+                          </a>
+                        )}
+                        {data.tidalLink && (
+                          <a
+                            href={data.tidalLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title={`${data.name} on Tidal`}
+                            aria-label={`${data.name} on Tidal`}
+                            class="inline-flex h-10 w-10 items-center justify-center rounded-full text-black transition-colors duration-200 hover:bg-black hover:text-white"
+                          >
+                            <Icon name={TIDAL_ICON} size={24} />
+                          </a>
+                        )}
+                        {data.appleLink && (
+                          <a
+                            href={data.appleLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title={`${data.name} on Apple Music`}
+                            aria-label={`${data.name} on Apple Music`}
+                            class="inline-flex h-10 w-10 items-center justify-center rounded-full text-pink-700 transition-colors duration-200 hover:bg-pink-200"
+                          >
+                            <Icon name={APPLE_MUSIC_ICON} size={24} />
+                          </a>
+                        )}
+                        {data.soundcloudLink && (
+                          <a
+                            href={data.soundcloudLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title={`${data.name} on SoundCloud`}
+                            aria-label={`${data.name} on SoundCloud`}
+                            class="inline-flex h-10 w-10 items-center justify-center rounded-full text-orange-700 transition-colors duration-200 hover:bg-orange-200"
+                          >
+                            <Icon name={SOUNDCLOUD_ICON} size={24} />
+                          </a>
+                        )}
+                      </div>
+                      <p class="text-gray-500">{data.description}</p>
+                    </div>
+                  </details>
+                </div>
               </div>
-            </div>
-          ))
+            );
+          })
         }
       </div>
     </div>
