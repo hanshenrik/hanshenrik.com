@@ -1,8 +1,16 @@
 media:
-  input: public
-  output: public
-  path: public
-  extensions: [png, jpg, jpeg, gif, svg, webp, avif, mp3, mp4]
+  - name: public-images
+    label: Images
+    input: public
+    output: public
+    path: public/images
+    extensions: [png, jpg, jpeg, gif, svg, webp, avif]
+  - name: public-audio
+    label: Audio
+    input: public
+    output: public
+    path: public/audio
+    extensions: [mp3, mp4, wav, ogg, webm]
 
 content:
   - name: recordings
@@ -199,7 +207,7 @@ content:
         description: Lowest first
 
   - name: drypp
-    label: Blog Posts (Drypp)
+    label: Drypp
     type: collection
     path: src/content/drypp
     filename: "{primary}.mdx"
@@ -240,3 +248,10 @@ content:
         type: list
         items:
           type: string
+      - name: body
+        label: Body
+        type: rich-text
+        options:
+          media: public-images
+          path: public/images/drypp
+          extensions: [png, jpg, jpeg, webp, svg, gif]
