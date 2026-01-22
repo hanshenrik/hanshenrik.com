@@ -20,7 +20,7 @@
     "astro-embed": "^0.9.0",
     "astro-icon": "^1.1.5",
     "date-fns": "^4.1.0",
-    "lodash-es": "^4.17.21",
+    "lodash-es": "^4.17.23",
     "remark-smartypants": "^3.0.2",
     "retext-smartypants": "^6.2.0",
     "tailwindcss": "^4.1.5",
