@@ -92,7 +92,7 @@ const vouchers = defineCollection({
   }),
   schema: z.object({
     name: z.string(),
-    description: z.string(),
+    description: z.string().optional(),
     value: z.string().optional(),
     url: z.string().optional(),
     code: z.string().nullish(),
