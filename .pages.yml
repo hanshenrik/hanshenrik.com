@@ -228,7 +228,6 @@ content:
     type: file
     path: src/data/vouchers.json
     format: json
-    list: true
     view:
       fields: [image, name, description, url, code, order]
       primary: name
