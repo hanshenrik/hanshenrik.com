@@ -1,13 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import {
-  IS_PLAYING_ICON,
-  NEXT_ICON,
-  PAUSE_ICON,
-  PLAY_ICON,
-  PREVIOUS_ICON,
-} from "../icons";
+import { IS_PLAYING, NEXT, PAUSE, PLAY, PREVIOUS } from "../icons";
 import { PLAY_LOCAL_TRACK } from "../umamiEvents";
 import { stringToHtmlTagId } from "../utils";
 
@@ -30,22 +24,22 @@ const { recordings, title, playerId } = Astro.props;
         class="rounded-full p-2 text-sky-600 hover:bg-gray-100"
         aria-label="Previous track"
       >
-        <Icon name={PREVIOUS_ICON} size={20} />
+        <Icon name={PREVIOUS} size={20} />
       </button>
       <button
         id={`play-pause-${playerId}`}
         class="rounded-full p-2 text-sky-600 hover:bg-gray-100"
         aria-label="Play/Pause"
       >
-        <Icon name={PLAY_ICON} size={32} class="play-icon" />
-        <Icon name={PAUSE_ICON} size={32} class="pause-icon hidden" />
+        <Icon name={PLAY} size={32} class="play-icon" />
+        <Icon name={PAUSE} size={32} class="pause-icon hidden" />
       </button>
       <button
         id={`next-track-${playerId}`}
         class="rounded-full p-2 text-sky-600 hover:bg-gray-100"
         aria-label="Next track"
       >
-        <Icon name={NEXT_ICON} size={20} />
+        <Icon name={NEXT} size={20} />
       </button>
       <div class="min-w-0 flex-1 overflow-x-hidden">
         <div
@@ -96,7 +90,7 @@ const { recordings, title, playerId } = Astro.props;
                     class="flex-shrink-0 text-sky-600 opacity-0 transition-opacity duration-200"
                     data-playing-indicator
                   >
-                    <Icon name={IS_PLAYING_ICON} size={24} />
+                    <Icon name={IS_PLAYING} size={24} />
                   </div>
                 </div>
                 <span class="flex items-end justify-between gap-2">

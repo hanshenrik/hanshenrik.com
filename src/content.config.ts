@@ -38,7 +38,7 @@ const recordings = defineCollection({
 
 const gigs = defineCollection({
   loader: file("src/data/gigs.json", {
-    parser: (text, ...props) => {
+    parser: (text, ..._props) => {
       const data = JSON.parse(text);
       return data.map((gig: any) => ({ id: uuidv4(), ...gig }));
     },
@@ -83,10 +83,29 @@ const videos = defineCollection({
   }),
 });
 
+const vouchers = defineCollection({
+  loader: file("src/data/vouchers.json", {
+    parser: (text, ..._props) => {
+      const data = JSON.parse(text);
+      return data.map((voucher: any) => ({ id: uuidv4(), ...voucher }));
+    },
+  }),
+  schema: z.object({
+    name: z.string(),
+    description: z.string(),
+    value: z.string().optional(),
+    url: z.string().optional(),
+    code: z.string().nullish(),
+    image: z.string().optional(),
+    order: z.number().optional(),
+  }),
+});
+
 export const collections = {
   drypp: blog,
   recordings,
   gigs,
   software,
   videos,
+  vouchers,
 };

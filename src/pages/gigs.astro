@@ -6,7 +6,7 @@ import { format } from "date-fns";
 import { groupBy, orderBy } from "lodash-es";
 import Link from "../components/Link.astro";
 import TopImage from "../components/TopImage.astro";
-import { SOLAR_CHEVRON_DOWN_ICON } from "../icons";
+import { CHEVRON_DOWN } from "../icons";
 import Layout from "../layouts/Layout.astro";
 import { imageToUrl } from "../utils";
 
@@ -49,7 +49,7 @@ const topImageAttribution = "Photo: foto.samfundet.no";
               <span class="bg-white py-1.5">{year}</span>
               <Icon
                 class="origin-center bg-white transition-transform group-open:scale-150 group-open:rotate-180 group-hover:scale-110 group-hover:not-group-open:rotate-6 group-hover:group-open:rotate-[174deg]"
-                name={SOLAR_CHEVRON_DOWN_ICON}
+                name={CHEVRON_DOWN}
                 size={24}
               />
             </summary>

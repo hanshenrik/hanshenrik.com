@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { orderBy } from "lodash-es";
 import Link from "../components/Link.astro";
-import { GITHUB_ICON } from "../icons";
+import { GITHUB } from "../icons";
 import Layout from "../layouts/Layout.astro";
 import { imageToUrl } from "../utils";
 
@@ -69,7 +69,7 @@ const topImageUrl = imageToUrl(topImage);
                       rel="noopener noreferrer"
                       class="inline-flex items-center gap-1 rounded-full bg-gray-100 px-3 py-1.5 text-gray-700 transition-colors duration-200 hover:bg-gray-200"
                     >
-                      <Icon name={GITHUB_ICON} />
+                      <Icon name={GITHUB} />
                       GitHub
                     </a>
                   )}

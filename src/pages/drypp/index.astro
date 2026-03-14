@@ -6,7 +6,7 @@ import { format, isPast } from "date-fns";
 import { nb } from "date-fns/locale";
 import Link from "../../components/Link.astro";
 import Tag from "../../components/Tag.astro";
-import { RSS_ICON } from "../../icons";
+import { RSS } from "../../icons";
 import Layout from "../../layouts/Layout.astro";
 
 const posts = await getCollection("drypp");
@@ -30,7 +30,7 @@ const title = "Drypp";
         title="Abonner på RSS-feed"
       >
         <Icon
-          name={RSS_ICON}
+          name={RSS}
           size={24}
           class="block transition-transform group-hover:scale-110"
         />

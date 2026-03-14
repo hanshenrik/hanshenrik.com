@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import { orderBy } from "lodash-es";
+import Layout from "../layouts/Layout.astro";
+import { imageToUrl } from "../utils";
+
+const vouchers = await getCollection("vouchers");
+---
+
+<Layout title="Vervekoder">
+  <div class="mx-auto max-w-7xl space-y-8">
+    <h1 class="mb-12">Vervekoder</h1>
+    <p>Her er noen tjenester jeg bruker og setter pris på.</p>
+    <p>
+      Hvis du også tenker å bruke en av de kan du (og jeg) få en ekstra liten
+      slant hvis du registrerer deg med en av disse kodene.
+    </p>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        orderBy(vouchers, "data.order", "asc").map((voucher) => {
+          const imageUrl = voucher.data.image
+            ? imageToUrl(voucher.data.image, Astro.url.origin)
+            : null;
+
+          return (
+            <div class="group rounded-2xl border border-gray-200 bg-white shadow-xs">
+              <div class="flex h-full flex-1 flex-col justify-between p-6">
+                <div class="mb-4 flex items-center gap-4">
+                  {imageUrl && (
+                    <div class="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-gray-100 bg-gray-50">
+                      <Image
+                        src={imageUrl}
+                        width={48}
+                        height={48}
+                        quality={100}
+                        alt={voucher.data.name}
+                        class="h-full w-full object-contain p-1"
+                      />
+                    </div>
+                  )}
+                  <h2 class="text-xl font-bold tracking-tight text-gray-900">
+                    {voucher.data.name}
+                  </h2>
+                </div>
+
+                {voucher.data.description && (
+                  <p class="mb-6 flex-1 text-sm">{voucher.data.description}</p>
+                )}
+                {voucher.data.value && (
+                  <p class="mb-6 flex-1 text-sm">{voucher.data.value}</p>
+                )}
+
+                {voucher.data.code && (
+                  <div class="mb-6 rounded-lg border border-gray-100 bg-gray-50 p-3 text-center">
+                    <span class="block text-[10px] font-bold tracking-wider text-gray-400 uppercase">
+                      Vervekode
+                    </span>
+                    <code class="font-mono text-lg font-bold text-blue-600 uppercase">
+                      {voucher.data.code}
+                    </code>
+                  </div>
+                )}
+
+                <a
+                  href={voucher.data.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-blue-600 active:scale-95"
+                >
+                  Gå til {voucher.data.name}
+                </a>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</Layout>

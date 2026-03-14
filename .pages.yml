@@ -223,6 +223,46 @@ content:
         type: number
         description: Highest first
 
+  - name: vouchers
+    label: Vouchers
+    type: file
+    path: src/data/vouchers.json
+    format: json
+    list: true
+    view:
+      fields: [image, name, description, url, code, order]
+      primary: name
+      sort: [order, name]
+      default:
+        sort: order
+        order: desc
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        required: true
+      - name: url
+        label: URL
+        type: string
+      - name: code
+        label: Code
+        type: string
+      - name: image
+        label: Image
+        type: image
+        options:
+          media: public-images
+          path: public/images/vouchers
+          extensions: [png, jpg, jpeg, gif, svg, webp, avif]
+      - name: order
+        label: Order
+        type: number
+        description: Highest first
+
   - name: drypp
     label: Drypp
     type: collection

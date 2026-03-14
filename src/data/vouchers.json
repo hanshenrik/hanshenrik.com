@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Kron",
+    "description": "Spar penger i fond.",
+    "value": "Få 200 kr i bonus.",
+    "url": "https://kron.no/app/invitert/4b7je",
+    "code": "4b7je",
+    "image": "/images/vouchers/kron.png",
+    "order": 10
+  },
+  {
+    "name": "Proton",
+    "description": "Alternativ til Google. E-post, kalender, lagring, VPN, osv.",
+    "value": "Få 2 uker gratis.",
+    "url": "https://pr.tn/ref/Y49XA3HQ",
+    "code": "Y49XA3HQ",
+    "image": "/images/vouchers/proton.png",
+    "order": 15
+  },
+  {
+    "name": "Too Good Too Go",
+    "description": "Redd god mat fra søpla på tampen av dagen til en billig penge.",
+    "value": "Få 30 kr i bonus.",
+    "url": "https://tgtg.onelink.me/OGjG/25yqcykn",
+    "code": "25yqcykn",
+    "image": "/images/vouchers/tgtg.png",
+    "order": 20
+  },
+  {
+    "name": "Slipper",
+    "description": "Få den beste strømavtalen uten å løfte en finger.",
+    "value": "",
+    "url": "https://r.slipper.no/AS78XK",
+    "code": "AS78XK",
+    "image": "/images/vouchers/slipper.png",
+    "order": 30
+  },
+  {
+    "name": "Hygglo",
+    "description": "Leie av ting og tang.",
+    "value": "",
+    "url": "",
+    "code": "7CCRB",
+    "image": "/images/vouchers/hygglo.png",
+    "order": 40
+  },
+  {
+    "name": "Airbnb",
+    "description": "",
+    "value": "",
+    "url": "https://www.airbnb.no/rp/hanshenrikg10?p=stay&s=76&unique_share_id=D175CF91-FAC5-4D59-808A-344F0009557B",
+    "code": "",
+    "image": "/images/vouchers/airbnb.png",
+    "order": 50
+  }
+]

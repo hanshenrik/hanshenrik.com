@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
-import { CLOSE_ICON, HAMBURGER_MENU_ICON } from "../icons";
+import { CLOSE, HAMBURGER_MENU } from "../icons";
 import { pages } from "../pages/index.astro";
 import IconButton from "./IconButton.astro";
 import Link from "./Link.astro";
@@ -50,7 +50,7 @@ import PianoPlukk from "./PianoPlukk.astro";
       <!-- Mobile Menu Button -->
       <IconButton
         id="menu-button"
-        icon={HAMBURGER_MENU_ICON}
+        icon={HAMBURGER_MENU}
         label="Toggle menu"
         class="md:hidden"
       />
@@ -65,7 +65,7 @@ import PianoPlukk from "./PianoPlukk.astro";
 >
   <div class="flex h-full flex-col">
     <div class="flex justify-end p-4">
-      <IconButton id="close-button" icon={CLOSE_ICON} label="Close menu" />
+      <IconButton id="close-button" icon={CLOSE} label="Close menu" />
     </div>
     <nav class="flex-1 space-y-4 px-4 py-4">
       {

@@ -1,35 +1,37 @@
 // UI
-export const HAMBURGER_MENU_ICON = "solar:hamburger-menu-line-duotone";
-export const CLOSE_ICON = "solar:close-circle-line-duotone";
-export const RSS_ICON = "ph:rss-duotone";
-export const SOLAR_CHEVRON_DOWN_ICON = "solar:double-alt-arrow-down-line-duotone";
+export const HAMBURGER_MENU = "solar:hamburger-menu-line-duotone";
+export const CLOSE = "solar:close-circle-line-duotone";
+export const RSS = "ph:rss-duotone";
+export const CHEVRON_DOWN = "solar:double-alt-arrow-down-line-duotone";
+export const COPY = "solar:copy-bold-duotone";
 
 // Pages
-export const RECORDINGS_ICON = "solar:radio-minimalistic-line-duotone";
-export const GIGS_ICON = "solar:calendar-line-duotone";
-export const VIDEO_ICON = "solar:tv-line-duotone";
-export const SOFTWARE_ICON = "solar:diskette-line-duotone";
-export const DRYPP_ICON = "solar:armchair-2-line-duotone";
+export const RECORDINGS = "solar:radio-minimalistic-line-duotone";
+export const GIGS = "solar:calendar-line-duotone";
+export const VIDEO = "solar:tv-line-duotone";
+export const SOFTWARE = "solar:diskette-line-duotone";
+export const DRYPP = "solar:armchair-2-line-duotone";
+export const VOUCHERS = "solar:gift-line-duotone";
 
 // Logos
-export const TIDAL_ICON = "ph:tidal-logo-duotone";
-export const SPOTIFY_ICON = "ph:spotify-logo-duotone";
-export const APPLE_MUSIC_ICON = "ph:apple-logo-duotone";
-export const SOUNDCLOUD_ICON = "ph:soundcloud-logo-duotone";
-export const GITHUB_ICON = "ph:github-logo-duotone";
-export const YOUTUBE_ICON = "ph:youtube-logo-duotone";
-export const WEBSITE_ICON = "ph:globe-duotone";
+export const TIDAL = "ph:tidal-logo-duotone";
+export const SPOTIFY = "ph:spotify-logo-duotone";
+export const APPLE_MUSIC = "ph:apple-logo-duotone";
+export const SOUNDCLOUD = "ph:soundcloud-logo-duotone";
+export const GITHUB = "ph:github-logo-duotone";
+export const YOUTUBE = "ph:youtube-logo-duotone";
+export const WEBSITE = "ph:globe-duotone";
 
 // Audio player
-export const PLAY_ICON = "solar:play-bold";
-export const PAUSE_ICON = "solar:pause-bold";
-export const PREVIOUS_ICON = "solar:skip-previous-bold-duotone";
-export const NEXT_ICON = "solar:skip-next-bold-duotone";
-export const IS_PLAYING_ICON = "solar:volume-loud-line-duotone";
+export const PLAY = "solar:play-bold";
+export const PAUSE = "solar:pause-bold";
+export const PREVIOUS = "solar:skip-previous-bold-duotone";
+export const NEXT = "solar:skip-next-bold-duotone";
+export const IS_PLAYING = "solar:volume-loud-line-duotone";
 
 // Piano plukk
-export const PIANO_PLUKK_ICON = "ph:piano-keys-duotone";
-export const PIANO_PLUKK_NOTE_ICONS = [
+export const PIANO_PLUKK = "ph:piano-keys-duotone";
+export const PIANO_PLUKK_NOTES = [
   "solar:music-note-bold",
   "solar:music-note-bold-duotone",
   "solar:music-note-broken",
