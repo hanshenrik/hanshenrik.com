@@ -24,7 +24,7 @@
     "remark-smartypants": "^3.0.2",
     "retext-smartypants": "^6.2.0",
     "tailwindcss": "^4.1.5",
-    "uuid": "^11.1.0"
+    "uuid": "^14.0.0"
   },
   "devDependencies": {
     "@iconify-json/ph": "^1.2.2",
