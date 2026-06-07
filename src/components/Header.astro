@@ -80,9 +80,9 @@ import PianoPlukk from "./PianoPlukk.astro";
               ]}
             >
               {image && (
-                <div class="absolute inset-0 overflow-hidden">
+                <div class="group absolute inset-0 overflow-hidden">
                   <div
-                    class="h-full w-full bg-cover bg-center"
+                    class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                     style={`background-image: url(${image.src});`}
                   />
                 </div>
