@@ -6,7 +6,13 @@ import { orderBy } from "lodash-es";
 import AudioPlayer from "../components/AudioPlayer.astro";
 import Link from "../components/Link.astro";
 import TopImage from "../components/TopImage.astro";
-import { APPLE_MUSIC, SOUNDCLOUD, SPOTIFY, TIDAL } from "../icons";
+import {
+  APPLE_MUSIC,
+  CHEVRON_DOWN,
+  SOUNDCLOUD,
+  SPOTIFY,
+  TIDAL,
+} from "../icons";
 import Layout from "../layouts/Layout.astro";
 import { imageToUrl } from "../utils";
 
@@ -104,7 +110,7 @@ const topImageAttribution = "Photo: Jørgen Reitan";
               ? imageToUrl(data.image, Astro.url.origin)
               : null;
             return (
-              <div class="group">
+              <div class="">
                 {imageUrl && (
                   <div class="relative aspect-square overflow-hidden">
                     <Image
@@ -128,10 +134,17 @@ const topImageAttribution = "Photo: Jørgen Reitan";
                     {data.artist}
                     {data.year && ` (${data.year})`}
                   </h4>
-                  <details class="">
-                    <summary>Details</summary>
+                  <details>
+                    <summary class="group flex w-fit list-none flex-row items-center gap-1">
+                      <span class="">More info</span>
+                      <Icon
+                        class="origin-center bg-white transition-transform group-open:scale-150 group-open:rotate-180 group-hover:scale-110 group-hover:not-group-open:rotate-6 group-hover:group-open:rotate-[174deg]"
+                        name={CHEVRON_DOWN}
+                        size={18}
+                      />
+                    </summary>
                     <div class="mt-2">
-                      <div class="-ml-2 flex w-fit flex-wrap gap-1">
+                      <div class="-ml-2 flex w-fit flex-wrap gap-0.5">
                         {data.spotifyLink && (
                           <a
                             href={data.spotifyLink}
