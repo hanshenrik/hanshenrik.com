@@ -24,9 +24,9 @@ const vouchers = await getCollection("vouchers");
             : null;
 
           return (
-            <div class="group rounded-2xl border border-gray-200 bg-white shadow-xs">
-              <div class="flex h-full flex-1 flex-col justify-between p-6">
-                <div class="mb-4 flex items-center gap-4">
+            <div class="group rounded-2xl bg-sky-50 shadow-xs">
+              <div class="flex h-full flex-1 flex-col justify-between gap-3 p-6">
+                <div class="flex items-center gap-4">
                   {imageUrl && (
                     <div class="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl">
                       <Image
@@ -44,29 +44,31 @@ const vouchers = await getCollection("vouchers");
                   </h2>
                 </div>
 
-                {voucher.data.description && (
-                  <p class="mb-6 flex-1 text-sm">{voucher.data.description}</p>
-                )}
-                {voucher.data.value && (
-                  <p class="mb-6 flex-1 text-sm">{voucher.data.value}</p>
-                )}
+                <div class="flex flex-col gap-2">
+                  {voucher.data.description && (
+                    <p class="flex-1 text-sm">{voucher.data.description}</p>
+                  )}
+                  {voucher.data.value && (
+                    <p class="flex-1 text-sm">{voucher.data.value}</p>
+                  )}
 
-                {voucher.data.code && (
-                  <div class="mb-6 rounded-lg border border-gray-100 bg-gray-50 p-3 text-center">
-                    <span class="block text-[10px] font-bold tracking-wider text-gray-400 uppercase">
-                      Vervekode
-                    </span>
-                    <code class="font-mono text-lg font-bold text-blue-600 uppercase">
-                      {voucher.data.code}
-                    </code>
-                  </div>
-                )}
+                  {voucher.data.code && (
+                    <div class="rounded-lg bg-white p-3 text-center">
+                      <span class="block text-[10px] font-bold tracking-wider text-gray-600 uppercase">
+                        Vervekode
+                      </span>
+                      <code class="font-mono text-lg font-bold text-sky-600 uppercase">
+                        {voucher.data.code}
+                      </code>
+                    </div>
+                  )}
+                </div>
 
                 <a
                   href={voucher.data.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-blue-600 active:scale-95"
+                  class="flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-sky-600 active:scale-95"
                 >
                   Gå til {voucher.data.name}
                 </a>
