@@ -5,6 +5,9 @@ import { format } from "date-fns";
 import { nb } from "date-fns/locale";
 import Layout from "../../layouts/Layout.astro";
 import Tag from "../../components/Tag.astro";
+import { drypp as dryppNs } from "../../i18n/ui";
+import { useTranslations } from "../../i18n/utils";
+import type { Lang } from "../../i18n/utils";
 import { imageToUrl } from "../../utils";
 
 export async function getStaticPaths() {
@@ -14,6 +17,9 @@ export async function getStaticPaths() {
     props: post,
   }));
 }
+
+const lang = (Astro.currentLocale ?? "en") as Lang;
+const t = useTranslations(lang, dryppNs);
 
 const post = Astro.props as CollectionEntry<"drypp">;
 const { Content } = await render(post);
@@ -45,12 +51,12 @@ const imageUrl = image ? imageToUrl(image, Astro.url.origin) : undefined;
       )}
       <div class="grid grid-cols-1">
         <time datetime={pubDate.toISOString()}>
-          Publisert {format(pubDate, "dd.MM.yyyy", { locale: nb })}
+          {t("Publisert ")}{format(pubDate, "dd.MM.yyyy", { locale: nb })}
         </time>
         {
           updatedAt && (
             <time datetime={updatedAt.toISOString()}>
-              Oppdatert {format(updatedAt, "dd.MM.yyyy", { locale: nb })}
+              {t("Oppdatert ")}{format(updatedAt, "dd.MM.yyyy", { locale: nb })}
             </time>
           )
         }

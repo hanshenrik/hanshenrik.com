@@ -1,6 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
+import { audio as audioNs } from "../i18n/ui";
+import { useTranslations } from "../i18n/utils";
+import type { Lang } from "../i18n/utils";
 import { IS_PLAYING, NEXT, PAUSE, PLAY, PREVIOUS } from "../icons";
 import { PLAY_LOCAL_TRACK } from "../umamiEvents";
 import { stringToHtmlTagId } from "../utils";
@@ -9,9 +12,11 @@ interface Props {
   recordings: any[];
   title: string;
   playerId: string;
+  lang?: Lang;
 }
 
-const { recordings, title, playerId } = Astro.props;
+const { recordings, title, playerId, lang = "en" } = Astro.props;
+const t = useTranslations(lang, audioNs);
 ---
 
 <div class="h-full">
@@ -22,14 +27,14 @@ const { recordings, title, playerId } = Astro.props;
       <button
         id={`prev-track-${playerId}`}
         class="rounded-full p-2 text-sky-600 hover:bg-gray-100"
-        aria-label="Previous track"
+        aria-label={t("Previous track")}
       >
         <Icon name={PREVIOUS} size={20} />
       </button>
       <button
         id={`play-pause-${playerId}`}
         class="rounded-full p-2 text-sky-600 hover:bg-gray-100"
-        aria-label="Play/Pause"
+        aria-label={t("Play/Pause")}
       >
         <Icon name={PLAY} size={32} class="play-icon" />
         <Icon name={PAUSE} size={32} class="pause-icon hidden" />
@@ -37,7 +42,7 @@ const { recordings, title, playerId } = Astro.props;
       <button
         id={`next-track-${playerId}`}
         class="rounded-full p-2 text-sky-600 hover:bg-gray-100"
-        aria-label="Next track"
+        aria-label={t("Next track")}
       >
         <Icon name={NEXT} size={20} />
       </button>
@@ -49,7 +54,7 @@ const { recordings, title, playerId } = Astro.props;
           <br />
         </div>
         <div class="text-sm break-words" id={`now-playing-artist-${playerId}`}>
-          Select a track to play
+          {t("Select a track to play")}
         </div>
         <div
           class="text-sm whitespace-nowrap"

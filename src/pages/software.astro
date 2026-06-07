@@ -4,9 +4,15 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { orderBy } from "lodash-es";
 import Link from "../components/Link.astro";
+import { software as softwareNs } from "../i18n/ui";
+import { useTranslations } from "../i18n/utils";
+import type { Lang } from "../i18n/utils";
 import { GITHUB } from "../icons";
 import Layout from "../layouts/Layout.astro";
 import { imageToUrl } from "../utils";
+
+const lang = (Astro.currentLocale ?? "en") as Lang;
+const t = useTranslations(lang, softwareNs);
 
 const softwares = await getCollection("software");
 
@@ -14,23 +20,23 @@ const topImage = "/images/software.png";
 const topImageUrl = imageToUrl(topImage);
 ---
 
-<Layout title="Software" image={topImageUrl}>
+<Layout title={t("Software")} image={topImageUrl}>
   <div class="mx-auto max-w-7xl space-y-8">
-    <h1 class="mb-12">Software</h1>
+    <h1 class="mb-12">{t("Software")}</h1>
     <p>
-      I currently work at <Link
+      {t("I currently work at ")}<Link
         href="https://www.folq.no"
         target="_blank"
         rel="noopener noreferrer">Folq</Link
-      >. Previously, I worked at <Link
+      >{t(". Previously, I worked at ")}<Link
         href="https://entur.no"
         target="_blank"
         rel="noopener noreferrer">Entur</Link
-      > (through <Link
+      >{t(" (through ")}<Link
         href="https://knowit.no"
         target="_blank"
         rel="noopener noreferrer">Knowit</Link
-      >). I also do some hobby projects from time to time.
+      >{t("). I also do some hobby projects from time to time.")}
     </p>
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
@@ -70,7 +76,7 @@ const topImageUrl = imageToUrl(topImage);
                       class="inline-flex items-center gap-1 rounded-full bg-gray-100 px-3 py-1.5 text-gray-700 transition-colors duration-200 hover:bg-gray-200"
                     >
                       <Icon name={GITHUB} />
-                      GitHub
+                      {t("GitHub")}
                     </a>
                   )}
                 </div>

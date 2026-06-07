@@ -1,0 +1,48 @@
+---
+import type { Lang } from "../i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+const enPath = currentPath.startsWith("/nb")
+  ? currentPath.slice(3) || "/"
+  : currentPath;
+
+const nbPath = currentPath.startsWith("/nb")
+  ? currentPath
+  : currentPath === "/"
+    ? "/nb"
+    : `/nb${currentPath}`;
+---
+
+<div class="flex items-center gap-0.5 text-sm font-medium">
+  <a
+    href={enPath}
+    class:list={[
+      "rounded px-1.5 py-0.5 transition-colors",
+      lang === "en"
+        ? "font-semibold text-gray-900"
+        : "text-gray-400 hover:text-gray-700",
+    ]}
+    aria-current={lang === "en" ? "true" : undefined}
+  >
+    EN
+  </a>
+  <span class="text-gray-300 select-none">/</span>
+  <a
+    href={nbPath}
+    class:list={[
+      "rounded px-1.5 py-0.5 transition-colors",
+      lang === "nb"
+        ? "font-semibold text-gray-900"
+        : "text-gray-400 hover:text-gray-700",
+    ]}
+    aria-current={lang === "nb" ? "true" : undefined}
+  >
+    NO
+  </a>
+</div>

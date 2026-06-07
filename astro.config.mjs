@@ -13,6 +13,17 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   trailingSlash: "never",
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "nb"],
+    routing: {
+      prefixDefaultLocale: false,
+      fallbackType: "rewrite",
+    },
+    fallback: {
+      nb: "en",
+    },
+  },
   integrations: [
     icon({
       include: {

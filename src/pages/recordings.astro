@@ -6,6 +6,9 @@ import { orderBy } from "lodash-es";
 import AudioPlayer from "../components/AudioPlayer.astro";
 import Link from "../components/Link.astro";
 import TopImage from "../components/TopImage.astro";
+import { recordings as recordingsNs } from "../i18n/ui";
+import { useTranslations } from "../i18n/utils";
+import type { Lang } from "../i18n/utils";
 import {
   APPLE_MUSIC,
   CHEVRON_DOWN,
@@ -15,6 +18,9 @@ import {
 } from "../icons";
 import Layout from "../layouts/Layout.astro";
 import { imageToUrl } from "../utils";
+
+const lang = (Astro.currentLocale ?? "en") as Lang;
+const t = useTranslations(lang, recordingsNs);
 
 const recordings = await getCollection("recordings");
 
@@ -50,22 +56,20 @@ const sortedLocalSoloRecordings = orderBy(
 
 const topImage = "/images/recordings.jpg";
 const topImageUrl = imageToUrl(topImage);
-const topImageAttribution = "Photo: Jørgen Reitan";
 ---
 
-<Layout title="Recordings" image={topImageUrl}>
+<Layout title={t("Recordings")} image={topImageUrl}>
   <div class="mx-auto max-w-7xl space-y-8">
     <TopImage
       imageUrl={topImageUrl}
-      title="Recordings"
-      alt="Recordings"
-      imageAttribution={topImageAttribution}
+      title={t("Recordings")}
+      alt={t("Recordings")}
+      imageAttribution={t("Photo: Jørgen Reitan")}
     />
 
-    <h2 class="mb-4">Official releases</h2>
+    <h2 class="mb-4">{t("Official releases")}</h2>
     <p>
-      I've contributed on recordings by Lisa Nybrott, Kjør Romskip, Elias Eine
-      and Reggie Got Beats, amongst others. Check out playlists on
+      {t("I've contributed on recordings by Lisa Nybrott, Kjør Romskip, Elias Eine and Reggie Got Beats, amongst others. Check out playlists on")}
       <Link
         href="https://open.spotify.com/playlist/0HQEtUAwUe5VnLh42iIjSb?si=1234567890"
         target="_blank"
@@ -73,7 +77,7 @@ const topImageAttribution = "Photo: Jørgen Reitan";
         class="inline-flex w-fit items-center gap-1"
       >
         Spotify
-      </Link> or <Link
+      </Link> {t("or")} <Link
         href="https://tidal.com/browse/playlist/0a61d353-ade3-4efe-a517-a82d99b47354"
         target="_blank"
         rel="noopener noreferrer"
@@ -85,7 +89,7 @@ const topImageAttribution = "Photo: Jørgen Reitan";
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       <div class="flex flex-col gap-2">
         <iframe
-          title="Spotify playlist"
+          title={t("Spotify playlist")}
           class="h-[420px] rounded-none md:h-full"
           src="https://open.spotify.com/embed/playlist/0HQEtUAwUe5VnLh42iIjSb?utm_source=generator&theme=0"
           width="100%"
@@ -98,7 +102,7 @@ const topImageAttribution = "Photo: Jørgen Reitan";
           rel="noopener noreferrer"
           class="flex w-fit items-center gap-1 self-end"
         >
-          Also available on <Icon name={TIDAL} />Tidal
+          {t("Also available on ")}<Icon name={TIDAL} />Tidal
         </Link>
       </div>
       <div
@@ -136,7 +140,7 @@ const topImageAttribution = "Photo: Jørgen Reitan";
                   </h4>
                   <details>
                     <summary class="group flex w-fit list-none flex-row items-center gap-1">
-                      <span class="">More info</span>
+                      <span class="">{t("More info")}</span>
                       <Icon
                         class="origin-center bg-white transition-transform group-open:scale-150 group-open:rotate-180 group-hover:scale-110 group-hover:not-group-open:rotate-6 group-hover:group-open:rotate-[174deg]"
                         name={CHEVRON_DOWN}
@@ -204,9 +208,9 @@ const topImageAttribution = "Photo: Jørgen Reitan";
         }
       </div>
     </div>
-    <h2 class="mb-4">Unreleased stuff</h2>
+    <h2 class="mb-4">{t("Unreleased stuff")}</h2>
     <p>
-      Most of my unreleased music is on
+      {t("Most of my unreleased music is on")}
       <Link
         href="https://soundcloud.com/hanshenrik"
         target="_blank"
@@ -214,18 +218,20 @@ const topImageAttribution = "Photo: Jørgen Reitan";
         class="inline-flex w-fit items-center"
       >
         SoundCloud
-      </Link>, but you can listen here as well.
+      </Link>{t(", but you can listen here as well.")}
     </p>
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
       <AudioPlayer
         recordings={sortedLocalSoloRecordings}
-        title="Solo"
+        title={t("Solo")}
         playerId="solo"
+        lang={lang}
       />
       <AudioPlayer
         recordings={sortedLocalBandRecordings}
-        title="Bands"
+        title={t("Bands")}
         playerId="bands"
+        lang={lang}
       />
     </div>
   </div>

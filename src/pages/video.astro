@@ -3,9 +3,15 @@ import { YouTube } from "astro-embed";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import { orderBy } from "lodash-es";
+import { video as videoNs } from "../i18n/ui";
+import { useTranslations } from "../i18n/utils";
+import type { Lang } from "../i18n/utils";
 import { YOUTUBE } from "../icons";
 import Layout from "../layouts/Layout.astro";
 import { imageToUrl } from "../utils";
+
+const lang = (Astro.currentLocale ?? "en") as Lang;
+const t = useTranslations(lang, videoNs);
 
 const videos = await getCollection("videos");
 
@@ -13,9 +19,9 @@ const topImage = "/images/videos.jpg";
 const topImageUrl = imageToUrl(topImage);
 ---
 
-<Layout title="Video" image={topImageUrl}>
+<Layout title={t("Video")} image={topImageUrl}>
   <div class="mx-auto max-w-7xl space-y-8">
-    <h1 class="mb-12">Video</h1>
+    <h1 class="mb-12">{t("Video")}</h1>
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
         orderBy(videos, "data.order", "desc").map((video) => (
@@ -37,7 +43,7 @@ const topImageUrl = imageToUrl(topImage);
                     class="inline-flex items-center gap-1 rounded-full bg-red-100 px-3 py-1.5 text-red-700 transition-colors duration-200 hover:bg-red-200"
                   >
                     <Icon name={YOUTUBE} />
-                    View full playlist
+                    {t("View full playlist")}
                   </a>
                 </p>
               )}

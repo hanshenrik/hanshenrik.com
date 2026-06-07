@@ -2,19 +2,24 @@
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { orderBy } from "lodash-es";
+import { vervekoder as vervekodernNs } from "../i18n/ui";
+import { useTranslations } from "../i18n/utils";
+import type { Lang } from "../i18n/utils";
 import Layout from "../layouts/Layout.astro";
 import { imageToUrl } from "../utils";
+
+const lang = (Astro.currentLocale ?? "en") as Lang;
+const t = useTranslations(lang, vervekodernNs);
 
 const vouchers = await getCollection("vouchers");
 ---
 
-<Layout title="Vervekoder">
+<Layout title={t("Vervekoder")}>
   <div class="mx-auto max-w-7xl space-y-6">
-    <h1>Vervekoder</h1>
-    <p>Her er noen tjenester jeg bruker og setter pris på.</p>
+    <h1>{t("Vervekoder")}</h1>
+    <p>{t("Her er noen tjenester jeg bruker og setter pris på.")}</p>
     <p>
-      Hvis du også tenker å bruke en av de kan du (og jeg) få en ekstra liten
-      slant hvis du registrerer deg med en av disse kodene.
+      {t("Hvis du også tenker å bruke en av de kan du (og jeg) få en ekstra liten slant hvis du registrerer deg med en av disse kodene.")}
     </p>
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
@@ -55,7 +60,7 @@ const vouchers = await getCollection("vouchers");
                   {voucher.data.code && (
                     <div class="rounded-lg bg-white p-3 text-center">
                       <span class="block text-[10px] font-bold tracking-wider text-gray-600 uppercase">
-                        Vervekode
+                        {t("Vervekode")}
                       </span>
                       <code class="font-mono text-lg font-bold text-sky-600 uppercase">
                         {voucher.data.code}
@@ -70,7 +75,7 @@ const vouchers = await getCollection("vouchers");
                   rel="noopener noreferrer"
                   class="flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-sky-600 active:scale-95"
                 >
-                  Gå til {voucher.data.name}
+                  {t("Gå til ")}{voucher.data.name}
                 </a>
               </div>
             </div>

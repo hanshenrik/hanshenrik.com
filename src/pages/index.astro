@@ -1,6 +1,12 @@
 ---
 import { DRYPP, GIGS, RECORDINGS, SOFTWARE, VIDEO } from "../icons";
+import { nav } from "../i18n/ui";
+import { useTranslations } from "../i18n/utils";
+import type { Lang } from "../i18n/utils";
 import Layout from "../layouts/Layout.astro";
+
+const lang = (Astro.currentLocale ?? "en") as Lang;
+const t = useTranslations(lang, nav);
 
 export const pages = [
   {
@@ -55,7 +61,7 @@ export const pages = [
 ];
 ---
 
-<Layout title="Sounds and code">
+<Layout title={t("Sounds and code")}>
   <div class="mx-auto max-w-5xl sm:my-16">
     <div class="grid gap-4 sm:grid-cols-2 sm:gap-8 md:gap-12 lg:gap-16">
       {

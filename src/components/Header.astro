@@ -1,10 +1,22 @@
 ---
 import { Icon } from "astro-icon/components";
 import { CLOSE, HAMBURGER_MENU } from "../icons";
+import { nav, common } from "../i18n/ui";
+import { getLocalizedHref, useTranslations } from "../i18n/utils";
+import type { Lang } from "../i18n/utils";
 import { pages } from "../pages/index.astro";
 import IconButton from "./IconButton.astro";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
 import Link from "./Link.astro";
 import PianoPlukk from "./PianoPlukk.astro";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const tNav = useTranslations(lang, nav);
+const tCommon = useTranslations(lang, common);
 ---
 
 <div class="h-16"></div>
@@ -19,7 +31,7 @@ import PianoPlukk from "./PianoPlukk.astro";
       <div class="flex items-center gap-1">
         <PianoPlukk />
         <Link
-          href="/"
+          href={getLocalizedHref("/", lang)}
           class="wave-link hide-initial-underline text-base font-medium text-gray-900 transition-all duration-200 md:text-xl"
           >hanshenrik.com</Link
         >
@@ -32,7 +44,7 @@ import PianoPlukk from "./PianoPlukk.astro";
             .filter((page) => !page.hidden)
             .map(({ href, title, icon }) => (
               <Link
-                href={href}
+                href={getLocalizedHref(href, lang)}
                 class="group flex items-center gap-2 font-medium"
                 noWave
               >
@@ -41,19 +53,22 @@ import PianoPlukk from "./PianoPlukk.astro";
                   size={24}
                   class="transition-transform group-hover:scale-110"
                 />
-                {title}
+                {tNav(title as keyof typeof nav.en)}
               </Link>
             ))
         }
+        <LanguageSwitcher lang={lang} />
       </div>
 
       <!-- Mobile Menu Button -->
-      <IconButton
-        id="menu-button"
-        icon={HAMBURGER_MENU}
-        label="Toggle menu"
-        class="md:hidden"
-      />
+      <div class="flex items-center gap-2 md:hidden">
+        <LanguageSwitcher lang={lang} />
+        <IconButton
+          id="menu-button"
+          icon={HAMBURGER_MENU}
+          label={tCommon("Toggle menu")}
+        />
+      </div>
     </div>
   </nav>
 </header>
@@ -65,7 +80,7 @@ import PianoPlukk from "./PianoPlukk.astro";
 >
   <div class="flex h-full flex-col">
     <div class="flex justify-end p-4">
-      <IconButton id="close-button" icon={CLOSE} label="Close menu" />
+      <IconButton id="close-button" icon={CLOSE} label={tCommon("Close menu")} />
     </div>
     <nav class="flex-1 space-y-4 px-4 py-4">
       {
@@ -73,7 +88,7 @@ import PianoPlukk from "./PianoPlukk.astro";
           .filter((page) => !page.hidden)
           .map(({ href, title, icon, image, imageAttribution, textColor }) => (
             <a
-              href={href}
+              href={getLocalizedHref(href, lang)}
               class:list={[
                 "group relative flex h-28 w-full items-center gap-3",
                 textColor,
@@ -94,7 +109,7 @@ import PianoPlukk from "./PianoPlukk.astro";
               )}
               <div class="absolute bottom-2 left-1 z-10 flex items-center gap-2 rounded-lg p-2 backdrop-blur-sm">
                 <Icon name={icon} size={24} class="shrink-0" />
-                <span class="text-lg font-medium">{title}</span>
+                <span class="text-lg font-medium">{tNav(title as keyof typeof nav.en)}</span>
               </div>
             </a>
           ))

@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import type { Lang } from "../i18n/utils";
 import "../styles/global.css";
 
 interface Props {
@@ -17,6 +18,8 @@ const {
   showRssLink = false,
 } = Astro.props;
 
+const lang = (Astro.currentLocale ?? "en") as Lang;
+
 const imageUrl = image
   ? image.startsWith("http")
     ? image
@@ -25,7 +28,7 @@ const imageUrl = image
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -52,7 +55,7 @@ const imageUrl = image
     />
   </head>
   <body class="flex min-h-screen flex-col bg-white">
-    <Header />
+    <Header lang={lang} />
     <main class="container mx-auto flex-1 px-4 pt-8 pb-16 md:pb-24">
       <slot />
     </main>
