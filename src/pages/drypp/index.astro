@@ -7,8 +7,8 @@ import { nb } from "date-fns/locale";
 import Link from "../../components/Link.astro";
 import Tag from "../../components/Tag.astro";
 import { drypp as dryppNs } from "../../i18n/ui";
-import { useTranslations } from "../../i18n/utils";
 import type { Lang } from "../../i18n/utils";
+import { useTranslations } from "../../i18n/utils";
 import { RSS } from "../../icons";
 import Layout from "../../layouts/Layout.astro";
 
@@ -22,7 +22,9 @@ const sortedPosts = posts
   .filter((post) => (import.meta.env.DEV ? true : isPast(post.data.pubDate)))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const description = t("En blogg med små drypp fra musikk, podkast og andre greier");
+const description = t(
+  "En blogg med små drypp fra musikk, podkast og andre greier",
+);
 const title = t("Drypp");
 ---
 

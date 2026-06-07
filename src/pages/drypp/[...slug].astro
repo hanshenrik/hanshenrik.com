@@ -3,11 +3,11 @@ import { Image } from "astro:assets";
 import { type CollectionEntry, getCollection, render } from "astro:content";
 import { format } from "date-fns";
 import { nb } from "date-fns/locale";
-import Layout from "../../layouts/Layout.astro";
 import Tag from "../../components/Tag.astro";
 import { drypp as dryppNs } from "../../i18n/ui";
-import { useTranslations } from "../../i18n/utils";
 import type { Lang } from "../../i18n/utils";
+import { useTranslations } from "../../i18n/utils";
+import Layout from "../../layouts/Layout.astro";
 import { imageToUrl } from "../../utils";
 
 export async function getStaticPaths() {
@@ -24,8 +24,15 @@ const t = useTranslations(lang, dryppNs);
 const post = Astro.props as CollectionEntry<"drypp">;
 const { Content } = await render(post);
 
-const { title, description, pubDate, updatedAt, image, imageAttribution, tags } =
-  post.data;
+const {
+  title,
+  description,
+  pubDate,
+  updatedAt,
+  image,
+  imageAttribution,
+  tags,
+} = post.data;
 
 const imageUrl = image ? imageToUrl(image, Astro.url.origin) : undefined;
 ---
@@ -42,13 +49,15 @@ const imageUrl = image ? imageToUrl(image, Astro.url.origin) : undefined;
         {title}
       </h1>
       <p class="mb-4">{description}</p>
-      {tags && tags.length > 0 && (
-        <div class="mb-4 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <Tag tag={tag} />
-          ))}
-        </div>
-      )}
+      {
+        tags && tags.length > 0 && (
+          <div class="mb-4 flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <Tag tag={tag} />
+            ))}
+          </div>
+        )
+      }
       <div class="grid grid-cols-1">
         <time datetime={pubDate.toISOString()}>
           {t("Publisert ")}{format(pubDate, "dd.MM.yyyy", { locale: nb })}
@@ -56,7 +65,8 @@ const imageUrl = image ? imageToUrl(image, Astro.url.origin) : undefined;
         {
           updatedAt && (
             <time datetime={updatedAt.toISOString()}>
-              {t("Oppdatert ")}{format(updatedAt, "dd.MM.yyyy", { locale: nb })}
+              {t("Oppdatert ")}
+              {format(updatedAt, "dd.MM.yyyy", { locale: nb })}
             </time>
           )
         }
