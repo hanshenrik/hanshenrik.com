@@ -1,9 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
-import { CLOSE, HAMBURGER_MENU } from "../icons";
-import { nav, common } from "../i18n/ui";
-import { getLocalizedHref, useTranslations } from "../i18n/utils";
+import { common, nav } from "../i18n/ui";
 import type { Lang } from "../i18n/utils";
+import { getLocalizedHref, useTranslations } from "../i18n/utils";
+import { CLOSE, HAMBURGER_MENU } from "../icons";
 import { pages } from "../pages/index.astro";
 import IconButton from "./IconButton.astro";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
@@ -66,7 +66,7 @@ const tCommon = useTranslations(lang, common);
         <IconButton
           id="menu-button"
           icon={HAMBURGER_MENU}
-          label={tCommon("Toggle menu")}
+          label={tCommon("Åpne/lukke meny")}
         />
       </div>
     </div>
@@ -80,7 +80,7 @@ const tCommon = useTranslations(lang, common);
 >
   <div class="flex h-full flex-col">
     <div class="flex justify-end p-4">
-      <IconButton id="close-button" icon={CLOSE} label={tCommon("Close menu")} />
+      <IconButton id="close-button" icon={CLOSE} label={tCommon("Lukk meny")} />
     </div>
     <nav class="flex-1 space-y-4 px-4 py-4">
       {
@@ -109,7 +109,9 @@ const tCommon = useTranslations(lang, common);
               )}
               <div class="absolute bottom-2 left-1 z-10 flex items-center gap-2 rounded-lg p-2 backdrop-blur-sm">
                 <Icon name={icon} size={24} class="shrink-0" />
-                <span class="text-lg font-medium">{tNav(title as keyof typeof nav.en)}</span>
+                <span class="text-lg font-medium">
+                  {tNav(title as keyof typeof nav.en)}
+                </span>
               </div>
             </a>
           ))

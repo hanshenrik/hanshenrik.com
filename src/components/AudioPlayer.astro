@@ -2,8 +2,8 @@
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import { audio as audioNs } from "../i18n/ui";
-import { useTranslations } from "../i18n/utils";
 import type { Lang } from "../i18n/utils";
+import { useTranslations } from "../i18n/utils";
 import { IS_PLAYING, NEXT, PAUSE, PLAY, PREVIOUS } from "../icons";
 import { PLAY_LOCAL_TRACK } from "../umamiEvents";
 import { stringToHtmlTagId } from "../utils";
@@ -27,14 +27,14 @@ const t = useTranslations(lang, audioNs);
       <button
         id={`prev-track-${playerId}`}
         class="rounded-full p-2 text-sky-600 hover:bg-gray-100"
-        aria-label={t("Previous track")}
+        aria-label={t("Forrige låt")}
       >
         <Icon name={PREVIOUS} size={20} />
       </button>
       <button
         id={`play-pause-${playerId}`}
         class="rounded-full p-2 text-sky-600 hover:bg-gray-100"
-        aria-label={t("Play/Pause")}
+        aria-label={t("Spill av / pause")}
       >
         <Icon name={PLAY} size={32} class="play-icon" />
         <Icon name={PAUSE} size={32} class="pause-icon hidden" />
@@ -42,7 +42,7 @@ const t = useTranslations(lang, audioNs);
       <button
         id={`next-track-${playerId}`}
         class="rounded-full p-2 text-sky-600 hover:bg-gray-100"
-        aria-label={t("Next track")}
+        aria-label={t("Neste låt")}
       >
         <Icon name={NEXT} size={20} />
       </button>

@@ -1,8 +1,8 @@
 ---
-import { DRYPP, GIGS, RECORDINGS, SOFTWARE, VIDEO } from "../icons";
 import { nav } from "../i18n/ui";
-import { useTranslations } from "../i18n/utils";
 import type { Lang } from "../i18n/utils";
+import { useTranslations } from "../i18n/utils";
+import { DRYPP, GIGS, RECORDINGS, SOFTWARE, VIDEO } from "../icons";
 import Layout from "../layouts/Layout.astro";
 
 const lang = (Astro.currentLocale ?? "en") as Lang;
@@ -17,7 +17,7 @@ export const pages = [
     },
     imageAttribution: "Photo: foto.samfundet.no",
     textColor: "text-white",
-    title: "Gigs",
+    title: "Konserter",
   },
   {
     href: "/recordings",
@@ -27,7 +27,7 @@ export const pages = [
     },
     imageAttribution: "Photo: Jørgen Reitan",
     textColor: "text-white",
-    title: "Recordings",
+    title: "Innspilt musikk",
   },
   {
     href: "/video",
@@ -45,7 +45,7 @@ export const pages = [
       src: "/images/software.png",
     },
     textColor: "text-black",
-    title: "Software",
+    title: "Programvare",
   },
   {
     href: "/drypp",
@@ -61,7 +61,7 @@ export const pages = [
 ];
 ---
 
-<Layout title={t("Sounds and code")}>
+<Layout title={t("Musikk og kode")}>
   <div class="mx-auto max-w-5xl sm:my-16">
     <div class="grid gap-4 sm:grid-cols-2 sm:gap-8 md:gap-12 lg:gap-16">
       {
@@ -95,7 +95,7 @@ export const pages = [
                     page.textColor,
                   ]}
                 >
-                  {page.title}
+                  {t(page.title as keyof typeof nav.en)}
                 </h2>
               </div>
             </a>

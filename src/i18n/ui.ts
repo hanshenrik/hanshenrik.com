@@ -2,129 +2,119 @@ export type Lang = "en" | "nb";
 
 export const common = {
   en: {
-    "Toggle menu": "Toggle menu",
-    "Close menu": "Close menu",
+    "Åpne/lukke meny": "Toggle menu",
+    "Lukk meny": "Close menu",
   },
   nb: {
-    "Toggle menu": "Toggle menu",
-    "Close menu": "Close menu",
+    "Åpne/lukke meny": "Åpne/lukke meny",
+    "Lukk meny": "Lukk meny",
   },
 } as const;
 
 export const nav = {
   en: {
-    Gigs: "Gigs",
-    Recordings: "Recordings",
+    Konserter: "Gigs",
+    "Innspilt musikk": "Recordings",
     Video: "Video",
-    Software: "Software",
+    Programvare: "Software",
     Drypp: "Drypp",
-    "Sounds and code": "Sounds and code",
+    "Musikk og kode": "Sounds and code",
   },
   nb: {
-    Gigs: "Gigs",
-    Recordings: "Recordings",
+    Konserter: "Konserter",
+    "Innspilt musikk": "Innspilt musikk",
     Video: "Video",
-    Software: "Software",
+    Programvare: "Programvare",
     Drypp: "Drypp",
-    "Sounds and code": "Sounds and code",
+    "Musikk og kode": "Musikk og kode",
   },
 } as const;
 
 export const gigs = {
   en: {
-    Gigs: "Gigs",
-    "Photo: foto.samfundet.no": "Photo: foto.samfundet.no",
-    "When?": "When?",
-    "Who, where?": "Who, where?",
-    "What?": "What?",
+    "Foto: foto.samfundet.no": "Photo: foto.samfundet.no",
+    "Når?": "When?",
+    "Hvem, hvor?": "Who, where?",
+    "Hva?": "What?",
   },
   nb: {
-    Gigs: "Gigs",
-    "Photo: foto.samfundet.no": "Photo: foto.samfundet.no",
-    "When?": "When?",
-    "Who, where?": "Who, where?",
-    "What?": "What?",
+    "Foto: foto.samfundet.no": "Foto: foto.samfundet.no",
+    "Når?": "Når?",
+    "Hvem, hvor?": "Hvem, hvor?",
+    "Hva?": "Hva?",
   },
 } as const;
 
 export const recordings = {
   en: {
-    Recordings: "Recordings",
-    "Photo: Jørgen Reitan": "Photo: Jørgen Reitan",
-    "Official releases": "Official releases",
-    "I've contributed on recordings by Lisa Nybrott, Kjør Romskip, Elias Eine and Reggie Got Beats, amongst others. Check out playlists on":
+    "Foto: Jørgen Reitan": "Photo: Jørgen Reitan",
+    Utgivelser: "Official releases",
+    "Jeg har bidratt på innspillinger med blant annet Lisa Nybrott, Kjør Romskip, Elias Eine og Reggie Got Beats. Sjekk ut spillelister på":
       "I've contributed on recordings by Lisa Nybrott, Kjør Romskip, Elias Eine and Reggie Got Beats, amongst others. Check out playlists on",
-    or: "or",
-    "Spotify playlist": "Spotify playlist",
-    "Also available on ": "Also available on ",
-    "More info": "More info",
-    "Unreleased stuff": "Unreleased stuff",
-    "Most of my unreleased music is on": "Most of my unreleased music is on",
-    ", but you can listen here as well.":
-      ", but you can listen here as well.",
+    eller: "or",
+    "Spotify-spilleliste": "Spotify playlist",
+    "Også tilgjengelig på ": "Also available on ",
+    "Mer info": "More info",
+    "Uutgitte greier": "Unreleased stuff",
+    "Mesteparten av musikken min ligger på":
+      "Most of my unreleased music is on",
+    ", men du kan også bare lytte her.": ", but you can listen here as well.",
     Solo: "Solo",
-    Bands: "Bands",
+    Band: "Bands",
   },
   nb: {
-    Recordings: "Recordings",
-    "Photo: Jørgen Reitan": "Photo: Jørgen Reitan",
-    "Official releases": "Official releases",
-    "I've contributed on recordings by Lisa Nybrott, Kjør Romskip, Elias Eine and Reggie Got Beats, amongst others. Check out playlists on":
-      "I've contributed on recordings by Lisa Nybrott, Kjør Romskip, Elias Eine and Reggie Got Beats, amongst others. Check out playlists on",
-    or: "or",
-    "Spotify playlist": "Spotify playlist",
-    "Also available on ": "Also available on ",
-    "More info": "More info",
-    "Unreleased stuff": "Unreleased stuff",
-    "Most of my unreleased music is on": "Most of my unreleased music is on",
-    ", but you can listen here as well.":
-      ", but you can listen here as well.",
+    "Foto: Jørgen Reitan": "Foto: Jørgen Reitan",
+    Utgivelser: "Utgivelser",
+    "Jeg har bidratt på innspillinger med blant annet Lisa Nybrott, Kjør Romskip, Elias Eine og Reggie Got Beats. Sjekk ut spillelister på":
+      "Jeg har bidratt på innspillinger med blant annet Lisa Nybrott, Kjør Romskip, Elias Eine og Reggie Got Beats. Sjekk ut spillelister på",
+    eller: "eller",
+    "Spotify-spilleliste": "Spotify-spilleliste",
+    "Også tilgjengelig på ": "Også tilgjengelig på ",
+    "Mer info": "Mer info",
+    "Uutgitte greier": "Uutgitte greier",
+    "Mesteparten av musikken min ligger på":
+      "Mesteparten av musikken min ligger på",
+    ", men du kan også bare lytte her.": ", men du kan også bare lytte her.",
     Solo: "Solo",
-    Bands: "Bands",
+    Band: "Band",
   },
 } as const;
 
 export const video = {
   en: {
-    Video: "Video",
-    "View full playlist": "View full playlist",
+    "Se hele spillelista": "View full playlist",
   },
   nb: {
-    Video: "Video",
-    "View full playlist": "View full playlist",
+    "Se hele spillelista": "Se hele spillelista",
   },
 } as const;
 
 export const software = {
   en: {
-    Software: "Software",
-    "I currently work at ": "I currently work at ",
-    ". Previously, I worked at ": ". Previously, I worked at ",
-    " (through ": " (through ",
-    "). I also do some hobby projects from time to time.":
+    "For øyeblikket jobber jeg hos ": "I currently work at ",
+    ". Tidligere jobbet jeg for ": ". Previously, I worked at ",
+    " (via ": " (through ",
+    "). Fra tid til annen programmerer jeg også litt på fritiden.":
       "). I also do some hobby projects from time to time.",
-    GitHub: "GitHub",
   },
   nb: {
-    Software: "Software",
-    "I currently work at ": "I currently work at ",
-    ". Previously, I worked at ": ". Previously, I worked at ",
-    " (through ": " (through ",
-    "). I also do some hobby projects from time to time.":
-      "). I also do some hobby projects from time to time.",
-    GitHub: "GitHub",
+    "For øyeblikket jobber jeg hos ": "For øyeblikket jobber jeg hos ",
+    ". Tidligere jobbet jeg for ": ". Tidligere jobbet jeg for ",
+    " (via ": " (via ",
+    "). Fra tid til annen programmerer jeg også litt på fritiden.":
+      "). Fra tid til annen programmerer jeg også litt på fritiden.",
   },
 } as const;
 
-export const vervekoder = {
+export const vouchers = {
   en: {
-    Vervekoder: "Vervekoder",
+    Vervekoder: "Vouchers",
     "Her er noen tjenester jeg bruker og setter pris på.":
-      "Her er noen tjenester jeg bruker og setter pris på.",
+      "Here are some services that I use and appreciate.",
     "Hvis du også tenker å bruke en av de kan du (og jeg) få en ekstra liten slant hvis du registrerer deg med en av disse kodene.":
-      "Hvis du også tenker å bruke en av de kan du (og jeg) få en ekstra liten slant hvis du registrerer deg med en av disse kodene.",
+      "If you also think about using one of them, you (and I) can get somehting extra if you register using these codes.",
     Vervekode: "Vervekode",
-    "Gå til ": "Gå til ",
+    "Gå til ": "Go to ",
   },
   nb: {
     Vervekoder: "Vervekoder",
@@ -140,16 +130,16 @@ export const vervekoder = {
 export const drypp = {
   en: {
     Drypp: "Drypp",
-    "En blogg med drypp fra musikk og podkast":
-      "En blogg med drypp fra musikk og podkast",
-    "Abonner på RSS-feed": "Abonner på RSS-feed",
-    "Publisert ": "Publisert ",
-    "Oppdatert ": "Oppdatert ",
+    "En blogg med små drypp fra musikk, podkast og andre greier":
+      "A blog with small drips from music, podcasts and other stuff",
+    "Abonner på RSS-feed": "Subscribe (RSS feed)",
+    "Publisert ": "Published ",
+    "Oppdatert ": "Updated ",
   },
   nb: {
     Drypp: "Drypp",
-    "En blogg med drypp fra musikk og podkast":
-      "En blogg med drypp fra musikk og podkast",
+    "En blogg med små drypp fra musikk, podkast og andre greier":
+      "En blogg med små drypp fra musikk, podkast og andre greier",
     "Abonner på RSS-feed": "Abonner på RSS-feed",
     "Publisert ": "Publisert ",
     "Oppdatert ": "Oppdatert ",
@@ -158,15 +148,15 @@ export const drypp = {
 
 export const audio = {
   en: {
-    "Previous track": "Previous track",
-    "Play/Pause": "Play/Pause",
-    "Next track": "Next track",
-    "Select a track to play": "Select a track to play",
+    "Forrige låt": "Previous track",
+    "Spill av / pause": "Play/Pause",
+    "Neste låt": "Next track",
+    "Velg en låt": "Select a track to play",
   },
   nb: {
-    "Previous track": "Previous track",
-    "Play/Pause": "Play/Pause",
-    "Next track": "Next track",
-    "Select a track to play": "Select a track to play",
+    "Forrige låt": "Forrige låt",
+    "Spill av / pause": "Spill av / pause",
+    "Neste låt": "Neste låt",
+    "Velg en låt": "Velg en låt",
   },
 } as const;

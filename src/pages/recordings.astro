@@ -6,9 +6,9 @@ import { orderBy } from "lodash-es";
 import AudioPlayer from "../components/AudioPlayer.astro";
 import Link from "../components/Link.astro";
 import TopImage from "../components/TopImage.astro";
-import { recordings as recordingsNs } from "../i18n/ui";
-import { useTranslations } from "../i18n/utils";
+import { nav, recordings as recordingsNs } from "../i18n/ui";
 import type { Lang } from "../i18n/utils";
+import { useTranslations } from "../i18n/utils";
 import {
   APPLE_MUSIC,
   CHEVRON_DOWN,
@@ -21,6 +21,7 @@ import { imageToUrl } from "../utils";
 
 const lang = (Astro.currentLocale ?? "en") as Lang;
 const t = useTranslations(lang, recordingsNs);
+const tNav = useTranslations(lang, nav);
 
 const recordings = await getCollection("recordings");
 
@@ -58,18 +59,22 @@ const topImage = "/images/recordings.jpg";
 const topImageUrl = imageToUrl(topImage);
 ---
 
-<Layout title={t("Recordings")} image={topImageUrl}>
+<Layout title={tNav("Innspilt musikk")} image={topImageUrl}>
   <div class="mx-auto max-w-7xl space-y-8">
     <TopImage
       imageUrl={topImageUrl}
-      title={t("Recordings")}
-      alt={t("Recordings")}
-      imageAttribution={t("Photo: Jørgen Reitan")}
+      title={tNav("Innspilt musikk")}
+      alt={tNav("Innspilt musikk")}
+      imageAttribution={t("Foto: Jørgen Reitan")}
     />
 
-    <h2 class="mb-4">{t("Official releases")}</h2>
+    <h2 class="mb-4">{t("Utgivelser")}</h2>
     <p>
-      {t("I've contributed on recordings by Lisa Nybrott, Kjør Romskip, Elias Eine and Reggie Got Beats, amongst others. Check out playlists on")}
+      {
+        t(
+          "Jeg har bidratt på innspillinger med blant annet Lisa Nybrott, Kjør Romskip, Elias Eine og Reggie Got Beats. Sjekk ut spillelister på",
+        )
+      }
       <Link
         href="https://open.spotify.com/playlist/0HQEtUAwUe5VnLh42iIjSb?si=1234567890"
         target="_blank"
@@ -77,7 +82,9 @@ const topImageUrl = imageToUrl(topImage);
         class="inline-flex w-fit items-center gap-1"
       >
         Spotify
-      </Link> {t("or")} <Link
+      </Link>
+      {t("eller")}
+      <Link
         href="https://tidal.com/browse/playlist/0a61d353-ade3-4efe-a517-a82d99b47354"
         target="_blank"
         rel="noopener noreferrer"
@@ -89,7 +96,7 @@ const topImageUrl = imageToUrl(topImage);
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       <div class="flex flex-col gap-2">
         <iframe
-          title={t("Spotify playlist")}
+          title={t("Spotify-spilleliste")}
           class="h-[420px] rounded-none md:h-full"
           src="https://open.spotify.com/embed/playlist/0HQEtUAwUe5VnLh42iIjSb?utm_source=generator&theme=0"
           width="100%"
@@ -102,7 +109,7 @@ const topImageUrl = imageToUrl(topImage);
           rel="noopener noreferrer"
           class="flex w-fit items-center gap-1 self-end"
         >
-          {t("Also available on ")}<Icon name={TIDAL} />Tidal
+          {t("Også tilgjengelig på ")}<Icon name={TIDAL} />Tidal
         </Link>
       </div>
       <div
@@ -140,7 +147,7 @@ const topImageUrl = imageToUrl(topImage);
                   </h4>
                   <details>
                     <summary class="group flex w-fit list-none flex-row items-center gap-1">
-                      <span class="">{t("More info")}</span>
+                      <span class="">{t("Mer info")}</span>
                       <Icon
                         class="origin-center bg-white transition-transform group-open:scale-150 group-open:rotate-180 group-hover:scale-110 group-hover:not-group-open:rotate-6 group-hover:group-open:rotate-[174deg]"
                         name={CHEVRON_DOWN}
@@ -208,9 +215,9 @@ const topImageUrl = imageToUrl(topImage);
         }
       </div>
     </div>
-    <h2 class="mb-4">{t("Unreleased stuff")}</h2>
+    <h2 class="mb-4">{t("Uutgitte greier")}</h2>
     <p>
-      {t("Most of my unreleased music is on")}
+      {t("Mesteparten av musikken min ligger på")}
       <Link
         href="https://soundcloud.com/hanshenrik"
         target="_blank"
@@ -218,7 +225,7 @@ const topImageUrl = imageToUrl(topImage);
         class="inline-flex w-fit items-center"
       >
         SoundCloud
-      </Link>{t(", but you can listen here as well.")}
+      </Link>{t(", men du kan også bare lytte her.")}
     </p>
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
       <AudioPlayer
@@ -229,7 +236,7 @@ const topImageUrl = imageToUrl(topImage);
       />
       <AudioPlayer
         recordings={sortedLocalBandRecordings}
-        title={t("Bands")}
+        title={t("Band")}
         playerId="bands"
         lang={lang}
       />

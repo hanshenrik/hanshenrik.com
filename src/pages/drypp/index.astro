@@ -22,7 +22,7 @@ const sortedPosts = posts
   .filter((post) => (import.meta.env.DEV ? true : isPast(post.data.pubDate)))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const description = t("En blogg med drypp fra musikk og podkast");
+const description = t("En blogg med små drypp fra musikk, podkast og andre greier");
 const title = t("Drypp");
 ---
 
