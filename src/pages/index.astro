@@ -1,7 +1,7 @@
 ---
 import { nav } from "../i18n/ui";
 import type { Lang } from "../i18n/utils";
-import { useTranslations } from "../i18n/utils";
+import { getLocalizedHref, useTranslations } from "../i18n/utils";
 import { DRYPP, GIGS, RECORDINGS, SOFTWARE, VIDEO } from "../icons";
 import Layout from "../layouts/Layout.astro";
 
@@ -69,7 +69,7 @@ export const pages = [
           .filter((page) => !page.hidden)
           .map((page) => (
             <a
-              href={page.href}
+              href={getLocalizedHref(page.href, lang)}
               class:list={[
                 "group relative aspect-video w-full px-8 py-12 md:px-24 md:py-24",
                 page.textColor,
