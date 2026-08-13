@@ -113,6 +113,7 @@ content:
       - name: toDate
         label: To Date
         type: date
+        default: ""
       - name: venue
         label: Venue
         type: string
