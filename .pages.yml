@@ -123,7 +123,6 @@ content:
       - name: city
         label: City
         type: string
-        required: true
       - name: artist
         label: Artist
         type: string

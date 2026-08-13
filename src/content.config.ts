@@ -48,7 +48,7 @@ const gigs = defineCollection({
     toDate: z.string().optional(),
     venue: z.string(),
     venueUrl: z.string().optional(),
-    city: z.string(),
+    city: z.string().optional(),
     artist: z.string(),
     artistUrl: z.string().optional(),
     eventDescription: z.string(),
