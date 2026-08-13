@@ -2813,5 +2813,31 @@
     "facebookUrl": "",
     "ticketsUrl": "",
     "createdAt": "2025-10-09T11:34:00.000Z"
+  },
+  {
+    "date": "2026-06-19",
+    "venue": "Lofotkatedralen",
+    "venueUrl": "",
+    "city": "Kabelvåg",
+    "artist": "HHG",
+    "artistUrl": "",
+    "eventDescription": "Private",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2026-08-13T18:00:00.000Z"
+  },
+  {
+    "date": "2026-07-23",
+    "venue": "Lofoten Vanlife",
+    "venueUrl": "",
+    "city": "Svolvær",
+    "artist": "HHG",
+    "artistUrl": "",
+    "eventDescription": "Høllavors",
+    "eventUrl": "",
+    "facebookUrl": "",
+    "ticketsUrl": "",
+    "createdAt": "2026-08-13T18:12:00.000Z"
   }
 ]
