@@ -21,7 +21,7 @@ export default defineConfig({
       fallbackType: "rewrite",
     },
     fallback: {
-      nb: "en",
+      en: "nb",
     },
   },
   integrations: [
