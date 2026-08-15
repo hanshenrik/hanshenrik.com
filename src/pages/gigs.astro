@@ -51,11 +51,13 @@ const topImageUrl = imageToUrl(topImage);
     {
       sortYearsDesc(groupGigsByYear(sortedGigs)).map(
         ([year, yearGigs], index) => (
-          <details class="group" open={index === 0}>
-            <summary class="sticky top-12 z-10 flex list-none flex-row items-center justify-between px-6 text-3xl font-medium">
-              <span class="bg-white py-1.5">{year}</span>
+          <details class="group/details" open={index === 0}>
+            <summary class="group/summary sticky top-12 z-10 flex list-none flex-row items-center justify-between px-6 text-3xl font-medium">
+              <span class="border-b-4 border-transparent bg-white py-1.5 transition group-hover/summary:border-current">
+                {year}
+              </span>
               <Icon
-                class="origin-center bg-white transition-transform group-open:scale-150 group-open:rotate-180 group-hover:scale-110 group-hover:not-group-open:rotate-6 group-hover:group-open:rotate-[174deg]"
+                class="origin-center bg-white transition-transform group-open/details:scale-150 group-open/details:rotate-180 group-hover/summary:scale-110 group-hover/summary:not-group-open/details:rotate-6 group-hover/summary:group-open/details:rotate-174"
                 name={CHEVRON_DOWN}
                 size={24}
               />
