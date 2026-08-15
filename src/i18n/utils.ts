@@ -2,12 +2,9 @@ import type { Lang } from "./ui";
 
 export type { Lang };
 
-type Namespace<T extends Record<string, string>> = Record<Lang, T>;
-
-export function useTranslations<T extends Record<string, string>>(
-  lang: Lang,
-  namespace: Namespace<T>,
-): (key: keyof T) => string {
+export function useTranslations<
+  N extends { en: Record<string, string>; nb: Record<string, string> },
+>(lang: Lang, namespace: N): (key: keyof N["nb"]) => string {
   return (key) =>
     (namespace[lang][key] ?? namespace.nb[key] ?? String(key)) as string;
 }
