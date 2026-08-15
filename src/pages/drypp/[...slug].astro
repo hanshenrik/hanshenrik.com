@@ -1,8 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import { type CollectionEntry, getCollection, render } from "astro:content";
+import { getCollection, render, type CollectionEntry } from "astro:content";
 import { format } from "date-fns";
 import { nb } from "date-fns/locale";
+
 import Tag from "../../components/Tag.astro";
 import { drypp as dryppNs } from "../../i18n/ui";
 import type { Lang } from "../../i18n/utils";

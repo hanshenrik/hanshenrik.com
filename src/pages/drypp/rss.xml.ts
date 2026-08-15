@@ -1,9 +1,9 @@
 import rss from "@astrojs/rss";
 import type { APIContext } from "astro";
-import { type CollectionEntry, getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import { isBefore } from "date-fns";
 
-import { type BlogPostData, hasRequiredRssPostFields } from "../../utils";
+import { hasRequiredRssPostFields, type BlogPostData } from "../../utils";
 
 const includePostInRssFeed = (
   post: CollectionEntry<"drypp"> & { data: BlogPostData },

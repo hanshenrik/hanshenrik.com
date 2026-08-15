@@ -1,5 +1,5 @@
-import { file, glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
+import { file, glob } from "astro/loaders";
 import { v4 as uuidv4 } from "uuid";
 
 import { blogPostDataSchema } from "./utils";
