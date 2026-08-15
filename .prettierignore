@@ -1,1 +1,14 @@
+# Machine-generated. pnpm rewrites this file on every install using its own
+# style (single quotes, its own blank lines), so letting Prettier reformat it
+# just creates a tug-of-war: thousands of lines of diff churn that pnpm undoes
+# the next time anyone installs a dependency.
 pnpm-lock.yaml
+
+# Build output and Astro's generated types.
+#
+# These are already in .gitignore, and Prettier 3 reads .gitignore by default,
+# so they are skipped today. They are repeated here because passing an explicit
+# --ignore-path (e.g. `prettier --ignore-path .prettierignore .`) replaces that
+# default and would otherwise start formatting generated files.
+dist/
+.astro/
