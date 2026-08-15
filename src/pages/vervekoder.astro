@@ -8,7 +8,7 @@ import { useTranslations } from "../i18n/utils";
 import Layout from "../layouts/Layout.astro";
 import { imageToUrl } from "../utils";
 
-const lang = (Astro.currentLocale ?? "en") as Lang;
+const lang = (Astro.currentLocale ?? "nb") as Lang;
 const t = useTranslations(lang, vervekodernNs);
 
 const vouchers = await getCollection("vouchers");

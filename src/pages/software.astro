@@ -11,7 +11,7 @@ import { GITHUB } from "../icons";
 import Layout from "../layouts/Layout.astro";
 import { imageToUrl } from "../utils";
 
-const lang = (Astro.currentLocale ?? "en") as Lang;
+const lang = (Astro.currentLocale ?? "nb") as Lang;
 const t = useTranslations(lang, softwareNs);
 const tNav = useTranslations(lang, nav);
 

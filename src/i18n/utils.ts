@@ -9,17 +9,17 @@ export function useTranslations<T extends Record<string, string>>(
   namespace: Namespace<T>,
 ): (key: keyof T) => string {
   return (key) =>
-    (namespace[lang][key] ?? namespace.en[key] ?? String(key)) as string;
+    (namespace[lang][key] ?? namespace.nb[key] ?? String(key)) as string;
 }
 
 export function getLangFromUrl(url: URL): Lang {
   const [, maybeLang] = url.pathname.split("/");
-  if (maybeLang === "nb") return "nb";
-  return "en";
+  if (maybeLang === "en") return "en";
+  return "nb";
 }
 
 export function getLocalizedHref(href: string, lang: Lang): string {
-  if (lang === "en") return href;
-  if (href === "/") return "/nb";
-  return `/nb${href}`;
+  if (lang === "nb") return href;
+  if (href === "/") return "/en";
+  return `/en${href}`;
 }
