@@ -91,14 +91,14 @@ export const video = {
 
 export const software = {
   en: {
-    "For øyeblikket jobber jeg hos ": "I currently work at ",
+    "Jeg jobber for ": "I work at ",
     ". Tidligere jobbet jeg for ": ". Previously, I worked at ",
     " (via ": " (through ",
     "). Fra tid til annen programmerer jeg også litt på fritiden.":
       "). I also do some hobby projects from time to time.",
   },
   nb: {
-    "For øyeblikket jobber jeg hos ": "For øyeblikket jobber jeg hos ",
+    "Jeg jobber for ": "Jeg jobber for ",
     ". Tidligere jobbet jeg for ": ". Tidligere jobbet jeg for ",
     " (via ": " (via ",
     "). Fra tid til annen programmerer jeg også litt på fritiden.":
