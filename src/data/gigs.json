@@ -1911,5 +1911,47 @@
     "artist": "Lofoten Juleshowband",
     "eventDescription": "Thon Hotel Lofotens store julebordshow",
     "createdAt": "2026-10-29"
+  },
+  {
+    "date": "2026-11-28",
+    "venue": "Thon Hotel Lofoten",
+    "city": "Svolvær",
+    "artist": "Lofoten Juleshowband",
+    "eventDescription": "Thon Hotel Lofotens store julebordshow",
+    "createdAt": "2026-10-29"
+  },
+  {
+    "date": "2026-12-04",
+    "venue": "Thon Hotel Lofoten",
+    "city": "Svolvær",
+    "artist": "Lofoten Juleshowband",
+    "eventDescription": "Thon Hotel Lofotens store julebordshow",
+    "createdAt": "2026-10-29"
+  },
+  {
+    "date": "2026-12-05",
+    "venue": "Thon Hotel Lofoten",
+    "city": "Svolvær",
+    "artist": "Lofoten Juleshowband",
+    "eventDescription": "Thon Hotel Lofotens store julebordshow",
+    "createdAt": "2026-10-29"
+  },
+  {
+    "date": "2026-12-12",
+    "venue": "Thon Hotel Lofoten",
+    "city": "Svolvær",
+    "artist": "Lofoten Juleshowband",
+    "eventDescription": "Thon Hotel Lofotens store julebordshow",
+    "createdAt": "2026-10-29"
+  },
+  {
+    "date": "2026-12-19",
+    "venue": "Arbeidern",
+    "venueUrl": "https://arbeidern.no",
+    "city": "Kabelvåg",
+    "artist": "Julejammens Husband",
+    "eventDescription": "Julejam",
+    "eventUrl": "https://lofotenjazzklubb.no/arrangement/julejam-2026-08-14/",
+    "createdAt": "2026-10-29"
   }
 ]
