@@ -1898,9 +1898,18 @@
   },
   {
     "date": "2026-10-16",
-    "venue": "TBA",
+    "venue": "Thon Hotel Svolvær",
     "city": "Svolvær",
     "artist": "Lofoten Groove Collective",
+    "eventDescription": "NESO",
     "createdAt": "2026-08-13"
+  },
+  {
+    "date": "2026-11-21",
+    "venue": "Thon Hotel Lofoten",
+    "city": "Svolvær",
+    "artist": "Lofoten Juleshowband",
+    "eventDescription": "Thon Hotel Lofotens store julebordshow",
+    "createdAt": "2026-10-29"
   }
 ]
