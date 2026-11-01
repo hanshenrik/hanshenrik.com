@@ -101,10 +101,17 @@ content:
 
   - name: gigs
     label: Gigs
-    type: file
-    path: src/data/gigs.json
-    format: json
-    list: true
+    type: collection
+    path: src/content/gigs
+    filename: "{fields.date}-{primary}.mdx"
+    view:
+      layout: tree
+      fields: [date, artist, venue, city]
+      primary: artist
+      sort: [date, artist]
+      default:
+        sort: date
+        order: desc
     fields:
       - name: date
         label: Date
@@ -240,9 +247,9 @@ content:
         label: Name
         type: string
         required: true
-      - name: body
+      - name: description
         label: Description
-        type: rich-text
+        type: string
       - name: url
         label: URL
         type: string

@@ -1,6 +1,5 @@
 import { defineCollection, z } from "astro:content";
-import { file, glob } from "astro/loaders";
-import { v4 as uuidv4 } from "uuid";
+import { glob } from "astro/loaders";
 
 import { blogPostDataSchema } from "./utils";
 
@@ -37,12 +36,7 @@ const recordings = defineCollection({
 });
 
 const gigs = defineCollection({
-  loader: file("src/data/gigs.json", {
-    parser: (text, ..._props) => {
-      const data = JSON.parse(text);
-      return data.map((gig: any) => ({ id: uuidv4(), ...gig }));
-    },
-  }),
+  loader: glob({ pattern: "**/*.mdx", base: "src/content/gigs" }),
   schema: z.object({
     date: z.string(),
     toDate: z.string().optional(),
@@ -87,6 +81,7 @@ const vouchers = defineCollection({
   loader: glob({ pattern: "**/*.mdx", base: "src/content/vouchers" }),
   schema: z.object({
     name: z.string(),
+    description: z.string().optional(),
     value: z.string().optional(),
     url: z.string().optional(),
     code: z.string().nullish(),
