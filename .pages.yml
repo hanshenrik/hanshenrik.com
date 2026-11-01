@@ -105,7 +105,6 @@ content:
     path: src/content/gigs
     filename: "{fields.date}-{primary}.mdx"
     view:
-      layout: tree
       fields: [date, artist, venue, city]
       primary: artist
       sort: [date, artist]
