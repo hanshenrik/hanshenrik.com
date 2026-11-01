@@ -225,12 +225,11 @@ content:
 
   - name: vouchers
     label: Vouchers
-    type: file
-    path: src/data/vouchers.json
-    format: json
-    list: true
+    type: collection
+    path: src/content/vouchers
+    filename: "{primary}.mdx"
     view:
-      fields: [image, name, description, url, code, order]
+      fields: [image, name, url, code, order]
       primary: name
       sort: [order, name]
       default:
@@ -241,9 +240,9 @@ content:
         label: Name
         type: string
         required: true
-      - name: description
+      - name: body
         label: Description
-        type: text
+        type: rich-text
       - name: url
         label: URL
         type: string

@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import { orderBy } from "lodash-es";
 
 import { vouchers as vervekodernNs } from "../i18n/ui";
@@ -12,7 +12,13 @@ import { imageToUrl } from "../utils";
 const lang = (Astro.currentLocale ?? "nb") as Lang;
 const t = useTranslations(lang, vervekodernNs);
 
-const vouchers = await getCollection("vouchers");
+const voucherEntries = await getCollection("vouchers");
+const vouchers = await Promise.all(
+  voucherEntries.map(async (voucher) => ({
+    voucher,
+    Content: (await render(voucher)).Content,
+  })),
+);
 ---
 
 <Layout title={t("Vervekoder")}>
@@ -28,7 +34,7 @@ const vouchers = await getCollection("vouchers");
     </p>
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
-        orderBy(vouchers, "data.order", "asc").map((voucher) => {
+        orderBy(vouchers, "voucher.data.order", "asc").map(({ voucher, Content }) => {
           const imageUrl = voucher.data.image
             ? imageToUrl(voucher.data.image, Astro.url.origin)
             : null;
@@ -55,8 +61,10 @@ const vouchers = await getCollection("vouchers");
                 </div>
 
                 <div class="flex flex-col gap-2">
-                  {voucher.data.description && (
-                    <p class="flex-1 text-sm">{voucher.data.description}</p>
+                  {voucher.body?.trim() && (
+                    <div class="flex-1 text-sm prose prose-sm">
+                      <Content />
+                    </div>
                   )}
                   {voucher.data.value && (
                     <p class="flex-1 text-sm">{voucher.data.value}</p>

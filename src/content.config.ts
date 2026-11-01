@@ -84,15 +84,9 @@ const videos = defineCollection({
 });
 
 const vouchers = defineCollection({
-  loader: file("src/data/vouchers.json", {
-    parser: (text, ..._props) => {
-      const data = JSON.parse(text);
-      return data.map((voucher: any) => ({ id: uuidv4(), ...voucher }));
-    },
-  }),
+  loader: glob({ pattern: "**/*.mdx", base: "src/content/vouchers" }),
   schema: z.object({
     name: z.string(),
-    description: z.string().optional(),
     value: z.string().optional(),
     url: z.string().optional(),
     code: z.string().nullish(),
