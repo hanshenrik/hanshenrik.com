@@ -28,8 +28,8 @@ const topImageUrl = imageToUrl(topImage);
       {
         orderBy(videos, "data.order", "desc").map((video) => (
           <div class="group space-y-2">
-            {video.data.youtubeLink && (
-              <YouTube id={video.data.youtubeLink} title={video.data.name} />
+            {video.data.youtubeUrl && (
+              <YouTube id={video.data.youtubeUrl} title={video.data.name} />
             )}
             <div class="space-y-2">
               <h2>
@@ -39,7 +39,7 @@ const topImageUrl = imageToUrl(topImage);
               {video.data.isPlaylist && (
                 <p class="mb-4">
                   <a
-                    href={video.data.youtubeLink}
+                    href={video.data.youtubeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     class="inline-flex items-center gap-1 rounded-full bg-red-100 px-3 py-1.5 text-red-700 transition-colors duration-200 hover:bg-red-200"

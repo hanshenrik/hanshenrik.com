@@ -58,20 +58,20 @@ content:
         type: number
         description: Highest first
         default: 0
-      - name: spotifyLink
-        label: Spotify Link
+      - name: spotifyUrl
+        label: Spotify URL
         type: string
-      - name: tidalLink
-        label: Tidal Link
+      - name: tidalUrl
+        label: Tidal URL
         type: string
-      - name: appleLink
-        label: Apple Music Link
+      - name: appleUrl
+        label: Apple Music URL
         type: string
-      - name: soundcloudLink
-        label: SoundCloud Link
+      - name: soundcloudUrl
+        label: SoundCloud URL
         type: string
-      - name: youtubeLink
-        label: YouTube Link
+      - name: youtubeUrl
+        label: YouTube URL
         type: string
       - name: image
         label: Image
@@ -120,6 +120,13 @@ content:
         label: To Date
         type: date
         default: ""
+      - name: artist
+        label: Artist
+        type: string
+        required: true
+      - name: artistUrl
+        label: Artist URL
+        type: string
       - name: venue
         label: Venue
         type: string
@@ -130,24 +137,17 @@ content:
       - name: city
         label: City
         type: string
-      - name: artist
-        label: Artist
-        type: string
-        required: true
-      - name: artistUrl
-        label: Artist URL
-        type: string
       - name: eventDescription
         label: Event Description
         type: text
       - name: eventUrl
         label: Event URL
         type: string
-      - name: facebookUrl
-        label: Facebook URL
-        type: string
       - name: ticketsUrl
         label: Tickets URL
+        type: string
+      - name: facebookUrl
+        label: Facebook URL
         type: string
       - name: createdAt
         label: Created At
@@ -213,8 +213,8 @@ content:
         label: Name
         type: string
         required: true
-      - name: youtubeLink
-        label: YouTube Link
+      - name: youtubeUrl
+        label: YouTube URL
         type: string
         required: true
       - name: description
